@@ -36,8 +36,14 @@
     }
 
     @keyframes moveHorse {
-      0% { left: 10px; }  /* Start from outside the left */
-      100% { left: 100vw; } /* Move to the right and disappear */
+      0% { left: 10px; }  
+      100% { left: 100vw; } 
+    }
+    #horse {
+    transition: bottom 0.2s ease-in-out;
+    }
+    #obstacle {
+      position: absolute;
     }
     </style>
   </head>
@@ -192,15 +198,20 @@
     <section class="relative flex items-center h-[100dvh] justify-center min-h-1/3 bg-black bg-cover bg-center px-8 py-12" style="background-image: url('/MIW_Website_Assets/Ibangle_iSection_work.png');">
       <div class="max-w-6xl w-full flex flex-col md:flex-row items-center">
           <!-- Left Text Content -->
-          <div class="w-full md:w-1/2 text-white">
-              <h1 class="text-5xl font-semibold mb-4">ibangle</h1>
-              <p class="text-gray-400 text-lg">
-                  Interdum et malesuada <span class="font-bold text-white">fames</span> ac ante 
-                  ipsum primis in faucibus. Vestibulum lacus odio, tincidunt rhoncus purus 
-                  <span class="font-bold text-white">droduncto</span>, egestas convallis odio.
-              </p>
-          </div>
-  
+          <div class="flex items-center min-h-screen px-8 md:px-16 lg:px-24">
+            <div class="w-full md:w-1/2 text-white">
+                <h1 class="text-5xl font-semibold mb-6">ibangle</h1>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    The iBangle, designed by Gopi Prasannaa in 2008, was the first-of-its-kind wearable music device, 
+                    conceptualised long before Apple introduced wearables.
+                    <br><br>
+                    This futuristic bangle-style iPod featured touch-sensitive controls, virtual earphones, and an adjustable fit,
+                    redefining personal audio experiences. Recognised globally, it was featured in CNN's "21st Century Visionary" 
+                    list and highlighted by Yanko Design as one of the Best of 2008, showcasing its pioneering approach to wearable technology.
+                </p>
+            </div>
+
+        </div>
       </div>
     </section>
   
@@ -241,24 +252,31 @@
       <img src="/MIW_Website_Assets/Right_arrow_testimonials.png" alt="Next" class="w-8 sm:w-12 md:w-16">
     </button>
   </div>
+  
   <!-- Bottom Horse Animation Section -->
-  <div class="bg-white relative h-[40dvh] w-full flex items-center justify-center overflow-hidden">
+  <div class="bg-white relative w-full flex items-center justify-center overflow-hidden h-[40dvh]">
     <div class="absolute inset-0">
-      <img src="/MIW_Website_Assets/Horse_Game_BG.png" alt="Path Background" class="w-full h-full object-cover">
+        <img src="/MIW_Website_Assets/Horse_Game_BG.png" alt="Path Background" class="w-full h-full object-cover">
     </div>
 
-    <div id="horse-container" class="absolute bottom-0 left-[10px]">
-      <img id="horse" src="/MIW_Website_Assets/Horse_Game.png"
-        alt="Horse" class="w-[150px] sm:w-[200px] md:w-[200px]">
+    <!-- Horse (Fixed: Applied absolute positioning to the container) -->
+    <div id="horse-container" class="absolute bottom-0 left-[10px]" style="position: absolute; bottom: 0px;">
+        <img id="horse" src="/MIW_Website_Assets/Horse_Game.png" alt="Horse" class="w-[150px] sm:w-[200px] md:w-[200px]">
     </div>
 
+    <!-- Obstacle -->
+    <div id="obstacle" class="absolute bottom-0 right-0 bg-red-500 w-[30px] h-[50px]"></div>
+
+    <!-- Score -->
+    <p id="score" class="absolute top-5 left-5 text-lg font-bold text-gray-700">play by enter button</p>
+
+    <!-- Play Button -->
     <div class="absolute top-10 right-10 sm:right-20 md:right-32 flex items-center gap-4">
-      <img src="/MIW_Website_Assets/Play_button_Game.png" alt="Play" class="w-12 sm:w-16 md:w-20 cursor-pointer"
-        id="play-button">
-      <p class="text-sm sm:text-lg md:text-xl text-pink-500 font-semibold text-center sm:text-left">
-        Play is the highest form of research.
-        <span class="text-gray-600 ml-2">Albert Einstein</span>
-      </p>
+        <img src="/MIW_Website_Assets/Play_button_Game.png" alt="Play" class="w-12 sm:w-16 md:w-20 cursor-pointer" id="play-button">
+        <p class="text-sm sm:text-lg md:text-xl text-pink-500 font-semibold text-center sm:text-left">
+            Play is the highest form of research.
+            <span class="text-gray-600 ml-2">Albert Einstein</span>
+        </p>
     </div>
   </div>
 </section>
@@ -426,17 +444,7 @@
       }, 5000);
 
       updateTestimonial(currentIndex);
-      document.getElementById("play-button").addEventListener("click", function() {
-        const horse = document.getElementById("horse-container");
-
-        if (horse.style.animation) {
-            // If animation is running, pause it
-            horse.style.animation = "";
-        } else {
-            // If animation is paused, start it
-            horse.style.animation = "moveHorse 5s linear infinite";
-        }
-    });
+      
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -444,5 +452,109 @@
         mobileMenu.classList.toggle('hidden');
     });
   </script>
+  <script>
+    let horseContainer = document.getElementById("horse-container");
+    let obstacle = document.getElementById("obstacle");
+    let scoreDisplay = document.getElementById("score");
+    let playButton = document.getElementById("play-button");
+
+    let score = 0;
+    let isJumping = false;
+    let gameRunning = false;
+    let horseMoved = false;
+    let gameInterval;
+
+    // Prevent page scrolling when pressing Enter or Space
+    window.addEventListener("keydown", function (e) {
+        if (e.key === " " || e.key === "Enter") {
+            e.preventDefault();
+        }
+    });
+
+    // Start game
+    playButton.addEventListener("click", startGame);
+
+    function startGame() {
+        if (gameRunning) return;
+        gameRunning = true;
+        score = 0;
+        scoreDisplay.textContent = "Score: 0";
+
+        horseContainer.style.bottom = "0px";
+        obstacle.style.right = "0px";
+
+         // Move the horse to the center
+         if (!horseMoved) {
+            horseContainer.style.transition = "left 2s ease-in";
+            horseContainer.style.left = "30%"; 
+            horseMoved = true;
+        }
+
+        gameInterval = setInterval(() => {
+            moveObstacle();
+            checkCollision();
+        }, 20);
+    }
+
+    function moveObstacle() {
+        let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("right"));
+        if (obstacleLeft < window.innerWidth) {
+            obstacle.style.right = (obstacleLeft + 5) + "px";
+        } else {
+            obstacle.style.right = "0px";
+            score++;
+            scoreDisplay.textContent = "Score: " + score;
+        }
+    }
+
+    // Jump function
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" && !isJumping && gameRunning) {
+            isJumping = true;
+            let jumpHeight = 120;
+            let jumpSpeed = 35;
+
+            let up = setInterval(() => {
+                let horseBottom = parseInt(window.getComputedStyle(horseContainer).getPropertyValue("bottom"));
+                if (horseBottom < jumpHeight) {
+                    horseContainer.style.bottom = (horseBottom + 5) + "px";
+                } else {
+                    clearInterval(up);
+                    let down = setInterval(() => {
+                        let horseBottom = parseInt(window.getComputedStyle(horseContainer).getPropertyValue("bottom"));
+                        if (horseBottom > 0) {
+                            horseContainer.style.bottom = (horseBottom - 5) + "px";
+                        } else {
+                            clearInterval(down);
+                            isJumping = false;
+                        }
+                    }, jumpSpeed);
+                }
+            }, jumpSpeed);
+        }
+    });
+
+    function checkCollision() {
+        let horseRect = horseContainer.getBoundingClientRect();
+        let obstacleRect = obstacle.getBoundingClientRect();
+        let horseBottom = parseInt(window.getComputedStyle(horseContainer).getPropertyValue("bottom"));
+
+        // Ensure collision only when horse is low enough to hit the obstacle
+        if (
+            horseRect.left < obstacleRect.right &&
+            horseRect.right > obstacleRect.left &&
+            horseBottom <= 40
+        ) {
+            gameOver();
+        }
+    }
+
+    function gameOver() {
+        clearInterval(gameInterval);
+        gameRunning = false;
+        alert("Game Over! Score: " + score);
+        document.location.reload();
+    }
+</script>
   </body>
 </html>
