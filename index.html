@@ -58,7 +58,7 @@
           <ul class="hidden md:flex space-x-6 text-lg uppercase text-white">
             <li><a href="#" class="active">Home</a></li>
             <li><a href="#">Work</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="/service.html">Services</a></li>
             <li><a href="#">Team</a></li>
             <li><a href="#">Testimonials</a></li>
             <li><a href="#">Contact</a></li>
@@ -72,15 +72,21 @@
     </nav>
       
     <!-- Mobile Popup Menu (Overlay) -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 backdrop-blur-sm hidden flex-col justify-center items-center text-white text-lg uppercase z-50">
-        <button id="close-menu" class="absolute top-6 right-6 text-4xl hover:text-yellow-400 transition duration-300">&times;</button>
-        <ul class="space-y-6 text-center">
-          <li><a href="#" class="block">Home</a></li>
-          <li><a href="#" class="block">Work</a></li>
-          <li><a href="#" class="block">Services</a></li>
-          <li><a href="#" class="block">Team</a></li>
-          <li><a href="#" class="block">Testimonials</a></li>
-          <li><a href="#" class="block">Contact</a></li>
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
+        <!-- Close Button -->
+        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] hover:text-blue-700 transition duration-300">
+            ✖
+        </button>
+
+        <!-- Menu Items -->
+        <ul class="text-center leading-[2.5rem]">
+            <li class="mt-2"><a href="#">H O M E</a></li>
+            <li class="mt-2"><a href="#">W O R K</a></li>
+            <li class="mt-2"><a href="#">A B O U T</a></li>
+            <li class="mt-2"><a href="#" class="font-bold text-blue-900">S E R V I C E S</a></li>
+            <li class="mt-2"><a href="#" >T E A M</a></li>
+            <li class="mt-2"><a href="#">T E S T I M O N I A L S</a></li>
+            <li class="mt-2"><a href="#">C O N T A C T</a></li>
         </ul>
     </div>
 
@@ -331,7 +337,7 @@
       
           <div class="mt-10 flex flex-col md:flex-row justify-between items-start space-y-6 md:space-y-0">
             <!-- Flex List (Responsive Grid) -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-4 w-full md:w-2/3 text-center md:text-left">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-4 w-full md:w-2/3 text-left md:text-left">
                 <div class="w-full md:w-40">
                     <h3 class="font-semibold">DOOGEE</h3>
                     <ul class="space-y-1">
@@ -408,15 +414,15 @@
     <script type="module" src="/main.js"></script>
     <script>
        function openFullscreen(imageSrc) {
-    const modal = document.getElementById("fullscreen-modal");
-    const img = document.getElementById("fullscreen-image");
-    img.src = imageSrc;
-    modal.classList.remove("hidden");
-  }
+        const modal = document.getElementById("fullscreen-modal");
+        const img = document.getElementById("fullscreen-image");
+        img.src = imageSrc;
+        modal.classList.remove("hidden");
+    }
 
-  function closeFullscreen() {
-    document.getElementById("fullscreen-modal").classList.add("hidden");
-  }
+    function closeFullscreen() {
+        document.getElementById("fullscreen-modal").classList.add("hidden");
+    }
     </script>
     <script>
       const testimonials = [

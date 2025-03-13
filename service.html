@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Magic In White</title>
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .active {
+            background-color: yellow;
+            color: blue;
+            padding: 30px 10px 18px 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-transparent px-4 fixed w-full top-0 left-0 z-50">
+        <div class="flex justify-between items-center max-w-6xl mx-auto">
+          <!-- Logo -->
+          <div class="text-white text-2xl font-bold">
+            <img src="/services-assets/Logo-on-menu.png" alt="logo" class="w-20 h-20">
+          </div>
+      
+          <!-- Desktop Menu -->
+          <ul class="hidden md:flex space-x-6 text-lg uppercase text-blue-700">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="/service.html" class="active">Services</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+      
+          <!-- Mobile Menu Button -->
+          <button id="menu-btn" class="md:hidden lg:hidden text-white text-3xl hover:text-yellow-400 transition duration-300">
+           <img src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-10 h-10">
+          </button>
+        </div>
+    </nav>
+      
+    <!-- Mobile Popup Menu (Overlay) -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
+        <!-- Close Button -->
+        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
+            ✖
+        </button>
+
+        <!-- Menu Items -->
+        <ul class="text-center leading-[2.5rem]">
+            <li class="mt-2"><a href="#">H O M E</a></li>
+            <li class="mt-2"><a href="#">W O R K</a></li>
+            <li class="mt-2"><a href="#">A B O U T</a></li>
+            <li class="mt-2"><a href="#" class="font-bold text-blue-900">S E R V I C E S</a></li>
+            <li class="mt-2"><a href="#" >T E A M</a></li>
+            <li class="mt-2"><a href="#">T E S T I M O N I A L S</a></li>
+            <li class="mt-2"><a href="#">C O N T A C T</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Main Image Section with Parallax Effect -->
+    <section class="h-[100dvh] bg-cover bg-center bg-fixed" style="background-image: url('/services-assets/Services-Header.png');">
+    </section>
+
+   <!-- Grid Layout -->
+    <section class="grid grid-cols-7 grid-rows-12">
+        
+        <!-- Content 1 -->
+        <div class="col-span-4 row-span-2 bg-green-500 p-6 text-white flex items-center justify-center text-center">
+            <div class="text-left">
+                <h1 class="text-3xl font-bold">BRANDING</h1>
+                <p class="text-sm">LOGO DESIGN, BRAND POSITIONING,BRAND STRATEGY,NAMING & TAGLINE DEVELOPMENT,REBRANDING</p>
+                <button class="mt-2">
+                    <img src="/services-assets/explore-button-white.png" alt="Explore" class="w-20 h-auto"> 
+                </button>
+            </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="col-span-3 row-span-2 col-start-5 bg-gray-300">
+            <img src="/services-assets/branding-asset.png" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Image 3 -->
+        <div class="col-span-3 row-span-2 row-start-3 bg-gray-300">
+            <img src="/services-assets/advertising-asset.png" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Content 4 -->
+        <div class="col-span-4 row-span-2 col-start-4 row-start-3 bg-white p-6 text-blue-700 flex items-center justify-center text-center">
+            <div class="text-right">
+                <h1 class="text-3xl font-bold">ADVERTISING</h1>
+                <p class="text-sm">PRINT,DIGITAL,FILM,PHOTOGRAPHY AND ART DIRECTION,OUT-OF-HOME ADVERTISING.</p>
+                <button class="mt-2">
+                    <img src="/services-assets/explore-button-blue.png" alt="Explore" class="w-20 h-auto"> 
+                </button>
+            </div>
+        </div>
+
+        <!-- Content 5 -->
+        <div class="col-span-4 row-span-2 row-start-5 bg-pink-500 p-6 text-white flex items-center justify-center text-center">
+            <div class="text-left">
+                <h1 class="text-3xl font-bold">DESIGNING</h1>
+                <p class="text-sm">GRAPHIC DESIGN,PACKINGDESIGN,WEBSITE DESIGN & DEVELOPMENT,UI/UX DESIGN,PROTOTYPING AND WIREFRAMING,MOTION GRAPHICS & ANIMATION</p>
+                <button class="mt-2">
+                    <img src="/services-assets/explore-button-white.png" alt="Explore" class="w-20 h-auto"> 
+                </button>
+            </div>
+        </div>
+
+        <!-- Image 6 -->
+        <div class="col-span-3 row-span-2 col-start-5 row-start-5 bg-gray-300">
+            <img src="/services-assets/designing-asset.png" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Image 7 -->
+        <div class="col-span-3 row-span-2 row-start-7 bg-gray-300">
+            <img src="/services-assets/filmproduction-asset.png" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Content 8 -->
+        <div class="col-span-4 row-span-2 col-start-4 row-start-7 bg-black p-6 text-white flex items-center justify-center text-center">
+            <div class="text-right">
+                <h1 class="text-3xl font-bold">FILM PRODUCTION</h1>
+                <p class="text-sm">TITLE ANIMATION,STOP MOTION ANIMATION,MOVIE TITLE SEQUENCE,2D ANIMATION & 3D ANIMATION</p>
+                <button class="mt-2">
+                    <img src="/services-assets/explore-button-white.png" alt="Explore" class="w-20 h-auto"> 
+                </button>
+            </div>
+        </div>
+
+        <!-- Content 9 -->
+        <div class="col-span-4 row-span-2 row-start-9 bg-blue-700 p-6 text-white flex items-center justify-center text-center">
+            <div class="text-left">
+                <h1 class="text-3xl font-bold">UI / UX</h1>
+                <p class="text-sm">SOCIAL MEDIA STRATEGY AND MANAGEMENT, CONTENT CREATION-COPY,GRAPHICS AND VIDEO,INFLUENCER MARKETING</p>
+                <button class="mt-2">
+                    <img src="/services-assets/explore-button-white.png" alt="Explore" class="w-20 h-auto"> 
+                </button>
+            </div>
+        </div>
+
+        <!-- Image 10 -->
+        <div class="col-span-3 row-span-2 col-start-5 row-start-9 bg-gray-300">
+            <img src="/services-assets/ui-ux-asset.png" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Image 11 -->
+        <div class="col-span-3 row-span-2 row-start-11 bg-gray-300">
+            <img src="/services-assets/integrated-asset.png" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Content 12 -->
+        <div class="col-span-4 row-span-2 col-start-4 row-start-11 bg-[#ffd527] p-6 text-white flex items-center justify-center text-center">
+            <div class="text-right text-blue-700">
+                <h1 class="text-3xl font-bold">INTEGRATED MARKETING</h1>
+                <p class="text-sm">360 MARKETING CAMPAIGNS,GUERRILLA MARKETING AND EXPERIENTIAL MARKETING,SPONSORSHIP AND PARTNERSHIPS</p>
+                <button class="mt-2">
+                    <img src="/services-assets/explore-button-blue.png" alt="Explore" class="w-20 h-auto"> 
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Footer-->
+    <section class="min-h-1/2 flex flex-col justify-center items-center bg-gray-300 text-white text-center p-10">
+        <div class="container">
+          <div class="w-full max-w-4xl mx-auto mt-6">
+            <!-- Heading + Input Field -->
+            <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
+            <div class="flex">
+                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
+                <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
+            </div>
+        
+            <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
+                <!-- First Row: Lists (Grid of 5 Items) -->
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
+                    <div class="w-full">
+                        <h3 class="font-semibold">HOME</h3>
+                        <ul class="space-y-1">
+                            <li>Why us</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">WORK</h3>
+                        <ul class="space-y-1">
+                            <li>Film Posters</li>
+                            <li>Events</li>
+                            <li>Title Animations</li>
+                            <li>Branding</li>
+                            <li>Products</li>
+                            <li>Advertising</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">SERVICE</h3>
+                        <ul class="space-y-1 text-sm pt-3">
+                            <li class="whitespace-nowrap">Branding</li>
+                            <li class="whitespace-nowrap">Advertising</li>
+                            <li class="whitespace-nowrap">Film Production</li>
+                            <li class="whitespace-nowrap">Graphic Design</li>
+                            <li class="whitespace-nowrap">Social Media Marketing</li>
+                            <li class="whitespace-nowrap">Integrated Marketing</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">TEAM</h3>
+                        <ul class="space-y-1">
+                            <li>Meet the Team</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">CONTACT</h3>
+                        <ul class="space-y-1">
+                            <li>Contact Information</li>
+                            <li>Careers</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Second Row: Button & Social Media Icons -->
+                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
+                    <button class="bg-gray-300 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                        <i class="fas fa-share"></i> Share this Website
+                    </button>
+            
+                    <!-- Social Icons -->
+                    <div class="flex flex-wrap justify-center sm:justify-end gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fab fa-vimeo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    </section>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close menu when clicking outside of it
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+            mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
