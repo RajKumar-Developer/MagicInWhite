@@ -6,6 +6,7 @@ export default defineConfig({
       input: {
         main: 'index.html',
         service: 'service.html',
+        team:'team.html',
       }
     }
   }

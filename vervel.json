@@ -1,6 +1,7 @@
 {
     "rewrites": [
-      { "source": "/service", "destination": "/service.html" }
+      { "source": "/service", "destination": "/service.html" },
+      {"source":"/team","destination":"/team.html"}
     ],
     "redirects": [
       { "source": "/old-page", "destination": "/new-page", "permanent": true }

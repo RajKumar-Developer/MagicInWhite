@@ -13,6 +13,23 @@
             color: blue;
             padding: 30px 10px 18px 10px;
         }
+        /* Apply a smooth transition */
+        .grid img {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            transform-origin: center;
+        }
+
+        /* Parallax-like effect on hover */
+        .grid img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Optional: Adding a slight tilt effect */
+        .grid img:hover {
+            transform: scale(1.1) rotateX(5deg) rotateY(5deg);
+        }
+
     </style>
 </head>
 <body>
@@ -29,7 +46,7 @@
             <li><a href="/index.html">Home</a></li>
             <li><a href="#">Work</a></li>
             <li><a href="/service.html" class="active">Services</a></li>
-            <li><a href="#">Team</a></li>
+            <li><a href="/team.html">Team</a></li>
             <li><a href="#">Testimonials</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
@@ -50,11 +67,11 @@
 
         <!-- Menu Items -->
         <ul class="text-center leading-[2.5rem]">
-            <li class="mt-2"><a href="#">H O M E</a></li>
+            <li class="mt-2"><a href="/index.html">H O M E</a></li>
             <li class="mt-2"><a href="#">W O R K</a></li>
             <li class="mt-2"><a href="#">A B O U T</a></li>
-            <li class="mt-2"><a href="#" class="font-bold text-blue-900">S E R V I C E S</a></li>
-            <li class="mt-2"><a href="#" >T E A M</a></li>
+            <li class="mt-2"><a href="/service.html" class="font-bold text-blue-900">S E R V I C E S</a></li>
+            <li class="mt-2"><a href="/team.html" >T E A M</a></li>
             <li class="mt-2"><a href="#">T E S T I M O N I A L S</a></li>
             <li class="mt-2"><a href="#">C O N T A C T</a></li>
         </ul>
@@ -85,7 +102,7 @@
         </div>
 
         <!-- Image 3 -->
-        <div class="col-span-3 row-span-2 row-start-3 bg-gray-300">
+        <div class="col-span-3 row-span-2 row-start-3 bg-gray-300" >
             <img src="/services-assets/advertising-asset.png" class="w-full h-full object-cover">
         </div>
 
@@ -167,7 +184,7 @@
     </section>
 
     <!--Footer-->
-    <section class="min-h-1/2 flex flex-col justify-center items-center bg-gray-300 text-white text-center p-10">
+    <section class="min-h-1/2 flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
         <div class="container">
           <div class="w-full max-w-4xl mx-auto mt-6">
             <!-- Heading + Input Field -->
@@ -224,17 +241,18 @@
                 </div>
                 <!-- Second Row: Button & Social Media Icons -->
                 <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
-                    <button class="bg-gray-300 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
-                        <i class="fas fa-share"></i> Share this Website
+                    <button class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                        <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
                     </button>
+                    
             
                     <!-- Social Icons -->
                     <div class="flex flex-wrap justify-center sm:justify-end gap-4">
                         <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fa-brands fa-x-twitter"></i>
                         </a>
                         <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fab fa-facebook"></i>
+                            <i class="fa-brands fa-facebook-f"></i>
                         </a>
                         <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
                             <i class="fab fa-youtube"></i>
@@ -243,7 +261,7 @@
                             <i class="fab fa-vimeo"></i>
                         </a>
                         <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
                 </div>

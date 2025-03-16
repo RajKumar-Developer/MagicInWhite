@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="bg-transparent fixed w-full top-0 left-0 px-8 z-50 py-2">
+        <div class="flex justify-between items-center w-full max-w-full mx-auto">
+            <!-- Logo (Left Corner) -->
+            <div class="cursor-pointer" onclick="window.location.href='/index.html'">
+                <img src="/services-assets/Logo-on-menu.png" alt="logo" class="w-16 h-16">
+            </div>
+
+            <!-- Mobile Menu Button (Right Corner) -->
+            <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
+                <img src="/png-team/hambuger.png" alt="nav button" class="w-10 h-10">
+            </button>
+        </div>
+    </nav>
+
+      
+    <!-- Mobile Popup Menu (Overlay) -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
+        <!-- Close Button -->
+        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
+            ✖
+        </button>
+
+        <!-- Menu Items -->
+        <ul class="text-center leading-[2.5rem]">
+            <li class="mt-2"><a href="/index.html">H O M E</a></li>
+            <li class="mt-2"><a href="#">W O R K</a></li>
+            <li class="mt-2"><a href="#">A B O U T</a></li>
+            <li class="mt-2"><a href="/service.html">S E R V I C E S</a></li>
+            <li class="mt-2"><a href="/team.html" class="font-bold text-blue-900">T E A M</a></li>
+            <li class="mt-2"><a href="#">T E S T I M O N I A L S</a></li>
+            <li class="mt-2"><a href="#">C O N T A C T</a></li>
+        </ul>
+    </div>
+
+     <!-- Main Page -->
+     <section class="relative w-full h-screen flex items-center justify-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="/png-team/horses.png" alt="Background Image" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Centered Text Content -->
+        <div class="relative z-10 text-white text-right px-6">
+            <h1 class="text-4xl sm:text-6xl font-bold">OUR TEAM</h1>
+            <p class="mt-4 max-w-2xl text-lg sm:text-xl">
+                We are an award-winning, full-service design, advertising & digital agency. 
+                We work in all industry sectors from International brands to small retail outlets. 
+                We believe passionately in the power of well-crafted design solutions and in truly listening to our clients.
+            </p>
+        </div>
+    </section>
+
+    <!-- Individual Team Section -->
+    <section class="py-16">
+        <div class="relative max-w-4xl mx-auto">
+            <!-- Person 1 -->
+            <div class="flex items-center mb-20">
+                <div class="w-1/2 text-right pr-6">
+                    <h2 class="text-lg font-bold">GOPI PRASANNAA</h2>
+                    <p class="text-gray-600">CEO / FOUNDER</p>
+                </div>
+                <div class="relative w-1/2">
+                    <img src="/png-team/base.png" alt="Circle" class="absolute top-40 left-3 w-40 z-0">
+                    <img src="/png-team/young-dude.png" alt="Person 1" class="relative w-40 z-10">
+                </div>
+            </div>
+
+            <!-- Person 2 -->
+            <div class="flex items-center justify-end mb-20">
+                <div class="relative w-1/2">
+                    <img src="/png-team/base.png" alt="Circle" class="absolute top-56 left-6 w-40 z-0">
+                    <img src="/png-team/beard-dude.png" alt="Person 2" class="relative w-40 z-10">
+                </div>
+                <div class="w-1/2 pl-6">
+                    <h2 class="text-lg font-bold">S V UDAYAKUMAR</h2>
+                    <p class="text-gray-600">CREATIVE DIRECTOR</p>
+                </div>
+            </div>
+
+            <!-- Person 3 -->
+            <div class="flex items-center mb-20">
+                <div class="w-1/2 text-right pr-6">
+                    <h2 class="text-lg font-bold">GOPI PRASANNAA</h2>
+                    <p class="text-gray-600">CEO / FOUNDER</p>
+                </div>
+                <div class="relative w-1/2">
+                    <img src="/png-team/base.png" alt="Circle" class="absolute top-56 left-0 w-40 z-0">
+                    <img src="/png-team/girl.png" alt="Person 3" class="relative w-40 left-6 z-10">
+                </div>
+            </div>
+
+            <!-- Person 4 -->
+            <div class="flex items-center justify-end">
+                <div class="relative w-1/2">
+                    <img src="/png-team/base.png" alt="Circle" class="absolute top-16 left-0 w-40 z-0">
+                    <img src="/png-team/specs-dude.png" alt="Person 4" class="relative w-40 z-10">
+                </div>
+                <div class="w-1/2 pl-6">
+                    <h2 class="text-lg font-bold">S V UDAYAKUMAR</h2>
+                    <p class="text-gray-600">CREATIVE DIRECTOR</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--whole team-->
+    <section class="flex items-center justify-center h-screen">
+        <div class="max-w-4xl mx-auto">
+            <img src="/png-team/Team.png" alt="Group Photo" class="w-full h-auto object-contain">
+        </div>
+    </section>
+
+    <!--Footer-->
+    <section class="min-h-1/2 flex flex-col justify-center items-center bg-[#ffd628] text-white text-center p-10">
+        <div class="container">
+          <div class="w-full max-w-4xl mx-auto mt-6">
+            <!-- Heading + Input Field -->
+            <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
+            <div class="flex">
+                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
+                <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
+            </div>
+        
+            <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
+                <!-- First Row: Lists (Grid of 5 Items) -->
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
+                    <div class="w-full">
+                        <h3 class="font-semibold">HOME</h3>
+                        <ul class="space-y-1">
+                            <li>Why us</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">WORK</h3>
+                        <ul class="space-y-1">
+                            <li>Film Posters</li>
+                            <li>Events</li>
+                            <li>Title Animations</li>
+                            <li>Branding</li>
+                            <li>Products</li>
+                            <li>Advertising</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">SERVICE</h3>
+                        <ul class="space-y-1 text-sm pt-3">
+                            <li class="whitespace-nowrap">Branding</li>
+                            <li class="whitespace-nowrap">Advertising</li>
+                            <li class="whitespace-nowrap">Film Production</li>
+                            <li class="whitespace-nowrap">Graphic Design</li>
+                            <li class="whitespace-nowrap">Social Media Marketing</li>
+                            <li class="whitespace-nowrap">Integrated Marketing</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">TEAM</h3>
+                        <ul class="space-y-1">
+                            <li>Meet the Team</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">CONTACT</h3>
+                        <ul class="space-y-1">
+                            <li>Contact Information</li>
+                            <li>Careers</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Second Row: Button & Social Media Icons -->
+                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
+                    <button class="bg-[#ffd628] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                        <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
+                    </button>
+                    
+            
+                    <!-- Social Icons -->
+                    <div class="flex flex-wrap justify-center sm:justify-end gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fab fa-vimeo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    </section>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+    });
+
+    // Close menu when clicking outside of it
+    mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        }
+    });
+    </script>
+</body>
+</html>
