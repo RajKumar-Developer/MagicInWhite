@@ -7,6 +7,7 @@ export default defineConfig({
         main: 'index.html',
         service: 'service.html',
         team:'team.html',
+        contact:'contactus.html',
       }
     }
   }

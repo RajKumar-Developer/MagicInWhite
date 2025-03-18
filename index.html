@@ -49,25 +49,25 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="bg-[#24d56d] p-4 fixed w-full top-0 left-0 z-50">
+    <nav id="navbar" class="bg-[#24d56d] p-4 fixed w-full top-0 left-0 z-50 backdrop-blur-md shadow-md transition-transform duration-300 -translate-y-full">
         <div class="flex justify-between items-center max-w-6xl mx-auto">
-          <!-- Logo (Optional, Add Your Logo Here) -->
-          <div class="text-white text-2xl font-bold"></div>
-      
-          <!-- Desktop Menu -->
-          <ul class="hidden md:flex space-x-6 text-lg uppercase text-white">
+        <!-- Logo (Optional, Add Your Logo Here) -->
+        <div class="text-white text-2xl font-bold"></div>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 text-lg uppercase text-white">
             <li><a href="/index.html" class="active">Home</a></li>
             <li><a href="#">Work</a></li>
             <li><a href="/service.html">Services</a></li>
             <li><a href="/team.html">Team</a></li>
             <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-      
-          <!-- Mobile Menu Button -->
-          <button id="menu-btn" class="md:hidden text-white text-3xl hover:text-yellow-400 transition duration-300">
+            <li><a href="/contactus.html">Contact</a></li>
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-white text-3xl hover:text-yellow-400 transition duration-300">
             ☰
-          </button>
+        </button>
         </div>
     </nav>
       
@@ -186,7 +186,7 @@
     <!--branding-->
     <section class="mx-auto h-auto sm:h-auto bg-white">
         <!-- Top Bar -->
-        <div class="bg-[#2226f7] py-12 flex flex-col items-center">
+        <div class="bg-[#2226f7] py-10 flex flex-col items-center">
             <h2 class="text-white text-lg sm:text-xl font-semibold mb-16 text-center">THE COMPANIES WE EMPOWER</h2>
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-24 px-6 text-center items-center justify-center">
                 <img src="/MIW_Website_Assets/Netflix.png" alt="Netflix" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
@@ -204,51 +204,49 @@
     
     <!-- Movie Posters Section -->
     <div class="bg-white min-h-1/2 flex items-center justify-center px-4 py-8 sm:py-24">
-        <div class="max-w-7xl w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
-            
-            <!-- Text Content -->
-            <div class="w-full lg:w-1/3 text-center lg:text-left">
-                <h2 class="text-pink-400 text-3xl sm:text-4xl font-bold">MOVIE POSTERS</h2>
-                <p class="text-gray-400 mt-3 max-w-md sm:max-w-lg mx-auto lg:mx-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <button class="mt-6 bg-pink-500 px-8 py-3 text-white font-semibold hover:bg-pink-600 transition-all shadow-lg"
-                    onclick="navigateToGallery()">
-                    CLICK FOR MORE
-                </button>
-            </div>
+    <div class="max-w-7xl w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
+        
+        <!-- Text Content -->
+        <div class="w-full lg:w-1/3 text-left lg:text-left">
+            <h2 class="text-pink-400 text-3xl sm:text-4xl font-bold">MOVIE POSTERS</h2>
+            <p class="text-gray-400 mt-3 max-w-md sm:max-w-lg lg:mx-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <button class="mt-6 bg-pink-500 px-8 py-3 text-white font-semibold hover:bg-pink-600 transition-all shadow-lg"
+                onclick="navigateToGallery()">
+                CLICK FOR MORE
+            </button>
+        </div>
 
-            <!-- Image Section (Grid for responsiveness) -->
-            <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                <a href="#" onclick="event.preventDefault();" class="flex justify-center">
-                    <div class="card">
-                        <div class="wrapper">
-                            <img src="/MIW_Website_Assets/SD-10.png" class="title object-contain w-full" />
-                        </div>
-                        <img src="/MIW_Website_Assets/SD-09.png" class="character w-full" />
+        <!-- Image Section (Grid for responsiveness) -->
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+            <a href="#" onclick="event.preventDefault();" class="flex justify-center">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="/MIW_Website_Assets/SD-10.png" class="title object-cover w-full" />
                     </div>
-                </a>
-                <a href="#" onclick="event.preventDefault();" class="flex justify-center">
-                    <div class="card">
-                        <div class="wrapper">
-                            <img src="/MIW_Website_Assets/PS-Nandini-01png.png" class="title object-contain w-full" />
-                        </div>
-                        <img src="/MIW_Website_Assets/PS-Nandini-02.png" class="character w-full" />
+                    <img src="/MIW_Website_Assets/SD-09.png" class="character w-full" />
+                </div>
+            </a>
+            <a href="#" onclick="event.preventDefault();" class="flex justify-center">
+                <div class="card">
+                    <div class="wrapper ">
+                        <img src="/MIW_Website_Assets/PS-Nandini-01png.png" class="title object-cover w-full h-full" />
                     </div>
-                </a>
-                <a href="#" onclick="event.preventDefault();" class="flex justify-center">
-                    <div class="card">
-                        <div class="wrapper">
-                            <img src="/MIW_Website_Assets/Kaththi-01.png" class="title object-contain w-full" />
-                        </div>
-                        <img src="/MIW_Website_Assets/Kaththi-06.png" class="character w-full" />
+                    <img src="/MIW_Website_Assets/PS-Nandini-02.png" class="character w-full" />
+                </div>
+            </a>
+            <a href="#" onclick="event.preventDefault();" class="flex justify-center">
+                <div class="card">
+                    <div class="wrapper">
+                        <img src="/MIW_Website_Assets/Kaththi-01.png" class="title object-cover w-full" />
                     </div>
-                </a>
-            </div>
-
+                    <img src="/MIW_Website_Assets/Kaththi-06.png" class="character w-full" />
+                </div>
+            </a>
         </div>
     </div>
-
+</div>
     </section>
     
 
@@ -418,9 +416,6 @@
                             <i class="fab fa-youtube"></i>
                         </a>
                         <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fab fa-vimeo"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
@@ -434,6 +429,24 @@
 
     <!--Script Starts-->
     <script type="module" src="/main.js"></script>
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById("navbar");
+    
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+    
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down - Hide navbar
+                navbar.classList.add("-translate-y-full");
+            } else {
+                // Scrolling up - Show navbar
+                navbar.classList.remove("-translate-y-full");
+            }
+    
+            lastScrollY = currentScrollY;
+        });
+    </script>
     <script>
        function openFullscreen(imageSrc) {
         const modal = document.getElementById("fullscreen-modal");

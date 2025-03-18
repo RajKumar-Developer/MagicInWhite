@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>Contact Us</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-transparent fixed w-full top-0 left-0 px-8 z-50 py-2">
+        <div class="flex justify-between items-center w-full max-w-full mx-auto">
+            <!-- Logo (Left Corner) -->
+            <div class="cursor-pointer" onclick="window.location.href='/index.html'">
+                <img src="/services-assets/Logo-on-menu.png" alt="logo" class="w-16 h-16">
+            </div>
+
+            <!-- Mobile Menu Button (Right Corner) -->
+            <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
+                <img src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-10 h-10">
+            </button>
+        </div>
+    </nav>
+
+      
+    <!-- Mobile Popup Menu (Overlay) -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
+        <!-- Close Button -->
+        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
+            ✖
+        </button>
+
+        <!-- Menu Items -->
+        <ul class="text-center leading-[2.5rem]">
+            <li class="mt-2"><a href="/index.html">H O M E</a></li>
+            <li class="mt-2"><a href="#">W O R K</a></li>
+            <li class="mt-2"><a href="#">A B O U T</a></li>
+            <li class="mt-2"><a href="/service.html">S E R V I C E S</a></li>
+            <li class="mt-2"><a href="/team.html" class="font-bold text-blue-900">T E A M</a></li>
+            <li class="mt-2"><a href="#">T E S T I M O N I A L S</a></li>
+            <li class="mt-2"><a href="/contactus.html">C O N T A C T</a></li>
+        </ul>
+    </div>
+
+    <!--contact design section-->
+    <section class="w-full h-screen flex border border-black relative">
+        
+        <!-- Left Side (SVG Image) -->
+        <div class="w-1/2 flex items-center px-8 py-8 justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_4" data-name="Layer 4" viewBox="0 0 265.92 225">
+            <defs>
+                <style>
+                    .cls-1 {
+                        fill: none;
+                    }
+            
+                    .cls-1, .cls-2 {
+                        stroke: #231f20;
+                        stroke-miterlimit: 10;
+                    }
+            
+                    .cls-3 {
+                        fill: #fff;
+                    }
+            
+                    .cls-4 {
+                        fill: #c3a629;
+                    }
+            
+                    .cls-2 {
+                        fill: #231f20;
+                    }
+            
+                    .cls-5 {
+                        fill: #4a57a6;
+                    }
+            
+                    .cls-6 {
+                        fill: #fad233;
+                    }
+            
+                    .cls-7 {
+                        fill: #aa286c;
+                    }
+            
+                    .cls-8 {
+                        fill: #5ebe76;
+                    }
+            
+                    .cls-9 {
+                        fill: #ee4196;
+                    }
+                </style>
+            </defs>
+            <g id="face">
+                <path class="cls-6" d="M169.54,12.44c-1.68,2.57-3.75,6.65-3.06,11.23,.86,5.71,5.18,6.79,5.62,11.74,.56,6.37-6.27,8.33-7.15,15.32-.94,7.5,5.83,14.07,8.17,16.34,8.16,7.92,18.36,8.98,32.17,10.21,17.42,1.56,26.13,2.34,32.68-3.06,7.75-6.39,4.06-13.68,15.32-25.53,3.79-3.99,6.57-5.65,9.19-10.72,1.08-2.09,4.58-8.87,3.06-16.34-2.32-11.46-14.88-16.87-18.38-18.38-6.08-2.62-14.86-2.29-32.17-1.53-21.41,.94-30.49,3.22-38.81,7.15-2.87,1.36-5.15,2.67-6.64,3.57Z"/>
+                <path class="cls-9" d="M69.46,26.23c-21.57,.7-32.13,5.1-37.79,9.19-3.27,2.37-6.87,6.06-13.79,8.17-5.72,1.75-9.27,1.06-11.74,4.09-2.43,2.98-2.89,8.38-.51,10.72,3.19,3.15,8.65-2.02,16.34,.51,4.45,1.46,4.41,3.78,11.23,9.19,5.09,4.04,9.77,7.75,16.34,9.19,.63,.14,13.35,2.74,22.98-4.6,5.93-4.52,5.15-8.59,10.21-10.21,6.31-2.02,9.77,3.59,16.34,1.53,4.61-1.44,8.85-6.05,9.19-10.72,.31-4.29-2.91-5.46-9.7-15.83-5.48-8.38-5.09-10.23-8.17-12.26-2.59-1.71-8.51-4.12-20.94,1.02Z"/>
+                <path class="cls-8" d="M157.8,115.59c-2.03,3.51-5.27,8.37-10.21,13.28-2.98,2.96-5.87,5.83-10.21,8.17-7.05,3.8-9.94,1.9-23.49,5.11-7.7,1.82-11.54,2.73-15.83,5.62-5.04,3.4-4.99,5.52-10.72,9.7-5.25,3.83-7.23,3.46-14.3,7.15-9.22,4.81-14.74,7.7-16.85,12.77-4.38,10.51,8.35,24.5,10.21,26.55,9.91,10.9,22.19,13.97,33.7,16.85,15.52,3.88,27.59,6.91,36.26,.51,8.49-6.26,4.73-14.93,15.32-24,7.69-6.58,11.44-3.54,19.4-10.21,1.94-1.62,4.75-4.34,14.3-25.02,9.06-19.6,10.16-25.01,10.21-30.64,.05-5.27,.11-11.33-4.09-15.83-6.52-6.99-18.48-5.07-21.45-4.6-5.49,.88-9.68,3.01-12.26,4.6Z"/>
+                <path class="cls-4" d="M174.85,54.31c3.33-1.8,7.29-2.11,11.06-1.78s7.47,1.27,11.22,1.81c11.62,1.69,23.76-.46,34.08-6.05"/>
+                <path class="cls-4" d="M236.01,46.85c-2.51,3.06-6.05,5.16-9.79,6.43s-7.72,1.75-11.67,1.98c-9.44,.55-18.96-.32-28.14-2.55"/>
+                <path class="cls-7" d="M25.58,46.7c16.77,10.69,34.92,12.44,52.11,5.03"/>
+                <path class="cls-7" d="M41.7,50.74c13.51,6.11,29.71,7.16,44.04,2.84"/>
+                <path class="cls-4" d="M178.29,51.24c14.49,5.1,30.96,4.48,45.02-1.7"/>
+                <path class="cls-7" d="M89.82,50.49c-1.88,2.39-5.67,3.88-9.57,4.52s-7.99,.52-12,.39"/>
+                <path class="cls-1" d="M17.95,19.91c-5.45,2.04-10.89,4.09-16.34,6.13,2.72-3.23,5.45-6.47,8.17-9.7"/>
+                <path class="cls-1" d="M13.36,14.29c2.38-3.36,6.75-8.44,13.79-11.74,1.98-.93,3.88-1.58,5.62-2.04,12.43,.68,24.85,1.36,37.28,2.04"/>
+                <path class="cls-1" d="M84.85,3.57h7.15"/>
+                <path class="cls-1" d="M178.29,34.21l11.74-8.17"/>
+                <path class="cls-1" d="M183.4,27.06c5.46-.73,12.84-1.15,21.45,0,9.78,1.31,17.6,4.18,22.98,6.64"/>
+                <path class="cls-1" d="M233.95,35.74c2.55,2.04,5.11,4.09,7.66,6.13"/>
+                <path class="cls-1" d="M151.23,119.48c.93,1.22,2.26,3.28,3.06,6.13,.93,3.27,.74,6.06,.51,7.66"/>
+                <path class="cls-1" d="M123.14,50.55c-1.27-5.51-4.66-16.27-14.3-24-7.62-6.11-15.22-7.17-29.62-9.19-8.52-1.19-22.82-3.06-40.85,1.02-10.74,2.43-19.21,6.16-25.02,9.19"/>
+                <path class="cls-1" d="M33.27,14.29c-3.57,1.02-7.15,2.04-10.72,3.06"/>
+                
+                <!-- Left eye socket -->
+                <path id="leftEyeSocket" class="cls-3" d="M90.43,47.21c-.76,5.84-9.59,5.46-10.26,5.55-6.88,.96-12.52-.04-22.72-.04-8.65,0-9.12,.43-15.79-1.51-11.11-3.23-16.09-4.51-16.09-4.51,0,0,1.56-3.02,10.71-9.21,6.3-4.26,14.66-6.94,24.63-6.94,11.45,0,12.6,4.73,20.16,7.98,7.56,3.25,10,3.76,9.36,8.68Z"/>
+                
+                <!-- Right eye socket -->
+                <path id="rightEyeSocket" class="cls-3" d="M236.09,46.39c-1.4,1.86-1.3,1.49-5.49,3.03-5.81,2.13-6.97,2.21-11.87,3.35q-6.21,1.45-14.1,.65c-5.65-.57-11.64-2.12-15.57-2.31-4.88-.24-5.72,.85-10.76,2.2-3.41,.92-5.09,2.27-6.4-1.69-.71-2.15,.12-5.56,3.75-8,3.28-2.2,2.01-.94,7.54-3.83,4.35-2.27,5.5-3.32,10.88-5.6s7.97-3.15,14.71-2.59c5.63,.47,5.45,.4,9.32,2.59,4.85,2.75,6.01,4.24,10.09,6.32,6.41,3.27,10.24,2.79,7.91,5.87Z"/>
+                
+                <!-- Left eye area -->
+                <path id="leftEye" class="cls-5" d="M58.49,30.53c1.61,.68,2.36,2.11,3.4,4.09,.73,1.39,2.24,4.35,1.87,8.34-.14,1.52-.42,4.58-2.72,6.98-2.2,2.29-4.99,2.66-8,3.06-3.9,.52-8.64,1.15-11.91-1.87-2.75-2.53-3.07-6.33-3.23-8.34-.25-2.95,.36-5.35,.85-6.81,2.91-1.73,5.54-2.77,7.49-3.4,1.21-.39,2.68-.72,5.62-1.36,5-1.1,5.84-1.02,6.64-.68Z"/>
+                
+                <!-- Right eye area -->
+                <path id="rightEye" class="cls-5" d="M189.8,37.39c-.67,.93-1.69,2.61-2.04,4.94-.17,1.11-.47,3.08,.51,5.28,.27,.6,1.14,2.37,3.06,3.57,1.44,.9,2.22,.71,6.3,1.19,3.89,.46,5.09,.86,8.68,1.02,2.31,.1,3.33,0,4.43-.51,1.83-.85,2.79-2.36,3.23-3.06,1.09-1.75,1.26-3.34,1.53-6.13,.3-3.15,.46-4.73-.17-6.3-1.11-2.78-3.66-4.19-4.94-4.77,1.26,.35,1.54,.47,1.53,.51-.04,.19-6-2.32-11.91-.51-1.02,.31-2.27,.89-4.77,2.04-2.29,1.06-4.16,2.03-5.45,2.72Z"/>
+                
+                <!-- Left eyeball -->
+                <path id="leftEyeball" class="cls-2" d="M44.12,38.05c-.31,.19-2.08,1.33-2.38,3.4-.32,2.25,1.33,3.89,2.04,4.6,.65,.65,2.27,2.25,4.6,2.04,2.99-.26,4.35-3.24,4.43-3.4,.18-.41,.95-2.17,.17-4.09-.79-1.93-2.61-2.65-3.23-2.89-2.66-1.05-5.12,.1-5.62,.34Z"/>
+                
+                <!-- Right eyeball -->
+                <path id="rightEyeball" class="cls-2" d="M195.02,38.23c-.31,.19-2.08,1.33-2.38,3.4-.32,2.25,1.33,3.89,2.04,4.6,.65,.65,2.27,2.25,4.6,2.04,2.99-.26,4.35-3.24,4.43-3.4,.18-.41,.95-2.17,.17-4.09-.79-1.93-2.61-2.65-3.23-2.89-2.66-1.05-5.12,.1-5.62,.34Z"/>
+                
+                <path class="cls-1" d="M121.61,110.8c-1.49,6.79-2.19,12.55-2.55,16.85-.68,8.12-.09,10.38,1.02,12.26,2.27,3.82,6.25,5.23,10.21,6.64,2.37,.84,8.01,2.76,14.81,1.02,2.67-.68,4.74-1.73,6.13-2.55"/>
+                <path class="cls-1" d="M169.1,130.72c1.85,1.64,5.07,4.99,6.64,10.21,.81,2.7,2.07,6.9,0,11.23-.56,1.18-2.46,4.65-6.64,6.13-5.47,1.94-10.2-1.17-10.72-1.53,2.03-.09,3.64-.12,4.72-.13,1.6-.02,2.33,0,2.68-.51,.46-.68,.03-1.99-.77-2.68-.66-.57-1.47-.63-4.09-.38-3.44,.32-5.15,.48-6.38,1.02-1.14,.5-1.01,.68-3.96,2.81-2.87,2.08-4.31,3.12-5.74,3.7-2.88,1.17-5.48,1.16-6.64,1.15-1.68-.02-3.08-.27-4.09-.51"/>
+                <path class="cls-1" d="M101.83,129.57c-2.55,2.45-4.09,4.87-4.98,6.51-2.69,4.98-2.9,9.29-2.94,10.34-.1,3.05-.17,5.4,1.4,6.77,1.64,1.43,4.74,1.49,7.15,1.53,.51,0,1.15,0,2.17,.08,2.26,.17,3.41,.26,4.34,.94,.99,.72,1.94,2.17,1.53,3.06-.57,1.27-3.9,1.59-5.23,.13-1.41-1.55-.31-4.82,1.53-6.38,1.04-.89,2.17-1.1,3.19-1.28,3.62-.63,6.7,.78,8.3,1.53,1.69,.8,1.76,1.12,5.87,3.7,1.77,1.11,3.25,1.99,4.21,2.55"/>
+                <path class="cls-1" d="M187.48,63.22c2.11,1.1,4.85,2.26,8.17,3.06,5.93,1.43,11.04,1.04,14.3,.51"/>
+            </g>
+        </svg>
+        </div>
+        
+        <!-- Vertical Line -->
+        <div class="absolute left-1/2 top-0 bottom-0 w-px bg-blue-500"></div>
+        
+        <!-- Right Side (Form) -->
+        <div class="w-1/2 p-10 flex flex-col justify-center relative">
+            <!-- Header with Logo -->
+            <div class="flex items-center justify-between">
+                <h1 class="text-4xl font-light text-blue-500">LET'S <br> TALK</h1>
+                <img src="/contactpage_assets/stamp.png" alt="Logo" class="w-24">
+            </div>
+            
+            <!-- Input Fields -->
+            <div class="mt-10 space-y-6 p-6">
+                <div>
+                    <p class="text-sm text-blue-500">NAME</p>
+                    <img src="/contactpage_assets/horizontal-rec.png" alt="Underline" class="w-full">
+                </div>
+                <div>
+                    <p class="text-sm text-blue-500">EMAIL ADDRESS</p>
+                    <img src="/contactpage_assets/horizontal-rec.png" alt="Underline" class="w-full">
+                </div>
+                <div>
+                    <p class="text-sm text-blue-500">YOUR MESSAGE FOR US</p>
+                    <img src="/contactpage_assets/horizontal-rec.png" alt="Underline" class="w-full">
+                </div>
+            </div>
+            
+            <!-- Send Button -->
+            <div class="mt-10 flex justify-end">
+                <img src="/contactpage_assets/send-button.png" alt="Send Button" class="w-24">
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <section class="min-h-1/2 flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
+        <div class="container">
+          <div class="w-full max-w-4xl mx-auto mt-6">
+            <!-- Heading + Input Field -->
+            <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
+            <div class="flex">
+                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
+                <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
+            </div>
+        
+            <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
+                <!-- First Row: Lists (Grid of 5 Items) -->
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
+                    <div class="w-full">
+                        <h3 class="font-semibold">HOME</h3>
+                        <ul class="space-y-1">
+                            <li>Why us</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">WORK</h3>
+                        <ul class="space-y-1">
+                            <li>Film Posters</li>
+                            <li>Events</li>
+                            <li>Title Animations</li>
+                            <li>Branding</li>
+                            <li>Products</li>
+                            <li>Advertising</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">SERVICE</h3>
+                        <ul class="space-y-1 text-sm pt-3">
+                            <li class="whitespace-nowrap">Branding</li>
+                            <li class="whitespace-nowrap">Advertising</li>
+                            <li class="whitespace-nowrap">Film Production</li>
+                            <li class="whitespace-nowrap">Graphic Design</li>
+                            <li class="whitespace-nowrap">Social Media Marketing</li>
+                            <li class="whitespace-nowrap">Integrated Marketing</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">TEAM</h3>
+                        <ul class="space-y-1">
+                            <li>Meet the Team</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">CONTACT</h3>
+                        <ul class="space-y-1">
+                            <li>Contact Information</li>
+                            <li>Careers</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Second Row: Button & Social Media Icons -->
+                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
+                    <button class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                        <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
+                    </button>
+                    
+            
+                    <!-- Social Icons -->
+                    <div class="flex flex-wrap justify-center sm:justify-end gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    </section>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close menu when clicking outside of it
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+            mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+    <!--SVG Animation-->
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    // Get the eyeball elements
+    const leftEyeball = document.getElementById('leftEyeball');
+    const rightEyeball = document.getElementById('rightEyeball');
+    
+    // Get the eye sockets (as boundaries)
+    const leftEyeSocket = document.getElementById('leftEyeSocket');
+    const rightEyeSocket = document.getElementById('rightEyeSocket');
+    
+    // Get the entire SVG character (the face group)
+    const svgCharacter = document.getElementById('face');
+    
+    // Get the SVG element itself (for centering the transform origin)
+    const svgElement = document.querySelector('svg');
+    
+    // Get the bounding boxes of the eye sockets
+    const leftEyeBounds = leftEyeSocket.getBBox();
+    const rightEyeBounds = rightEyeSocket.getBBox();
+    
+    // Get eyeballs' original positions
+    const leftEyeballOriginal = leftEyeball.getBBox();
+    const rightEyeballOriginal = rightEyeball.getBBox();
+    
+    // Calculate eyeball centers for better movement control
+    const leftEyeballCenterX = leftEyeballOriginal.x + leftEyeballOriginal.width/2;
+    const leftEyeballCenterY = leftEyeballOriginal.y + leftEyeballOriginal.height/2;
+    const rightEyeballCenterX = rightEyeballOriginal.x + rightEyeballOriginal.width/2;
+    const rightEyeballCenterY = rightEyeballOriginal.y + rightEyeballOriginal.height/2;
+    
+    // Calculate socket centers
+    const leftSocketCenterX = leftEyeBounds.x + leftEyeBounds.width/2;
+    const leftSocketCenterY = leftEyeBounds.y + leftEyeBounds.height/2;
+    const rightSocketCenterX = rightEyeBounds.x + rightEyeBounds.width/2;
+    const rightSocketCenterY = rightEyeBounds.y + rightEyeBounds.height/2;
+    
+    // Reset any existing transformations on eyeballs to prevent accumulation
+    gsap.set([leftEyeball, rightEyeball], {
+        x: 0,
+        y: 0,
+        transformOrigin: "center center"
+    });
+    
+    // Calculate maximum movement that keeps eyeballs within sockets (same for both eyes now)
+    const maxMovementX = 2;
+    const maxMovementY = 2;
+    
+    // Set transform origin to center of SVG for 3D effect
+    gsap.set(svgElement, {
+        transformOrigin: "center center"
+    });
+    
+    // Mouse move event listener
+    document.addEventListener('mousemove', function(e) {
+        // Get mouse position relative to viewport
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        
+        // Get SVG position and dimensions for relative calculations
+        const svgRect = svgElement.getBoundingClientRect();
+        const svgX = svgRect.left + svgRect.width/2;
+        const svgY = svgRect.top + svgRect.height/2;
+        
+        // Get viewport dimensions
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        
+        // Calculate normalized mouse position (0 to 1)
+        const normalizedX = mouseX / viewportWidth;
+        const normalizedY = mouseY / viewportHeight;
+        
+        // Calculate vector from SVG center to mouse for eye direction
+        const mouseVectorX = mouseX - svgX;
+        const mouseVectorY = mouseY - svgY;
+        
+        // Normalize the vector and apply max movement
+        const vectorLength = Math.sqrt(mouseVectorX * mouseVectorX + mouseVectorY * mouseVectorY);
+        const normalizedVectorX = mouseVectorX / vectorLength;
+        const normalizedVectorY = mouseVectorY / vectorLength;
+        
+        // Calculate movement for both eyes, now using the same approach for consistency
+        const moveX = normalizedVectorX * maxMovementX;
+        const moveY = normalizedVectorY * maxMovementY;
+        
+        // Calculate 3D rotation for the entire SVG
+        // Convert normalized coordinates to rotation angles (limited to ±10 degrees)
+        const rotateY = (normalizedX - 0.5) * 10; // X movement controls Y rotation
+        const rotateX = (normalizedY - 0.5) * -10; // Y movement controls X rotation (inverted)
+        
+        // Update both eyeballs with the same approach
+        gsap.to(leftEyeball, {
+            duration: 0.3,
+            x: moveX,
+            y: moveY,
+            ease: "power2.out"
+        });
+        
+        gsap.to(rightEyeball, {
+            duration: 0.3,
+            x: moveX,
+            y: moveY,
+            ease: "power2.out"
+        });
+        
+        // Apply 3D rotation to the entire SVG character
+        gsap.to(svgElement, {
+            duration: 0.5,
+            rotateY: rotateY,
+            rotateX: rotateX,
+            ease: "power1.out"
+        });
+    });
+    
+    // Reset eyes position and SVG rotation when mouse leaves the window
+    document.addEventListener('mouseleave', function() {
+        gsap.to([leftEyeball, rightEyeball], {
+            duration: 0.5,
+            x: 0,
+            y: 0,
+            ease: "power2.out"
+        });
+        
+        // Reset SVG rotation
+        gsap.to(svgElement, {
+            duration: 0.8,
+            rotateY: 0,
+            rotateX: 0,
+            ease: "power2.out"
+        });
+    });
+    
+    // Optional: Add a blink animation
+    function blinkEyes() {
+        const timeline = gsap.timeline();
+        
+        // Scale Y to 0 (closed) and back to 1 (open)
+        timeline.to([leftEyeball, rightEyeball], {
+            scaleY: 0.1,
+            duration: 0.1,
+            transformOrigin: "center center",
+            ease: "power1.in"
+        }).to([leftEyeball, rightEyeball], {
+            scaleY: 1,
+            duration: 0.1,
+            ease: "power1.out"
+        });
+        
+        // Set random interval for next blink
+        gsap.delayedCall(Math.random() * 5 + 3, blinkEyes);
+    }
+    
+    // Start the blinking animation after a delay
+    gsap.delayedCall(2, blinkEyes);
+    
+    // Add a subtle floating animation for more liveliness
+    gsap.to(svgElement, {
+        y: "+=5",
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+    });
+});
+    </script>
+</body>
+</html>
