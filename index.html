@@ -49,7 +49,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav id="navbar" class="bg-[#24d56d] p-4 fixed w-full top-0 left-0 z-50 backdrop-blur-md shadow-md transition-transform duration-300 -translate-y-full">
+    <nav id="navbar" class="bg-transparent md:bg-green-500 p-4 fixed w-full top-0 left-0 z-50 backdrop-blur-md shadow-md transition-transform duration-300 -translate-y-full">
         <div class="flex justify-between items-center max-w-6xl mx-auto">
         <!-- Logo (Optional, Add Your Logo Here) -->
         <div class="text-white text-2xl font-bold"></div>
@@ -99,15 +99,15 @@
       </div>
   
       <!-- Text Section -->
-      <div class="w-full md:w-1/2 text-center md:text-left">
-        <h1 class="text-2xl text-white sm:text-3xl md:text-4xl font-bold leading-tight text-left md:text-left">
+      <div class="w-full md:w-1/2 text-center md:text-left py-10">
+        <h1 class="text-2xl text-white sm:text-3xl md:text-4xl font-bold leading-tight md:text-left">
           WE BELIEVE THAT<br> 
           INTELLIGENT CREATIVE<br> 
           THINKING HELPS<br> 
           ORGANISATIONS AND<br> 
           INDIVIDUALS TO GROW
         </h1>
-        <p class="text-base md:text-lg mt-4 text-[#056b29] text-left md:text-left">
+        <p class="text-base md:text-lg mt-4 text-[#056b29] md:text-left">
           Every relationship with every client is a partnership; we work alongside them to make their goals a reality 
           and help them to grow their businesses. Whatever the task, no matter whether it's big or small, we bring our 
           experience and expertise to that project and strive to deliver the best possible solution.
@@ -154,7 +154,7 @@
         <div class="grid-item col-span-1 sm:col-span-2 sm:row-start-5 bg-pink-500 cursor-pointer overflow-hidden"
             onclick="openFullscreen('/MIW_Website_Assets/OIC_image_work.png')">
             <img src="/MIW_Website_Assets/OIC_image_work.png"
-                class="w-full h-full object-contain transition-transform transform hover:scale-110 hover:opacity-80 duration-300" />
+                class="w-full h-full object-cover object-left transition-transform transform hover:scale-110 hover:opacity-80 duration-300" />
         </div>
         <div class="grid-item col-span-1 sm:col-start-3 sm:row-start-5 bg-red-700 cursor-pointer overflow-hidden"
             onclick="openFullscreen('/MIW_Website_Assets/Redknot_image_work.png')">
@@ -172,7 +172,7 @@
       
    
     <!-- Fullscreen Modal -->
-    <div id="fullscreen-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 hidden flex items-center justify-center" onclick="closeFullscreen()">
+    <div id="fullscreen-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 hidden flex items-center justify-center z-50" onclick="closeFullscreen()">
         <img id="fullscreen-image" class="max-w-full max-h-full" onclick="event.stopPropagation()" ondblclick="closeFullscreen()">
         
         <!-- Close Button (Bottom Right) -->
@@ -185,22 +185,25 @@
 
     <!--branding-->
     <section class="mx-auto h-auto sm:h-auto bg-white">
-        <!-- Top Bar -->
-        <div class="bg-[#2226f7] py-10 flex flex-col items-center">
-            <h2 class="text-white text-lg sm:text-xl font-semibold mb-16 text-center">THE COMPANIES WE EMPOWER</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-5 gap-24 px-6 text-center items-center justify-center">
-                <img src="/MIW_Website_Assets/Netflix.png" alt="Netflix" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-                <img src="/MIW_Website_Assets/Prime.png" alt="Prime Video" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-                <img src="/MIW_Website_Assets/JioHostar.png" alt="JioHotstar" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-                <img src="/MIW_Website_Assets/Zee.png" alt="Zee Cinema" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-                <img src="/MIW_Website_Assets/LYCA.png" alt="Lyca Productions" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-                <img src="/MIW_Website_Assets/Sony.png" alt="Sony" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-                <img src="/MIW_Website_Assets/Samsung.png" alt="Samsung" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-                <img src="/MIW_Website_Assets/Apple.png" alt="Apple" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-                <img src="/MIW_Website_Assets/Madras_Talkies.png" alt="Madras Talkies" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-                <img src="/MIW_Website_Assets/Vijay.png" alt="Vijay TV" class="h-16 w-32 sm:h-20 sm:w-40 mx-auto object-contain">
-            </div>
+       <!-- Top Bar -->
+    <div class="bg-[#2226f7] py-10 pb-16 flex flex-col items-center">
+        <h2 class="text-white text-lg sm:text-xl font-semibold mb-10 text-center">
+            THE COMPANIES WE EMPOWER
+        </h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-20 sm:gap-24 px-8 text-center items-center justify-center">
+            <img src="/MIW_Website_Assets/Netflix.png" alt="Netflix" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
+            <img src="/MIW_Website_Assets/Prime.png" alt="Prime Video" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
+            <img src="/MIW_Website_Assets/JioHostar.png" alt="JioHotstar" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
+            <img src="/MIW_Website_Assets/Zee.png" alt="Zee Cinema" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
+            <img src="/MIW_Website_Assets/LYCA.png" alt="Lyca Productions" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
+            <img src="/MIW_Website_Assets/Sony.png" alt="Sony" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
+            <img src="/MIW_Website_Assets/Samsung.png" alt="Samsung" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
+            <img src="/MIW_Website_Assets/Apple.png" alt="Apple" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
+            <img src="/MIW_Website_Assets/Madras_Talkies.png" alt="Madras Talkies" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
+            <img src="/MIW_Website_Assets/Vijay.png" alt="Vijay TV" class="h-14 w-28 sm:h-16 sm:w-32 mx-auto object-contain">
         </div>
+    </div>
     
     <!-- Movie Posters Section -->
     <div class="bg-white min-h-1/2 flex items-center justify-center px-4 py-8 sm:py-24">
@@ -222,19 +225,19 @@
     <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <!-- Left Image -->
         <a href="#" onclick="event.preventDefault();" class="flex justify-center">
-            <div class="card">
+            <div class="card mb-20 sm:mb-0">
                 <div class="wrapper">
                     <img src="/MIW_Website_Assets/SD-10.png" class="title object-contain w-full h-60 sm:h-72" />
                 </div>
-                <img src="/MIW_Website_Assets/SD-09.png" class="character w-full h-72 sm:60" />
+                <img src="/MIW_Website_Assets/SD-09.png" class="character w-full h-72 sm:60 pt-10" />
             </div>
         </a>
 
         <!-- Middle Image (Higher than others) -->
         <a href="#" onclick="event.preventDefault();" class="flex justify-center">
-            <div class="card">
+            <div class="card mb-20 sm:mb-0">
                 <div class="wrapper">
-                    <img src="/MIW_Website_Assets/PS-Nandini-01png.png" class="title object-contain w-full h-72 sm:h-80" />
+                    <img src="/MIW_Website_Assets/PS-Nandini-01png.png" class="title object-cover w-full h-72 sm:h-80" />
                 </div>
                 <img src="/MIW_Website_Assets/PS-Nandini-02.png" class="character w-full h-72 sm:60" />
             </div>
@@ -242,11 +245,11 @@
 
         <!-- Right Image -->
         <a href="#" onclick="event.preventDefault();" class="flex justify-center">
-            <div class="card">
+            <div class="card mb-20 sm:mb-0">
                 <div class="wrapper">
                     <img src="/MIW_Website_Assets/Kaththi-01.png" class="title object-contain w-full h-60 sm:h-72" />
                 </div>
-                <img src="/MIW_Website_Assets/Kaththi-06.png" class="character object-contain w-full h-72 sm:60" />
+                <img src="/MIW_Website_Assets/Kaththi-06.png" class="character pt-5 pl-2 w-full h-72 sm:58" />
             </div>
         </a>
     </div>
@@ -282,8 +285,8 @@
       </section>      
       
     <!--carousel slider-->
-    <section class="min-h-screen h-[100dvh] flex flex-col">
-    <div class="h-[60dvh] relative overflow-hidden bg-[#ffd527]">
+    <section class="min-h-screen h-auto flex flex-col">
+    <div class="h-[100dvh] sm:h-[60dvh] relative overflow-hidden bg-[#ffd527]">
         <div class="container mx-auto px-4 h-full flex flex-col 
         md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8 py-4">
         
@@ -304,9 +307,9 @@
         <!-- Image Section -->
         <div class="w-full md:w-[50%] flex justify-center md:justify-end items-center md:items-end h-[60dvh] relative">
             <img id="testimonial-image" alt="Mani Rathnam Sir"
-                class="w-auto h-40 sm:h-52 md:h-full max-h-[50dvh] object-contain">
+                class="w-[100%] h-56 sm:h-60 md:h-full max-h-[60dvh] object-contain mx-auto">
             <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                alt="Bottom Quote" class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-12 sm:w-16 md:w-20 hidden lg:block">
+                alt="Bottom Quote" class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block">
         </div>
         </div>
 
@@ -320,7 +323,7 @@
     </div>
     
     <!-- Bottom Horse Animation Section -->
-    <div class="bg-white relative w-full flex items-center justify-center overflow-hidden h-[40dvh]">
+    <div class="bg-white relative w-full flex items-center justify-center overflow-hidden h-[40dvh] hidden sm:flex">
         <div class="absolute inset-0">
             <img src="/MIW_Website_Assets/Horse_Game_BG.png" alt="Path Background" class="w-full h-full object-cover">
         </div>
@@ -405,14 +408,14 @@
                     </div>
                 </div>
                 <!-- Second Row: Button & Social Media Icons -->
-                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
+                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-8 mt-8 sm:space-y-0">
                     <button class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
                         <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
                     </button>
                     
             
                     <!-- Social Icons -->
-                    <div class="flex flex-wrap justify-center sm:justify-end gap-4">
+                    <div class="flex flex-wrap justify-center sm:justify-end gap-6">
                         <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
                             <i class="fa-brands fa-x-twitter"></i>
                         </a>
@@ -465,6 +468,20 @@
     function closeFullscreen() {
         document.getElementById("fullscreen-modal").classList.add("hidden");
     }
+
+    function updatePlaceholder() {
+        const inputField = document.querySelector("input[type='email']");
+        
+        if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
+            inputField.placeholder = "EMAIL";
+        } else {
+            inputField.placeholder = "ENTER YOUR EMAIL ADDRESS";
+        }
+    }
+
+    // Run function on page load and resize
+    window.addEventListener("load", updatePlaceholder);
+    window.addEventListener("resize", updatePlaceholder);
     </script>
     <script>
       const testimonials = [
