@@ -34,7 +34,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="bg-transparent backdrop-blur-md shadow-md px-4 fixed w-full left-0 z-50">
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md px-4 fixed w-full left-0 z-50">
         <div class="flex pt-4 justify-between items-center max-w-6xl mx-auto">
           <!-- Logo -->
           <div class="text-white text-2xl font-bold" onclick="window.location.href='/index.html'">
@@ -68,7 +68,7 @@
         <ul class="text-center leading-[2.5rem]">
             <li class="mt-2"><a href="/index.html">H O M E</a></li>
             <li class="mt-2"><a href="#">W O R K</a></li>
-            <li class="mt-2"><a href="#">A B O U T</a></li>
+            <li class="mt-2"><a href="/aboutus.html">A B O U T</a></li>
             <li class="mt-2"><a href="/service.html" class="font-bold text-blue-900">S E R V I C E S</a></li>
             <li class="mt-2"><a href="/team.html" >T E A M</a></li>
             <li class="mt-2"><a href="/contactus.html">C O N T A C T</a></li>
@@ -77,7 +77,7 @@
 
 
     <!-- Main Image Section with Parallax Effect -->
-    <section class="h-[100dvh] bg-cover bg-center bg-fixed" style="background-image: url('/services-assets/Services-Header.png');">
+    <section class="h-[96dvh] bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: url('/services-assets/Services-Header.png');">
     </section>
 
    <!-- Grid Layout -->
@@ -297,6 +297,24 @@
             if (e.target === mobileMenu) {
             mobileMenu.classList.add('hidden');
             }
+        });
+    </script>
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById("navbar");
+    
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+    
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down - Hide navbar
+                navbar.classList.add("-translate-y-full");
+            } else {
+                // Scrolling up - Show navbar
+                navbar.classList.remove("-translate-y-full");
+            }
+    
+            lastScrollY = currentScrollY;
         });
     </script>
 </body>

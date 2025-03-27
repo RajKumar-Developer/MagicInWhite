@@ -8,6 +8,7 @@ export default defineConfig({
         service: 'service.html',
         team:'team.html',
         contact:'contactus.html',
+        about:'aboutus.html',
       }
     }
   }

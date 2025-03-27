@@ -2,7 +2,8 @@
     "rewrites": [
       { "source": "/service", "destination": "/service.html" },
       {"source":"/team","destination":"/team.html"},
-      {"source":"/contact","destination":"/contactus.html"}
+      {"source":"/contact","destination":"/contactus.html"},
+      {"source":"/about","destination":"/aboutus.html"}
     ],
     "redirects": [
       { "source": "/old-page", "destination": "/new-page", "permanent": true }

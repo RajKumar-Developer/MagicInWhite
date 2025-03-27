@@ -12,7 +12,7 @@
 <body>
     
     <!-- Navbar -->
-    <nav class="bg-transparent backdrop-blur-md shadow-md fixed w-full left-0 px-5 z-50">
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md fixed w-full left-0 px-5 z-50">
         <div class="flex pt-3 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
@@ -37,7 +37,7 @@
         <ul class="text-center leading-[2.5rem]">
             <li class="mt-2"><a href="/index.html">H O M E</a></li>
             <li class="mt-2"><a href="#">W O R K</a></li>
-            <li class="mt-2"><a href="#">A B O U T</a></li>
+            <li class="mt-2"><a href="/aboutus.html">A B O U T</a></li>
             <li class="mt-2"><a href="/service.html">S E R V I C E S</a></li>
             <li class="mt-2"><a href="/team.html" class="font-bold text-blue-900">T E A M</a></li>
             <li class="mt-2"><a href="/contactus.html">C O N T A C T</a></li>
@@ -213,6 +213,24 @@
         </div>
     </section>
 
+    <script>
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById("navbar");
+    
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+    
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down - Hide navbar
+                navbar.classList.add("-translate-y-full");
+            } else {
+                // Scrolling up - Show navbar
+                navbar.classList.remove("-translate-y-full");
+            }
+    
+            lastScrollY = currentScrollY;
+        });
+    </script>
     <script>
         const menuBtn = document.getElementById('menu-btn');
     const closeMenuBtn = document.getElementById('close-menu');

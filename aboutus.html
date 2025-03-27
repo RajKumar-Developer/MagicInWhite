@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <link rel="stylesheet" href="/src/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md fixed w-full top-0 left-0 px-5 z-50">
+        <div class="flex pt-3 justify-between items-center w-full max-w-full mx-auto">
+            <!-- Logo (Left Corner) -->
+            <div class="cursor-pointer" onclick="window.location.href='/index.html'">
+                <img src="/about-assets/logo.png" alt="logo" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
+            </div>
+
+            <!-- Mobile Menu Button (Right Corner) -->
+            <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
+                <img src="/about-assets/burger-menu.png" alt="nav button" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
+            </button>
+        </div>
+    </nav>
+
+      
+    <!-- Mobile Popup Menu (Overlay) -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
+        <!-- Close Button -->
+        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
+            ✖
+        </button>
+
+        <!-- Menu Items -->
+        <ul class="text-center leading-[2.5rem]">
+            <li class="mt-2"><a href="/index.html">H O M E</a></li>
+            <li class="mt-2"><a href="#">W O R K</a></li>
+            <li class="mt-2"><a href="/aboutus.html" class="font-bold text-blue-900">A B O U T</a></li>
+            <li class="mt-2"><a href="/service.html">S E R V I C E S</a></li>
+            <li class="mt-2"><a href="/team.html">T E A M</a></li>
+            <li class="mt-2"><a href="/contactus.html">C O N T A C T</a></li>
+        </ul>
+    </div>
+
+    <!--Main Section-->
+    <section class="relative w-full min-h-screen flex items-center justify-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/about-assets/header-image.png');"></div>
+        
+        <!-- Content Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+
+        <!-- Text Section -->
+        <div class="absolute bottom-10 right-10 text-white text-right max-w-xs md:max-w-md lg:max-w-lg">
+            <p class="text-lg md:text-xl lg:text-2xl font-semibold leading-tight">
+                WE BELIEVE THAT <br>
+                INTELLIGENT CREATIVE <br>
+                THINKING HELPS <br>
+                ORGANISATIONS AND <br>
+                INDIVIDUALS TO GROW
+            </p>
+        </div>
+    </section>
+    <!--Bento section 1-->
+    <section class="w-full min-h-[360dvh] mx-auto grid grid-cols-46 grid-rows-18 bg-gray-200" style="background-image: url(/about-assets/frame-body.png);">
+        <!-- <div class="bg-gray-700">1</div>
+        <div class="col-span-2">2</div>
+        <div class="col-span-2 col-start-4">3</div>
+        <div class="col-span-2 col-start-6">4</div>
+        <div class="col-start-8">5</div>
+        <div class="col-start-9">6</div>
+        <div class="col-span-2 col-start-10">7</div>
+        <div class="col-span-2 col-start-12">8</div>
+        <div>9</div> -->
+    </section>
+
+    </section>
+    <!--Footer-->
+    <section class="min-h-1/2 flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
+        <div class="container">
+          <div class="w-full max-w-4xl mx-auto mt-6">
+            <!-- Heading + Input Field -->
+            <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
+            <div class="flex">
+                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
+                <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
+            </div>
+        
+            <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
+                <!-- First Row: Lists (Grid of 5 Items) -->
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
+                    <div class="w-full order-1 md:order-none">
+                        <h3 class="font-semibold">HOME</h3>
+                        <ul class="space-y-1">
+                            <li>Why us</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">WORK</h3>
+                        <ul class="space-y-1">
+                            <li>Film Posters</li>
+                            <li>Events</li>
+                            <li>Title Animations</li>
+                            <li>Branding</li>
+                            <li>Products</li>
+                            <li>Advertising</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">SERVICE</h3>
+                        <ul class="space-y-1 text-sm pt-3">
+                            <li class="whitespace-nowrap">Branding</li>
+                            <li class="whitespace-nowrap">Advertising</li>
+                            <li class="whitespace-nowrap">Film Production</li>
+                            <li class="whitespace-nowrap">Graphic Design</li>
+                            <li class="whitespace-nowrap">Social Media Marketing</li>
+                            <li class="whitespace-nowrap">Integrated Marketing</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">TEAM</h3>
+                        <ul class="space-y-1">
+                            <li>Meet the Team</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="font-semibold">CONTACT</h3>
+                        <ul class="space-y-1">
+                            <li>Contact Information</li>
+                            <li>Careers</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Second Row: Button & Social Media Icons -->
+                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-8 mt-8 sm:space-y-0">
+                    <button class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                        <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
+                    </button>
+                    
+            
+                    <!-- Social Icons -->
+                    <div class="flex flex-wrap justify-center sm:justify-end gap-6">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    </section>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close menu when clicking outside of it
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+            mobileMenu.classList.add('hidden');
+            }
+        });
+
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById("navbar");
+    
+        window.addEventListener("scroll", () => {
+            const currentScrollY = window.scrollY;
+    
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down - Hide navbar
+                navbar.classList.add("-translate-y-full");
+            } else {
+                // Scrolling up - Show navbar
+                navbar.classList.remove("-translate-y-full");
+            }
+    
+            lastScrollY = currentScrollY;
+        });
+    </script>
+</body>
+</html>
