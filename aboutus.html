@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="icon" type="image/svg+xml" href="/icon.png" />
-    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="/src/bento.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -64,19 +64,99 @@
         </div>
     </section>
     <!--Bento section 1-->
-    <section class="w-full min-h-[360dvh] mx-auto grid grid-cols-46 grid-rows-18 bg-gray-200" style="background-image: url(/about-assets/frame-body.png);">
-        <!-- <div class="bg-gray-700">1</div>
-        <div class="col-span-2">2</div>
-        <div class="col-span-2 col-start-4">3</div>
-        <div class="col-span-2 col-start-6">4</div>
-        <div class="col-start-8">5</div>
-        <div class="col-start-9">6</div>
-        <div class="col-span-2 col-start-10">7</div>
-        <div class="col-span-2 col-start-12">8</div>
-        <div>9</div> -->
-    </section>
+    <section class="h-[270dvh] relative bg-white bg-[url('/about-assets/frame-body.png')] bg-contain">
+        <!-- Background Grid Image -->
+        <div class="h-[90dvh] w-full relative overflow-hidden">
+          <!-- Yellow Accent Blocks -->
+          <div class="absolute top-[20%] w-[2.5%] h-[68%] bg-[url('/about-assets/yellow-box-1.png')]"></div>
+          <div class="absolute top-[35.2%] right-[30.2%] w-[12%] h-[11%] bg-[url('/about-assets/yellow-box-1.png')]"></div>
+          <div class="absolute top-[7.2%] right-[4.5%] w-[11.7%] h-[20.8%] bg-[url('/about-assets/yellow-box-2.png')]"></div>
+      
+          <!-- "WE GROW IDEAS" Section -->
+          <div class="absolute top-[10%] left-[5%] w-[30%]">
+            <h2 class="text-4xl font-bold text-blue-600 mb-4">WE GROW IDEAS</h2>
+            <p class="text-gray-600 w-[74%]">
+              Our design studio uses intelligent creative thinking to help add value to and grow our clients' businesses.
+            </p>
+          </div>
+      
+          <!-- Office Image -->
+          <div class="absolute top-[45%] left-[13%] w-[30%] h-[30%]">
+            <img src="/about-assets/body-image-1.png" alt="Modern office space with wooden elements and bright accents"
+              class="w-full object-contain shadow-lg" />
+          </div>
+      
+          <!-- "WE EVOLVE CONSTANTLY" Section -->
+          <div class="absolute top-[55%] right-[15%] w-[25%]">
+            <h2 class="text-4xl font-bold text-blue-600 mb-4">WE EVOLVE CONSTANTLY</h2>
+            <p class="text-gray-600 w-[75%]">
+              The only thing that is certain is that everything will change; standing still isn't an option. We explore, adapt, and evolve in order to stay ahead.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Background Grid Image -->
+        <div class="h-[90dvh] w-full relative overflow-hidden">
+            <!-- Green Accent Blocks -->
+            <div class="absolute top-[2%] left-[23.4%] w-[16%] h-[22%] bg-[url('/about-assets/green-box-1.png')]"></div>
+            <div class="absolute top-[64%] left-[11.8%] w-[11.7%] h-[12%]  bg-[url('/about-assets/green-box-2.png')]"></div>
+            <div class="absolute bottom-[9.7%] right-0 w-[15%] h-[8%] bg-[url('/about-assets/green-box-3.png')]"></div>
+        
+            <!-- "WE CHAMPION CLIENTS" Section -->
+            <div class="absolute top-[4%] right-[32%] w-[25%]">
+            <h2 class="text-4xl font-bold text-blue-600 mb-4">WE CHAMPION CLIENTS.</h2>
+            <p class="text-gray-600 w-[75%]">
+                We are lucky enough to work with gifted, dedicated and committed clients. They offer us insight into their business; our job is to tell the world.
+            </p>
+            </div>
+        
+            <!-- "WE COLLABORATE FEARLESSLY" Section -->
+            <div class="absolute top-[55%] left-[30%] w-[20%]">
+            <h2 class="text-4xl font-bold text-blue-600 mb-4">WE COLLABORATE FEARLESSLY.</h2>
+            <p class="text-gray-600">
+                Every relationship with every client is a partnership; we work alongside them to make their goals a reality and help them to grow their businesses.
+            </p>
+            </div>
+        
+            <!-- Office Image -->
+            <div class="absolute top-[44%] right-[18%] w-[28%] h-[42%]">
+            <img src="/about-assets/body-image-2.png" alt="Modern office space with wooden table and glass partitions"
+                class="w-full h-full object-contain" />
+            </div>
+        </div>
 
-    </section>
+        <!-- Background Grid Image -->
+        <div class="h-[100dvh] w-full relative overflow-hidden">
+            <!-- Blue Accent Blocks -->
+            <div class="absolute top-[5%] left-0 w-[2%] h-[30%] bg-[url('/about-assets/blue-box-1.png')]"></div>
+            <div class="absolute top-0 right-[25%] w-[10%] h-[5%] bg-[url('/about-assets/blue-box-2.png')]"></div>
+            <div class="absolute bottom-[16%] right-[27%] w-[20%] h-[40%] bg-[url('/about-assets/blue-box-3.png')]"></div>
+        
+            <!-- Office Image -->
+            <div class="absolute top-[5%] left-[18%] w-[20%] h-[25%]">
+            <img src="/about-assets/body-image-3.png" alt="Interior office space with wooden frames and glass partitions"
+                class="w-full h-full object-cover shadow-lg" />
+            </div>
+        
+            <!-- "WE ADD VALUE" Section -->
+            <div class="absolute top-[15%] right-[20%] w-[25%]">
+            <h2 class="text-4xl font-bold text-blue-600 mb-4">WE ADD VALUE</h2>
+            <p class="text-gray-600 w-[70%]">
+                Whatever the task, no matter whether it's big or small, we bring our experience and expertise to that project and strive to deliver the best possible solution.
+            </p>
+            </div>
+        
+            <!-- "WE CRAFT SOLUTIONS" Section -->
+            <div class="absolute bottom-[30%] left-[13%] w-[25%]">
+            <h2 class="text-4xl font-bold text-blue-600 mb-4">WE CRAFT SOLUTIONS.</h2>
+            <p class="text-gray-600 w-[70%]">
+                Beautiful creative work only goes so far. To deliver something that really engages you need to add some blood, sweat and tears.
+            </p>
+            </div>
+        </div>
+      </section>
+      
+
     <!--Footer-->
     <section class="min-h-1/2 flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
         <div class="container">

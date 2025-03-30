@@ -296,34 +296,25 @@
     </script>
     <!--SVG Animation-->
     <script>
-       document.addEventListener('DOMContentLoaded', function() {
+     document.addEventListener('DOMContentLoaded', function() {
     // Get the eyeball elements
     const leftEyeball = document.getElementById('leftEyeball');
     const rightEyeball = document.getElementById('rightEyeball');
+    
+    // Get the eye area elements
+    const leftEye = document.getElementById('leftEye');
+    const rightEye = document.getElementById('rightEye');
     
     // Get the eye sockets (as boundaries)
     const leftEyeSocket = document.getElementById('leftEyeSocket');
     const rightEyeSocket = document.getElementById('rightEyeSocket');
     
-    // Get the entire SVG character (the face group)
-    const svgCharacter = document.getElementById('face');
-    
-    // Get the SVG element itself (for centering the transform origin)
+    // Get the SVG element itself
     const svgElement = document.querySelector('svg');
     
     // Get the bounding boxes of the eye sockets
     const leftEyeBounds = leftEyeSocket.getBBox();
     const rightEyeBounds = rightEyeSocket.getBBox();
-    
-    // Get eyeballs' original positions
-    const leftEyeballOriginal = leftEyeball.getBBox();
-    const rightEyeballOriginal = rightEyeball.getBBox();
-    
-    // Calculate eyeball centers for better movement control
-    const leftEyeballCenterX = leftEyeballOriginal.x + leftEyeballOriginal.width/2;
-    const leftEyeballCenterY = leftEyeballOriginal.y + leftEyeballOriginal.height/2;
-    const rightEyeballCenterX = rightEyeballOriginal.x + rightEyeballOriginal.width/2;
-    const rightEyeballCenterY = rightEyeballOriginal.y + rightEyeballOriginal.height/2;
     
     // Calculate socket centers
     const leftSocketCenterX = leftEyeBounds.x + leftEyeBounds.width/2;
@@ -331,87 +322,105 @@
     const rightSocketCenterX = rightEyeBounds.x + rightEyeBounds.width/2;
     const rightSocketCenterY = rightEyeBounds.y + rightEyeBounds.height/2;
     
-    // Reset any existing transformations on eyeballs to prevent accumulation
-    gsap.set([leftEyeball, rightEyeball], {
+    // Set up initial states and transform origins
+    gsap.set([leftEyeball, rightEyeball, leftEye, rightEye], {
+        transformOrigin: "center center",
         x: 0,
-        y: 0,
-        transformOrigin: "center center"
+        y: 0
     });
     
-    // Calculate maximum movement that keeps eyeballs within sockets (same for both eyes now)
-    const maxMovementX = 2;
-    const maxMovementY = 2;
-    
-    // Set transform origin to center of SVG for 3D effect
     gsap.set(svgElement, {
         transformOrigin: "center center"
     });
     
-    // Mouse move event listener
+    // Fine-tune movement parameters for more realistic eye movement
+    const maxMovementX = 3;
+    const maxMovementY = 2;
+    const eyeAreaRatio = 0.8; // Eye area moves at 80% of eyeball movement
+    const movementDuration = 0.2; // Faster response time
+    
+    // Create tweens that we can modify rather than creating new ones on each mouse move
+    const leftEyeballTween = gsap.to(leftEyeball, {duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out"});
+    const rightEyeballTween = gsap.to(rightEyeball, {duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out"});
+    const leftEyeTween = gsap.to(leftEye, {duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out"});
+    const rightEyeTween = gsap.to(rightEye, {duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out"});
+    const svgTween = gsap.to(svgElement, {duration: 0.4, rotateX: 0, rotateY: 0, paused: true, ease: "sine.out"});
+    
+    // Use a throttled function for mouse move to improve performance
+    let lastUpdate = 0;
+    const throttleTime = 10; // 10ms throttle
+    
+    // Mouse move event listener with throttling
     document.addEventListener('mousemove', function(e) {
+        const now = Date.now();
+        
+        // Only update if enough time has passed since last update
+        if (now - lastUpdate > throttleTime) {
+            lastUpdate = now;
+            updateEyePosition(e);
+        }
+    });
+    
+    function updateEyePosition(e) {
         // Get mouse position relative to viewport
         const mouseX = e.clientX;
         const mouseY = e.clientY;
         
-        // Get SVG position and dimensions for relative calculations
+        // Get SVG position and dimensions
         const svgRect = svgElement.getBoundingClientRect();
         const svgX = svgRect.left + svgRect.width/2;
         const svgY = svgRect.top + svgRect.height/2;
         
-        // Get viewport dimensions
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
+        // Calculate normalized mouse position (-1 to 1 from center)
+        const mouseVectorX = (mouseX - svgX) / (window.innerWidth / 2);
+        const mouseVectorY = (mouseY - svgY) / (window.innerHeight / 2);
         
-        // Calculate normalized mouse position (0 to 1)
-        const normalizedX = mouseX / viewportWidth;
-        const normalizedY = mouseY / viewportHeight;
+        // Calculate movement with easing curve for natural motion
+        const moveX = Math.min(Math.max(mouseVectorX * maxMovementX, -maxMovementX), maxMovementX);
+        const moveY = Math.min(Math.max(mouseVectorY * maxMovementY, -maxMovementY), maxMovementY);
         
-        // Calculate vector from SVG center to mouse for eye direction
-        const mouseVectorX = mouseX - svgX;
-        const mouseVectorY = mouseY - svgY;
+        // Eye areas move slightly less than eyeballs
+        const eyeAreaMoveX = moveX * eyeAreaRatio;
+        const eyeAreaMoveY = moveY * eyeAreaRatio;
         
-        // Normalize the vector and apply max movement
-        const vectorLength = Math.sqrt(mouseVectorX * mouseVectorX + mouseVectorY * mouseVectorY);
-        const normalizedVectorX = mouseVectorX / vectorLength;
-        const normalizedVectorY = mouseVectorY / vectorLength;
+        // Calculate 3D rotation - more subtle
+        const rotateY = mouseVectorX * 5;
+        const rotateX = -mouseVectorY * 5;
         
-        // Calculate movement for both eyes, now using the same approach for consistency
-        const moveX = normalizedVectorX * maxMovementX;
-        const moveY = normalizedVectorY * maxMovementY;
+        // Update tweens with new target values and restart them
+        leftEyeballTween.vars.x = moveX;
+        leftEyeballTween.vars.y = moveY;
+        leftEyeballTween.invalidate().restart();
         
-        // Calculate 3D rotation for the entire SVG
-        // Convert normalized coordinates to rotation angles (limited to ±10 degrees)
-        const rotateY = (normalizedX - 0.5) * 10; // X movement controls Y rotation
-        const rotateX = (normalizedY - 0.5) * -10; // Y movement controls X rotation (inverted)
+        rightEyeballTween.vars.x = moveX;
+        rightEyeballTween.vars.y = moveY;
+        rightEyeballTween.invalidate().restart();
         
-        // Update both eyeballs with the same approach
-        gsap.to(leftEyeball, {
-            duration: 0.3,
-            x: moveX,
-            y: moveY,
-            ease: "power2.out"
-        });
+        leftEyeTween.vars.x = eyeAreaMoveX;
+        leftEyeTween.vars.y = eyeAreaMoveY;
+        leftEyeTween.invalidate().restart();
         
-        gsap.to(rightEyeball, {
-            duration: 0.3,
-            x: moveX,
-            y: moveY,
-            ease: "power2.out"
-        });
+        rightEyeTween.vars.x = eyeAreaMoveX;
+        rightEyeTween.vars.y = eyeAreaMoveY;
+        rightEyeTween.invalidate().restart();
         
-        // Apply 3D rotation to the entire SVG character
-        gsap.to(svgElement, {
-            duration: 0.5,
-            rotateY: rotateY,
-            rotateX: rotateX,
-            ease: "power1.out"
-        });
-    });
+        svgTween.vars.rotateX = rotateX;
+        svgTween.vars.rotateY = rotateY;
+        svgTween.invalidate().restart();
+    }
     
-    // Reset eyes position and SVG rotation when mouse leaves the window
+    // Reset eyes position when mouse leaves the window
     document.addEventListener('mouseleave', function() {
+        // Reset eye positions
         gsap.to([leftEyeball, rightEyeball], {
-            duration: 0.5,
+            duration: 0.6,
+            x: 0,
+            y: 0,
+            ease: "power2.out"
+        });
+        
+        gsap.to([leftEye, rightEye], {
+            duration: 0.6,
             x: 0,
             y: 0,
             ease: "power2.out"
@@ -426,33 +435,121 @@
         });
     });
     
-    // Optional: Add a blink animation
+    // Enhanced eyeball animations
+    function animateEyeballs() {
+        // Create a master timeline for eyeball animations
+        const eyeballTimeline = gsap.timeline({
+            onComplete: function() {
+                // Wait a random amount of time before starting the next animation cycle
+                gsap.delayedCall(Math.random() * 3 + 2, animateEyeballs);
+            }
+        });
+        
+        // Random subtle movement patterns for eyeballs
+        if (Math.random() > 0.7) {
+            // Occasional look around animation
+            eyeballTimeline.to([leftEyeball, rightEyeball], {
+                x: Math.random() * 2 - 1,
+                y: Math.random() * 1 - 0.5,
+                duration: 0.4,
+                ease: "sine.inOut"
+            })
+            .to([leftEyeball, rightEyeball], {
+                x: Math.random() * 2 - 1,
+                y: Math.random() * 1 - 0.5,
+                duration: 0.5,
+                ease: "sine.inOut"
+            })
+            .to([leftEyeball, rightEyeball], {
+                x: 0,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out"
+            });
+        } else if (Math.random() > 0.5) {
+            // Subtle dilation/contraction effect (simulates focus changes)
+            eyeballTimeline.to([leftEyeball, rightEyeball], {
+                scale: 0.95 + Math.random() * 0.1,
+                duration: 0.5,
+                ease: "sine.inOut"
+            })
+            .to([leftEyeball, rightEyeball], {
+                scale: 1,
+                duration: 0.5,
+                ease: "sine.inOut"
+            });
+        } else {
+            // Micro movements (simulates small focus adjustments)
+            for (let i = 0; i < 3; i++) {
+                eyeballTimeline.to([leftEyeball, rightEyeball], {
+                    x: (Math.random() - 0.5) * 1.2,
+                    y: (Math.random() - 0.5) * 0.8,
+                    duration: 0.3,
+                    ease: "sine.inOut"
+                });
+            }
+            eyeballTimeline.to([leftEyeball, rightEyeball], {
+                x: 0,
+                y: 0,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+        }
+        
+        return eyeballTimeline;
+    }
+    
+    // Add a realistic blink animation
     function blinkEyes() {
+        // Don't blink if we're in the middle of another eyeball animation
+        if (gsap.getTweensOf(leftEyeball).filter(tween => tween.vars.scaleY !== undefined).length > 0) {
+            gsap.delayedCall(0.5, blinkEyes);
+            return;
+        }
+        
         const timeline = gsap.timeline();
         
-        // Scale Y to 0 (closed) and back to 1 (open)
+        // Natural blink sequence
         timeline.to([leftEyeball, rightEyeball], {
-            scaleY: 0.1,
-            duration: 0.1,
+            scaleY: 0.15,
+            duration: 0.1, 
             transformOrigin: "center center",
             ease: "power1.in"
-        }).to([leftEyeball, rightEyeball], {
+        })
+        .to([leftEyeball, rightEyeball], {
             scaleY: 1,
             duration: 0.1,
             ease: "power1.out"
         });
         
-        // Set random interval for next blink
-        gsap.delayedCall(Math.random() * 5 + 3, blinkEyes);
+        // Random double-blink occasionally
+        if (Math.random() > 0.85) {
+            timeline.to({}, {duration: 0.1}) // Brief pause
+            .to([leftEyeball, rightEyeball], {
+                scaleY: 0.15,
+                duration: 0.08,
+                ease: "power1.in"
+            })
+            .to([leftEyeball, rightEyeball], {
+                scaleY: 1,
+                duration: 0.1,
+                ease: "power1.out"
+            });
+        }
+        
+        // Random timing for next blink (between 2-6 seconds)
+        const nextBlink = Math.random() * 4 + 2;
+        gsap.delayedCall(nextBlink, blinkEyes);
     }
     
-    // Start the blinking animation after a delay
-    gsap.delayedCall(2, blinkEyes);
+    // Start eye animations after initial delay
+    gsap.delayedCall(1, blinkEyes);
+    gsap.delayedCall(2, animateEyeballs);
     
-    // Add a subtle floating animation for more liveliness
+    // Add a subtle breathing/floating animation
     gsap.to(svgElement, {
-        y: "+=5",
-        duration: 2,
+        y: "+=3",
+        duration: 1.5,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut"

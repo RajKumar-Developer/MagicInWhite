@@ -16,6 +16,9 @@
   perspective: 2500px;
   /* margin: 0 50px; */
   border-radius: 5px;
+  /* -moz-box-shadow:2px 35px 32px -8px rgba(0, 0, 0, 0.75); */
+  /* -webkit-box-shadow:2px 35px 32px -8px rgba(0, 0, 0, 0.75); */
+  /* box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75); */
 }
 .cover-image{
   width: 100%;
@@ -32,9 +35,9 @@
 }
 .card:hover .wrapper{
   transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
-  -moz-box-shadow:2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  /* -moz-box-shadow:2px 35px 32px -8px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow:2px 35px 32px -8px rgba(0, 0, 0, 0.75);
-  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75); */
   border-radius: 5px;
 }
 .wrapper::before,
@@ -94,6 +97,9 @@
 .card:hover .character {
   opacity: 1;
   transform: translate3d(0%, -30%, 50px);
+  box-shadow: 0px 35px 10px -8px rgba(0, 0, 0, 0.50);
+  -moz-box-shadow:0px 35px 10px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow:0px 35px 10px -8px rgba(0, 0, 0, 0.75);
 }
 
 /* Mobile View: Reduce shadow and hover effect */
