@@ -9,6 +9,7 @@ export default defineConfig({
         team:'team.html',
         contact:'contactus.html',
         about:'aboutus.html',
+        work:'work.html',
       }
     }
   }
