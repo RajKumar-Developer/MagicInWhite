@@ -8,10 +8,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         .active {
             background-color: yellow;
             color: blue;
-            padding: 35px 10px 18px 10px;
+            padding: 35px 10px 24px 10px;
         }
         /* Apply a smooth transition */
         .grid img {
@@ -19,49 +22,40 @@
             transform-origin: center;
         }
 
-        /* Parallax-like effect on hover */
-        /* .grid img:hover {
-            transform: scale(1);
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-        } */
-
         /* Optional: Adding a slight tilt effect */
         .grid img:hover {
             transform: scale(1) rotateX(8deg) rotateY(8deg);
             overflow: hidden;
         }
         .text-left{
-            max-width: 600px;
+            max-width: 500px;
         }
         .text-right{
-            max-width: 600px;
+            max-width: 500px;
         }
-        .posters {
-            position: relative;
+        .posters{
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
         }
-        
         .posters img {
-            /* position: absolute; */
-            object-fit: cover;
-            /* width: 90%; */
-            height: 108%;
-            /* left: 5%; */
-            will-change: transform; /* Improves performance for animations */
+            width: 110%; 
+            height: 110%; 
+            object-fit: cover; 
+            transform-origin: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
-
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md px-4 fixed w-full left-0 z-50">
-        <div class="flex pt-4 justify-between items-center max-w-6xl mx-auto">
+        <div class="flex py-2 justify-between items-center max-w-6xl mx-auto">
           <!-- Logo -->
           <div class="text-white text-2xl font-bold" onclick="window.location.href='/index.html'">
-            <img src="/services-assets/Logo-on-menu.png" alt="logo" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
+            <img src="/services-assets/Logo-on-menu.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
           </div>
       
           <!-- Desktop Menu -->
@@ -76,7 +70,7 @@
       
           <!-- Mobile Menu Button -->
           <button id="menu-btn" class="md:hidden lg:hidden text-white text-3xl hover:text-yellow-400 transition duration-300">
-           <img src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
+           <img src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
           </button>
         </div>
     </nav>
@@ -101,7 +95,7 @@
 
 
     <!-- Main Image Section with Parallax Effect -->
-    <section class="h-[90dvh] w-[100%] bg-contain sm:bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: url('/services-assets/Services-Header.png');">
+    <section class="h-[96dvh] w-[100%] bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: url('/services-assets/Services-Header.png');">
     </section>
     <!-- <section class="h-[96dvh] relative overflow-hidden">
         <img src="/services-assets/Services-Header.png" 
@@ -112,7 +106,7 @@
    <!-- Grid Layout -->
    <section class="grid grid-cols-7 grid-rows-12">
     <!-- Content 1 -->
-    <div class="col-span-4 row-span-2 bg-green-500 p-4 md:p-6 lg:p-8 text-white flex items-center justify-center">
+    <div class="col-span-4 row-span-2 bg-green-500 px-4 md:px-6 lg:px-8 text-white flex items-center justify-center">
         <div class="text-left">
             <h1 class="text-3xl md:text-4xl font-bold leading-relaxed">BRANDING</h1>
             <p class="text-xs sm:text-sm md:text-base leading-loose">
@@ -348,7 +342,38 @@
     
             lastScrollY = currentScrollY;
         });
+
+        function updatePlaceholder() {
+        const inputField = document.querySelector("input[type='email']");
+        
+        if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
+            inputField.placeholder = "EMAIL";
+        } else {
+            inputField.placeholder = "ENTER YOUR EMAIL ADDRESS";
+        }
+    }
+
+    // Run function on page load and resize
+    window.addEventListener("load", updatePlaceholder);
+    window.addEventListener("resize", updatePlaceholder);
     </script>    
-    
+    <script>
+       gsap.utils.toArray('.posters').forEach((poster) => {
+        gsap.fromTo(
+            poster.querySelector('img'),
+            { y: -20, scale: 1.1 }, // Start position and slight scale
+            {
+                y: 20,
+                scale: 1.1, // Maintain slight scale to cover gaps
+                scrollTrigger: {
+                    trigger: poster,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true,
+                },
+            }
+        );
+    });
+    </script>
 </body>
 </html>

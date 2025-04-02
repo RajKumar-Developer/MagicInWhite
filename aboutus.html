@@ -8,19 +8,30 @@
     <link rel="stylesheet" href="/src/bento.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .slide-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .slide-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md fixed w-full top-0 left-0 px-5 z-50">
-        <div class="flex pt-3 justify-between items-center w-full max-w-full mx-auto">
+        <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
-                <img src="/about-assets/logo.png" alt="logo" class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
+                <img src="/about-assets/logo.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
             </div>
 
             <!-- Mobile Menu Button (Right Corner) -->
             <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
-                <img src="/about-assets/burger-menu.png" alt="nav button" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
+                <img src="/about-assets/burger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
             </button>
         </div>
     </nav>
@@ -64,16 +75,16 @@
         </div>
     </section>
     <!--Bento section 1-->
-    <section class="h-[270dvh] relative bg-white bg-[url('/about-assets/frame-body.png')] bg-contain">
+    <section class="h-[270dvh] relative bg-white bg-[url('/about-assets/frame-body.png')] bg-cover bg-fixed">
         <!-- Background Grid Image -->
         <div class="h-[90dvh] w-full relative overflow-hidden">
           <!-- Yellow Accent Blocks -->
-          <div class="absolute top-[20%] w-[2.5%] h-[68%] bg-[url('/about-assets/yellow-box-1.png')]"></div>
-          <div class="absolute top-[35.2%] right-[30.2%] w-[12%] h-[11%] bg-[url('/about-assets/yellow-box-1.png')]"></div>
-          <div class="absolute top-[7.2%] right-[4.5%] w-[11.7%] h-[20.8%] bg-[url('/about-assets/yellow-box-2.png')]"></div>
-      
+          <div class="absolute top-[20%] w-[2.5%] h-[68%] bg-[url('/about-assets/yellow-box-1.png')] slide-in"></div>
+          <div class="absolute top-[35.2%] right-[30.2%] w-[12%] h-[11%] bg-[url('/about-assets/yellow-box-1.png')] slide-in"></div>
+          <div class="absolute top-[7.2%] right-[4.5%] w-[11.7%] h-[20.8%] bg-[url('/about-assets/yellow-box-2.png')] slide-in"></div>
+          
           <!-- "WE GROW IDEAS" Section -->
-          <div class="absolute top-[10%] left-[5%] w-[30%]">
+          <div class="absolute top-[10%] left-[5%] w-[30%] slide-in">
             <h2 class="text-4xl font-bold text-blue-600 mb-4">WE GROW IDEAS</h2>
             <p class="text-gray-600 w-[74%]">
               Our design studio uses intelligent creative thinking to help add value to and grow our clients' businesses.
@@ -81,78 +92,65 @@
           </div>
       
           <!-- Office Image -->
-          <div class="absolute top-[45%] left-[13%] w-[30%] h-[30%]">
-            <img src="/about-assets/body-image-1.png" alt="Modern office space with wooden elements and bright accents"
-              class="w-full object-contain shadow-lg" />
-          </div>
-      
-          <!-- "WE EVOLVE CONSTANTLY" Section -->
-          <div class="absolute top-[55%] right-[15%] w-[25%]">
-            <h2 class="text-4xl font-bold text-blue-600 mb-4">WE EVOLVE CONSTANTLY</h2>
-            <p class="text-gray-600 w-[75%]">
-              The only thing that is certain is that everything will change; standing still isn't an option. We explore, adapt, and evolve in order to stay ahead.
-            </p>
+          <div class="absolute top-[45%] left-[13%] w-[30%] h-[30%] slide-in">
+            <img src="/about-assets/body-image-1.png" alt="Modern office space" class="w-full object-contain shadow-lg" />
           </div>
         </div>
-        
-        <!-- Background Grid Image -->
+      
         <div class="h-[90dvh] w-full relative overflow-hidden">
-            <!-- Green Accent Blocks -->
-            <div class="absolute top-[2%] left-[23.4%] w-[16%] h-[22%] bg-[url('/about-assets/green-box-1.png')]"></div>
-            <div class="absolute top-[64%] left-[11.8%] w-[11.7%] h-[12%]  bg-[url('/about-assets/green-box-2.png')]"></div>
-            <div class="absolute bottom-[9.7%] right-0 w-[15%] h-[8%] bg-[url('/about-assets/green-box-3.png')]"></div>
-        
-            <!-- "WE CHAMPION CLIENTS" Section -->
-            <div class="absolute top-[4%] right-[32%] w-[25%]">
+          <!-- Green Accent Blocks -->
+          <div class="absolute top-[2%] left-[23.4%] w-[16%] h-[22%] bg-[url('/about-assets/green-box-1.png')] slide-in"></div>
+          <div class="absolute top-[64%] left-[11.8%] w-[11.7%] h-[12%]  bg-[url('/about-assets/green-box-2.png')] slide-in"></div>
+          <div class="absolute bottom-[9.7%] right-0 w-[15%] h-[8%] bg-[url('/about-assets/green-box-3.png')] slide-in"></div>
+      
+          <!-- "WE CHAMPION CLIENTS" Section -->
+          <div class="absolute top-[4%] right-[32%] w-[25%] slide-in">
             <h2 class="text-4xl font-bold text-blue-600 mb-4">WE CHAMPION CLIENTS.</h2>
             <p class="text-gray-600 w-[75%]">
-                We are lucky enough to work with gifted, dedicated and committed clients. They offer us insight into their business; our job is to tell the world.
+              We are lucky enough to work with gifted, dedicated and committed clients. They offer us insight into their business; our job is to tell the world.
             </p>
-            </div>
-        
-            <!-- "WE COLLABORATE FEARLESSLY" Section -->
-            <div class="absolute top-[55%] left-[30%] w-[20%]">
+          </div>
+      
+          <!-- "WE COLLABORATE FEARLESSLY" Section -->
+          <div class="absolute top-[55%] left-[30%] w-[20%] slide-in">
             <h2 class="text-4xl font-bold text-blue-600 mb-4">WE COLLABORATE FEARLESSLY.</h2>
             <p class="text-gray-600">
-                Every relationship with every client is a partnership; we work alongside them to make their goals a reality and help them to grow their businesses.
+              Every relationship with every client is a partnership; we work alongside them to make their goals a reality and help them to grow their businesses.
             </p>
-            </div>
-        
-            <!-- Office Image -->
-            <div class="absolute top-[44%] right-[18%] w-[28%] h-[42%]">
-            <img src="/about-assets/body-image-2.png" alt="Modern office space with wooden table and glass partitions"
-                class="w-full h-full object-contain" />
-            </div>
+          </div>
+      
+          <!-- Office Image -->
+          <div class="absolute top-[44%] right-[18%] w-[28%] h-[42%] slide-in">
+            <img src="/about-assets/body-image-2.png" alt="Modern office space with wooden table and glass partitions" class="w-full h-full object-contain" />
+          </div>
         </div>
-
-        <!-- Background Grid Image -->
+      
         <div class="h-[100dvh] w-full relative overflow-hidden">
-            <!-- Blue Accent Blocks -->
-            <div class="absolute top-[5%] left-0 w-[2%] h-[30%] bg-[url('/about-assets/blue-box-1.png')]"></div>
-            <div class="absolute top-0 right-[25%] w-[10%] h-[5%] bg-[url('/about-assets/blue-box-2.png')]"></div>
-            <div class="absolute bottom-[16%] right-[27%] w-[20%] h-[40%] bg-[url('/about-assets/blue-box-3.png')]"></div>
-        
-            <!-- Office Image -->
-            <div class="absolute top-[5%] left-[18%] w-[20%] h-[25%]">
-            <img src="/about-assets/body-image-3.png" alt="Interior office space with wooden frames and glass partitions"
-                class="w-full h-full object-cover shadow-lg" />
-            </div>
-        
-            <!-- "WE ADD VALUE" Section -->
-            <div class="absolute top-[15%] right-[20%] w-[25%]">
+          <!-- Blue Accent Blocks -->
+          <div class="absolute top-[5%] left-0 w-[2%] h-[30%] bg-[url('/about-assets/blue-box-1.png')] slide-in"></div>
+          <div class="absolute top-0 right-[25%] w-[10%] h-[5%] bg-[url('/about-assets/blue-box-2.png')] slide-in"></div>
+          <div class="absolute bottom-[16%] right-[27%] w-[20%] h-[40%] bg-[url('/about-assets/blue-box-3.png')] slide-in"></div>
+      
+          <!-- Office Image -->
+          <div class="absolute top-[5%] left-[18%] w-[20%] h-[25%] slide-in">
+            <img src="/about-assets/body-image-3.png" alt="Interior office space with wooden frames and glass partitions" class="w-full h-full object-cover shadow-lg" />
+          </div>
+      
+          <!-- "WE ADD VALUE" Section -->
+          <div class="absolute top-[15%] right-[20%] w-[25%] slide-in">
             <h2 class="text-4xl font-bold text-blue-600 mb-4">WE ADD VALUE</h2>
             <p class="text-gray-600 w-[70%]">
-                Whatever the task, no matter whether it's big or small, we bring our experience and expertise to that project and strive to deliver the best possible solution.
+              Whatever the task, no matter whether it's big or small, we bring our experience and expertise to that project and strive to deliver the best possible solution.
             </p>
-            </div>
-        
-            <!-- "WE CRAFT SOLUTIONS" Section -->
-            <div class="absolute bottom-[30%] left-[13%] w-[25%]">
+          </div>
+      
+          <!-- "WE CRAFT SOLUTIONS" Section -->
+          <div class="absolute bottom-[30%] left-[13%] w-[25%] slide-in">
             <h2 class="text-4xl font-bold text-blue-600 mb-4">WE CRAFT SOLUTIONS.</h2>
             <p class="text-gray-600 w-[70%]">
-                Beautiful creative work only goes so far. To deliver something that really engages you need to add some blood, sweat and tears.
+              Beautiful creative work only goes so far. To deliver something that really engages you need to add some blood, sweat and tears.
             </p>
-            </div>
+          </div>
         </div>
       </section>
       
@@ -280,5 +278,34 @@
             lastScrollY = currentScrollY;
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const elements = document.querySelectorAll(".slide-in");
+          function checkVisibility() {
+            elements.forEach((el) => {
+              const rect = el.getBoundingClientRect();
+              if (rect.top < window.innerHeight - 100) {
+                el.classList.add("visible");
+              }
+            });
+          }
+          window.addEventListener("scroll", checkVisibility);
+          checkVisibility();
+        });
+
+        function updatePlaceholder() {
+        const inputField = document.querySelector("input[type='email']");
+        
+        if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
+            inputField.placeholder = "EMAIL";
+        } else {
+            inputField.placeholder = "ENTER YOUR EMAIL ADDRESS";
+        }
+    }
+
+    // Run function on page load and resize
+    window.addEventListener("load", updatePlaceholder);
+    window.addEventListener("resize", updatePlaceholder);
+      </script>
 </body>
 </html>
