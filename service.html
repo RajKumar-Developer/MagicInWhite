@@ -364,9 +364,9 @@
        gsap.utils.toArray('.posters').forEach((poster) => {
         gsap.fromTo(
             poster.querySelector('img'),
-            { y: -20, scale: 1.1 }, // Start position and slight scale
+            { y: -10, scale: 1.1 }, // Start position and slight scale
             {
-                y: 20,
+                y: 10,
                 scale: 1.1, // Maintain slight scale to cover gaps
                 scrollTrigger: {
                     trigger: poster,
