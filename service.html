@@ -31,11 +31,8 @@
             transform: scale(1) rotateX(8deg) rotateY(8deg);
             overflow: hidden;
         }
-        .text-left{
-            max-width: 500px;
-        }
-        .text-right{
-            max-width: 500px;
+        .custom-width{
+            width: 450px;
         }
         .posters{
             overflow: hidden;
@@ -55,29 +52,20 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md px-4 fixed w-full left-0 z-50">
-        <div class="flex py-2 justify-between items-center max-w-6xl mx-auto">
-          <!-- Logo -->
-          <div class="text-white text-2xl font-bold" onclick="window.location.href='/index.html'">
-            <img src="/services-assets/Logo-on-menu.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
-          </div>
-      
-          <!-- Desktop Menu -->
-          <ul class="hidden md:flex space-x-6 text-lg uppercase text-blue-700">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/work.html">Work</a></li>
-            <li><a href="/aboutus.html">About</a></li>
-            <li><a href="/service.html" class="active">Services</a></li>
-            <li><a href="/team.html">Team</a></li>
-            <li><a href="/contactus.html">Contact</a></li>
-          </ul>
-      
-          <!-- Mobile Menu Button -->
-          <button id="menu-btn" class="md:hidden lg:hidden text-white text-3xl hover:text-yellow-400 transition duration-300">
-           <img src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
-          </button>
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md sm:shadow-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
+        <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
+            <!-- Logo (Left Corner) -->
+            <div class="cursor-pointer" onclick="window.location.href='/index.html'">
+                <img src="/services-assets/Logo-on-menu.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
+            </div>
+
+            <!-- Mobile Menu Button (Right Corner) -->
+            <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
+                <img src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
+            </button>
         </div>
     </nav>
+
       
     <!-- Mobile Popup Menu (Overlay) -->
     <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
@@ -92,8 +80,8 @@
             <li class="mt-2"><a href="/work.html">W O R K</a></li>
             <li class="mt-2"><a href="/aboutus.html">A B O U T</a></li>
             <li class="mt-2"><a href="/service.html" class="font-bold text-blue-900">S E R V I C E S</a></li>
-            <li class="mt-2"><a href="/team.html" >T E A M</a></li>
-            <li class="mt-2"><a href="/contactus.html">C O N T A C T</a></li>
+            <li class="mt-2"><a href="/team.html">T E A M</a></li>
+            <li class="mt-2"><a href="/contactus.html" >C O N T A C T</a></li>
         </ul>
     </div>
 
@@ -111,8 +99,8 @@
    <section class="grid grid-cols-7 grid-rows-12">
     <!-- Content 1 -->
     <div class="col-span-4 row-span-2 bg-green-500 px-4 md:px-6 lg:px-8 text-white flex items-center justify-center">
-        <div class="text-left">
-            <h1 class="text-3xl md:text-4xl font-bold leading-relaxed">BRANDING</h1>
+        <div class="text-left custom-width">
+            <h1 class="text-3xl md:text-4xl font-bold leading-relaxed pb-2">BRANDING</h1>
             <p class="text-xs sm:text-sm md:text-base leading-loose">
                 LOGO DESIGN, BRAND POSITIONING, BRAND STRATEGY, NAMING & TAGLINE DEVELOPMENT, REBRANDING
             </p>
@@ -134,8 +122,8 @@
 
     <!-- Content 4 -->
     <div class="col-span-4 row-span-2 col-start-4 row-start-3 bg-white p-4 md:p-6 lg:p-8 text-blue-700 flex items-center justify-center">
-        <div class="text-right">
-            <h1 class="text-right text-3xl md:text-4xl font-bold leading-relaxed">ADVERTISING</h1>
+        <div class="text-right custom-width">
+            <h1 class="text-right text-3xl md:text-4xl font-bold leading-relaxed pb-2">ADVERTISING</h1>
             <p class="text-right text-xs sm:text-sm md:text-base leading-loose">
                 PRINT, DIGITAL, FILM, PHOTOGRAPHY AND ART DIRECTION, OUT-OF-HOME ADVERTISING.
             </p>
@@ -147,8 +135,8 @@
 
     <!-- Content 5 -->
     <div class="col-span-4 row-span-2 row-start-5 bg-pink-500 p-4 md:p-6 lg:p-8 text-white flex items-center justify-center">
-        <div class="text-left">
-            <h1 class="text-3xl md:text-4xl font-bold leading-relaxed">DESIGNING</h1>
+        <div class="text-left custom-width">
+            <h1 class="text-3xl md:text-4xl font-bold leading-relaxed pb-2">DESIGNING</h1>
             <p class="text-xs sm:text-sm md:text-base leading-loose">
                 GRAPHIC DESIGN, PACKAGING DESIGN, WEBSITE DESIGN & DEVELOPMENT, UI/UX DESIGN, PROTOTYPING AND WIREFRAMING, MOTION GRAPHICS & ANIMATION
             </p>
@@ -170,8 +158,8 @@
 
     <!-- Content 8 -->
     <div class="col-span-4 row-span-2 col-start-4 row-start-7 bg-black p-4 md:p-6 lg:p-8 text-white flex items-center justify-center">
-        <div class="text-left">
-            <h1 class="text-3xl md:text-4xl font-bold">FILM PRODUCTION</h1>
+        <div class="text-right custom-width">
+            <h1 class="text-3xl md:text-4xl font-bold pb-2">FILM PRODUCTION</h1>
             <p class="text-xs sm:text-sm md:text-base leading-loose">
                 TITLE ANIMATION, STOP MOTION ANIMATION, MOVIE TITLE SEQUENCE, 2D ANIMATION & 3D ANIMATION
             </p>
@@ -183,8 +171,8 @@
 
     <!-- Content 9 -->
     <div class="col-span-4 row-span-2 row-start-9 bg-blue-700 p-4 md:p-6 lg:p-8 text-white flex items-center justify-center">
-        <div class="text-left">
-            <h1 class="text-3xl md:text-4xl font-bold leading-relaxed">UI / UX</h1>
+        <div class="text-left custom-width">
+            <h1 class="text-3xl md:text-4xl font-bold leading-relaxed pb-2">UI / UX</h1>
             <p class="text-xs sm:text-sm md:text-base leading-loose">
                 SOCIAL MEDIA STRATEGY AND MANAGEMENT, CONTENT CREATION - COPY, GRAPHICS AND VIDEO, INFLUENCER MARKETING
             </p>
@@ -206,8 +194,8 @@
 
     <!-- Content 12 -->
     <div class="col-span-4 row-span-2 col-start-4 row-start-11 bg-[#ffd527] p-4 md:p-6 lg:p-8 text-white flex items-center justify-center">
-        <div class="text-right text-blue-700">
-            <h1 class="text-3xl md:text-4xl font-bold">INTEGRATED MARKETING</h1>
+        <div class="text-right custom-width text-blue-700">
+            <h1 class="text-3xl md:text-4xl font-bold pb-2">INTEGRATED MARKETING</h1>
             <p class="text-xs sm:text-sm md:text-base leading-loose">
                 360 MARKETING CAMPAIGNS, GUERRILLA MARKETING AND EXPERIENTIAL MARKETING, SPONSORSHIP AND PARTNERSHIPS
             </p>
@@ -276,14 +264,14 @@
                     </div>
                 </div>
                 <!-- Second Row: Button & Social Media Icons -->
-                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
+                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-8 mt-8 sm:space-y-0">
                     <button class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
                         <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
                     </button>
                     
             
                     <!-- Social Icons -->
-                    <div class="flex flex-wrap justify-center sm:justify-end gap-4">
+                    <div class="flex flex-wrap justify-center sm:justify-end gap-6">
                         <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
                             <i class="fa-brands fa-x-twitter"></i>
                         </a>
@@ -329,20 +317,22 @@
         });
     </script>
     <script>
-        let lastScrollY = window.scrollY;
+         let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
-    
+
         window.addEventListener("scroll", () => {
             const currentScrollY = window.scrollY;
-    
+
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - Hide navbar
-                navbar.classList.add("-translate-y-full");
+                // Scrolling down - Hide navbar with animation
+                navbar.classList.add("-translate-y-full", "opacity-0");
+                navbar.classList.remove("opacity-100");
             } else {
-                // Scrolling up - Show navbar
-                navbar.classList.remove("-translate-y-full");
+                // Scrolling up - Show navbar with animation
+                navbar.classList.remove("-translate-y-full", "opacity-0");
+                navbar.classList.add("opacity-100");
             }
-    
+
             lastScrollY = currentScrollY;
         });
 

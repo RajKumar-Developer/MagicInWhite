@@ -53,32 +53,24 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent md:bg-[#24d56d] p-4 fixed w-full top-0 left-0 z-50 backdrop-blur-md shadow-md transition-transform duration-300 -translate-y-full">
-        <div class="flex justify-between items-center max-w-6xl mx-auto">
-        <!-- Logo (Optional, Add Your Logo Here) -->
-        <div class="text-white text-2xl font-bold"></div>
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
+        <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
+            <!-- Logo (Left Corner) -->
+            <div class="cursor-pointer" onclick="window.location.href='/index.html'">
+                <img src="/about-assets/logo.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
+            </div>
 
-        <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-6 text-lg uppercase text-white">
-            <li><a href="/index.html" class="active">Home</a></li>
-            <li><a href="/work.html">Work</a></li>
-            <li><a href="/aboutus.html">About</a></li>
-            <li><a href="/service.html">Services</a></li>
-            <li><a href="/team.html">Team</a></li>
-            <li><a href="/contactus.html">Contact</a></li>
-        </ul>
-
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden text-white text-3xl hover:text-yellow-400 transition duration-300">
-            ☰
-        </button>
+            <!-- Mobile Menu Button (Right Corner) -->
+            <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
+                <img src="/about-assets/burger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
+            </button>
         </div>
     </nav>
       
     <!-- Mobile Popup Menu (Overlay) -->
     <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
         <!-- Close Button -->
-        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] hover:text-blue-700 transition duration-300">
+        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
             ✖
         </button>
 
@@ -88,7 +80,7 @@
             <li class="mt-2"><a href="/work.html">W O R K</a></li>
             <li class="mt-2"><a href="/aboutus.html">A B O U T</a></li>
             <li class="mt-2"><a href="/service.html">S E R V I C E S</a></li>
-            <li class="mt-2"><a href="/team.html" >T E A M</a></li>
+            <li class="mt-2"><a href="/team.html">T E A M</a></li>
             <li class="mt-2"><a href="/contactus.html">C O N T A C T</a></li>
         </ul>
     </div>
@@ -230,9 +222,9 @@
         <a href="#" onclick="event.preventDefault();" class="flex justify-center">
             <div class="card mb-20 sm:mb-0">
                 <div class="wrapper">
-                    <img src="/MIW_Website_Assets/SD-10.png" class="title object-contain w-full h-60 sm:h-72" />
+                    <img src="/MIW_Website_Assets/SD-10.png" class="title object-contain w-full h-60 sm:h-full" />
                 </div>
-                <img src="/MIW_Website_Assets/SD-09.png" class="character w-full h-72 sm:60 pt-10" />
+                <img src="/MIW_Website_Assets/SD-09.png" class="character w-full h-72 pt-10" />
             </div>
         </a>
 
@@ -242,7 +234,7 @@
                 <div class="wrapper">
                     <img src="/MIW_Website_Assets/PS-Nandini-01png.png" class="title object-cover w-full h-72 sm:h-80" />
                 </div>
-                <img src="/MIW_Website_Assets/PS-Nandini-02.png" class="character w-full h-72 sm:60" />
+                <img src="/MIW_Website_Assets/PS-Nandini-02.png" class="character w-full h-72" />
             </div>
         </a>
 
@@ -252,12 +244,10 @@
                 <div class="wrapper">
                     <img src="/MIW_Website_Assets/Kaththi-01.png" class="title object-contain w-full sm:h-72" />
                 </div>
-                <img src="/MIW_Website_Assets/Kaththi-02.png" class="character w-full h-72 sm:58" />
+                <img src="/MIW_Website_Assets/Kaththi-02.png" class="character w-full h-72 pt-10" />
             </div>
         </a>
     </div>
-
-
     </div>
 </div>
     </section>
@@ -445,18 +435,20 @@
     <script>
         let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
-    
+
         window.addEventListener("scroll", () => {
             const currentScrollY = window.scrollY;
-    
+
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - Hide navbar
-                navbar.classList.add("-translate-y-full");
+                // Scrolling down - Hide navbar with animation
+                navbar.classList.add("-translate-y-full", "opacity-0");
+                navbar.classList.remove("opacity-100");
             } else {
-                // Scrolling up - Show navbar
-                navbar.classList.remove("-translate-y-full");
+                // Scrolling up - Show navbar with animation
+                navbar.classList.remove("-translate-y-full", "opacity-0");
+                navbar.classList.add("opacity-100");
             }
-    
+
             lastScrollY = currentScrollY;
         });
     </script>

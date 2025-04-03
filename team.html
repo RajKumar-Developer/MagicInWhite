@@ -18,7 +18,7 @@
 <body>
     
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md fixed w-full left-0 px-5 z-50">
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md transition-transform duration-500 ease-in-out opacity-100 fixed w-full left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
@@ -27,7 +27,7 @@
 
             <!-- Mobile Menu Button (Right Corner) -->
             <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
-                <img src="/png-team/hambuger.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
+                <img src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
             </button>
         </div>
     </nav>
@@ -74,57 +74,60 @@
 
 
     <!-- Individual Team Section -->
-    <section class="py-16 px-6">
-        <div class="relative max-w-4xl mx-auto">
-            <!-- Person 1 -->
-            <div class="flex items-center mb-20">
-                <div class="w-1/2 text-right pr-6">
-                    <h2 class="text-lg font-bold">GOPI PRASANNAA</h2>
-                    <p class="text-gray-600">CEO / FOUNDER</p>
-                </div>
-                <div class="relative w-1/2">
-                    <img src="/png-team/base.png" alt="Circle" class="absolute top-40 left-3 w-40 z-0">
-                    <img src="/png-team/young-dude.png" alt="Person 1" class="relative w-40 z-10">
-                </div>
+<section class="py-16 px-6">
+    <div class="relative max-w-screen-lg mx-auto">
+        <!-- Person 1 -->
+        <div class="flex flex-col-reverse sm:flex-row items-center mt-24 pb-20 gap-10 sm:gap-20 sm:mr-[38%] text-center sm:text-right">
+            <div class="w-full sm:w-1/2">
+                <h2 class="text-lg font-bold">GOPI PRASANNAA</h2>
+                <p class="text-gray-600">CEO / FOUNDER</p>
             </div>
-
-            <!-- Person 2 -->
-            <div class="flex items-center justify-end mb-20">
-                <div class="relative w-1/2">
-                    <img src="/png-team/base.png" alt="Circle" class="absolute top-56 left-6 w-40 z-0">
-                    <img src="/png-team/beard-dude.png" alt="Person 2" class="relative w-40 z-10">
-                </div>
-                <div class="w-1/2 pl-6">
-                    <h2 class="text-lg font-bold">S V UDAYAKUMAR</h2>
-                    <p class="text-gray-600">CREATIVE DIRECTOR</p>
-                </div>
-            </div>
-
-            <!-- Person 3 -->
-            <div class="flex items-center mb-20">
-                <div class="w-1/2 text-right pr-6">
-                    <h2 class="text-lg font-bold">GOPI PRASANNAA</h2>
-                    <p class="text-gray-600">CEO / FOUNDER</p>
-                </div>
-                <div class="relative w-1/2">
-                    <img src="/png-team/base.png" alt="Circle" class="absolute top-56 left-0 w-40 z-0">
-                    <img src="/png-team/girl.png" alt="Person 3" class="relative w-40 left-6 z-10">
-                </div>
-            </div>
-
-            <!-- Person 4 -->
-            <div class="flex items-center justify-end">
-                <div class="relative w-1/2">
-                    <img src="/png-team/base.png" alt="Circle" class="absolute top-16 left-0 w-40 z-0">
-                    <img src="/png-team/specs-dude.png" alt="Person 4" class="relative w-40 z-10">
-                </div>
-                <div class="w-1/2 pl-6">
-                    <h2 class="text-lg font-bold">S V UDAYAKUMAR</h2>
-                    <p class="text-gray-600">CREATIVE DIRECTOR</p>
-                </div>
+            <div class="relative w-full sm:w-1/2 flex justify-center sm:block">
+                <img src="/png-team/base.png" alt="Circle" class="absolute top-10 sm:top-20 left-30 sm:-left-10  w-40 sm:w-56 -z-10">
+                <img src="/png-team/specs-dude.png" alt="Person 1" class="relative w-32 sm:w-40 z-10">
             </div>
         </div>
-    </section>
+
+        <!-- Person 2 -->
+        <div class="flex flex-col-reverse sm:flex-row-reverse items-center justify-center sm:justify-end gap-10 sm:gap-20 sm:ml-[50%] text-center sm:text-left">
+            <div class="w-full sm:w-1/2">
+                <h2 class="text-lg font-bold">S V UDAYAKUMAR</h2>
+                <p class="text-gray-600">CREATIVE DIRECTOR</p>
+            </div>
+            <div class="relative w-full sm:w-1/2 flex justify-center sm:block">
+                <img src="/png-team/base.png" alt="Circle" class="absolute top-32 sm:top-40 left-15 sm:left-0 w-40 sm:w-56 -z-10">
+                <img src="/png-team/beard-dude.png" alt="Person 2" class="relative w-32 sm:w-40 z-10">
+            </div>
+            
+        </div>
+
+        <!-- Person 3 -->
+        <div class="flex flex-col-reverse sm:flex-row items-center mb-20 gap-10 sm:gap-20 sm:mr-[45%] text-center sm:text-right">
+            <div class="w-full sm:w-1/2">
+                <h2 class="text-lg font-bold">GOPI PRASANNAA</h2>
+                <p class="text-gray-600">CEO / FOUNDER</p>
+            </div>
+            <div class="relative w-full sm:w-1/2 flex justify-center sm:block">
+                <img src="/png-team/base.png" alt="Circle" class="absolute top-28 sm:top-36 left-25 sm:left-0 w-40 sm:w-56 -z-10">
+                <img src="/png-team/young-dude.png" alt="Person 3" class="relative w-32 sm:w-40 left-2 sm:left-6 z-10">
+            </div>
+        </div>
+
+        <!-- Person 4 -->
+        <div class="flex flex-col-reverse sm:flex-row-reverse items-center justify-center sm:justify-end sm:ml-[58%] text-center sm:text-left">
+            <div class="w-full sm:w-1/2">
+                <h2 class="text-lg font-bold">S V UDAYAKUMAR</h2>
+                <p class="text-gray-600">CREATIVE DIRECTOR</p>
+            </div>
+            <div class="relative w-full sm:w-1/2 flex justify-center sm:block">
+                <img src="/png-team/base.png" alt="Circle" class="absolute top-32 sm:top-44 left-14 sm:-left-4 sm:-left-10 w-40 sm:w-56 -z-10">
+                <img src="/png-team/girl.png" alt="Person 4" class="relative w-32 sm:w-40 z-10">
+            </div>
+            
+        </div>
+    </div>
+</section>
+
 
     <!--whole team-->
     <section class="flex items-end justify-center py-40 min-h-1/2">
@@ -220,20 +223,22 @@
     </section>
 
     <script>
-        let lastScrollY = window.scrollY;
+         let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
-    
+
         window.addEventListener("scroll", () => {
             const currentScrollY = window.scrollY;
-    
+
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - Hide navbar
-                navbar.classList.add("-translate-y-full");
+                // Scrolling down - Hide navbar with animation
+                navbar.classList.add("-translate-y-full", "opacity-0");
+                navbar.classList.remove("opacity-100");
             } else {
-                // Scrolling up - Show navbar
-                navbar.classList.remove("-translate-y-full");
+                // Scrolling up - Show navbar with animation
+                navbar.classList.remove("-translate-y-full", "opacity-0");
+                navbar.classList.add("opacity-100");
             }
-    
+
             lastScrollY = currentScrollY;
         });
 

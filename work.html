@@ -12,20 +12,32 @@
         body{
             font-family: 'Lato',sans-serif;
         }
+         .parallax {
+            transition: transform 0.3s ease-out;
+        }
+        .parallax:hover {
+            transform: scale(1.05);
+        }
+
+        /* Scroll Parallax */
+        .parallax-scroll {
+            transform: translateY(0px);
+            transition: transform 0.2s ease-out;
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md fixed w-full top-0 left-0 px-5 z-50">
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md sm:shadow-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
-                <img src="/about-assets/logo.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
+                <img src="/work assets/logo.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
             </div>
 
             <!-- Mobile Menu Button (Right Corner) -->
             <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
-                <img src="/about-assets/burger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
+                <img src="/work assets/burger menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
             </button>
         </div>
     </nav>      
@@ -39,10 +51,10 @@
         <!-- Menu Items -->
         <ul class="text-center leading-[2.5rem]">
             <li class="mt-2"><a href="/index.html">H O M E</a></li>
-            <li class="mt-2"><a href="/work.html">W O R K</a></li>
-            <li class="mt-2"><a href="/aboutus.html" class="font-bold text-blue-900">A B O U T</a></li>
+            <li class="mt-2"><a href="/work.html" class="font-bold text-blue-900">W O R K</a></li>
+            <li class="mt-2"><a href="/aboutus.html" >A B O U T</a></li>
             <li class="mt-2"><a href="/service.html">S E R V I C E S</a></li>
-            <li class="mt-2"><a href="/team.html">T E A M</a></li>
+            <li class="mt-2"><a href="/team.html" >T E A M</a></li>
             <li class="mt-2"><a href="/contactus.html">C O N T A C T</a></li>
         </ul>
     </div>
@@ -50,29 +62,30 @@
     <!--Main Content-->
     <section class="flex items-center justify-center h-[70dvh] px-6 md:px-12 bg-[#ffffff] w-full">
         <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl">
-          <!-- Logo Section -->
-          <div class="w-full md:w-1/2 flex justify-center mt-6 md:mt-0">
-            <img src="/MIW_Website_Assets/Magicinwhite_logo_Main.png" alt="Magic White Logo" class="h-70 w-40 md:w-72">
-          </div>
-      
-          <!-- Text Section -->
-          <div class="w-full md:w-1/2 text-center md:text-left py-10">
-            <h1 class="lato-font text-[88px] text-[#00001b] font-light tracking-wide sm:text-[58px] md:text-[58px] leading-tight md:text-left">
-              OUR  WORK
-            </h1>
-            <p class="lato-font md:text-lg mt-4 text-[#00001b] md:text-left">
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nunc felis. 
-                Morbi dui turpis, facilisis vitae ullam sit amet, bibendum bibendum dui. 
-                Etiam volut eu est ut viverra. Mattis non magna sit amet, blandit sceler nibh. 
-                Praesent vitae purus ut elit ultricies finibus eu ut dui. Cras non laoreet augue. Morbi.
-            </p>
-          </div>
+            <!-- Logo Section -->
+            <div class="w-full md:w-[40%] flex justify-center">
+                <img src="/work assets/logo-header.png" alt="Magic White Logo" class="h-[180px] md:h-[260px] w-auto">
+            </div>
+    
+            <!-- Text Section -->
+            <div class="w-full md:w-[60%] text-center md:text-left">
+                <h1 class="lato-font text-[60px] md:text-[72px] text-[#00001b] font-light tracking-wide leading-tight">
+                    OUR WORK
+                </h1>
+                <p class="lato-font md:text-lg mt-4 text-[#00001b] max-w-[450px]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nunc felis. 
+                    Morbi dui turpis, facilisis vitae ullam sit amet, bibendum bibendum dui. 
+                    Etiam volut eu est ut viverra. Mattis non magna sit amet, blandit sceler nibh. 
+                    Praesent vitae purus ut elit ultricies finibus eu ut dui. Cras non laoreet augue. Morbi.
+                </p>
+            </div>
         </div>
     </section>
     
+    
     <!--image bento grid-->
     <section class="h-auto w-full mx-auto">
-        <div class="grid grid-cols-4 grid-rows-16 gap-4 px-4 py-4">
+        <div class="grid grid-cols-4 grid-rows-16 gap-2 sm:gap-4 px-2 sm:px-4 py-4">
             <div class="col-span-2 row-span-2 overflow-hidden">
                 <img src="/MIW_Website_Assets/Poss_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Image 1">
             </div>
@@ -226,20 +239,22 @@
         });
     </script>
     <script>
-        let lastScrollY = window.scrollY;
+         let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
-    
+
         window.addEventListener("scroll", () => {
             const currentScrollY = window.scrollY;
-    
+
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - Hide navbar
-                navbar.classList.add("-translate-y-full");
+                // Scrolling down - Hide navbar with animation
+                navbar.classList.add("-translate-y-full", "opacity-0");
+                navbar.classList.remove("opacity-100");
             } else {
-                // Scrolling up - Show navbar
-                navbar.classList.remove("-translate-y-full");
+                // Scrolling up - Show navbar with animation
+                navbar.classList.remove("-translate-y-full", "opacity-0");
+                navbar.classList.add("opacity-100");
             }
-    
+
             lastScrollY = currentScrollY;
         });
 
@@ -257,5 +272,15 @@
         window.addEventListener("load", updatePlaceholder);
         window.addEventListener("resize", updatePlaceholder);
     </script> 
+     <!-- <script>
+        // Scroll-Based Parallax Effect
+        window.addEventListener("scroll", function() {
+            document.querySelectorAll(".parallax-scroll").forEach(img => {
+                let speed = img.getAttribute("data-speed");
+                let offset = window.scrollY * (speed / 10);
+                img.style.transform = `translateY(${offset}px)`;
+            });
+        });
+    </script> -->
 </body>
 </html>

@@ -17,7 +17,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md sm:shadow-none fixed w-full top-0 left-0 px-5 z-50">
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md sm:shadow-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
@@ -51,12 +51,12 @@
     </div>
 
     <!--contact design section-->
-    <section class="w-full h-screen flex items-center justify-center bg-gray-100">
-        <div class="w-[80%] h-auto sm:h-[80%] flex border relative shadow-xl bg-white 
+    <section class="w-full h-screen flex items-center justify-center bg-white">
+        <div class="w-[80%] h-auto sm:h-[80%] flex border relative shadow-2xl bg-white 
                     flex-col md:flex-row">
             
             <!-- Left Side (SVG Image) -->
-            <div class="md:w-1/2 flex items-center px-10 md:px-2 py-6 md:py-32 justify-center">
+            <div class="md:w-1/2 flex items-center px-10 md:px-12 py-6 md:py-28 justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_4" data-name="Layer 4" viewBox="0 0 265.92 225">
                     <defs>
                         <style>
@@ -149,7 +149,7 @@
             </div>
             
             <!-- Vertical Line (Hidden on Small Screens) -->
-            <div class="hidden md:block absolute left-1/2 top-24 bottom-24 w-[0.10rem] bg-[#272cf7]"></div>
+            <div class="hidden md:block absolute left-1/2 top-24 bottom-24 w-[0.05rem] bg-[#272cf7]"></div>
             
             <!-- Right Side (Form) -->
             <div class="md:w-1/2 p-6 sm:p-10  flex flex-col justify-center relative">
@@ -584,20 +584,22 @@
 });
     </script>
     <script>
-        let lastScrollY = window.scrollY;
+         let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
-    
+
         window.addEventListener("scroll", () => {
             const currentScrollY = window.scrollY;
-    
+
             if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - Hide navbar
-                navbar.classList.add("-translate-y-full");
+                // Scrolling down - Hide navbar with animation
+                navbar.classList.add("-translate-y-full", "opacity-0");
+                navbar.classList.remove("opacity-100");
             } else {
-                // Scrolling up - Show navbar
-                navbar.classList.remove("-translate-y-full");
+                // Scrolling up - Show navbar with animation
+                navbar.classList.remove("-translate-y-full", "opacity-0");
+                navbar.classList.add("opacity-100");
             }
-    
+
             lastScrollY = currentScrollY;
         });
     </script>
