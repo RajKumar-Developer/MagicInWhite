@@ -87,8 +87,9 @@
 
 
     <!-- Main Image Section with Parallax Effect -->
-    <section class="h-[96dvh] w-[100%] bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: url('/services-assets/Services-Header.png');">
+    <section class="h-screen w-full md:bg-cover bg-center bg-fixed bg-no-repeat" style="background-image: url('/services-assets/Services-Header-center.png');">
     </section>
+		
     <!-- <section class="h-[96dvh] relative overflow-hidden">
         <img src="/services-assets/Services-Header.png" 
              class="w-full h-full object-contain" 
@@ -354,9 +355,9 @@
        gsap.utils.toArray('.posters').forEach((poster) => {
         gsap.fromTo(
             poster.querySelector('img'),
-            { y: -10, scale: 1.1 }, // Start position and slight scale
+            { y: -15, scale: 1.1 }, // Start position and slight scale
             {
-                y: 10,
+                y: 15,
                 scale: 1.1, // Maintain slight scale to cover gaps
                 scrollTrigger: {
                     trigger: poster,
