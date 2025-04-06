@@ -47,10 +47,12 @@
             left: 0;
             right: 0;
             bottom: 0;
+            will-change: transform;
+            transform: translateZ(0);
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
     <!-- Navbar -->
     <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md sm:shadow-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
@@ -350,25 +352,25 @@
     window.addEventListener("load", updatePlaceholder);
     window.addEventListener("resize", updatePlaceholder);
     </script>    
-    <script>
-       gsap.utils.toArray('.posters').forEach((poster) => {
-    gsap.fromTo(
+   <script>
+    gsap.utils.toArray('.posters').forEach((poster) => {
+      gsap.fromTo(
         poster.querySelector('img'),
-        { y: -25, scale: 1.1 },
+        { y: -50, scale: 1.1 }, // stronger parallax start position
         {
-            y: 25,
-            scale: 1.1,
-            ease: "none",
-            scrollTrigger: {
-                trigger: poster,
-                start: 'top 100%',   // When poster's top hits bottom of viewport
-                end: 'bottom 0%',    // When poster's bottom hits top of viewport
-                scrub: true,         // 👈 attaches animation to scroll position
-            }
+          y: 50,
+          scale: 1.1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: poster,
+            start: 'top bottom',   // when top of poster hits bottom of viewport
+            end: 'bottom top',     // when bottom of poster hits top of viewport
+            scrub: true,           // ties animation to scroll
+          }
         }
-    );
-});
-
-    </script>
+      );
+    });
+  </script>
+  
 </body>
 </html>

@@ -15,7 +15,7 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
     
     <!-- Navbar -->
     <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md transition-transform duration-500 ease-in-out opacity-100 fixed w-full left-0 px-5 z-50">
@@ -129,12 +129,36 @@
 </section>
 
 
-    <!--whole team-->
-    <section class="flex items-end justify-center py-40 min-h-1/2">
-        <div class="max-w-4xl mx-auto">
-            <img src="/png-team/Team.png" alt="Group Photo" class="w-full h-auto object-contain">
+   <!-- whole team -->
+<section class="flex items-end justify-center py-40 min-h-1/2">
+    <div class="max-w-4xl mx-auto relative">
+      <!-- Group Photo -->
+      <img src="/png-team/Team.png" alt="Group Photo" class="w-full h-auto object-contain">
+  
+      <!-- Person 1 (e.g., Gopi Prasannaa) -->
+      <div class="absolute left-[45%] top-[10%] w-[5%] h-[40%] group">
+        <div class="absolute -top-60 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-center">
+          <div class="bg-transparent text-black text-xs px-2 py-1 rounded shadow-lg">
+            Gopi Prasannaa<br>
+            <span class="text-gray-600 text-[10px]">Creative Director</span>
+          </div>
         </div>
-    </section>
+      </div>
+  
+      <!-- Person 2 -->
+      <div class="absolute left-[20%] top-[15%] w-[5%] h-[40%] group">
+        <div class="absolute -top-60 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-center">
+          <div class="bg-transparent text-black text-xs px-2 py-1 rounded shadow-lg">
+            S V UDAYAKUMAR<br>
+            <span class="text-gray-600 text-[10px]">CREATIVE DIRECTOR</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Add more people here -->
+    </div>
+  </section>
+  
 
     <!--Footer-->
     <section class="min-h-1/2 flex flex-col justify-center items-center bg-[#ffd628] text-white text-center p-10">
