@@ -17,7 +17,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md sm:shadow-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
@@ -52,11 +52,11 @@
 
     <!--contact design section-->
     <section class="w-full h-screen flex items-center justify-center bg-white">
-        <div class="w-[80%] h-auto sm:h-[80%] flex border relative shadow-2xl bg-white 
-                    flex-col md:flex-row">
+        <div class="w-[95%] h-auto sm:h-[80%] flex border relative shadow-2xl bg-white 
+                    flex-col md:flex-row pt-8 sm:pt-0">
             
             <!-- Left Side (SVG Image) -->
-            <div class="md:w-1/2 flex items-center px-10 md:px-12 py-6 md:py-28 justify-center">
+            <div class="md:w-1/2 flex items-center px-10 md:px-12 py-6 md:py-28 justify-center border-b-2 border-dotted border-gray-400 sm:border-0" style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
                 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_4" data-name="Layer 4" viewBox="0 0 265.92 225">
                     <defs>
                         <style>
@@ -155,14 +155,14 @@
             <div class="md:w-1/2 p-6 sm:p-10  flex flex-col justify-center relative">
                 <!-- Header with Logo -->
                 <div class="flex items-center justify-between">
-                    <h1 class="text-3xl md:text-4xl leading-relaxed font-light text-[#272cf7]">L E T S <br> T A L K</h1>
+                    <h1 class="text-2xl md:text-4xl leading-relaxed font-light text-[#272cf7]">L E T S <br> T A L K</h1>
                     <img src="/contactpage_assets/stamp.png" alt="Logo" class="w-16 md:w-24">
                 </div>
                 
                 <!-- Form Section -->
                 <form class="mt-10 md:mt-24 space-y-6 md:space-y-10">
                     <!-- Name Field -->
-                    <div>
+                    <div class=" pt-5 sm:pt-0">
                         <input type="text" name="name" placeholder="NAME" 
                             class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" 
@@ -171,7 +171,7 @@
                     </div>
     
                     <!-- Email Field -->
-                    <div>
+                    <div class=" pt-5 sm:pt-0">
                         <input type="email" name="email" placeholder="EMAIL ADDRESS" 
                             class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" 
@@ -180,8 +180,8 @@
                     </div>
     
                     <!-- Message Field -->
-                    <div>
-                        <textarea name="message" rows="2" placeholder="YOUR MESSAGE FOR US" 
+                    <div class=" pt-5 sm:pt-0">
+                        <textarea name="message" rows="1" placeholder="YOUR MESSAGE FOR US" 
                             class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" 
                             required></textarea>
@@ -189,7 +189,7 @@
                     </div>
     
                     <!-- Send Button -->
-                    <div class="mt-6 md:mt-10 flex justify-end">
+                    <div class="mt-6 md:mt-10 flex justify-end pt-5 sm:pt-0">
                         <button type="submit">
                             <img src="/contactpage_assets/send-button.png" alt="Send Button" class="w-20 md:w-24">
                         </button>
