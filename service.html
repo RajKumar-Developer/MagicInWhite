@@ -96,7 +96,7 @@
       </section> -->
 
    <!-- Grid Layout -->
-   <section class="grid grid-cols-7 grid-rows-12">
+   <section class="grid grid-cols-7 grid-rows-12 min-h-[200vh]">
     <!-- Content 1 -->
     <div class="col-span-4 row-span-2 bg-green-500 px-4 md:px-6 lg:px-8 text-white flex items-center justify-center">
         <div class="text-left custom-width">
@@ -352,21 +352,23 @@
     </script>    
     <script>
        gsap.utils.toArray('.posters').forEach((poster) => {
-        gsap.fromTo(
-            poster.querySelector('img'),
-            { y: -20, scale: 1.1 }, // Start position and slight scale
-            {
-                y: 20,
-                scale: 1.1, // Maintain slight scale to cover gaps
-                scrollTrigger: {
-                    trigger: poster,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: true,
-                },
+    gsap.fromTo(
+        poster.querySelector('img'),
+        { y: -25, scale: 1.1 },
+        {
+            y: 25,
+            scale: 1.1,
+            ease: "none",
+            scrollTrigger: {
+                trigger: poster,
+                start: 'top 100%',   // When poster's top hits bottom of viewport
+                end: 'bottom 0%',    // When poster's bottom hits top of viewport
+                scrub: true,         // 👈 attaches animation to scroll position
             }
-        );
-    });
+        }
+    );
+});
+
     </script>
 </body>
 </html>
