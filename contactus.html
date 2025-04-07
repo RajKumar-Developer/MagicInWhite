@@ -52,11 +52,13 @@
 
     <!--contact design section-->
     <section class="w-full h-screen flex items-center justify-center bg-white">
-        <div class="w-[95%] h-auto sm:h-[80%] flex border relative shadow-2xl bg-white 
-                    flex-col md:flex-row pt-8 sm:pt-0">
+        <div class="post-card mx-auto border shadow-2xl bg-white relative 
+            flex flex-col md:flex-row
+            w-[95%] md:w-[720px] lg:w-[960px] xl:w-[1320px]
+            h-auto md:h-[550px] xl:h-[650px] overflow-hidden">
             
             <!-- Left Side (SVG Image) -->
-            <div class="md:w-1/2 flex items-center px-10 md:px-16 py-6 md:py-32 sm:px-16 sm:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0" style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
+            <div class="md:w-1/2 flex items-center px-10 py-6 md:px-12 md:py-24 xl:px-16 xl:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0" style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
                 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_4" data-name="Layer 4" viewBox="0 0 265.92 225">
                     <defs>
                         <style>
@@ -149,8 +151,10 @@
             </div>
             
             <!-- Vertical Dotted Line (Hidden on Small Screens) -->
-            <div class="hidden md:block absolute left-1/2 top-24 bottom-24 border-l border-dotted border-[#272cf7]"></div>
-
+            <div class="hidden md:block absolute left-1/2 top-24 bottom-24 border-l-2 border-dotted border-transparent"
+            style="border-image: repeating-linear-gradient(to bottom, #000000 0, #000000 1px, transparent 1px, transparent 7px) 1 100%;">
+            </div>
+   
             <!-- Right Side (Form) -->
             <div class="md:w-1/2 p-6 sm:p-10  flex flex-col justify-center relative">
                 <!-- Header with Logo -->
@@ -167,7 +171,8 @@
                             class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" 
                             required>
-                            <div class="w-full border-b border-dotted border-[#272cf7]"></div>
+                            <div class="w-full border-b-2 border-dotted border-gray-600">
+                            </div>
                         </div>
     
                     <!-- Email Field -->
@@ -176,7 +181,8 @@
                             class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" 
                             required>
-                            <div class="w-full border-b border-dotted border-[#272cf7]"></div>
+                            <div class="w-full border-b-2 border-dotted border-gray-600">
+                            </div>
                         </div>
     
                     <!-- Message Field -->
@@ -185,7 +191,8 @@
                             class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" 
                             required></textarea>
-                            <div class="w-full border-b border-dotted border-[#272cf7]"></div>
+                            <div class="w-full border-b-2 border-dotted border-gray-600">
+                            </div>
                         </div>
     
                     <!-- Send Button -->
