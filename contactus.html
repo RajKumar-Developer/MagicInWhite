@@ -148,9 +148,9 @@
                 </svg>
             </div>
             
-            <!-- Vertical Line (Hidden on Small Screens) -->
-            <div class="hidden md:block absolute left-1/2 top-24 bottom-24 w-[0.05rem] bg-[#272cf7]"></div>
-            
+            <!-- Vertical Dotted Line (Hidden on Small Screens) -->
+            <div class="hidden md:block absolute left-1/2 top-24 bottom-24 border-l border-dotted border-[#272cf7]"></div>
+
             <!-- Right Side (Form) -->
             <div class="md:w-1/2 p-6 sm:p-10  flex flex-col justify-center relative">
                 <!-- Header with Logo -->
@@ -167,8 +167,8 @@
                             class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" 
                             required>
-                        <img src="/contactpage_assets/horizontal-rec.png" alt="Underline" class="w-full">
-                    </div>
+                            <div class="w-full border-b border-dotted border-[#272cf7]"></div>
+                        </div>
     
                     <!-- Email Field -->
                     <div class=" pt-5 sm:pt-0">
@@ -176,8 +176,8 @@
                             class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" 
                             required>
-                        <img src="/contactpage_assets/horizontal-rec.png" alt="Underline" class="w-full">
-                    </div>
+                            <div class="w-full border-b border-dotted border-[#272cf7]"></div>
+                        </div>
     
                     <!-- Message Field -->
                     <div class=" pt-5 sm:pt-0">
@@ -185,8 +185,8 @@
                             class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" 
                             required></textarea>
-                        <img src="/contactpage_assets/horizontal-rec.png" alt="Underline" class="w-full">
-                    </div>
+                            <div class="w-full border-b border-dotted border-[#272cf7]"></div>
+                        </div>
     
                     <!-- Send Button -->
                     <div class="mt-6 md:mt-10 flex justify-end pt-5 sm:pt-0">
@@ -602,6 +602,7 @@
 
             lastScrollY = currentScrollY;
         });
+
     </script>
 </body>
 </html>
