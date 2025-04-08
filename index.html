@@ -209,7 +209,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <button class="mt-6 bg-pink-500 px-8 py-3 text-white font-semibold hover:bg-pink-600 transition-all shadow-lg"
-                onclick="navigateToGallery()">
+                onclick="window.location.href='/work.html'">
                 CLICK FOR MORE
             </button>
         </div>
@@ -264,6 +264,9 @@
               <br><br>
               This futuristic bangle-style iPod featured touch-sensitive controls, virtual earphones, and an adjustable fit, redefining personal audio experiences.
             </p>
+            <button class="bg-black mt-4 sm:mt-10 border border-white px-6 py-3 text-lg text-white font-semibold" onclick="window.location.href='/work.html'">
+                 CLICK FOR MORE
+            </button>
           </div>
       
           <!-- Image (Bottom-Right) -->
@@ -315,8 +318,8 @@
     
     <!-- Bottom Horse Animation Section -->
     <div class="bg-white relative w-full flex items-center justify-center overflow-hidden h-[40dvh] hidden sm:flex">
-        <div class="absolute inset-0">
-            <img src="/MIW_Website_Assets/Horse_Game_BG.png" alt="Path Background" class="w-full h-full object-cover">
+        <div class="absolute bottom-5">
+            <img src="/MIW_Website_Assets/Horse_Game_BG.png" alt="Path Background" class="w-full h-full object-contain">
         </div>
 
         <!-- Horse (Fixed: Applied absolute positioning to the container) -->
@@ -325,17 +328,18 @@
         </div>
 
         <!-- Obstacle -->
-        <div id="obstacle" class="absolute bottom-0 right-0 bg-red-500 w-[30px] h-[50px]"></div>
+        <!-- <div id="obstacle" class="absolute bottom-0 right-0 bg-red-500 w-[30px] h-[50px]"></div> -->
 
         <!-- Score -->
-        <p id="score" class="absolute top-5 left-5 text-lg font-bold text-gray-700">play by enter button</p>
+        <!-- <p id="score" class="absolute top-5 left-5 text-lg font-bold text-gray-700">play by enter button</p> -->
 
         <!-- Play Button -->
         <div class="absolute top-10 right-10 sm:right-20 md:right-32 flex items-center gap-4">
-            <img src="/MIW_Website_Assets/Play_button_Game.png" alt="Play" class="w-12 sm:w-16 md:w-20 cursor-pointer" id="play-button">
+            <img src="/MIW_Website_Assets/Play_button_Game.png" alt="Play" class="w-12 sm:w-16 cursor-pointer" id="play-button">
             <p class="text-sm sm:text-lg md:text-xl text-pink-500 font-semibold text-center sm:text-left">
-                Play is the highest form of research.
-                <span class="text-gray-600 ml-2">Albert Einstein</span>
+                Coming Soon.
+                <!-- Play is the highest form of research. -->
+                <!-- <span class="text-gray-600 ml-2">Albert Einstein</span> -->
             </p>
         </div>
     </div>
