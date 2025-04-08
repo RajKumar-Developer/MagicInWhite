@@ -18,16 +18,16 @@
 <body>
     
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none shadow-md transition-transform duration-500 ease-in-out opacity-100 fixed w-full left-0 px-5 z-50">
+    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
-                <img src="/services-assets/Logo-on-menu.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
+                <img id="logo-img" src="/services-assets/Logo-on-menu.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
             </div>
 
             <!-- Mobile Menu Button (Right Corner) -->
             <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
-                <img src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
+                <img id="menu-icon" src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
             </button>
         </div>
     </nav>
@@ -311,5 +311,120 @@
         }
     });
     </script>
+    <script>
+        // Enhanced function to check background section color and invert images if needed
+    function checkBackgroundAndInvertImages() {
+        const navbar = document.getElementById('navbar');
+        const logo = document.getElementById('logo-img');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        // Get the scroll position to determine what section we're on
+        const scrollY = window.scrollY;
+        
+        // Get elements that navbar might be overlapping
+        const sections = document.querySelectorAll('section');
+        let currentSection = null;
+        
+        // Find which section the navbar is currently overlapping
+        for (const section of sections) {
+            const rect = section.getBoundingClientRect();
+            // If the navbar is within the top portion of this section
+            if (rect.top <= 80 && rect.bottom > 0) {
+                currentSection = section;
+                break;
+            }
+        }
+        
+        // If we found a current section, get its background color
+        if (currentSection) {
+            const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
+            const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
+            
+            // Check if this is a section where we need to invert
+            if (needsInversion(sectionBgColor, sectionBgImage)) {
+                logo.style.filter = "invert(1)";
+                menuIcon.style.filter = "invert(1)";
+            } else {
+                logo.style.filter = "none";
+                menuIcon.style.filter = "none";
+            }
+        }
+    }
+    
+    // Enhanced function to determine if inversion is needed
+    function needsInversion(backgroundColor, backgroundImage) {
+        // If there's a background image that's not "none", we might need special handling
+        const hasBackgroundImage = backgroundImage && backgroundImage !== "none";
+        
+        // Get the logo and menu icon color (you may need to define these explicitly)
+        // For example, if your logo is black (#000000) or close to it:
+        const logoColor = { r: 0, g: 0, b: 0 }; // Assuming black logo
+        
+        // Parse the backgroundColor to get RGB values
+        const rgbValues = backgroundColor.match(/\d+/g);
+        
+        if (!rgbValues || rgbValues.length < 3) {
+            // If we can't parse the color, default behavior based on section
+            return hasBackgroundImage || isKnownDarkSection(backgroundColor);
+        }
+        
+        const r = parseInt(rgbValues[0]);
+        const g = parseInt(rgbValues[1]);
+        const b = parseInt(rgbValues[2]);
+        
+        // Calculate color similarity between background and logo
+        const colorSimilarity = calculateColorSimilarity(
+            { r, g, b },
+            logoColor
+        );
+        
+        // Calculate the perceived brightness
+        const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
+        
+        // If colors are similar OR background is dark, invert
+        return colorSimilarity > 85 || brightness < 128;
+    }
+    
+    // Calculate how similar two colors are (0-100%)
+    function calculateColorSimilarity(color1, color2) {
+        // Calculate the Euclidean distance in RGB space
+        const distance = Math.sqrt(
+            Math.pow(color1.r - color2.r, 2) +
+            Math.pow(color1.g - color2.g, 2) +
+            Math.pow(color1.b - color2.b, 2)
+        );
+        
+        // Convert to a similarity percentage (0-100)
+        // Max distance in RGB space is √(255² + 255² + 255²) ≈ 441.7
+        return 100 - (distance / 441.7 * 100);
+    }
+    
+    // Helper function for known dark sections
+    function isKnownDarkSection(backgroundColor) {
+        // List of sections we know should have inverted logo/menu
+        const darkSectionColors = [
+            "rgb(34, 38, 247)",    // Blue section (#2226f7)
+            "rgb(0, 0, 0)",        // Black section
+            "rgb(34, 34, 34)"      // Dark gray section
+        ];
+        
+        return darkSectionColors.includes(backgroundColor);
+    }
+    
+    // Run on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        checkBackgroundAndInvertImages();
+        
+        // Run when scrolling
+        window.addEventListener('scroll', checkBackgroundAndInvertImages);
+        
+        // Run on window resize
+        window.addEventListener('resize', checkBackgroundAndInvertImages);
+        
+        // Observe changes to the navbar element
+        const observer = new MutationObserver(checkBackgroundAndInvertImages);
+        observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
+    });
+        </script>
 </body>
 </html>
