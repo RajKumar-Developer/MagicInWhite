@@ -221,9 +221,9 @@
 
     <!-- Work details popup -->
 
-    <div id="work-details-popup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center">
+    <!-- <div id="work-details-popup" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-start justify-center">
         <div class="relative bg-white rounded-lg w-[90%] h-screen px-8 overflow-y-auto mt-16 no-scrollbar">
-            <!-- Title and Close Button -->
+
             <div class="flex justify-between items-center mb-6 mt-4">
                 <h2 class="text-2xl font-bold" id="details-pop-header"></h2>
 
@@ -234,9 +234,30 @@
             <p class="text-gray-600 mt-2 mb-4" id="details-pop-desc">
 
             </p>
-            <!-- Image List -->
+
             <div class="space-y-8" id="details-pop-img-contents">
-                <!-- <img src="/FINAL/TheRoute/ROUTE-02.jpg" alt="Image 1" class="w-full h-auto rounded-md"> -->
+
+            </div>
+        </div>
+    </div> -->
+
+
+    <div id="work-details-popup" class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16">
+
+        <div class="relative bg-white rounded-lg w-[92%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
+
+            <div class="p-6">
+                <div class="flex justify-between items-start">
+                    <h2 class="text-2xl font-bold" id="details-pop-header"></h2>
+                    <button id="closePopup" class="text-gray-500 text-4xl hover:text-red-500">&times;</button>
+                </div>
+
+                <p class="text-gray-600 mt-2 " id="details-pop-desc">
+
+                </p>
+            </div>
+
+            <div class="space-y-8 px-6 pb-6" id="details-pop-img-contents">
             </div>
         </div>
     </div>
