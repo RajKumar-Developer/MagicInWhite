@@ -380,19 +380,27 @@ style="background-image: url('/services-assets/services-header-mobile.png');">
     window.addEventListener("resize", updatePlaceholder);
     </script>    
     <script>
-       gsap.utils.toArray('.posters').forEach((poster) => {
+      gsap.utils.toArray('.posters').forEach((poster) => {
+    // Calculate a movement amount based on the element's height
+    // This helps to scale the effect appropriately
+    const posterHeight = poster.offsetHeight;
+    const movementAmount = posterHeight * 0.05; // 10% of the element's height
+    
     gsap.fromTo(
         poster.querySelector('img'),
-        { y: -25, scale: 1.1 },
+        { 
+            y: -movementAmount, 
+            scale: 1.1  // Scale up to cover potential blank spaces
+        },
         {
-            y: 25,
-            scale: 1.1,
+            y: movementAmount,
+            scale: 1.1, // Keep consistent scale throughout
             ease: "none",
             scrollTrigger: {
                 trigger: poster,
-                start: 'top 100%',   // When poster's top hits bottom of viewport
-                end: 'bottom 0%',    // When poster's bottom hits top of viewport
-                scrub: true,         // 👈 attaches animation to scroll position
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 0.8,     // Smooth delay but not too much
             }
         }
     );
