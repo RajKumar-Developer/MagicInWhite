@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/icon.png" />
@@ -9,12 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body{
-            font-family: 'Lato',sans-serif;
+        body {
+            font-family: 'Lato', sans-serif;
         }
-         .parallax {
+
+        .parallax {
             transition: transform 0.3s ease-out;
         }
+
         .parallax:hover {
             transform: scale(1.05);
         }
@@ -24,27 +27,46 @@
             transform: translateY(0px);
             transition: transform 0.2s ease-out;
         }
+
+        /* Hide scrollbar but keep scrolling functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Edge */
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            scrollbar-width: none;
+            /* Firefox */
+        }
     </style>
 </head>
+
 <body oncontextmenu="return false;">
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
+    <nav id="navbar"
+        class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
-                <img id="logo-img" src="/work assets/logo.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
+                <img id="logo-img" src="/work assets/logo.png" alt="logo"
+                    class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
             </div>
 
             <!-- Mobile Menu Button (Right Corner) -->
             <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
-                <img id="menu-icon" src="/work assets/burger menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
+                <img id="menu-icon" src="/work assets/burger menu.png" alt="nav button"
+                    class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
             </button>
         </div>
-    </nav>      
+    </nav>
     <!-- Mobile Popup Menu (Overlay) -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
+    <div id="mobile-menu"
+        class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
         <!-- Close Button -->
-        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
+        <button id="close-menu"
+            class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
             ✖
         </button>
 
@@ -52,9 +74,9 @@
         <ul class="text-center leading-[2.5rem]">
             <li class="mt-2"><a href="/index.html">H O M E</a></li>
             <li class="mt-2"><a href="/work.html" class="font-bold text-blue-900">W O R K</a></li>
-            <li class="mt-2"><a href="/aboutus.html" >A B O U T</a></li>
+            <li class="mt-2"><a href="/aboutus.html">A B O U T</a></li>
             <li class="mt-2"><a href="/service.html">S E R V I C E S</a></li>
-            <li class="mt-2"><a href="/team.html" >T E A M</a></li>
+            <li class="mt-2"><a href="/team.html">T E A M</a></li>
             <li class="mt-2"><a href="/contactus.html">C O N T A C T</a></li>
         </ul>
     </div>
@@ -66,203 +88,467 @@
             <div class="w-full pb-16 sm:pb-0 md:w-[40%] flex justify-center">
                 <img src="/work assets/logo-header.png" alt="Magic White Logo" class="h-[180px] md:h-[260px] w-auto">
             </div>
-    
+
             <!-- Text Section -->
             <div class="w-full sm:w-[60%] text-center md:text-left">
-                <h1 class="lato-font text-[54px] md:text-[54px] sm:text-[72px] text-[#00001b] font-light tracking-wide leading-tight">
+                <h1
+                    class="lato-font text-[54px] md:text-[54px] sm:text-[72px] text-[#00001b] font-light tracking-wide leading-tight">
                     OUR WORK
                 </h1>
                 <p class="lato-font md:text-lg mt-4 text-[#00001b] max-w-[450px]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nunc felis. 
-                    Morbi dui turpis, facilisis vitae ullam sit amet, bibendum bibendum dui. 
-                    Etiam volut eu est ut viverra. Mattis non magna sit amet, blandit sceler nibh. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nunc felis.
+                    Morbi dui turpis, facilisis vitae ullam sit amet, bibendum bibendum dui.
+                    Etiam volut eu est ut viverra. Mattis non magna sit amet, blandit sceler nibh.
                     Praesent vitae purus ut elit ultricies finibus eu ut dui. Cras non laoreet augue. Morbi.
                 </p>
             </div>
         </div>
     </section>
-    
-    
+
+
     <!--image bento grid-->
     <section class="h-auto w-full mx-auto">
         <div class="grid grid-cols-4 grid-rows-20 gap-2 sm:gap-4 px-2 sm:px-4 py-4">
-            <div class="col-span-2 row-span-2 overflow-hidden">
+            <div class="col-span-2 row-span-2 overflow-hidden" onclick="openModal(event, 1)">
                 <a href="/work.html/tossImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Poss_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Image 1">
+                    <img src="/MIW_Website_Assets/Poss_image_work.png"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Gourmet Salads">
                 </a>
             </div>
-            <div class="row-span-2 col-start-1 row-start-3 overflow-hidden">
+            <div class="row-span-2 col-start-1 row-start-3 overflow-hidden" onclick="openModal(event, 2)">
                 <a href="/work.html/bjImage" target="_blank">
-                    <img src="/MIW_Website_Assets/BJ_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Image 2">
+                    <img src="/MIW_Website_Assets/BJ_image_work.png"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Adidas Spain">
                 </a>
             </div>
-            <div class="row-span-2 col-start-2 row-start-3 overflow-hidden">
+            <div class="row-span-2 col-start-2 row-start-3 overflow-hidden" onclick="openModal(event, 3)">
                 <a href="/work.html/ynotImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Ynot_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="4" alt="Image 3">
+                    <img src="/MIW_Website_Assets/Ynot_image_work.png"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="4" alt="Ynot Studios">
                 </a>
             </div>
-            <div class="row-span-4 col-start-3 row-start-1 overflow-hidden">
+            <div class="row-span-4 col-start-3 row-start-1 overflow-hidden" onclick="openModal(event, 4)">
                 <a href="/work.html/rockstarImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Rockstar_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Image 4">
+                    <img src="/MIW_Website_Assets/Rockstar_image_work.png"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="3"
+                        alt="Rockstar concert">
                 </a>
             </div>
-            <div class="row-span-4 col-start-4 row-start-1 overflow-hidden">
+            <div class="row-span-4 col-start-4 row-start-1 overflow-hidden" onclick="openModal(event, 5)">
                 <a href="/work.html/dramilaImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Dramila_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="5" alt="Image 5">
+                    <img src="/MIW_Website_Assets/Dramila_image_work.png"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="5"
+                        alt="Dramila: The Kombucha Shop">
                 </a>
             </div>
-            <div class="col-span-4 row-span-4 row-start-5 overflow-hidden">
+            <div class="col-span-4 row-span-4 row-start-5 overflow-hidden" onclick="openModal(event, 6)">
                 <a href="/work.html/baskImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Bask_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Image 6">
+                    <img src="/MIW_Website_Assets/Bask_image_work.png"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Bask">
                 </a>
             </div>
-            <div class="row-span-4 row-start-9 overflow-hidden">
+            <div class="row-span-4 row-start-9 overflow-hidden" onclick="openModal(event, 7)">
                 <a href="/work.html/kolliImage" target="_blank">
-                    <img src="/FINAL/KolliHills/kolli-01.jpg" class="w-full h-full object-cover parallax parallax-scroll" data-speed="4" alt="Image 7">
+                    <img src="/FINAL/KolliHills/kolli-01.jpg"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="4"
+                        alt="KHS, kolli hills">
                 </a>
             </div>
-            <div class="row-span-2 row-start-9 overflow-hidden">
+            <div class="row-span-2 row-start-9 overflow-hidden" onclick="openModal(event, 8)">
                 <a href="/work.html/tdkfImage" target="_blank">
-                    <img src="/FINAL/TDKF/TDKF-2.jpg" class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Image 8">
+                    <img src="/FINAL/TDKF/TDKF-2.jpg" class="w-full h-full object-cover parallax parallax-scroll"
+                        data-speed="3" alt="TDKF">
                 </a>
             </div>
-            <div class="row-span-2 row-start-9 overflow-hidden">
+            <div class="row-span-2 row-start-9 overflow-hidden" onclick="openModal(event, 9)">
                 <a href="/work.html/brickhouseImage" target="_blank">
-                    <img src="/FINAL/BrickHouse/BRICK-house-02.jpg" class="w-full h-full object-cover parallax parallax-scroll" data-speed="5" alt="Image 9">
+                    <img src="/FINAL/BrickHouse/BRICK-house-02.jpg"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="5" alt="Brick House">
                 </a>
             </div>
-            <div class="col-span-2 row-span-2 col-start-2 row-start-11 overflow-hidden">
+            <div class="col-span-2 row-span-2 col-start-2 row-start-11 overflow-hidden" onclick="openModal(event, 10)">
                 <a href="/work.html/krakenImage" target="_blank">
-                    <img src="/FINAL/Kraken/kraken-1.jpg" class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Image 10">
+                    <img src="/FINAL/Kraken/kraken-1.jpg" class="w-full h-full object-cover parallax parallax-scroll"
+                        data-speed="2" alt="kraken">
                 </a>
             </div>
-            <div class="row-span-4 col-start-4 row-start-9 overflow-hidden">
+            <div class="row-span-4 col-start-4 row-start-9 overflow-hidden" onclick="openModal(event, 11)">
                 <a href="/work.html/aussiehomebakerImage" target="_blank">
-                    <img src="/FINAL/AussieHomeBaker/Aussiebaker-03.jpg" class="w-full h-full object-cover parallax parallax-scroll" data-speed="4" alt="Image 11">
+                    <img src="/FINAL/AussieHomeBaker/Aussiebaker-03.jpg"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="4"
+                        alt="aussie home baker">
                 </a>
             </div>
-            <div class="col-span-2 row-span-2 row-start-13 overflow-hidden">
+            <div class="col-span-2 row-span-2 row-start-13 overflow-hidden" onclick="openModal(event, 12)">
                 <a href="/work.html/oicImage" target="_blank">
-                    <img src="./MIW_Website_Assets/OIC_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Image 12">
+                    <img src="./MIW_Website_Assets/OIC_image_work.png"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Oic">
                 </a>
             </div>
-            <div class="col-span-2 row-span-2 col-start-1 row-start-15 overflow-hidden">
+            <div class="col-span-2 row-span-2 col-start-1 row-start-15 overflow-hidden" onclick="openModal(event, 13)">
                 <a href="/work.html/coffeeImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Coffe_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Image 13">
+                    <img src="/MIW_Website_Assets/Coffe_image_work.png"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Coffee">
                 </a>
             </div>
-            <div class="col-span-2 row-span-4 col-start-3 row-start-13 overflow-hidden">
+            <div class="col-span-2 row-span-4 col-start-3 row-start-13 overflow-hidden" onclick="openModal(event, 14)">
                 <a href="/work.html/redknotImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Redknot_image_work.png" class="w-full h-full object-cover parallax parallax-scroll" data-speed="5" alt="Image 14">
+                    <img src="/MIW_Website_Assets/Redknot_image_work.png"
+                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="5" alt="Red Knot">
                 </a>
             </div>
             <!-- New Row Start: 17 -->
-            <div class="col-span-2 row-span-4 col-start-1 row-start-17 overflow-hidden">
+            <div class="col-span-2 row-span-4 col-start-1 row-start-17 overflow-hidden" onclick="openModal(event, 15)">
                 <a href="/work.html/plantmonkImage" target="_blank">
-                    <img src="/FINAL/PlanMonk/1.jpg" class="w-full h-full object-cover parallax parallax-scroll" data-speed="5" alt="Image 14 mirrored">
+                    <img src="/FINAL/PlanMonk/1.jpg" class="w-full h-full object-cover parallax parallax-scroll"
+                        data-speed="5" alt="PlanMonk">
                 </a>
             </div>
-            <div class="col-span-2 row-span-2 col-start-3 row-start-17 overflow-hidden">
+            <div class="col-span-2 row-span-2 col-start-3 row-start-17 overflow-hidden" onclick="openModal(event, 16)">
                 <a href="/work.html/routeImage" target="_blank">
-                    <img src="/FINAL/TheRoute/ROUTE-02.jpg" class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Image 13 mirrored">
+                    <img src="/FINAL/TheRoute/ROUTE-02.jpg" class="w-full h-full object-cover parallax parallax-scroll"
+                        data-speed="2" alt="TheRoute">
                 </a>
             </div>
-            <div class="col-span-2 row-span-2 col-start-3 row-start-19 overflow-hidden">
+            <div class="col-span-2 row-span-2 col-start-3 row-start-19 overflow-hidden" onclick="openModal(event, 17)">
                 <a href="/work.html/stokerImage" target="_self">
-                    <img src="/FINAL/Stoker/stoker-1.jpg" class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Image 12 mirrored">
+                    <img src="/FINAL/Stoker/stoker-1.jpg" class="w-full h-full object-cover parallax parallax-scroll"
+                        data-speed="3" alt="Stroker">
                 </a>
             </div>
         </div>
     </section>
-    
+
+    <!-- Work details popup -->
+
+    <div id="work-details-popup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center">
+        <div class="relative bg-white rounded-lg w-[90%] h-screen px-8 overflow-y-auto mt-16 no-scrollbar">
+            <!-- Title and Close Button -->
+            <div class="flex justify-between items-center mb-6 mt-4">
+                <h2 class="text-2xl font-bold" id="details-pop-header"></h2>
+
+                <button id="closePopup" class="text-gray-500 text-4xl hover:text-red-500">
+                    &times;
+                </button>
+            </div>
+            <p class="text-gray-600 mt-2 mb-4" id="details-pop-desc">
+
+            </p>
+            <!-- Image List -->
+            <div class="space-y-8" id="details-pop-img-contents">
+                <!-- <img src="/FINAL/TheRoute/ROUTE-02.jpg" alt="Image 1" class="w-full h-auto rounded-md"> -->
+            </div>
+        </div>
+    </div>
 
     <!--Footer-->
     <section class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
         <div class="container">
-          <div class="w-full max-w-4xl mx-auto mt-6">
-            <!-- Heading + Input Field -->
-            <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
-            <div class="flex">
-                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
-                <button class="bg-pink-500 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
-            </div>
-        
-            <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
-                <!-- First Row: Lists (Grid of 5 Items) -->
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
-                    <div class="w-full order-1 md:order-none">
-                        <h3 class="font-semibold">HOME</h3>
-                        <ul class="space-y-1">
-                            <li>Why us</li>
-                        </ul>
+            <div class="w-full max-w-4xl mx-auto mt-6">
+                <!-- Heading + Input Field -->
+                <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
+                <div class="flex">
+                    <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS"
+                        class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
+                    <button class="bg-pink-500 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
+                    <!-- First Row: Lists (Grid of 5 Items) -->
+                    <div
+                        class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
+                        <div class="w-full order-1 md:order-none">
+                            <h3 class="font-semibold">HOME</h3>
+                            <ul class="space-y-1">
+                                <li>Why us</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">WORK</h3>
+                            <ul class="space-y-1">
+                                <li>Film Posters</li>
+                                <li>Events</li>
+                                <li>Title Animations</li>
+                                <li>Branding</li>
+                                <li>Products</li>
+                                <li>Advertising</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">SERVICE</h3>
+                            <ul class="space-y-1 text-sm pt-3">
+                                <li class="whitespace-nowrap">Branding</li>
+                                <li class="whitespace-nowrap">Advertising</li>
+                                <li class="whitespace-nowrap">Film Production</li>
+                                <li class="whitespace-nowrap">Graphic Design</li>
+                                <li class="whitespace-nowrap">Social Media Marketing</li>
+                                <li class="whitespace-nowrap">Integrated Marketing</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">TEAM</h3>
+                            <ul class="space-y-1">
+                                <li>Meet the Team</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">CONTACT</h3>
+                            <ul class="space-y-1">
+                                <li>Contact Information</li>
+                                <li>Careers</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">WORK</h3>
-                        <ul class="space-y-1">
-                            <li>Film Posters</li>
-                            <li>Events</li>
-                            <li>Title Animations</li>
-                            <li>Branding</li>
-                            <li>Products</li>
-                            <li>Advertising</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">SERVICE</h3>
-                        <ul class="space-y-1 text-sm pt-3">
-                            <li class="whitespace-nowrap">Branding</li>
-                            <li class="whitespace-nowrap">Advertising</li>
-                            <li class="whitespace-nowrap">Film Production</li>
-                            <li class="whitespace-nowrap">Graphic Design</li>
-                            <li class="whitespace-nowrap">Social Media Marketing</li>
-                            <li class="whitespace-nowrap">Integrated Marketing</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">TEAM</h3>
-                        <ul class="space-y-1">
-                            <li>Meet the Team</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">CONTACT</h3>
-                        <ul class="space-y-1">
-                            <li>Contact Information</li>
-                            <li>Careers</li>
-                        </ul>
+                    <!-- Second Row: Button & Social Media Icons -->
+                    <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
+                        <button
+                            class="bg-[#00001b] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                            <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
+                        </button>
+
+
+                        <!-- Social Icons -->
+                        <div class="flex flex-wrap justify-center sm:justify-end gap-4">
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <!-- Second Row: Button & Social Media Icons -->
-                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
-                    <button class="bg-[#00001b] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
-                        <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
-                    </button>
-                    
-            
-                    <!-- Social Icons -->
-                    <div class="flex flex-wrap justify-center sm:justify-end gap-4">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
+
             </div>
-            
-        </div>
-        
+
         </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <script>
+        const workDetails = [
+            {
+                id: 1, title: 'Gourmet Salads',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/MIW_Website_Assets/Poss_image_work.png']
+            },
+            {
+                id: 2, title: 'Adidas Spain',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/MIW_Website_Assets/BJ_image_work.png']
+            },
+            {
+                id: 3, title: 'Ynot Studios',
+                desc: `YNOT Studios was created by Chennai-based architect and entrepreneur S. Sashikanth in 2009. 
+                Having previously worked in films as an assistant art director, Sashikanth remained in contact with film personalities through his architectural 
+                work and became a close acquaintance of ad filmmaker C. S. Amudhan and cinematographer Nirav Shah. Looking to make his directorial debut, 
+                Amudhan pitched film scripts in three genres for YNOT Studios: a road film,
+                 a period film and a spoof film, with the latter, later materialising as the studio's first film, Thamizh Padam (2010), Tamil cinema's first spoof film`,
+                imageSources: ['/MIW_Website_Assets/Ynot_image_work.png']
+            },
+            {
+                id: 4, title: 'Rockstar on hotstar',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/MIW_Website_Assets/Rockstar_image_work.png']
+            },
+            {
+                id: 5, title: 'Dramila: The Kombucha Shop',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/MIW_Website_Assets/Dramila_image_work.png']
+            },
+            {
+                id: 6, title: 'Bask',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/MIW_Website_Assets/Bask_image_work.png']
+            },
+            {
+                id: 7, title: 'KHS, Kolli Hills',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/FINAL/KolliHills/kolli-01.jpg', '/FINAL/KolliHills/kolli-02.jpg', '/FINAL/KolliHills/kolli-03.jpg', '/FINAL/KolliHills/kolli-04.jpg']
+            },
+            {
+                id: 8, title: 'TDKF',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/FINAL/TDKF/TDKF-1.jpg', '/FINAL/TDKF/TDKF-2.jpg', '/FINAL/TDKF/TDKF-3.png', '/FINAL/TDKF/TDKF-4.jpg']
+            },
+            {
+                id: 9, title: 'Brick House',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/FINAL/BrickHouse/BRICK-house-01.jpg', '/FINAL/BrickHouse/BRICK-house-02.jpg', '/FINAL/BrickHouse/BRICK-house-03.jpg', '/FINAL/BrickHouse/BRICK-house-04.jpg']
+            },
+            {
+                id: 10, title: 'Kraken',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/FINAL/Kraken/kraken-1.jpg', '/FINAL/Kraken/kraken-2.jpg']
+            },
+            {
+                id: 11,
+                title: 'Aussie Home Baker',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/FINAL/AussieHomeBaker/Aussiebaker-00.jpg', '/FINAL/AussieHomeBaker/Aussiebaker-01.jpg', '/FINAL/AussieHomeBaker/Aussiebaker-02.jpg', '/FINAL/AussieHomeBaker/Aussiebaker-03.jpg']
+            },
+            {
+                id: 12,
+                title: 'OIC',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['MIW_Website_Assets/OIC_image_work.png']
+            },
+            {
+                id: 13,
+                title: 'Coffee',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/MIW_Website_Assets/Coffe_image_work.png']
+            },
+            {
+                id: 14,
+                title: 'Red Knot',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/MIW_Website_Assets/Redknot_image_work.png']
+            },
+            {
+                id: 15,
+                title: 'PlanMonk',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/FINAL/PlanMonk/1.jpg', '/FINAL/PlanMonk/2.jpg', '/FINAL/PlanMonk/3.jpg', '/FINAL/PlanMonk/4.jpg']
+            },
+            {
+                id: 16,
+                title: 'The Route',
+                desc: `The Route is a celebrity management and film production company currently representing some of the leading personalities from the Entertainment industry including Thalapathy Vijay, Samantha, Atlee, Lokesh Kanagaraj, Keerthy Suresh, Rashmika Mandanna, Kalyani Priyadarshan, Krithi Shetty, Meenakshi Chaudhary, Kathir, Arjun Das and Monisha Mohan Menon.`,
+                imageSources: ['/FINAL/TheRoute/ROUTE-01.jpg', '/FINAL/TheRoute/ROUTE-02.jpg', '/FINAL/TheRoute/ROUTE-03.jpg', '/FINFINAL/TheRoute/ROUTE-04.jpg']
+            },
+            {
+                id: 17,
+                title: 'Stroker',
+                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
+                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
+                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
+                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                imageSources: ['/FINAL/Stoker/stoker-1.jpg', '/FINAL/Stoker/stoker-2.jpg', '/FINAL/Stoker/stoker-3.jpg', '/FINAL/Stoker/stoker-4.jpg']
+            }
+        ];
+        // Detail modal
+        const popup = document.getElementById("work-details-popup");
+        const closePopup = document.getElementById("closePopup");
+        const detailsHeader = document.getElementById("details-pop-header");
+        const detailsImageSrc = document.getElementById("details-pop-img-contents");
+        const detailsPopupDescription = document.getElementById("details-pop-desc");
+        // Function to open the modal
+        const openModal = (event, id) => {
+            // Prevent default behavior of the anchor tag
+            if (event) {
+                event.preventDefault();
+            }
+            const data = workDetails.filter((i) => { return i.id == id })[0];
+            detailsHeader.textContent = data.title;
+            detailsPopupDescription.textContent = data.desc;
+
+            detailsImageSrc.innerHTML = '';
+
+            // Append new images based on the `imageSources` array
+            data.imageSources.forEach((src) => {
+                const imgElement = document.createElement('img');
+                imgElement.src = src;
+                imgElement.alt = data.title; // Set alt text to the title for accessibility
+                imgElement.className = 'w-full h-auto rounded-md'; // Add Tailwind classes for styling
+                detailsImageSrc.appendChild(imgElement);
+            });
+
+
+            // Show the popup
+            const modalContent = popup.querySelector("div.relative");
+            popup.classList.remove("hidden");
+
+            // Disable background scrolling
+            document.body.classList.add("overflow-hidden");
+            gsap.fromTo(
+                modalContent,
+                { opacity: 0, scale: 0.9 }, // Start state
+                { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" } // End state
+            );
+
+        };
+
+        // Function to close the modal
+        closePopup.addEventListener("click", () => {
+            const modalContent = popup.querySelector("div.relative");
+            gsap.to(modalContent, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.3,
+                ease: "power3.in",
+                onComplete: () => {
+                    // Hide modal and restore background scrolling
+                    popup.classList.add("hidden");
+                    document.body.classList.remove("overflow-hidden");
+                },
+            });
+
+        });
+
+        // Search query param if any id exist
+        const urlParams = new URLSearchParams(window.location.search);
+        const activeWorkDetail = urlParams.get('work_detail');
+
+        if (activeWorkDetail) {
+            const data = workDetails.find(i => i.id == activeWorkDetail);
+            if (data) openModal(null, activeWorkDetail);
+        }
+
+
+
         const menuBtn = document.getElementById('menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -279,12 +565,16 @@
         // Close menu when clicking outside of it
         mobileMenu.addEventListener('click', (e) => {
             if (e.target === mobileMenu) {
-            mobileMenu.classList.add('hidden');
+                mobileMenu.classList.add('hidden');
             }
         });
+
+
+
+
     </script>
     <script>
-         let lastScrollY = window.scrollY;
+        let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
 
         window.addEventListener("scroll", () => {
@@ -305,7 +595,7 @@
 
         function updatePlaceholder() {
             const inputField = document.querySelector("input[type='email']");
-            
+
             if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
                 inputField.placeholder = "EMAIL";
             } else {
@@ -316,121 +606,122 @@
         // Run function on page load and resize
         window.addEventListener("load", updatePlaceholder);
         window.addEventListener("resize", updatePlaceholder);
-    </script> 
+    </script>
     <script>
         // Enhanced function to check background section color and invert images if needed
-    function checkBackgroundAndInvertImages() {
-        const navbar = document.getElementById('navbar');
-        const logo = document.getElementById('logo-img');
-        const menuIcon = document.getElementById('menu-icon');
-        
-        // Get the scroll position to determine what section we're on
-        const scrollY = window.scrollY;
-        
-        // Get elements that navbar might be overlapping
-        const sections = document.querySelectorAll('section');
-        let currentSection = null;
-        
-        // Find which section the navbar is currently overlapping
-        for (const section of sections) {
-            const rect = section.getBoundingClientRect();
-            // If the navbar is within the top portion of this section
-            if (rect.top <= 80 && rect.bottom > 0) {
-                currentSection = section;
-                break;
+        function checkBackgroundAndInvertImages() {
+            const navbar = document.getElementById('navbar');
+            const logo = document.getElementById('logo-img');
+            const menuIcon = document.getElementById('menu-icon');
+
+            // Get the scroll position to determine what section we're on
+            const scrollY = window.scrollY;
+
+            // Get elements that navbar might be overlapping
+            const sections = document.querySelectorAll('section');
+            let currentSection = null;
+
+            // Find which section the navbar is currently overlapping
+            for (const section of sections) {
+                const rect = section.getBoundingClientRect();
+                // If the navbar is within the top portion of this section
+                if (rect.top <= 80 && rect.bottom > 0) {
+                    currentSection = section;
+                    break;
+                }
+            }
+
+            // If we found a current section, get its background color
+            if (currentSection) {
+                const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
+                const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
+
+                // Check if this is a section where we need to invert
+                if (needsInversion(sectionBgColor, sectionBgImage)) {
+                    logo.style.filter = "invert(1)";
+                    menuIcon.style.filter = "invert(1)";
+                } else {
+                    logo.style.filter = "none";
+                    menuIcon.style.filter = "none";
+                }
             }
         }
-        
-        // If we found a current section, get its background color
-        if (currentSection) {
-            const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
-            const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
-            
-            // Check if this is a section where we need to invert
-            if (needsInversion(sectionBgColor, sectionBgImage)) {
-                logo.style.filter = "invert(1)";
-                menuIcon.style.filter = "invert(1)";
-            } else {
-                logo.style.filter = "none";
-                menuIcon.style.filter = "none";
+
+        // Enhanced function to determine if inversion is needed
+        function needsInversion(backgroundColor, backgroundImage) {
+            // If there's a background image that's not "none", we might need special handling
+            const hasBackgroundImage = backgroundImage && backgroundImage !== "none";
+
+            // Get the logo and menu icon color (you may need to define these explicitly)
+            // For example, if your logo is black (#000000) or close to it:
+            const logoColor = { r: 0, g: 0, b: 0 }; // Assuming black logo
+
+            // Parse the backgroundColor to get RGB values
+            const rgbValues = backgroundColor.match(/\d+/g);
+
+            if (!rgbValues || rgbValues.length < 3) {
+                // If we can't parse the color, default behavior based on section
+                return hasBackgroundImage || isKnownDarkSection(backgroundColor);
             }
+
+            const r = parseInt(rgbValues[0]);
+            const g = parseInt(rgbValues[1]);
+            const b = parseInt(rgbValues[2]);
+
+            // Calculate color similarity between background and logo
+            const colorSimilarity = calculateColorSimilarity(
+                { r, g, b },
+                logoColor
+            );
+
+            // Calculate the perceived brightness
+            const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
+
+            // If colors are similar OR background is dark, invert
+            return colorSimilarity > 85 || brightness < 128;
         }
-    }
-    
-    // Enhanced function to determine if inversion is needed
-    function needsInversion(backgroundColor, backgroundImage) {
-        // If there's a background image that's not "none", we might need special handling
-        const hasBackgroundImage = backgroundImage && backgroundImage !== "none";
-        
-        // Get the logo and menu icon color (you may need to define these explicitly)
-        // For example, if your logo is black (#000000) or close to it:
-        const logoColor = { r: 0, g: 0, b: 0 }; // Assuming black logo
-        
-        // Parse the backgroundColor to get RGB values
-        const rgbValues = backgroundColor.match(/\d+/g);
-        
-        if (!rgbValues || rgbValues.length < 3) {
-            // If we can't parse the color, default behavior based on section
-            return hasBackgroundImage || isKnownDarkSection(backgroundColor);
+
+        // Calculate how similar two colors are (0-100%)
+        function calculateColorSimilarity(color1, color2) {
+            // Calculate the Euclidean distance in RGB space
+            const distance = Math.sqrt(
+                Math.pow(color1.r - color2.r, 2) +
+                Math.pow(color1.g - color2.g, 2) +
+                Math.pow(color1.b - color2.b, 2)
+            );
+
+            // Convert to a similarity percentage (0-100)
+            // Max distance in RGB space is √(255² + 255² + 255²) ≈ 441.7
+            return 100 - (distance / 441.7 * 100);
         }
-        
-        const r = parseInt(rgbValues[0]);
-        const g = parseInt(rgbValues[1]);
-        const b = parseInt(rgbValues[2]);
-        
-        // Calculate color similarity between background and logo
-        const colorSimilarity = calculateColorSimilarity(
-            { r, g, b },
-            logoColor
-        );
-        
-        // Calculate the perceived brightness
-        const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
-        
-        // If colors are similar OR background is dark, invert
-        return colorSimilarity > 85 || brightness < 128;
-    }
-    
-    // Calculate how similar two colors are (0-100%)
-    function calculateColorSimilarity(color1, color2) {
-        // Calculate the Euclidean distance in RGB space
-        const distance = Math.sqrt(
-            Math.pow(color1.r - color2.r, 2) +
-            Math.pow(color1.g - color2.g, 2) +
-            Math.pow(color1.b - color2.b, 2)
-        );
-        
-        // Convert to a similarity percentage (0-100)
-        // Max distance in RGB space is √(255² + 255² + 255²) ≈ 441.7
-        return 100 - (distance / 441.7 * 100);
-    }
-    
-    // Helper function for known dark sections
-    function isKnownDarkSection(backgroundColor) {
-        // List of sections we know should have inverted logo/menu
-        const darkSectionColors = [
-            "rgb(34, 38, 247)",    // Blue section (#2226f7)
-            "rgb(0, 0, 0)",        // Black section
-            "rgb(34, 34, 34)"      // Dark gray section
-        ];
-        
-        return darkSectionColors.includes(backgroundColor);
-    }
-    
-    // Run on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        checkBackgroundAndInvertImages();
-        
-        // Run when scrolling
-        window.addEventListener('scroll', checkBackgroundAndInvertImages);
-        
-        // Run on window resize
-        window.addEventListener('resize', checkBackgroundAndInvertImages);
-        
-        // Observe changes to the navbar element
-        const observer = new MutationObserver(checkBackgroundAndInvertImages);
-        observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
-    });
-        </script>
+
+        // Helper function for known dark sections
+        function isKnownDarkSection(backgroundColor) {
+            // List of sections we know should have inverted logo/menu
+            const darkSectionColors = [
+                "rgb(34, 38, 247)",    // Blue section (#2226f7)
+                "rgb(0, 0, 0)",        // Black section
+                "rgb(34, 34, 34)"      // Dark gray section
+            ];
+
+            return darkSectionColors.includes(backgroundColor);
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            checkBackgroundAndInvertImages();
+
+            // Run when scrolling
+            window.addEventListener('scroll', checkBackgroundAndInvertImages);
+
+            // Run on window resize
+            window.addEventListener('resize', checkBackgroundAndInvertImages);
+
+            // Observe changes to the navbar element
+            const observer = new MutationObserver(checkBackgroundAndInvertImages);
+            observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
+        });
+    </script>
 </body>
+
 </html>
