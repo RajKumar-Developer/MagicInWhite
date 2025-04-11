@@ -241,15 +241,20 @@
         </div>
     </div> -->
 
+    <button id="closePopup"
+        class="hidden fixed top-4 right-4 bg-gray-800 text-white px-4 py-2 text-lg rounded-full shadow-lg hover:bg-gray-700 transition z-50">
+        ✖ Close
+    </button>
 
-    <div id="work-details-popup" class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16">
+    <div id="work-details-popup"
+        class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16">
 
-        <div class="relative bg-white rounded-lg w-[92%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
+        <div
+            class="relative bg-white rounded-lg w-[92%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
 
             <div class="p-6">
                 <div class="flex justify-between items-start">
                     <h2 class="text-2xl font-bold" id="details-pop-header"></h2>
-                    <button id="closePopup" class="text-gray-500 text-4xl hover:text-red-500">&times;</button>
                 </div>
 
                 <p class="text-gray-600 mt-2 " id="details-pop-desc">
@@ -531,7 +536,7 @@
             // Show the popup
             const modalContent = popup.querySelector("div.relative");
             popup.classList.remove("hidden");
-
+            closePopup.classList.remove('hidden');
             // Disable background scrolling
             document.body.classList.add("overflow-hidden");
             gsap.fromTo(
@@ -552,6 +557,7 @@
                 ease: "power3.in",
                 onComplete: () => {
                     // Hide modal and restore background scrolling
+                    closePopup.classList.add('hidden');
                     popup.classList.add("hidden");
                     document.body.classList.remove("overflow-hidden");
                 },
