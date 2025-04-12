@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Lato', sans-serif;
@@ -266,6 +267,20 @@
             </div>
         </div>
     </div>
+    <!-- Fullscreen Image Modal -->
+    <div id="fullscreen-image-modal"
+        class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[60]">
+        <div class="relative">
+            <button onclick="closeFullscreenImage()"
+                class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50">
+                ✖
+            </button>
+
+            <img id="fullscreen-img" src="" alt="Zoomed"
+                class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl ">
+        </div>
+    </div>
+
 
     <!--Footer-->
     <section class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
@@ -493,7 +508,7 @@
                 id: 16,
                 title: 'The Route',
                 desc: `The Route is a celebrity management and film production company currently representing some of the leading personalities from the Entertainment industry including Thalapathy Vijay, Samantha, Atlee, Lokesh Kanagaraj, Keerthy Suresh, Rashmika Mandanna, Kalyani Priyadarshan, Krithi Shetty, Meenakshi Chaudhary, Kathir, Arjun Das and Monisha Mohan Menon.`,
-                imageSources: ['/FINAL/TheRoute/ROUTE-01.jpg', '/FINAL/TheRoute/ROUTE-02.jpg', '/FINAL/TheRoute/ROUTE-03.jpg', '/FINFINAL/TheRoute/ROUTE-04.jpg']
+                imageSources: ['/FINAL/TheRoute/ROUTE-01.jpg', '/FINAL/TheRoute/ROUTE-02.jpg', '/FINAL/TheRoute/ROUTE-03.jpg', '/FINAL/TheRoute/ROUTE-04.jpg']
             },
             {
                 id: 17,
@@ -528,7 +543,9 @@
                 const imgElement = document.createElement('img');
                 imgElement.src = src;
                 imgElement.alt = data.title; // Set alt text to the title for accessibility
-                imgElement.className = 'w-full h-auto rounded-md'; // Add Tailwind classes for styling
+                imgElement.className = 'w-full h-auto rounded-md cursor-zoom-in transition group-hover:opacity-90';
+                imgElement.onclick = () => openFullscreenImage(src);
+
                 detailsImageSrc.appendChild(imgElement);
             });
 
@@ -600,6 +617,24 @@
 
 
     </script>
+    <!-- full image -->
+    <script>
+        function openFullscreenImage(src) {
+            const modal = document.getElementById('fullscreen-image-modal');
+            const image = document.getElementById('fullscreen-img');
+            image.src = src;
+            modal.classList.remove('hidden');
+            document.body.classList.add("overflow-hidden"); // Prevent scrolling
+        }
+
+        function closeFullscreenImage() {
+            const modal = document.getElementById('fullscreen-image-modal');
+            modal.classList.add('hidden');
+            document.getElementById('fullscreen-img').src = '';
+            document.body.classList.remove("overflow-hidden");
+        }
+    </script>
+
     <script>
         let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
