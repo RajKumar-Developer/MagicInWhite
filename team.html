@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,32 +11,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body{
-            font-family: 'Lato',sans-serif;
+        body {
+            font-family: 'Lato', sans-serif;
         }
     </style>
 </head>
+
 <body oncontextmenu="return false;">
-    
+
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full left-0 px-5 z-50">
+    <nav id="navbar"
+        class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
-                <img id="logo-img" src="/services-assets/Logo-on-menu.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
+                <img id="logo-img" src="/services-assets/Logo-on-menu.png" alt="logo"
+                    class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
             </div>
 
             <!-- Mobile Menu Button (Right Corner) -->
             <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
-                <img id="menu-icon" src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
+                <img id="menu-icon" src="/services-assets/Hamburger-menu.png" alt="nav button"
+                    class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
             </button>
         </div>
     </nav>
-      
+
     <!-- Mobile Popup Menu (Overlay) -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
+    <div id="mobile-menu"
+        class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
         <!-- Close Button -->
-        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
+        <button id="close-menu"
+            class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
             ✖
         </button>
 
@@ -51,26 +58,27 @@
     </div>
 
     <!-- Main Page -->
-<section class="relative w-full h-screen flex items-center justify-center">
-    <!-- Background Video -->
-    <div class="absolute inset-0 overflow-hidden">
-        <video autoplay loop muted playsinline class="w-full h-full object-cover">
-            <source src="/png-team/AdobeStock_99504571.mov" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="absolute inset-0 bg-[#24d56d] opacity-60"></div>
-    </div>
+    <section class="relative w-full h-screen flex items-center justify-center">
+        <!-- Background Video -->
+        <div class="absolute inset-0 overflow-hidden">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="/png-team/AdobeStock_99504571.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-[#24d56d] opacity-60"></div>
+        </div>
 
-    <!-- Centered Text Content -->
-    <div class="relative z-10 text-white text-right px-6">
-        <h1 class="text-4xl sm:text-6xl font-bold">OUR TEAM</h1>
-        <p class="mt-4 max-w-2xl text-lg sm:text-xl">
-            We are an award-winning, full-service design, advertising & digital agency. 
-            We work in all industry sectors from International brands to small retail outlets. 
-            We believe passionately in the power of well-crafted design solutions and in truly listening to our clients.
-        </p>
-    </div>
-</section>
+        <!-- Centered Text Content -->
+        <div class="relative z-10 text-white text-right px-6">
+            <h1 class="text-4xl sm:text-6xl font-bold">OUR TEAM</h1>
+            <p class="mt-4 max-w-2xl text-lg sm:text-xl">
+                We are an award-winning, full-service design, advertising & digital agency.
+                We work in all industry sectors from International brands to small retail outlets.
+                We believe passionately in the power of well-crafted design solutions and in truly listening to our
+                clients.
+            </p>
+        </div>
+    </section>
 
 
     <!-- Individual Team Section -->
@@ -123,129 +131,268 @@
           <img src="/png-team/girl.png" alt="Person 4" class="relative w-40 sm:w-48 z-10">
           <img src="/png-team/base.png" alt="Circle" class="absolute bottom-[-15%] w-40 sm:w-48">
         </div>
-      </div>
-  </section>
+    </section>
 
 
-   <!-- whole team -->
-<section class="flex items-end justify-center py-40 min-h-1/2">
-    <div class="max-w-4xl mx-auto relative">
-      <!-- Group Photo -->
-      <img src="/png-team/Team.png" alt="Group Photo" class="w-full h-auto object-contain">
-  
-      <!-- Person 1 (e.g., Gopi Prasannaa) -->
-      <div class="absolute left-[45%] top-[10%] w-[5%] h-[40%] group">
+    <section class="relative py-40">
+        <!-- First Row (5 Images) -->
+        <div class="flex justify-center space-x-0">
+            <div class="person relative group">
+                <!-- Vertical Line (Shown on Hover) -->
+               
+                
+                <div class="absolute top-[-5rem] left-1/2 transform -translate-x-1/2">
+                    <!-- Vertical Line -->
+                    <div class="bg-black h-[102px] w-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Round Pointer -->
+                    <div class="absolute top-[-12px] left-[-6px] w-3 h-3 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+    
+    
+                <!-- Image -->
+                <img src="/png-team/team01.png" alt="Person X" class="w-24 h-auto sm:w-32">
+                <!-- Name and Designation (Shown on Hover) -->
+                <div class="absolute top-[-5rem] left-[calc(50%-70px)] transform -translate-y-2 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-sm font-bold text-gray-700">Person 1</p>
+                    <p class="text-xs text-gray-500">Designation</p>
+                </div>
+            </div>
+            <div class="person relative group">
+                <div class="absolute top-[-5rem] left-1/2 transform -translate-x-1/2">
+                    <!-- Vertical Line -->
+                    <div class="bg-black h-[102px] w-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Round Pointer -->
+                    <div class="absolute top-[-12px] left-[-6px] w-3 h-3 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+    
+                <img src="/png-team/team01.png" alt="Person X" class="w-24 h-auto sm:w-32">
+                <div class="absolute top-[-5rem] left-[calc(50%-70px)] transform -translate-y-2 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-sm font-bold text-gray-800">Person 2</p>
+                    <p class="text-xs text-gray-500">Designation</p>
+                </div>
+            </div>
+            <div class="person relative group">
+                <div class="absolute top-[-5rem] left-1/2 transform -translate-x-1/2">
+                    <!-- Vertical Line -->
+                    <div class="bg-black h-[102px] w-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Round Pointer -->
+                    <div class="absolute top-[-12px] left-[-6px] w-3 h-3 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+    
+                <img src="/png-team/team01.png" alt="Person X" class="w-24 h-auto sm:w-32">
+                <div class="absolute top-[-5rem] left-[calc(50%-70px)] transform -translate-y-2 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-sm font-bold text-gray-800">Person 3</p>
+                    <p class="text-xs text-gray-500">Designation</p>
+                </div>
+            </div>
+            <div class="person relative group">
+
+                <div class="absolute top-[-5rem] left-1/2 transform -translate-x-1/2">
+                    <!-- Vertical Line -->
+                    <div class="bg-black h-[102px] w-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Round Pointer -->
+                    <div class="absolute top-[-12px] left-[-6px] w-3 h-3 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <img src="/png-team/team01.png" alt="Person X" class="w-24 h-auto sm:w-32">
+                <div class="absolute top-[-5rem] left-[calc(50%-70px)] transform -translate-y-2 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-sm font-bold text-gray-800">Person 4</p>
+                    <p class="text-xs text-gray-500">Designation</p>
+                </div>
+            </div>
+            <div class="person relative group">
+                <div class="absolute top-[-5rem] left-1/2 transform -translate-x-1/2 bg-black h-[107px] w-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <img src="/png-team/team01.png" alt="Person X" class="w-24 h-auto sm:w-32">
+                <div class="absolute top-[-5rem] left-[calc(50%-70px)] transform -translate-y-2 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-sm font-bold text-gray-800">Person 5</p>
+                    <p class="text-xs text-gray-500">Designation</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Second Row (4 Images) -->
+        <div class="flex justify-center space-x-0 absolute top-[14rem] left-0 right-0">
+            <div class="person relative group">
+                <div class="absolute top-[-10rem] left-1/2 transform -translate-x-1/2">
+                    <!-- Vertical Line -->
+                    <div class="bg-black h-[190px] w-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Round Pointer -->
+                    <div class="absolute top-[-12px] left-[-6px] w-3 h-3 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+    
+
+                <img src="/png-team/team01.png" alt="Person X" class="w-24 h-auto sm:w-32">
+                <div class="absolute top-[-10rem] left-[calc(50%-70px)] transform -translate-y-2 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-sm font-bold text-gray-800">Person 6</p>
+                    <p class="text-xs text-gray-500">Designation</p>
+                </div>
+            </div>
+            <div class="person relative group">
+                <div class="absolute top-[-10rem] left-1/2 transform -translate-x-1/2">
+                    <!-- Vertical Line -->
+                    <div class="bg-black h-[190px] w-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Round Pointer -->
+                    <div class="absolute top-[-12px] left-[-6px] w-3 h-3 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <img src="/png-team/team01.png" alt="Person X" class="w-24 h-auto sm:w-32">
+                <div class="absolute top-[-10rem] left-[calc(50%-70px)] transform -translate-y-2 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-sm font-bold text-gray-800">Person 7</p>
+                    <p class="text-xs text-gray-500">Designation</p>
+                </div>
+            </div>
+            <div class="person relative group">
+                <div class="absolute top-[-10rem] left-1/2 transform -translate-x-1/2">
+                    <!-- Vertical Line -->
+                    <div class="bg-black h-[190px] w-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Round Pointer -->
+                    <div class="absolute top-[-12px] left-[-6px] w-3 h-3 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <img src="/png-team/team01.png" alt="Person X" class="w-24 h-auto sm:w-32">
+                <div class="absolute top-[-10rem] left-[calc(50%-70px)] transform -translate-y-2 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-sm font-bold text-gray-800">Person 8</p>
+                    <p class="text-xs text-gray-500">Designation</p>
+                </div>
+            </div>
+            <div class="person relative group">
+                <div class="absolute top-[-10rem] left-1/2 transform -translate-x-1/2">
+                    <!-- Vertical Line -->
+                    <div class="bg-black h-[190px] w-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Round Pointer -->
+                    <div class="absolute top-[-12px] left-[-6px] w-3 h-3 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <img src="/png-team/team01.png" alt="Person X" class="w-24 h-auto sm:w-32">
+                <div class="absolute top-[-10rem] left-[calc(50%-70px)] transform -translate-y-2 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-sm font-bold text-gray-800">Person 9</p>
+                    <p class="text-xs text-gray-500">Designation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- whole team -->
+    <!-- <section class="flex items-end justify-center py-40 min-h-1/2"> -->
+        
+        <!-- <div class="max-w-4xl mx-auto relative"> -->
+            <!-- Group Photo -->
+            <!-- <img src="/png-team/Team.png" alt="Group Photo" class="w-full h-auto object-contain"> -->
+
+            <!-- Person 1 (e.g., Gopi Prasannaa) -->
+            <!-- <div class="absolute left-[45%] top-[10%] w-[5%] h-[40%] group">
         <div class="absolute -top-60 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-center">
           <div class="bg-transparent text-black text-xs px-2 py-1 rounded shadow-lg">
             Gopi Prasannaa<br>
             <span class="text-gray-600 text-[10px]">Creative Director</span>
           </div>
         </div>
-      </div>
-  
-      <!-- Person 2 -->
-      <div class="absolute left-[20%] top-[15%] w-[5%] h-[40%] group">
+      </div> -->
+
+            <!-- Person 2 -->
+            <!-- <div class="absolute left-[20%] top-[15%] w-[5%] h-[40%] group">
         <div class="absolute -top-60 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-center">
           <div class="bg-transparent text-black text-xs px-2 py-1 rounded shadow-lg">
             S V UDAYAKUMAR<br>
             <span class="text-gray-600 text-[10px]">CREATIVE DIRECTOR</span>
           </div>
         </div>
-      </div>
-  
-      <!-- Add more people here -->
-    </div>
-  </section>
-  
+      </div> -->
+            <!-- Add more people here -->
+        <!-- </div> -->
+    <!-- </section> -->
+
 
     <!--Footer-->
     <section class="min-h-1/2 flex flex-col justify-center items-center bg-[#ffd628] text-white text-center p-10">
         <div class="container">
-          <div class="w-full max-w-4xl mx-auto mt-6">
-            <!-- Heading + Input Field -->
-            <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
-            <div class="flex">
-                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
-                <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
-            </div>
-        
-            <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
-                <!-- First Row: Lists (Grid of 5 Items) -->
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
-                    <div class="w-full order-1 md:order-none">
-                        <h3 class="font-semibold">HOME</h3>
-                        <ul class="space-y-1">
-                            <li>Why us</li>
-                        </ul>
+            <div class="w-full max-w-4xl mx-auto mt-6">
+                <!-- Heading + Input Field -->
+                <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
+                <div class="flex">
+                    <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS"
+                        class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
+                    <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
+                    <!-- First Row: Lists (Grid of 5 Items) -->
+                    <div
+                        class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
+                        <div class="w-full order-1 md:order-none">
+                            <h3 class="font-semibold">HOME</h3>
+                            <ul class="space-y-1">
+                                <li>Why us</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">WORK</h3>
+                            <ul class="space-y-1">
+                                <li>Film Posters</li>
+                                <li>Events</li>
+                                <li>Title Animations</li>
+                                <li>Branding</li>
+                                <li>Products</li>
+                                <li>Advertising</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">SERVICE</h3>
+                            <ul class="space-y-1 text-sm pt-3">
+                                <li class="whitespace-nowrap">Branding</li>
+                                <li class="whitespace-nowrap">Advertising</li>
+                                <li class="whitespace-nowrap">Film Production</li>
+                                <li class="whitespace-nowrap">Graphic Design</li>
+                                <li class="whitespace-nowrap">Social Media Marketing</li>
+                                <li class="whitespace-nowrap">Integrated Marketing</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">TEAM</h3>
+                            <ul class="space-y-1">
+                                <li>Meet the Team</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">CONTACT</h3>
+                            <ul class="space-y-1">
+                                <li>Contact Information</li>
+                                <li>Careers</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">WORK</h3>
-                        <ul class="space-y-1">
-                            <li>Film Posters</li>
-                            <li>Events</li>
-                            <li>Title Animations</li>
-                            <li>Branding</li>
-                            <li>Products</li>
-                            <li>Advertising</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">SERVICE</h3>
-                        <ul class="space-y-1 text-sm pt-3">
-                            <li class="whitespace-nowrap">Branding</li>
-                            <li class="whitespace-nowrap">Advertising</li>
-                            <li class="whitespace-nowrap">Film Production</li>
-                            <li class="whitespace-nowrap">Graphic Design</li>
-                            <li class="whitespace-nowrap">Social Media Marketing</li>
-                            <li class="whitespace-nowrap">Integrated Marketing</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">TEAM</h3>
-                        <ul class="space-y-1">
-                            <li>Meet the Team</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">CONTACT</h3>
-                        <ul class="space-y-1">
-                            <li>Contact Information</li>
-                            <li>Careers</li>
-                        </ul>
+                    <!-- Second Row: Button & Social Media Icons -->
+                    <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
+                        <button
+                            class="bg-[#ffd628] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                            <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
+                        </button>
+
+
+                        <!-- Social Icons -->
+                        <div class="flex flex-wrap justify-center sm:justify-end gap-4">
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <!-- Second Row: Button & Social Media Icons -->
-                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
-                    <button class="bg-[#ffd628] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
-                        <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
-                    </button>
-                    
-            
-                    <!-- Social Icons -->
-                    <div class="flex flex-wrap justify-center sm:justify-end gap-4">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
+
             </div>
-            
-        </div>
-        
+
         </div>
     </section>
 
     <script>
-         let lastScrollY = window.scrollY;
+        let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
 
         window.addEventListener("scroll", () => {
@@ -266,7 +413,7 @@
 
         function updatePlaceholder() {
             const inputField = document.querySelector("input[type='email']");
-            
+
             if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
                 inputField.placeholder = "EMAIL";
             } else {
@@ -279,140 +426,141 @@
         window.addEventListener("resize", updatePlaceholder);
     </script>
     <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const closeMenuBtn = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('flex');
-    });
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
 
-    closeMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-    });
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
 
-    // Close menu when clicking outside of it
-    mobileMenu.addEventListener('click', (e) => {
-        if (e.target === mobileMenu) {
-        mobileMenu.classList.add('hidden');
-        }
-    });
+        // Close menu when clicking outside of it
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
     </script>
     <script>
         // Enhanced function to check background section color and invert images if needed
-    function checkBackgroundAndInvertImages() {
-        const navbar = document.getElementById('navbar');
-        const logo = document.getElementById('logo-img');
-        const menuIcon = document.getElementById('menu-icon');
-        
-        // Get the scroll position to determine what section we're on
-        const scrollY = window.scrollY;
-        
-        // Get elements that navbar might be overlapping
-        const sections = document.querySelectorAll('section');
-        let currentSection = null;
-        
-        // Find which section the navbar is currently overlapping
-        for (const section of sections) {
-            const rect = section.getBoundingClientRect();
-            // If the navbar is within the top portion of this section
-            if (rect.top <= 80 && rect.bottom > 0) {
-                currentSection = section;
-                break;
+        function checkBackgroundAndInvertImages() {
+            const navbar = document.getElementById('navbar');
+            const logo = document.getElementById('logo-img');
+            const menuIcon = document.getElementById('menu-icon');
+
+            // Get the scroll position to determine what section we're on
+            const scrollY = window.scrollY;
+
+            // Get elements that navbar might be overlapping
+            const sections = document.querySelectorAll('section');
+            let currentSection = null;
+
+            // Find which section the navbar is currently overlapping
+            for (const section of sections) {
+                const rect = section.getBoundingClientRect();
+                // If the navbar is within the top portion of this section
+                if (rect.top <= 80 && rect.bottom > 0) {
+                    currentSection = section;
+                    break;
+                }
+            }
+
+            // If we found a current section, get its background color
+            if (currentSection) {
+                const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
+                const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
+
+                // Check if this is a section where we need to invert
+                if (needsInversion(sectionBgColor, sectionBgImage)) {
+                    logo.style.filter = "invert(1)";
+                    menuIcon.style.filter = "invert(1)";
+                } else {
+                    logo.style.filter = "none";
+                    menuIcon.style.filter = "none";
+                }
             }
         }
-        
-        // If we found a current section, get its background color
-        if (currentSection) {
-            const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
-            const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
-            
-            // Check if this is a section where we need to invert
-            if (needsInversion(sectionBgColor, sectionBgImage)) {
-                logo.style.filter = "invert(1)";
-                menuIcon.style.filter = "invert(1)";
-            } else {
-                logo.style.filter = "none";
-                menuIcon.style.filter = "none";
+
+        // Enhanced function to determine if inversion is needed
+        function needsInversion(backgroundColor, backgroundImage) {
+            // If there's a background image that's not "none", we might need special handling
+            const hasBackgroundImage = backgroundImage && backgroundImage !== "none";
+
+            // Get the logo and menu icon color (you may need to define these explicitly)
+            // For example, if your logo is black (#000000) or close to it:
+            const logoColor = { r: 0, g: 0, b: 0 }; // Assuming black logo
+
+            // Parse the backgroundColor to get RGB values
+            const rgbValues = backgroundColor.match(/\d+/g);
+
+            if (!rgbValues || rgbValues.length < 3) {
+                // If we can't parse the color, default behavior based on section
+                return hasBackgroundImage || isKnownDarkSection(backgroundColor);
             }
+
+            const r = parseInt(rgbValues[0]);
+            const g = parseInt(rgbValues[1]);
+            const b = parseInt(rgbValues[2]);
+
+            // Calculate color similarity between background and logo
+            const colorSimilarity = calculateColorSimilarity(
+                { r, g, b },
+                logoColor
+            );
+
+            // Calculate the perceived brightness
+            const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
+
+            // If colors are similar OR background is dark, invert
+            return colorSimilarity > 85 || brightness < 128;
         }
-    }
-    
-    // Enhanced function to determine if inversion is needed
-    function needsInversion(backgroundColor, backgroundImage) {
-        // If there's a background image that's not "none", we might need special handling
-        const hasBackgroundImage = backgroundImage && backgroundImage !== "none";
-        
-        // Get the logo and menu icon color (you may need to define these explicitly)
-        // For example, if your logo is black (#000000) or close to it:
-        const logoColor = { r: 0, g: 0, b: 0 }; // Assuming black logo
-        
-        // Parse the backgroundColor to get RGB values
-        const rgbValues = backgroundColor.match(/\d+/g);
-        
-        if (!rgbValues || rgbValues.length < 3) {
-            // If we can't parse the color, default behavior based on section
-            return hasBackgroundImage || isKnownDarkSection(backgroundColor);
+
+        // Calculate how similar two colors are (0-100%)
+        function calculateColorSimilarity(color1, color2) {
+            // Calculate the Euclidean distance in RGB space
+            const distance = Math.sqrt(
+                Math.pow(color1.r - color2.r, 2) +
+                Math.pow(color1.g - color2.g, 2) +
+                Math.pow(color1.b - color2.b, 2)
+            );
+
+            // Convert to a similarity percentage (0-100)
+            // Max distance in RGB space is √(255² + 255² + 255²) ≈ 441.7
+            return 100 - (distance / 441.7 * 100);
         }
-        
-        const r = parseInt(rgbValues[0]);
-        const g = parseInt(rgbValues[1]);
-        const b = parseInt(rgbValues[2]);
-        
-        // Calculate color similarity between background and logo
-        const colorSimilarity = calculateColorSimilarity(
-            { r, g, b },
-            logoColor
-        );
-        
-        // Calculate the perceived brightness
-        const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
-        
-        // If colors are similar OR background is dark, invert
-        return colorSimilarity > 85 || brightness < 128;
-    }
-    
-    // Calculate how similar two colors are (0-100%)
-    function calculateColorSimilarity(color1, color2) {
-        // Calculate the Euclidean distance in RGB space
-        const distance = Math.sqrt(
-            Math.pow(color1.r - color2.r, 2) +
-            Math.pow(color1.g - color2.g, 2) +
-            Math.pow(color1.b - color2.b, 2)
-        );
-        
-        // Convert to a similarity percentage (0-100)
-        // Max distance in RGB space is √(255² + 255² + 255²) ≈ 441.7
-        return 100 - (distance / 441.7 * 100);
-    }
-    
-    // Helper function for known dark sections
-    function isKnownDarkSection(backgroundColor) {
-        // List of sections we know should have inverted logo/menu
-        const darkSectionColors = [
-            "rgb(34, 38, 247)",    // Blue section (#2226f7)
-            "rgb(0, 0, 0)",        // Black section
-            "rgb(34, 34, 34)"      // Dark gray section
-        ];
-        
-        return darkSectionColors.includes(backgroundColor);
-    }
-    
-    // Run on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        checkBackgroundAndInvertImages();
-        
-        // Run when scrolling
-        window.addEventListener('scroll', checkBackgroundAndInvertImages);
-        
-        // Run on window resize
-        window.addEventListener('resize', checkBackgroundAndInvertImages);
-        
-        // Observe changes to the navbar element
-        const observer = new MutationObserver(checkBackgroundAndInvertImages);
-        observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
-    });
-        </script>
+
+        // Helper function for known dark sections
+        function isKnownDarkSection(backgroundColor) {
+            // List of sections we know should have inverted logo/menu
+            const darkSectionColors = [
+                "rgb(34, 38, 247)",    // Blue section (#2226f7)
+                "rgb(0, 0, 0)",        // Black section
+                "rgb(34, 34, 34)"      // Dark gray section
+            ];
+
+            return darkSectionColors.includes(backgroundColor);
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            checkBackgroundAndInvertImages();
+
+            // Run when scrolling
+            window.addEventListener('scroll', checkBackgroundAndInvertImages);
+
+            // Run on window resize
+            window.addEventListener('resize', checkBackgroundAndInvertImages);
+
+            // Observe changes to the navbar element
+            const observer = new MutationObserver(checkBackgroundAndInvertImages);
+            observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
+        });
+    </script>
 </body>
+
 </html>
