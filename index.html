@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: "SF UI Text";
+            src: url("/Fonts/SFUIText-Regular.woff") format("woff");
+        }
+
+        .font-sf {
+            font-family: "SF UI Text", sans-serif;
+        }
+
         body {
             font-family: 'Lato', sans-serif;
         }
@@ -86,7 +95,7 @@
         <!-- Close Button -->
         <button id="close-menu"
             class="absolute top-6 right-6 text-[3rem] font-bold text-[#2025f8] transition duration-300">
-             &times;
+            &times;
         </button>
 
         <!-- Menu Items -->
@@ -146,52 +155,56 @@
             </div>
             <div class="grid-item col-span-1 sm:row-span-2 sm:col-start-3 bg-red-700 cursor-pointer overflow-hidden">
                 <a href="/work.html?work_detail=2">
-                <img src="/MIW_Website_Assets/BJ_image_work.png"
-                    class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
+                    <img src="/MIW_Website_Assets/BJ_image_work.png"
+                        class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
                 </a>
             </div>
-            <div class="grid-item col-span-2 sm:col-span-2 sm:row-span-2 sm:col-start-4 bg-yellow-500 cursor-pointer overflow-hidden">
+            <div
+                class="grid-item col-span-2 sm:col-span-2 sm:row-span-2 sm:col-start-4 bg-yellow-500 cursor-pointer overflow-hidden">
                 <a href="/work.html?work_detail=3">
-                <img src="/MIW_Website_Assets/Ynot_image_work.png"
-                    class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
+                    <img src="/MIW_Website_Assets/Ynot_image_work.png"
+                        class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
                 </a>
             </div>
             <div class="grid-item col-span-1 sm:row-span-2 sm:row-start-3 bg-blue-900 cursor-pointer overflow-hidden">
                 <a href="/work.html?work_detail=4">
-                <img src="/MIW_Website_Assets/Rockstar_image_work.png"
-                    class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
+                    <img src="/MIW_Website_Assets/Rockstar_image_work.png"
+                        class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
                 </a>
             </div>
-            <div class="grid-item col-span-1 sm:col-span-2 sm:row-span-2 sm:row-start-3 bg-green-700 cursor-pointer overflow-hidden">
+            <div
+                class="grid-item col-span-1 sm:col-span-2 sm:row-span-2 sm:row-start-3 bg-green-700 cursor-pointer overflow-hidden">
                 <a href="/work.html?work_detail=5">
-                <img src="/MIW_Website_Assets/Dramila_image_work.png"
-                    class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
+                    <img src="/MIW_Website_Assets/Dramila_image_work.png"
+                        class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
                 </a>
             </div>
-            <div class="grid-item col-span-2 sm:col-span-2 sm:row-span-2 sm:col-start-4 sm:row-start-3 bg-yellow-500 cursor-pointer overflow-hidden">
+            <div
+                class="grid-item col-span-2 sm:col-span-2 sm:row-span-2 sm:col-start-4 sm:row-start-3 bg-yellow-500 cursor-pointer overflow-hidden">
                 <a href="/work.html?work_detail=6">
-                <img src="/MIW_Website_Assets/Bask_image_work.png"
-                    class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
+                    <img src="/MIW_Website_Assets/Bask_image_work.png"
+                        class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
                 </a>
             </div>
             <div class="grid-item col-span-1 sm:col-span-2 sm:row-start-5 bg-pink-500 cursor-pointer overflow-hidden">
                 <a href="/work.html?work_detail=12">
-                <img src="/MIW_Website_Assets/OIC_image_work.png"
-                    class="w-full h-full object-cover transition-transform transform hover:scale-110 duration-300"
-                    style="object-position: left;" />
+                    <img src="/MIW_Website_Assets/OIC_image_work.png"
+                        class="w-full h-full object-cover transition-transform transform hover:scale-110 duration-300"
+                        style="object-position: left;" />
                 </a>
             </div>
             <div class="grid-item col-span-1 sm:col-start-3 sm:row-start-5 bg-red-700 cursor-pointer overflow-hidden">
                 <a href="/work.html?work_detail=14">
-                <img src="/MIW_Website_Assets/Redknot_image_work.png"
-                    class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300"
-                    style="object-position: left;" />
+                    <img src="/MIW_Website_Assets/Redknot_image_work.png"
+                        class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300"
+                        style="object-position: left;" />
                 </a>
             </div>
-            <div class="grid-item col-span-2 sm:col-span-2 sm:col-start-4 sm:row-start-5 bg-gray-200 cursor-pointer overflow-hidden">
+            <div
+                class="grid-item col-span-2 sm:col-span-2 sm:col-start-4 sm:row-start-5 bg-gray-200 cursor-pointer overflow-hidden">
                 <a href="/work.html?work_detail=13">
-                <img src="/MIW_Website_Assets/Coffe_image_work.png"
-                    class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
+                    <img src="/MIW_Website_Assets/Coffe_image_work.png"
+                        class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
                 </a>
             </div>
         </div>
@@ -310,15 +323,22 @@
 
             <!-- Text Content (Left) -->
             <div class="w-full lg:w-1/2 text-left">
-                <h1 class="text-5xl lg:text-6xl font-semibold mb-4">ibangle</h1>
+                <h1 class="text-5xl lg:text-6xl font-sf font-medium mb-4">ibangle</h1>
                 <p class="text-gray-400 text-lg leading-relaxed">
+                    <br />
                     The iBangle, designed by Gopi Prasannaa in 2008, was the first-of-its-kind wearable music
                     device, conceptualized long before Apple introduced wearables.
-                    <br><br>
+                    <br />
+                    <br />
                     This futuristic bangle-style iPod featured touch-sensitive controls, virtual earphones, and an
-                    adjustable fit, redefining personal audio experiences.
+                    adjustable fit,
+                    redefining personal audio experiences. Recognised globally, it was featured in CNN's "21st Century
+                    Visionary" list and highlighted by Yanko Design as one of the Best of 2008, showcasing its
+                    pioneering approach to wearable technology.
+
                 </p>
-                <button class="bg-black mt-4 sm:mt-10 border border-white px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg text-white font-semibold"
+                <button
+                    class="bg-black mt-8 sm:mt-10 border border-white px-12 sm:px-10 py-2 sm:py-3 text-sm sm:text-lg text-white font-medium tracking-wider sm:tracking-wide"
                     onclick="window.location.href='/work.html'">
                     CLICK FOR MORE
                 </button>
