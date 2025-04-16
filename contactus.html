@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,32 +11,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <title>Contact Us</title>
     <style>
-        body{
-            font-family: 'Lato',sans-serif;
+        body {
+            font-family: 'Lato', sans-serif;
         }
     </style>
 </head>
+
 <body oncontextmenu="return false;">
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
+    <nav id="navbar"
+        class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
-                <img id="logo-img" src="/services-assets/Logo-on-menu.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
+                <img id="logo-img" src="/services-assets/Logo-on-menu.png" alt="logo"
+                    class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
             </div>
 
             <!-- Mobile Menu Button (Right Corner) -->
             <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
-                <img id="menu-icon" src="/services-assets/Hamburger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
+                <img id="menu-icon" src="/services-assets/Hamburger-menu.png" alt="nav button"
+                    class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
             </button>
         </div>
     </nav>
 
-      
+
     <!-- Mobile Popup Menu (Overlay) -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
+    <div id="mobile-menu"
+        class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
         <!-- Close Button -->
-        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
+        <button id="close-menu"
+            class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
             ✖
         </button>
 
@@ -51,29 +58,33 @@
     </div>
 
     <!--contact design section-->
-    <section id="tilt-section" class="w-full h-auto py-16 sm:py-24 sm:h-screen flex items-center justify-center bg-white">
+    <section id="tilt-section"
+        class="w-full h-auto py-16 sm:py-24 sm:h-screen flex items-center justify-center bg-white">
         <div class="post-card mx-auto border shadow-2xl bg-white relative 
             flex flex-col md:flex-row
             w-[95%] md:w-[720px] lg:w-[960px] xl:w-[1420px]
             h-auto md:h-[550px] xl:h-[650px] overflow-hidden">
-            
+
             <!-- Left Side (Stacked Images) -->
-            <div class="md:w-1/2 flex items-center px-10 py-6 md:px-12 md:py-24 xl:px-16 xl:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0" style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
+            <div class="md:w-1/2 flex items-center px-10 py-6 md:px-12 md:py-24 xl:px-16 xl:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0"
+                style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
                 <div id="tilt-container" class="relative w-full max-w-md aspect-[1/1.1]">
-                <!-- Background Image (Behind) -->
-                <img id="bg-img" src="/contactpage_assets/colours.png" alt="Background" class="absolute top-3 left-7 md:left-6 lg:left-12 xl:left-12 w-full h-full object-contain z-0 transition-transform duration-200 ease-in-out scale-[.86]" />
-                
-                <!-- Foreground Image (Top) -->
-                <img id="fg-img" src="/contactpage_assets/Hores.png" alt="Foreground" class="absolute top-0 left-0 w-full h-full object-contain z-10 transition-transform duration-200 ease-in-out" />
+                    <!-- Background Image (Behind) -->
+                    <img id="bg-img" src="/contactpage_assets/colours.png" alt="Background"
+                        class="absolute top-3 left-7 md:left-6 lg:left-12 xl:left-12 w-full h-full object-contain z-0 transition-transform duration-200 ease-in-out scale-[.86]" />
+
+                    <!-- Foreground Image (Top) -->
+                    <img id="fg-img" src="/contactpage_assets/Hores.png" alt="Foreground"
+                        class="absolute top-0 left-0 w-full h-full object-contain z-10 transition-transform duration-200 ease-in-out" />
                 </div>
             </div>
-  
-            
+
+
             <!-- Vertical Dotted Line (Hidden on Small Screens) -->
             <div class="hidden md:block absolute left-1/2 top-24 bottom-24 border-l-2 border-[#272cf7] border-dotted">
             </div>
-        <!-- style="border-image: repeating-linear-gradient(to bottom, #000000 0, #000000 1px, transparent 1px, transparent 7px) 1 100%;"> -->
-   
+            <!-- style="border-image: repeating-linear-gradient(to bottom, #000000 0, #000000 1px, transparent 1px, transparent 7px) 1 100%;"> -->
+
             <!-- Right Side (Form) -->
             <div class="md:w-1/2 p-6 sm:p-10  flex flex-col justify-center relative">
                 <!-- Header with Logo -->
@@ -81,39 +92,33 @@
                     <h1 class="text-2xl md:text-4xl leading-relaxed font-light text-[#272cf7]">L E T S <br> T A L K</h1>
                     <img src="/contactpage_assets/stamp.png" alt="Logo" class="w-24 md:w-28 mt-10">
                 </div>
-                
+
                 <!-- Form Section -->
                 <form class="mt-10 md:mt-24 space-y-6 md:space-y-10">
                     <!-- Name Field -->
                     <div class=" pt-5 sm:pt-0">
-                        <input type="text" name="name" placeholder="NAME" 
-                            class="w-full border-none outline-none bg-transparent text-[#272cf7] 
-                                   placeholder:text-[#272cf7] focus:ring-0" 
-                            required>
-                            <div class="w-full border-b-2 border-dotted border-[#272cf7]">
-                            </div>
+                        <input type="text" name="name" placeholder="NAME" class="w-full border-none outline-none bg-transparent text-[#272cf7] 
+                                   placeholder:text-[#272cf7] focus:ring-0" required>
+                        <div class="w-full border-b-2 border-dotted border-[#272cf7]">
                         </div>
-    
+                    </div>
+
                     <!-- Email Field -->
                     <div class=" pt-5 sm:pt-0">
-                        <input type="email" name="email" placeholder="EMAIL ADDRESS" 
-                            class="w-full border-none outline-none bg-transparent text-[#272cf7] 
-                                   placeholder:text-[#272cf7] focus:ring-0" 
-                            required>
-                            <div class="w-full border-b-2 border-dotted border-[#272cf7]">
-                            </div>
+                        <input type="email" name="email" placeholder="EMAIL ADDRESS" class="w-full border-none outline-none bg-transparent text-[#272cf7] 
+                                   placeholder:text-[#272cf7] focus:ring-0" required>
+                        <div class="w-full border-b-2 border-dotted border-[#272cf7]">
                         </div>
-    
+                    </div>
+
                     <!-- Message Field -->
                     <div class=" pt-5 sm:pt-0">
-                        <textarea name="message" rows="1" placeholder="YOUR MESSAGE FOR US" 
-                            class="w-full border-none outline-none bg-transparent text-[#272cf7] 
-                                   placeholder:text-[#272cf7] focus:ring-0" 
-                            required></textarea>
-                            <div class="w-full border-b-2 border-dotted border-[#272cf7]">
-                            </div>
+                        <textarea name="message" rows="1" placeholder="YOUR MESSAGE FOR US" class="w-full border-none outline-none bg-transparent text-[#272cf7] 
+                                   placeholder:text-[#272cf7] focus:ring-0" required></textarea>
+                        <div class="w-full border-b-2 border-dotted border-[#272cf7]">
                         </div>
-    
+                    </div>
+
                     <!-- Send Button -->
                     <div class="mt-6 md:mt-10 flex justify-end pt-5 sm:pt-0">
                         <button type="submit">
@@ -124,92 +129,99 @@
             </div>
         </div>
     </section>
-    
-    
+
+
 
     <!--Footer-->
     <section class="min-h-1/2 flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
         <div class="container">
-          <div class="w-full max-w-4xl mx-auto mt-6">
-            <!-- Heading + Input Field -->
-            <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
-            <div class="flex">
-                <input type="email" id="footerMail" placeholder="ENTER YOUR EMAIL ADDRESS" class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
-                <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
-            </div>
-        
-            <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
-                <!-- First Row: Lists (Grid of 5 Items) -->
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
-                    <div class="w-full order-1 md:order-none">
-                        <h3 class="font-semibold">HOME</h3>
-                        <ul class="space-y-1">
-                            <li>Why us</li>
-                        </ul>
+            <div class="w-full max-w-4xl mx-auto mt-6">
+                <!-- Heading + Input Field -->
+                <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
+                <div class="flex">
+                    <input type="email" id="footerMail" placeholder="ENTER YOUR EMAIL ADDRESS"
+                        class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
+                    <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
+                    <!-- First Row: Lists (Grid of 5 Items) -->
+                    <div
+                        class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
+                        <div class="w-full order-1 md:order-none">
+                            <h3 class="font-semibold">HOME</h3>
+                            <ul class="space-y-1">
+                                <li>Why us</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">WORK</h3>
+                            <ul class="space-y-1">
+                                <li>Film Posters</li>
+                                <li>Events</li>
+                                <li>Title Animations</li>
+                                <li>Branding</li>
+                                <li>Products</li>
+                                <li>Advertising</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">SERVICE</h3>
+                            <ul class="space-y-1 text-sm pt-3">
+                                <li class="whitespace-nowrap">Branding</li>
+                                <li class="whitespace-nowrap">Advertising</li>
+                                <li class="whitespace-nowrap">Film Production</li>
+                                <li class="whitespace-nowrap">Graphic Design</li>
+                                <li class="whitespace-nowrap">Social Media Marketing</li>
+                                <li class="whitespace-nowrap">Integrated Marketing</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">TEAM</h3>
+                            <ul class="space-y-1">
+                                <li>Meet the Team</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">CONTACT</h3>
+                            <ul class="space-y-1">
+                                <li>Contact Information</li>
+                                <li>Careers</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">WORK</h3>
-                        <ul class="space-y-1">
-                            <li>Film Posters</li>
-                            <li>Events</li>
-                            <li>Title Animations</li>
-                            <li>Branding</li>
-                            <li>Products</li>
-                            <li>Advertising</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">SERVICE</h3>
-                        <ul class="space-y-1 text-sm pt-3">
-                            <li class="whitespace-nowrap">Branding</li>
-                            <li class="whitespace-nowrap">Advertising</li>
-                            <li class="whitespace-nowrap">Film Production</li>
-                            <li class="whitespace-nowrap">Graphic Design</li>
-                            <li class="whitespace-nowrap">Social Media Marketing</li>
-                            <li class="whitespace-nowrap">Integrated Marketing</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">TEAM</h3>
-                        <ul class="space-y-1">
-                            <li>Meet the Team</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">CONTACT</h3>
-                        <ul class="space-y-1">
-                            <li>Contact Information</li>
-                            <li>Careers</li>
-                        </ul>
+                    <!-- Second Row: Button & Social Media Icons -->
+                    <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
+                        <button
+                            class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                            <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
+                        </button>
+
+
+                        <!-- Social Icons -->
+                        <div class="flex flex-wrap justify-center sm:justify-end gap-4">
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <!-- Second Row: Button & Social Media Icons -->
-                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
-                    <button class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
-                        <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
-                    </button>
-                    
-            
-                    <!-- Social Icons -->
-                    <div class="flex flex-wrap justify-center sm:justify-end gap-4">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
+
             </div>
-            
-        </div>
-        
+
         </div>
     </section>
 
@@ -230,13 +242,13 @@
         // Close menu when clicking outside of it
         mobileMenu.addEventListener('click', (e) => {
             if (e.target === mobileMenu) {
-            mobileMenu.classList.add('hidden');
+                mobileMenu.classList.add('hidden');
             }
         });
 
         function updatePlaceholder() {
             const inputField = document.getElementById("footerMail");
-            
+
             if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
                 inputField.placeholder = "EMAIL";
             } else {
@@ -249,292 +261,338 @@
     </script>
     <!--SVG Animation-->
     <script>
-     document.addEventListener('DOMContentLoaded', function() {
-    // Get the eyeball elements
-    const leftEyeball = document.getElementById('leftEyeball');
-    const rightEyeball = document.getElementById('rightEyeball');
-    
-    // Get the eye area elements
-    const leftEye = document.getElementById('leftEye');
-    const rightEye = document.getElementById('rightEye');
-    
-    // Get the eye sockets (as boundaries)
-    const leftEyeSocket = document.getElementById('leftEyeSocket');
-    const rightEyeSocket = document.getElementById('rightEyeSocket');
-    
-    // Get the SVG element itself
-    const svgElement = document.querySelector('svg');
-    
-    // Get the bounding boxes of the eye sockets
-    const leftEyeBounds = leftEyeSocket.getBBox();
-    const rightEyeBounds = rightEyeSocket.getBBox();
-    
-    // Calculate socket centers
-    const leftSocketCenterX = leftEyeBounds.x + leftEyeBounds.width/2;
-    const leftSocketCenterY = leftEyeBounds.y + leftEyeBounds.height/2;
-    const rightSocketCenterX = rightEyeBounds.x + rightEyeBounds.width/2;
-    const rightSocketCenterY = rightEyeBounds.y + rightEyeBounds.height/2;
-    
-    // Set up initial states and transform origins
-    gsap.set([leftEyeball, rightEyeball, leftEye, rightEye], {
-        transformOrigin: "center center",
-        x: 0,
-        y: 0
-    });
-    
-    gsap.set(svgElement, {
-        transformOrigin: "center center"
-    });
-    
-    // Fine-tune movement parameters for more realistic eye movement
-    const maxMovementX = 3;
-    const maxMovementY = 2;
-    const eyeAreaRatio = 0.8; // Eye area moves at 80% of eyeball movement
-    const movementDuration = 0.2; // Faster response time
-    
-    // Create tweens that we can modify rather than creating new ones on each mouse move
-    const leftEyeballTween = gsap.to(leftEyeball, {duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out"});
-    const rightEyeballTween = gsap.to(rightEyeball, {duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out"});
-    const leftEyeTween = gsap.to(leftEye, {duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out"});
-    const rightEyeTween = gsap.to(rightEye, {duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out"});
-    const svgTween = gsap.to(svgElement, {duration: 0.4, rotateX: 0, rotateY: 0, paused: true, ease: "sine.out"});
-    
-    // Use a throttled function for mouse move to improve performance
-    let lastUpdate = 0;
-    const throttleTime = 10; // 10ms throttle
-    
-    // Mouse move event listener with throttling
-    document.addEventListener('mousemove', function(e) {
-        const now = Date.now();
-        
-        // Only update if enough time has passed since last update
-        if (now - lastUpdate > throttleTime) {
-            lastUpdate = now;
-            updateEyePosition(e);
-        }
-    });
-    
-    function updateEyePosition(e) {
-        // Get mouse position relative to viewport
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-        
-        // Get SVG position and dimensions
-        const svgRect = svgElement.getBoundingClientRect();
-        const svgX = svgRect.left + svgRect.width/2;
-        const svgY = svgRect.top + svgRect.height/2;
-        
-        // Calculate normalized mouse position (-1 to 1 from center)
-        const mouseVectorX = (mouseX - svgX) / (window.innerWidth / 2);
-        const mouseVectorY = (mouseY - svgY) / (window.innerHeight / 2);
-        
-        // Calculate movement with easing curve for natural motion
-        const moveX = Math.min(Math.max(mouseVectorX * maxMovementX, -maxMovementX), maxMovementX);
-        const moveY = Math.min(Math.max(mouseVectorY * maxMovementY, -maxMovementY), maxMovementY);
-        
-        // Eye areas move slightly less than eyeballs
-        const eyeAreaMoveX = moveX * eyeAreaRatio;
-        const eyeAreaMoveY = moveY * eyeAreaRatio;
-        
-        // Calculate 3D rotation - more subtle
-        const rotateY = mouseVectorX * 5;
-        const rotateX = -mouseVectorY * 5;
-        
-        // Update tweens with new target values and restart them
-        leftEyeballTween.vars.x = moveX;
-        leftEyeballTween.vars.y = moveY;
-        leftEyeballTween.invalidate().restart();
-        
-        rightEyeballTween.vars.x = moveX;
-        rightEyeballTween.vars.y = moveY;
-        rightEyeballTween.invalidate().restart();
-        
-        leftEyeTween.vars.x = eyeAreaMoveX;
-        leftEyeTween.vars.y = eyeAreaMoveY;
-        leftEyeTween.invalidate().restart();
-        
-        rightEyeTween.vars.x = eyeAreaMoveX;
-        rightEyeTween.vars.y = eyeAreaMoveY;
-        rightEyeTween.invalidate().restart();
-        
-        svgTween.vars.rotateX = rotateX;
-        svgTween.vars.rotateY = rotateY;
-        svgTween.invalidate().restart();
-    }
-    
-    // Reset eyes position when mouse leaves the window
-    document.addEventListener('mouseleave', function() {
-        // Reset eye positions
-        gsap.to([leftEyeball, rightEyeball], {
-            duration: 0.6,
-            x: 0,
-            y: 0,
-            ease: "power2.out"
-        });
-        
-        gsap.to([leftEye, rightEye], {
-            duration: 0.6,
-            x: 0,
-            y: 0,
-            ease: "power2.out"
-        });
-        
-        // Reset SVG rotation
-        gsap.to(svgElement, {
-            duration: 0.8,
-            rotateY: 0,
-            rotateX: 0,
-            ease: "power2.out"
-        });
-    });
-    
-    // Enhanced eyeball animations
-    function animateEyeballs() {
-        // Create a master timeline for eyeball animations
-        const eyeballTimeline = gsap.timeline({
-            onComplete: function() {
-                // Wait a random amount of time before starting the next animation cycle
-                gsap.delayedCall(Math.random() * 3 + 2, animateEyeballs);
-            }
-        });
-        
-        // Random subtle movement patterns for eyeballs
-        if (Math.random() > 0.7) {
-            // Occasional look around animation
-            eyeballTimeline.to([leftEyeball, rightEyeball], {
-                x: Math.random() * 2 - 1,
-                y: Math.random() * 1 - 0.5,
-                duration: 0.4,
-                ease: "sine.inOut"
-            })
-            .to([leftEyeball, rightEyeball], {
-                x: Math.random() * 2 - 1,
-                y: Math.random() * 1 - 0.5,
-                duration: 0.5,
-                ease: "sine.inOut"
-            })
-            .to([leftEyeball, rightEyeball], {
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the eyeball elements
+            const leftEyeball = document.getElementById('leftEyeball');
+            const rightEyeball = document.getElementById('rightEyeball');
+
+            // Get the eye area elements
+            const leftEye = document.getElementById('leftEye');
+            const rightEye = document.getElementById('rightEye');
+
+            // Get the eye sockets (as boundaries)
+            const leftEyeSocket = document.getElementById('leftEyeSocket');
+            const rightEyeSocket = document.getElementById('rightEyeSocket');
+
+            // Get the SVG element itself
+            const svgElement = document.querySelector('svg');
+
+            // Get the bounding boxes of the eye sockets
+            const leftEyeBounds = leftEyeSocket.getBBox();
+            const rightEyeBounds = rightEyeSocket.getBBox();
+
+            // Calculate socket centers
+            const leftSocketCenterX = leftEyeBounds.x + leftEyeBounds.width / 2;
+            const leftSocketCenterY = leftEyeBounds.y + leftEyeBounds.height / 2;
+            const rightSocketCenterX = rightEyeBounds.x + rightEyeBounds.width / 2;
+            const rightSocketCenterY = rightEyeBounds.y + rightEyeBounds.height / 2;
+
+            // Set up initial states and transform origins
+            gsap.set([leftEyeball, rightEyeball, leftEye, rightEye], {
+                transformOrigin: "center center",
                 x: 0,
-                y: 0,
-                duration: 0.6,
-                ease: "power2.out"
+                y: 0
             });
-        } else if (Math.random() > 0.5) {
-            // Subtle dilation/contraction effect (simulates focus changes)
-            eyeballTimeline.to([leftEyeball, rightEyeball], {
-                scale: 0.95 + Math.random() * 0.1,
-                duration: 0.5,
-                ease: "sine.inOut"
-            })
-            .to([leftEyeball, rightEyeball], {
-                scale: 1,
-                duration: 0.5,
-                ease: "sine.inOut"
+
+            gsap.set(svgElement, {
+                transformOrigin: "center center"
             });
-        } else {
-            // Micro movements (simulates small focus adjustments)
-            for (let i = 0; i < 3; i++) {
-                eyeballTimeline.to([leftEyeball, rightEyeball], {
-                    x: (Math.random() - 0.5) * 1.2,
-                    y: (Math.random() - 0.5) * 0.8,
-                    duration: 0.3,
-                    ease: "sine.inOut"
+
+            // Fine-tune movement parameters for more realistic eye movement
+            const maxMovementX = 3;
+            const maxMovementY = 2;
+            const eyeAreaRatio = 0.8; // Eye area moves at 80% of eyeball movement
+            const movementDuration = 0.2; // Faster response time
+
+            // Create tweens that we can modify rather than creating new ones on each mouse move
+            const leftEyeballTween = gsap.to(leftEyeball, { duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out" });
+            const rightEyeballTween = gsap.to(rightEyeball, { duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out" });
+            const leftEyeTween = gsap.to(leftEye, { duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out" });
+            const rightEyeTween = gsap.to(rightEye, { duration: movementDuration, x: 0, y: 0, paused: true, ease: "sine.out" });
+            const svgTween = gsap.to(svgElement, { duration: 0.4, rotateX: 0, rotateY: 0, paused: true, ease: "sine.out" });
+
+            // Use a throttled function for mouse move to improve performance
+            let lastUpdate = 0;
+            const throttleTime = 10; // 10ms throttle
+
+            // Mouse move event listener with throttling
+            document.addEventListener('mousemove', function (e) {
+                const now = Date.now();
+
+                // Only update if enough time has passed since last update
+                if (now - lastUpdate > throttleTime) {
+                    lastUpdate = now;
+                    updateEyePosition(e);
+                }
+            });
+
+            function updateEyePosition(e) {
+                // Get mouse position relative to viewport
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+
+                // Get SVG position and dimensions
+                const svgRect = svgElement.getBoundingClientRect();
+                const svgX = svgRect.left + svgRect.width / 2;
+                const svgY = svgRect.top + svgRect.height / 2;
+
+                // Calculate normalized mouse position (-1 to 1 from center)
+                const mouseVectorX = (mouseX - svgX) / (window.innerWidth / 2);
+                const mouseVectorY = (mouseY - svgY) / (window.innerHeight / 2);
+
+                // Calculate movement with easing curve for natural motion
+                const moveX = Math.min(Math.max(mouseVectorX * maxMovementX, -maxMovementX), maxMovementX);
+                const moveY = Math.min(Math.max(mouseVectorY * maxMovementY, -maxMovementY), maxMovementY);
+
+                // Eye areas move slightly less than eyeballs
+                const eyeAreaMoveX = moveX * eyeAreaRatio;
+                const eyeAreaMoveY = moveY * eyeAreaRatio;
+
+                // Calculate 3D rotation - more subtle
+                const rotateY = mouseVectorX * 5;
+                const rotateX = -mouseVectorY * 5;
+
+                // Update tweens with new target values and restart them
+                leftEyeballTween.vars.x = moveX;
+                leftEyeballTween.vars.y = moveY;
+                leftEyeballTween.invalidate().restart();
+
+                rightEyeballTween.vars.x = moveX;
+                rightEyeballTween.vars.y = moveY;
+                rightEyeballTween.invalidate().restart();
+
+                leftEyeTween.vars.x = eyeAreaMoveX;
+                leftEyeTween.vars.y = eyeAreaMoveY;
+                leftEyeTween.invalidate().restart();
+
+                rightEyeTween.vars.x = eyeAreaMoveX;
+                rightEyeTween.vars.y = eyeAreaMoveY;
+                rightEyeTween.invalidate().restart();
+
+                svgTween.vars.rotateX = rotateX;
+                svgTween.vars.rotateY = rotateY;
+                svgTween.invalidate().restart();
+            }
+
+            // Reset eyes position when mouse leaves the window
+            document.addEventListener('mouseleave', function () {
+                // Reset eye positions
+                gsap.to([leftEyeball, rightEyeball], {
+                    duration: 0.6,
+                    x: 0,
+                    y: 0,
+                    ease: "power2.out"
                 });
+
+                gsap.to([leftEye, rightEye], {
+                    duration: 0.6,
+                    x: 0,
+                    y: 0,
+                    ease: "power2.out"
+                });
+
+                // Reset SVG rotation
+                gsap.to(svgElement, {
+                    duration: 0.8,
+                    rotateY: 0,
+                    rotateX: 0,
+                    ease: "power2.out"
+                });
+            });
+
+            // Enhanced eyeball animations
+            function animateEyeballs() {
+                // Create a master timeline for eyeball animations
+                const eyeballTimeline = gsap.timeline({
+                    onComplete: function () {
+                        // Wait a random amount of time before starting the next animation cycle
+                        gsap.delayedCall(Math.random() * 3 + 2, animateEyeballs);
+                    }
+                });
+
+                // Random subtle movement patterns for eyeballs
+                if (Math.random() > 0.7) {
+                    // Occasional look around animation
+                    eyeballTimeline.to([leftEyeball, rightEyeball], {
+                        x: Math.random() * 2 - 1,
+                        y: Math.random() * 1 - 0.5,
+                        duration: 0.4,
+                        ease: "sine.inOut"
+                    })
+                        .to([leftEyeball, rightEyeball], {
+                            x: Math.random() * 2 - 1,
+                            y: Math.random() * 1 - 0.5,
+                            duration: 0.5,
+                            ease: "sine.inOut"
+                        })
+                        .to([leftEyeball, rightEyeball], {
+                            x: 0,
+                            y: 0,
+                            duration: 0.6,
+                            ease: "power2.out"
+                        });
+                } else if (Math.random() > 0.5) {
+                    // Subtle dilation/contraction effect (simulates focus changes)
+                    eyeballTimeline.to([leftEyeball, rightEyeball], {
+                        scale: 0.95 + Math.random() * 0.1,
+                        duration: 0.5,
+                        ease: "sine.inOut"
+                    })
+                        .to([leftEyeball, rightEyeball], {
+                            scale: 1,
+                            duration: 0.5,
+                            ease: "sine.inOut"
+                        });
+                } else {
+                    // Micro movements (simulates small focus adjustments)
+                    for (let i = 0; i < 3; i++) {
+                        eyeballTimeline.to([leftEyeball, rightEyeball], {
+                            x: (Math.random() - 0.5) * 1.2,
+                            y: (Math.random() - 0.5) * 0.8,
+                            duration: 0.3,
+                            ease: "sine.inOut"
+                        });
+                    }
+                    eyeballTimeline.to([leftEyeball, rightEyeball], {
+                        x: 0,
+                        y: 0,
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                }
+
+                return eyeballTimeline;
             }
-            eyeballTimeline.to([leftEyeball, rightEyeball], {
-                x: 0,
-                y: 0,
-                duration: 0.5,
-                ease: "power2.out"
+
+            // Add a realistic blink animation
+            function blinkEyes() {
+                // Don't blink if we're in the middle of another eyeball animation
+                if (gsap.getTweensOf(leftEyeball).filter(tween => tween.vars.scaleY !== undefined).length > 0) {
+                    gsap.delayedCall(0.5, blinkEyes);
+                    return;
+                }
+
+                const timeline = gsap.timeline();
+
+                // Natural blink sequence
+                timeline.to([leftEyeball, rightEyeball], {
+                    scaleY: 0.15,
+                    duration: 0.1,
+                    transformOrigin: "center center",
+                    ease: "power1.in"
+                })
+                    .to([leftEyeball, rightEyeball], {
+                        scaleY: 1,
+                        duration: 0.1,
+                        ease: "power1.out"
+                    });
+
+                // Random double-blink occasionally
+                if (Math.random() > 0.85) {
+                    timeline.to({}, { duration: 0.1 }) // Brief pause
+                        .to([leftEyeball, rightEyeball], {
+                            scaleY: 0.15,
+                            duration: 0.08,
+                            ease: "power1.in"
+                        })
+                        .to([leftEyeball, rightEyeball], {
+                            scaleY: 1,
+                            duration: 0.1,
+                            ease: "power1.out"
+                        });
+                }
+
+                // Random timing for next blink (between 2-6 seconds)
+                const nextBlink = Math.random() * 4 + 2;
+                gsap.delayedCall(nextBlink, blinkEyes);
+            }
+
+            // Start eye animations after initial delay
+            gsap.delayedCall(1, blinkEyes);
+            gsap.delayedCall(2, animateEyeballs);
+
+            // Add a subtle breathing/floating animation
+            gsap.to(svgElement, {
+                y: "+=3",
+                duration: 1.5,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
             });
-        }
-        
-        return eyeballTimeline;
-    }
-    
-    // Add a realistic blink animation
-    function blinkEyes() {
-        // Don't blink if we're in the middle of another eyeball animation
-        if (gsap.getTweensOf(leftEyeball).filter(tween => tween.vars.scaleY !== undefined).length > 0) {
-            gsap.delayedCall(0.5, blinkEyes);
-            return;
-        }
-        
-        const timeline = gsap.timeline();
-        
-        // Natural blink sequence
-        timeline.to([leftEyeball, rightEyeball], {
-            scaleY: 0.15,
-            duration: 0.1, 
-            transformOrigin: "center center",
-            ease: "power1.in"
-        })
-        .to([leftEyeball, rightEyeball], {
-            scaleY: 1,
-            duration: 0.1,
-            ease: "power1.out"
         });
-        
-        // Random double-blink occasionally
-        if (Math.random() > 0.85) {
-            timeline.to({}, {duration: 0.1}) // Brief pause
-            .to([leftEyeball, rightEyeball], {
-                scaleY: 0.15,
-                duration: 0.08,
-                ease: "power1.in"
-            })
-            .to([leftEyeball, rightEyeball], {
-                scaleY: 1,
-                duration: 0.1,
-                ease: "power1.out"
-            });
-        }
-        
-        // Random timing for next blink (between 2-6 seconds)
-        const nextBlink = Math.random() * 4 + 2;
-        gsap.delayedCall(nextBlink, blinkEyes);
-    }
-    
-    // Start eye animations after initial delay
-    gsap.delayedCall(1, blinkEyes);
-    gsap.delayedCall(2, animateEyeballs);
-    
-    // Add a subtle breathing/floating animation
-    gsap.to(svgElement, {
-        y: "+=3",
-        duration: 1.5,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-    });
-});
     </script>
     <script>
+        // const section = document.getElementById("tilt-section");
+        // const bgImg = document.getElementById("bg-img");
+        // const fgImg = document.getElementById("fg-img");
+
+        // section.addEventListener("mousemove", (e) => {
+        //     const { width, height, left, top } = section.getBoundingClientRect();
+        //     const x = e.clientX - left;
+        //     const y = e.clientY - top;
+
+        //     const rotateX = ((y / height) - 0.75) * 20; // vertical tilt
+        //     const rotateY = ((x / width) - 0.75) * -20; // horizontal tilt
+
+        //     fgImg.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        //     bgImg.style.transform = `scale(.86) rotateX(${rotateX / 2}deg) rotateY(${rotateY / 2}deg)`;
+        // });
+
+        // section.addEventListener("mouseleave", () => {
+        //     fgImg.style.transform = `rotateX(0deg) rotateY(0deg)`;
+        //     bgImg.style.transform = `scale(.86) rotateX(0deg) rotateY(0deg)`;
+        // });
+
         const section = document.getElementById("tilt-section");
         const bgImg = document.getElementById("bg-img");
         const fgImg = document.getElementById("fg-img");
-    
+
         section.addEventListener("mousemove", (e) => {
             const { width, height, left, top } = section.getBoundingClientRect();
             const x = e.clientX - left;
             const y = e.clientY - top;
-    
-            const rotateX = ((y / height) - 0.5) * 20; // vertical tilt
-            const rotateY = ((x / width) - 0.5) * -20; // horizontal tilt
-    
-            fgImg.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            bgImg.style.transform = `scale(.86) rotateX(${rotateX / 2}deg) rotateY(${rotateY / 2}deg)`;
+
+            // Increase tilt intensity
+            const rotateX = ((y / height) - 0.75) * 30; // Stronger vertical tilt
+            const rotateY = ((x / width) - 0.75) * -30; // Stronger horizontal tilt
+
+            gsap.to(fgImg, {
+                duration: 0.2, // Faster transition
+                rotateX: rotateX,
+                rotateY: rotateY,
+                ease: "back.out(2)", // Adds extra pop effect
+            });
+
+            gsap.to(bgImg, {
+                duration: 0.2,
+                scale: 0.85, // Slightly more shrink for depth
+                rotateX: rotateX / 1.5,
+                rotateY: rotateY / 1.5,
+                ease: "back.out(2)",
+            });
         });
-    
+
         section.addEventListener("mouseleave", () => {
-            fgImg.style.transform = `rotateX(0deg) rotateY(0deg)`;
-            bgImg.style.transform = `scale(.86) rotateX(0deg) rotateY(0deg)`;
+            gsap.to(fgImg, {
+                duration: 0.5, // Slower reset for smoother effect
+                rotateX: 0,
+                rotateY: 0,
+                ease: "elastic.out(1, 0.4)", // Bouncy reset effect
+            });
+
+            gsap.to(bgImg, {
+                duration: 0.5,
+                scale: 0.85,
+                rotateX: 0,
+                rotateY: 0,
+                ease: "elastic.out(1, 0.4)",
+            });
         });
     </script>
-    
-    
+
+
     <script>
-         let lastScrollY = window.scrollY;
+        let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
 
         window.addEventListener("scroll", () => {
@@ -556,118 +614,119 @@
     </script>
     <script>
         // Enhanced function to check background section color and invert images if needed
-    function checkBackgroundAndInvertImages() {
-        const navbar = document.getElementById('navbar');
-        const logo = document.getElementById('logo-img');
-        const menuIcon = document.getElementById('menu-icon');
-        
-        // Get the scroll position to determine what section we're on
-        const scrollY = window.scrollY;
-        
-        // Get elements that navbar might be overlapping
-        const sections = document.querySelectorAll('section');
-        let currentSection = null;
-        
-        // Find which section the navbar is currently overlapping
-        for (const section of sections) {
-            const rect = section.getBoundingClientRect();
-            // If the navbar is within the top portion of this section
-            if (rect.top <= 80 && rect.bottom > 0) {
-                currentSection = section;
-                break;
+        function checkBackgroundAndInvertImages() {
+            const navbar = document.getElementById('navbar');
+            const logo = document.getElementById('logo-img');
+            const menuIcon = document.getElementById('menu-icon');
+
+            // Get the scroll position to determine what section we're on
+            const scrollY = window.scrollY;
+
+            // Get elements that navbar might be overlapping
+            const sections = document.querySelectorAll('section');
+            let currentSection = null;
+
+            // Find which section the navbar is currently overlapping
+            for (const section of sections) {
+                const rect = section.getBoundingClientRect();
+                // If the navbar is within the top portion of this section
+                if (rect.top <= 80 && rect.bottom > 0) {
+                    currentSection = section;
+                    break;
+                }
+            }
+
+            // If we found a current section, get its background color
+            if (currentSection) {
+                const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
+                const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
+
+                // Check if this is a section where we need to invert
+                if (needsInversion(sectionBgColor, sectionBgImage)) {
+                    logo.style.filter = "invert(1)";
+                    menuIcon.style.filter = "invert(1)";
+                } else {
+                    logo.style.filter = "none";
+                    menuIcon.style.filter = "none";
+                }
             }
         }
-        
-        // If we found a current section, get its background color
-        if (currentSection) {
-            const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
-            const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
-            
-            // Check if this is a section where we need to invert
-            if (needsInversion(sectionBgColor, sectionBgImage)) {
-                logo.style.filter = "invert(1)";
-                menuIcon.style.filter = "invert(1)";
-            } else {
-                logo.style.filter = "none";
-                menuIcon.style.filter = "none";
+
+        // Enhanced function to determine if inversion is needed
+        function needsInversion(backgroundColor, backgroundImage) {
+            // If there's a background image that's not "none", we might need special handling
+            const hasBackgroundImage = backgroundImage && backgroundImage !== "none";
+
+            // Get the logo and menu icon color (you may need to define these explicitly)
+            // For example, if your logo is black (#000000) or close to it:
+            const logoColor = { r: 0, g: 0, b: 0 }; // Assuming black logo
+
+            // Parse the backgroundColor to get RGB values
+            const rgbValues = backgroundColor.match(/\d+/g);
+
+            if (!rgbValues || rgbValues.length < 3) {
+                // If we can't parse the color, default behavior based on section
+                return hasBackgroundImage || isKnownDarkSection(backgroundColor);
             }
+
+            const r = parseInt(rgbValues[0]);
+            const g = parseInt(rgbValues[1]);
+            const b = parseInt(rgbValues[2]);
+
+            // Calculate color similarity between background and logo
+            const colorSimilarity = calculateColorSimilarity(
+                { r, g, b },
+                logoColor
+            );
+
+            // Calculate the perceived brightness
+            const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
+
+            // If colors are similar OR background is dark, invert
+            return colorSimilarity > 85 || brightness < 128;
         }
-    }
-    
-    // Enhanced function to determine if inversion is needed
-    function needsInversion(backgroundColor, backgroundImage) {
-        // If there's a background image that's not "none", we might need special handling
-        const hasBackgroundImage = backgroundImage && backgroundImage !== "none";
-        
-        // Get the logo and menu icon color (you may need to define these explicitly)
-        // For example, if your logo is black (#000000) or close to it:
-        const logoColor = { r: 0, g: 0, b: 0 }; // Assuming black logo
-        
-        // Parse the backgroundColor to get RGB values
-        const rgbValues = backgroundColor.match(/\d+/g);
-        
-        if (!rgbValues || rgbValues.length < 3) {
-            // If we can't parse the color, default behavior based on section
-            return hasBackgroundImage || isKnownDarkSection(backgroundColor);
+
+        // Calculate how similar two colors are (0-100%)
+        function calculateColorSimilarity(color1, color2) {
+            // Calculate the Euclidean distance in RGB space
+            const distance = Math.sqrt(
+                Math.pow(color1.r - color2.r, 2) +
+                Math.pow(color1.g - color2.g, 2) +
+                Math.pow(color1.b - color2.b, 2)
+            );
+
+            // Convert to a similarity percentage (0-100)
+            // Max distance in RGB space is √(255² + 255² + 255²) ≈ 441.7
+            return 100 - (distance / 441.7 * 100);
         }
-        
-        const r = parseInt(rgbValues[0]);
-        const g = parseInt(rgbValues[1]);
-        const b = parseInt(rgbValues[2]);
-        
-        // Calculate color similarity between background and logo
-        const colorSimilarity = calculateColorSimilarity(
-            { r, g, b },
-            logoColor
-        );
-        
-        // Calculate the perceived brightness
-        const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
-        
-        // If colors are similar OR background is dark, invert
-        return colorSimilarity > 85 || brightness < 128;
-    }
-    
-    // Calculate how similar two colors are (0-100%)
-    function calculateColorSimilarity(color1, color2) {
-        // Calculate the Euclidean distance in RGB space
-        const distance = Math.sqrt(
-            Math.pow(color1.r - color2.r, 2) +
-            Math.pow(color1.g - color2.g, 2) +
-            Math.pow(color1.b - color2.b, 2)
-        );
-        
-        // Convert to a similarity percentage (0-100)
-        // Max distance in RGB space is √(255² + 255² + 255²) ≈ 441.7
-        return 100 - (distance / 441.7 * 100);
-    }
-    
-    // Helper function for known dark sections
-    function isKnownDarkSection(backgroundColor) {
-        // List of sections we know should have inverted logo/menu
-        const darkSectionColors = [
-            "rgb(34, 38, 247)",    // Blue section (#2226f7)
-            "rgb(0, 0, 0)",        // Black section
-            "rgb(34, 34, 34)"      // Dark gray section
-        ];
-        
-        return darkSectionColors.includes(backgroundColor);
-    }
-    
-    // Run on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        checkBackgroundAndInvertImages();
-        
-        // Run when scrolling
-        window.addEventListener('scroll', checkBackgroundAndInvertImages);
-        
-        // Run on window resize
-        window.addEventListener('resize', checkBackgroundAndInvertImages);
-        
-        // Observe changes to the navbar element
-        const observer = new MutationObserver(checkBackgroundAndInvertImages);
-        observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
-    });
-        </script>
+
+        // Helper function for known dark sections
+        function isKnownDarkSection(backgroundColor) {
+            // List of sections we know should have inverted logo/menu
+            const darkSectionColors = [
+                "rgb(34, 38, 247)",    // Blue section (#2226f7)
+                "rgb(0, 0, 0)",        // Black section
+                "rgb(34, 34, 34)"      // Dark gray section
+            ];
+
+            return darkSectionColors.includes(backgroundColor);
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            checkBackgroundAndInvertImages();
+
+            // Run when scrolling
+            window.addEventListener('scroll', checkBackgroundAndInvertImages);
+
+            // Run on window resize
+            window.addEventListener('resize', checkBackgroundAndInvertImages);
+
+            // Observe changes to the navbar element
+            const observer = new MutationObserver(checkBackgroundAndInvertImages);
+            observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
+        });
+    </script>
 </body>
+
 </html>
