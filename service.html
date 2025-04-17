@@ -9,11 +9,8 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
 	<style>
-		html {
-			scroll-behavior: smooth;
-		}
-
 		body {
 			font-family: 'Lato', sans-serif;
 		}
@@ -24,16 +21,17 @@
 			padding: 35px 10px 24px 10px;
 		}
 
-		/* Apply a smooth transition */
-		.grid img {
-			/* transition: transform 0.5s ease, box-shadow 0.5s ease; */
-			/* transform-origin: center; */
-		}
+
 
 		/* Optional: Adding a slight tilt effect */
 		.grid img:hover {
 			/* transform: scale(1) rotateX(8deg) rotateY(8deg); */
 			overflow: hidden;
+		}
+
+		[data-scroll-container] {
+			opacity: 1 !important;
+			visibility: visible !important;
 		}
 
 		.custom-width {
@@ -47,7 +45,7 @@
 
 		.posters img {
 			width: 110%;
-			height: 130%;
+			height: 100%;
 			object-fit: cover;
 			transform-origin: center;
 			top: 0;
@@ -60,7 +58,7 @@
 	</style>
 </head>
 
-<body oncontextmenu="return false;">
+<body oncontextmenu="return false;" data-scroll-container>
 	<!-- Navbar -->
 	<nav id="navbar"
 		class="bg-transparent sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
@@ -119,7 +117,7 @@
       </section> -->
 
 	<!-- Grid Layout -->
-	<section class="grid grid-cols-7 grid-rows-12 min-h-[200vh]">
+	<section class="grid grid-cols-7 grid-rows-12 min-h-[200vh]" data-scroll-section>
 		<!-- Content 1 -->
 		<div
 			class="col-span-4 row-span-2 bg-green-500 px-4 md:px-6 lg:px-8 text-white flex items-center justify-center">
@@ -241,7 +239,8 @@
 
 
 	<!--Footer-->
-	<section class="min-h-1/2 flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
+	<section class="min-h-1/2 flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10"
+		data-scroll-section>
 		<div class="container">
 			<div class="w-full max-w-4xl mx-auto mt-6">
 				<!-- Heading + Input Field -->
@@ -336,6 +335,10 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+	<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
+
 	<script>
 		const menuBtn = document.getElementById('menu-btn');
 		const closeMenuBtn = document.getElementById('close-menu');
@@ -417,31 +420,80 @@
 		//         }
 		//     );
 		// });
+		// Register plugin
+		gsap.registerPlugin(ScrollTrigger);
 
-		gsap.utils.toArray('.posters').forEach((poster) => {
-			const image = poster.querySelector('img');
-		    const posterHeight = poster.offsetHeight;
-		    const movementAmount = posterHeight * 0.05; // 10% of the element's height
+		const scrollContainer = document.querySelector("[data-scroll-container]");
 
-			gsap.fromTo(
-				image,
-				{
-					y: -50,
-					scale: 1.05
+		function initSmoothScroll() {
+			const locoScroll = new LocomotiveScroll({
+				el: scrollContainer,
+				smooth: true,
+				smoothMobile: true,
+				inertia: 0.85,
+				multiplier: 1.2,
+				getDirection: true
+			});
+
+			ScrollTrigger.scrollerProxy(scrollContainer, {
+				scrollTop(value) {
+					return arguments.length
+						? locoScroll.scrollTo(value, 0, 0)
+						: locoScroll.scroll.instance.scroll.y;
 				},
-				{
-					y: 50,
-					scale: 1.15,
-					ease: "none",
-					scrollTrigger: {
-						trigger: poster,
-						start: "top bottom",
-						end: "bottom top",
-						scrub: 0,
-						invalidateOnRefresh: true
+				getBoundingClientRect() {
+					return {
+						top: 0,
+						left: 0,
+						width: window.innerWidth,
+						height: window.innerHeight,
+					};
+				},
+				pinType: scrollContainer.style.transform ? "transform" : "fixed",
+			});
+
+			locoScroll.on("scroll", ScrollTrigger.update);
+			ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+			ScrollTrigger.refresh();
+
+			requestAnimationFrame(() => {
+				ScrollTrigger.refresh();
+			});
+		}
+
+		function loadGsap() {
+			// Your GSAP animation
+			gsap.utils.toArray(".posters").forEach((poster) => {
+				const image = poster.querySelector("img");
+
+				gsap.fromTo(
+					image,
+					{ y: -50, scale: 1.05 },
+					{
+						y: 50,
+						scale: 1.15,
+						ease: "none",
+						scrollTrigger: {
+							trigger: poster,
+							scroller: scrollContainer,
+							start: "top bottom",
+							end: "bottom top",
+							scrub: true,
+							invalidateOnRefresh: true
+						}
 					}
-				}
-			);
+				);
+			});
+		}
+
+		window.addEventListener("load", () => {
+			imagesLoaded(scrollContainer, { background: true }, () => {
+				initSmoothScroll();
+
+				setTimeout(() => {
+					loadGsap();
+				});
+			});
 		});
 
 	</script>
