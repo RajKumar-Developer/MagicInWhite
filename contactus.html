@@ -14,6 +14,11 @@
         body {
             font-family: 'Lato', sans-serif;
         }
+
+        #image-container {
+            perspective: 1000px;
+            /* Enables 3D effect */
+        }
     </style>
 </head>
 
@@ -66,16 +71,17 @@
             h-auto md:h-[550px] xl:h-[650px] overflow-hidden">
 
             <!-- Left Side (Stacked Images) -->
-            <div id="tilt-container" class="md:w-1/2 flex items-center px-10 py-6 md:px-12 md:py-24 xl:px-16 xl:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0"
+
+            <div class="md:w-1/2 flex items-center px-10 py-6 md:px-12 md:py-24 xl:px-16 xl:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0"
                 style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
-                <div  class="relative w-full max-w-md aspect-[1/1.1]">
+                <div id="image-container" class="relative w-full max-w-md aspect-[1/1.1]">
                     <!-- Background Image (Behind) -->
-                    <img id="bg-img" src="/contactpage_assets/colours.png" alt="Background"
-                        class="absolute top-3 left-7 md:left-6 lg:left-12 xl:left-12 w-full h-full object-contain z-0 transition-transform duration-200 ease-in-out scale-[.86]" />
+                    <img id="bg-img" src="/contactpage_assets/Vector_Smart_Object.svg" alt="Background"
+                        class="image-to-move absolute top-3 right-8 w-[65%] h-full object-contain z-0" />
 
                     <!-- Foreground Image (Top) -->
-                    <img id="fg-img" src="/contactpage_assets/Hores.png" alt="Foreground"
-                        class="absolute top-0 left-0 w-full h-full object-contain z-10 transition-transform duration-200 ease-in-out" />
+                    <img id="fg-img" src="/contactpage_assets/Horse.svg" alt="Foreground"
+                        class="image-to-move absolute top-0 left-0 w-full h-full object-contain z-10" />
                 </div>
             </div>
 
@@ -261,33 +267,31 @@
     </script>
 
     <script>
-        const tiltContainer = document.getElementById("tilt-container");
-        const bgImg = document.getElementById("bg-img");
-        const fgImg = document.getElementById("fg-img");
+        // horse animation
+        const container = document.getElementById("image-container");
+        const images = document.querySelectorAll(".image-to-move"); // Select both images
 
-        tiltContainer.addEventListener("mousemove", (e) => {
-            const { width, height, left, top } = tiltContainer.getBoundingClientRect();
-            const x = (e.clientX - left) / width; // Normalized X (0 to 1)
-            const y = (e.clientY - top) / height; // Normalized Y (0 to 1)
+        container.addEventListener("mousemove", (e) => {
+            const { width, left } = container.getBoundingClientRect(); // Get container dimensions
+            const mouseX = e.clientX - left; // Mouse X relative to container
+            const centerX = width / 2; // Center of the container
 
-            // Apply clamping to prevent abrupt jumps
-            const moveX = gsap.utils.clamp(-20, 20, (x - 0.5) * 40);
-            const moveY = gsap.utils.clamp(-20, 20, (y - 0.5) * 40);
+            const rotateY = (mouseX - centerX) / centerX * 20; // Reverse rotation logic for face-turn effect
 
-            gsap.to([bgImg, fgImg], {
-                duration: 0.3,
-                x: moveX,
-                y: moveY,
-                ease: "sine.out" // Smooth deceleration
+            // Animate both images to turn like a face
+            gsap.to(images, {
+                duration: 0.3, // Smooth transition
+                rotateY: rotateY, // Rotate both images
+                ease: "power3.out" // Fluid easing for natural movement
             });
         });
 
-        tiltContainer.addEventListener("mouseleave", () => {
-            gsap.to([bgImg, fgImg], {
-                duration: 0.6,
-                x: 0,
-                y: 0,
-                ease: "sine.out"
+        container.addEventListener("mouseleave", () => {
+            // Reset both images to their original position
+            gsap.to(images, {
+                duration: 0.5, // Slower reset
+                rotateY: 0, // Faces return to center
+                ease: "power3.out"
             });
         });
     </script>
