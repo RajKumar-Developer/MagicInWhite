@@ -268,29 +268,36 @@
 
     <script>
         // horse animation
-        const container = document.getElementById("image-container");
         const images = document.querySelectorAll(".image-to-move"); // Select both images
 
-        container.addEventListener("mousemove", (e) => {
-            const { width, left } = container.getBoundingClientRect(); // Get container dimensions
-            const mouseX = e.clientX - left; // Mouse X relative to container
-            const centerX = width / 2; // Center of the container
+        document.addEventListener("mousemove", (e) => {
+            const { clientX: mouseX, clientY: mouseY } = e; // Get mouse position on the page
+            const centerX = window.innerWidth / 2; // Center of the viewport (X-axis)
+            const centerY = window.innerHeight / 2; // Center of the viewport (Y-axis)
 
-            const rotateY = (mouseX - centerX) / centerX * 20; // Reverse rotation logic for face-turn effect
+            // Calculate movement strength based on distance from the center
+            const moveX = (mouseX - centerX) / centerX * 20; // Horizontal movement
+            const moveY = (mouseY - centerY) / centerY * 20; // Vertical movement
 
-            // Animate both images to turn like a face
+            // Apply movement to both images
             gsap.to(images, {
                 duration: 0.3, // Smooth transition
-                rotateY: rotateY, // Rotate both images
-                ease: "power3.out" // Fluid easing for natural movement
+                x: moveX, // Move left/right
+                y: moveY, // Move up/down
+                rotateY: moveX / 2, // Slight 3D rotation
+                rotateX: -moveY / 2, // Add vertical rotation for depth
+                ease: "power3.out" // Smooth easing
             });
         });
 
-        container.addEventListener("mouseleave", () => {
+        document.addEventListener("mouseleave", () => {
             // Reset both images to their original position
             gsap.to(images, {
                 duration: 0.5, // Slower reset
-                rotateY: 0, // Faces return to center
+                x: 0,
+                y: 0,
+                rotateY: 0,
+                rotateX: 0,
                 ease: "power3.out"
             });
         });
