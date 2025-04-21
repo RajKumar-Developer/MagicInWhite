@@ -72,16 +72,16 @@
 
             <!-- Left Side (Stacked Images) -->
 
-            <div class="md:w-1/2 flex items-center px-10 py-6 md:px-12 md:py-24 xl:px-16 xl:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0"
+            <div class="md:w-1/2 flex items-center px-10 pt-4 pb-0 sm:py-6 md:px-12 md:py-24 xl:px-16 xl:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0"
                 style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
-                <div id="image-container" class="relative w-full max-w-md aspect-[1/1.1]">
+                <div id="image-container" class="relative w-full max-w-md aspect-[1.4/1.1] sm:aspect-[1/1.1]">
                     <!-- Background Image (Behind) -->
                     <img id="bg-img" src="/contactpage_assets/Vector_Smart_Object.svg" alt="Background"
-                        class="image-to-move absolute top-3 right-8 w-[65%] h-full object-contain z-0" />
+                        class="image-to-move absolute top-1 sm:top-3 right-9 sm:right-8 w-[59%] h-[67%] sm:w-[65%] sm:h-full object-contain z-0" />
 
                     <!-- Foreground Image (Top) -->
                     <img id="fg-img" src="/contactpage_assets/Horse.svg" alt="Foreground"
-                        class="image-to-move absolute top-0 left-0 w-full h-full object-contain z-10" />
+                        class="image-to-move absolute top-0 left-0 w-full h-[70%] sm:h-full object-contain z-10" />
                 </div>
             </div>
 
@@ -92,17 +92,17 @@
             <!-- style="border-image: repeating-linear-gradient(to bottom, #000000 0, #000000 1px, transparent 1px, transparent 7px) 1 100%;"> -->
 
             <!-- Right Side (Form) -->
-            <div class="md:w-1/2 p-6 sm:p-10  flex flex-col justify-center relative">
+            <div class="md:w-1/2 pt-0 px-6 pb-5 sm:p-6 sm:p-10  flex flex-col justify-center relative">
                 <!-- Header with Logo -->
                 <div class="flex items-center justify-between">
-                    <h1 class="text-2xl md:text-4xl leading-relaxed font-light text-[#272cf7]">L E T S <br> T A L K</h1>
-                    <img src="/contactpage_assets/stamp.png" alt="Logo" class="w-24 md:w-28 mt-10">
+                    <h1 class="text-base sm:text-2xl md:text-4xl leading-relaxed font-light text-[#272cf7]">L E T S <br> T A L K</h1>
+                    <img src="/contactpage_assets/stamp.png" alt="Logo" class="w-16 mt-6 sm:w-24 sm:mt-10  md:w-28">
                 </div>
 
                 <!-- Form Section -->
-                <form class="mt-10 md:mt-24 space-y-6 md:space-y-10">
+                <form class="mt-5 sm:mt-10 md:mt-24 space-y-6 md:space-y-10">
                     <!-- Name Field -->
-                    <div class=" pt-5 sm:pt-0">
+                    <div class="pt-1 sm:pt-5 sm:pt-0">
                         <input type="text" name="name" placeholder="NAME" class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" required>
                         <div class="w-full border-b-2 border-dotted border-[#272cf7]">
@@ -110,7 +110,7 @@
                     </div>
 
                     <!-- Email Field -->
-                    <div class=" pt-5 sm:pt-0">
+                    <div class="pt-1 sm:pt-5 sm:pt-0">
                         <input type="email" name="email" placeholder="EMAIL ADDRESS" class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" required>
                         <div class="w-full border-b-2 border-dotted border-[#272cf7]">
@@ -118,7 +118,7 @@
                     </div>
 
                     <!-- Message Field -->
-                    <div class=" pt-5 sm:pt-0">
+                    <div class="pt-2 sm:pt-5 sm:pt-0">
                         <textarea name="message" rows="1" placeholder="YOUR MESSAGE FOR US" class="w-full border-none outline-none bg-transparent text-[#272cf7] 
                                    placeholder:text-[#272cf7] focus:ring-0" required></textarea>
                         <div class="w-full border-b-2 border-dotted border-[#272cf7]">
