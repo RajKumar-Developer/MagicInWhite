@@ -100,12 +100,12 @@
 
 
 	<!-- Desktop Background -->
-	<section class="hidden md:block h-screen w-full bg-cover bg-center bg-fixed bg-no-repeat"
+	<section id="service-lg-banner" class="hidden md:block h-screen w-full bg-cover bg-center bg-fixed bg-no-repeat"
 		style="background-image: url('/services-assets/services-header-desktop.png');">
 	</section>
 
 	<!-- Mobile Background -->
-	<section class="block md:hidden h-screen w-full bg-cover bg-center bg-fixed bg-no-repeat"
+	<section id="service-md-banner" class="block md:hidden h-screen w-full bg-cover bg-center bg-fixed bg-no-repeat"
 		style="background-image: url('/services-assets/services-header-mobile.png');">
 	</section>
 
@@ -117,7 +117,7 @@
       </section> -->
 
 	<!-- Grid Layout -->
-	<section class="grid grid-cols-7 grid-rows-12 min-h-[200vh]" data-scroll-section>
+	<section class="grid grid-cols-7 grid-rows-12 min-h-[200vh]" id="service-grid" data-scroll-section>
 		<!-- Content 1 -->
 		<div
 			class="col-span-4 row-span-2 bg-green-500 px-4 md:px-6 lg:px-8 text-white flex items-center justify-center">
@@ -143,7 +143,7 @@
 		</div>
 
 		<!-- Content 4 -->
-		<div
+		<div id="ads-section-right"
 			class="col-span-4 row-span-2 col-start-4 row-start-3 bg-white p-4 md:p-6 lg:p-8 text-blue-700 flex items-center justify-center">
 			<div class="text-right custom-width">
 				<h1 class="text-right text-3xl md:text-4xl font-bold leading-relaxed pb-2">ADVERTISING</h1>
@@ -340,6 +340,7 @@
 
 
 	<script>
+		let locoScrollInstance;
 		const menuBtn = document.getElementById('menu-btn');
 		const closeMenuBtn = document.getElementById('close-menu');
 		const mobileMenu = document.getElementById('mobile-menu');
@@ -361,25 +362,6 @@
 		});
 	</script>
 	<script>
-		let lastScrollY = window.scrollY;
-		const navbar = document.getElementById("navbar");
-
-		window.addEventListener("scroll", () => {
-			const currentScrollY = window.scrollY;
-
-			if (currentScrollY > lastScrollY && currentScrollY > 100) {
-				// Scrolling down - Hide navbar with animation
-				navbar.classList.add("-translate-y-full", "opacity-0");
-				navbar.classList.remove("opacity-100");
-			} else {
-				// Scrolling up - Show navbar with animation
-				navbar.classList.remove("-translate-y-full", "opacity-0");
-				navbar.classList.add("opacity-100");
-			}
-
-			lastScrollY = currentScrollY;
-		});
-
 		function updatePlaceholder() {
 			const inputField = document.querySelector("input[type='email']");
 
@@ -395,32 +377,6 @@
 		window.addEventListener("resize", updatePlaceholder);
 	</script>
 	<script>
-		//       gsap.utils.toArray('.posters').forEach((poster) => {
-		//     // Calculate a movement amount based on the element's height
-		//     // This helps to scale the effect appropriately
-		//     const posterHeight = poster.offsetHeight;
-		//     const movementAmount = posterHeight * 0.05; // 10% of the element's height
-
-		//     gsap.fromTo(
-		//         poster.querySelector('img'),
-		//         { 
-		//             y: -movementAmount, 
-		//             scale: 1.1  // Scale up to cover potential blank spaces
-		//         },
-		//         {
-		//             y: movementAmount,
-		//             scale: 1.1, // Keep consistent scale throughout
-		//             ease: "none",
-		//             scrollTrigger: {
-		//                 trigger: poster,
-		//                 start: 'top bottom',
-		//                 end: 'bottom top',
-		//                 scrub: 0.8,     // Smooth delay but not too much
-		//             }
-		//         }
-		//     );
-		// });
-		// Register plugin
 		gsap.registerPlugin(ScrollTrigger);
 
 		const scrollContainer = document.querySelector("[data-scroll-container]");
@@ -434,6 +390,7 @@
 				multiplier: 1.2,
 				getDirection: true
 			});
+			locoScrollInstance = locoScroll;
 
 			ScrollTrigger.scrollerProxy(scrollContainer, {
 				scrollTop(value) {
@@ -451,8 +408,29 @@
 				},
 				pinType: scrollContainer.style.transform ? "transform" : "fixed",
 			});
+			let lastScrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
 
-			locoScroll.on("scroll", ScrollTrigger.update);
+			locoScroll.on("scroll", (event) => {
+				checkBackgroundAndInvertImages();
+
+				const navbar = document.getElementById("navbar");
+				const currentScrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
+
+				if (currentScrollY > lastScrollY && currentScrollY > 100) {
+					// Scrolling down - Hide navbar with animation
+					navbar.classList.add("-translate-y-full", "opacity-0");
+					navbar.classList.remove("opacity-100");
+				} else {
+					// Scrolling up - Show navbar with animation
+					navbar.classList.remove("-translate-y-full", "opacity-0");
+					navbar.classList.add("opacity-100");
+				}
+
+				lastScrollY = currentScrollY;
+
+				ScrollTrigger.update();
+			});
+			// locoScroll.on("scroll", ScrollTrigger.update);
 			ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 			ScrollTrigger.refresh();
 
@@ -489,10 +467,9 @@
 		window.addEventListener("load", () => {
 			imagesLoaded(scrollContainer, { background: true }, () => {
 				initSmoothScroll();
-
 				setTimeout(() => {
 					loadGsap();
-				});
+				}, 100);
 			});
 		});
 
@@ -505,7 +482,7 @@
 			const menuIcon = document.getElementById('menu-icon');
 
 			// Get the scroll position to determine what section we're on
-			const scrollY = window.scrollY;
+			const scrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
 
 			// Get elements that navbar might be overlapping
 			const sections = document.querySelectorAll('section');
@@ -513,23 +490,43 @@
 
 			// Find which section the navbar is currently overlapping
 			for (const section of sections) {
-				const rect = section.getBoundingClientRect();
-				// If the navbar is within the top portion of this section
-				if (rect.top <= 80 && rect.bottom > 0) {
+				const sectionTop = section.offsetTop; // Get section's position relative to the top of the page
+				const sectionHeight = section.offsetHeight;
+
+				if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
 					currentSection = section;
 					break;
 				}
+
+				// const rect = section.getBoundingClientRect();
+				// // If the navbar is within the top portion of this section
+				// if (rect.top <= 80 && rect.bottom > 0) {
+				// 	currentSection = section;
+				// 	break;
+				// }
 			}
 
 			// If we found a current section, get its background color
 			if (currentSection) {
 				const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
 				const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
+				if (currentSection.id === 'service-md-banner' || currentSection.id === 'service-lg-banner') {
+					logo.style.filter = "invert(0)";
+					menuIcon.style.filter = "invert(0)";
+				} else if (currentSection.id === 'service-grid') {
+					const innerDiv = currentSection.querySelector('#ads-section-right');
+					let divRect;
+					if (innerDiv) {
+						divRect = innerDiv.getBoundingClientRect();
+					}
+					if ((innerDiv && divRect && divRect.top <= 80 && divRect.bottom > 0)) {
+						logo.style.filter = "invert(0)";
+						menuIcon.style.filter = "invert(0)";
+					} else {
+						logo.style.filter = "invert(1)";
+						menuIcon.style.filter = "invert(1)";
+					}
 
-				// Check if this is a section where we need to invert
-				if (needsInversion(sectionBgColor, sectionBgImage)) {
-					logo.style.filter = "invert(1)";
-					menuIcon.style.filter = "invert(1)";
 				} else {
 					logo.style.filter = "none";
 					menuIcon.style.filter = "none";
@@ -599,11 +596,6 @@
 
 		// Run on page load
 		document.addEventListener('DOMContentLoaded', function () {
-			checkBackgroundAndInvertImages();
-
-			// Run when scrolling
-			window.addEventListener('scroll', checkBackgroundAndInvertImages);
-
 			// Run on window resize
 			window.addEventListener('resize', checkBackgroundAndInvertImages);
 
@@ -612,6 +604,8 @@
 			observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
 		});
 	</script>
+
+
 </body>
 
 </html>

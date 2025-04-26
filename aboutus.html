@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,41 +11,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body{
-            font-family: 'Lato',sans-serif;
+        body {
+            font-family: 'Lato', sans-serif;
         }
+
         .slide-in {
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
+
         .slide-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
+
 <body oncontextmenu="return false;">
     <!-- Navbar -->
-    <nav id="navbar" class="bg-transparent sm:bg-transparent transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
+    <nav id="navbar"
+        class="bg-transparent sm:bg-transparent transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
-                <img id="logo-img" src="/about-assets/logo.png" alt="logo" class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
+                <img id="logo-img" src="/about-assets/logo.png" alt="logo"
+                    class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
             </div>
 
             <!-- Mobile Menu Button (Right Corner) -->
             <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
-                <img id="menu-icon" src="/about-assets/burger-menu.png" alt="nav button" class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
+                <img id="menu-icon" src="/about-assets/burger-menu.png" alt="nav button"
+                    class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
             </button>
         </div>
     </nav>
 
-      
+
     <!-- Mobile Popup Menu (Overlay) -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
+    <div id="mobile-menu"
+        class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
         <!-- Close Button -->
-        <button id="close-menu" class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
+        <button id="close-menu"
+            class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
             ✖
         </button>
 
@@ -60,10 +69,11 @@
     </div>
 
     <!--Main Section-->
-    <section class="relative w-full min-h-screen flex items-center justify-center">
+    <section class="relative w-full min-h-screen flex items-center justify-center" id="about-banner">
         <!-- Background Image -->
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/about-assets/header-image.png');"></div>
-        
+        <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('/about-assets/header-image.png');"></div>
+
         <!-- Content Overlay -->
         <div class="absolute inset-0 bg-black bg-opacity-20"></div>
 
@@ -79,171 +89,208 @@
         </div>
     </section>
     <!--Bento section 1-->
-    <section class="min-h-screen relative bg-white bg-[url('/about-assets/frame-body.png')] bg-cover bg-fixed">
+    <section id="about-content" class="min-h-screen relative bg-white bg-[url('/about-assets/frame-body.png')] bg-cover bg-fixed">
         <!-- First Section -->
         <div class="min-h-screen w-full relative overflow-hidden px-4 md:px-0">
-          <!-- Yellow Accent Blocks - Hidden on small screens -->
-          <div class="hidden md:block absolute top-[20%] w-[2.5%] h-[68%] bg-[url('/about-assets/yellow-box-1.png')] slide-in"></div>
-          <div class="block absolute top-[60%] right-0 sm:top-[35.2%] sm:right-[30.2%] w-[30%] sm:w-[12%] h-[11%] bg-[url('/about-assets/yellow-box-1.png')] slide-in"></div>
-          <div class="block absolute top-[80%] right-52 sm:top-[7.2%] sm:right-[4.5%] h-[8%] w-[50%] sm:w-[11.7%] sm:h-[20.8%] bg-[url('/about-assets/yellow-box-2.png')] slide-in"></div>
-          
-          <!-- "WE GROW IDEAS" Section -->
-          <div class="pt-16 md:absolute md:top-[10%] md:left-[5%] md:w-[30%] w-full slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE GROW IDEAS</h2>
-            <p class="text-gray-600 w-full md:w-[74%]">
-              Our design studio uses intelligent creative thinking to help add value to and grow our clients' businesses.
-            </p>
-          </div>
-      
-          <!-- Office Image -->
-          <div class="mt-8 md:absolute md:top-[45%] md:left-[13%] md:w-[30%] md:h-[30%] w-full slide-in">
-            <img src="/about-assets/body-image-1.png" alt="Modern office space" class="w-full md:object-contain shadow-lg" />
-          </div>
+            <!-- Yellow Accent Blocks - Hidden on small screens -->
+            <div
+                class="hidden md:block absolute top-[20%] w-[2.5%] h-[68%] bg-[url('/about-assets/yellow-box-1.png')] slide-in">
+            </div>
+            <div
+                class="block absolute top-[60%] right-0 sm:top-[35.2%] sm:right-[30.2%] w-[30%] sm:w-[12%] h-[11%] bg-[url('/about-assets/yellow-box-1.png')] slide-in">
+            </div>
+            <div
+                class="block absolute top-[80%] right-52 sm:top-[7.2%] sm:right-[4.5%] h-[8%] w-[50%] sm:w-[11.7%] sm:h-[20.8%] bg-[url('/about-assets/yellow-box-2.png')] slide-in">
+            </div>
+
+            <!-- "WE GROW IDEAS" Section -->
+            <div class="pt-16 md:absolute md:top-[10%] md:left-[5%] md:w-[30%] w-full slide-in">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE GROW IDEAS</h2>
+                <p class="text-gray-600 w-full md:w-[74%]">
+                    Our design studio uses intelligent creative thinking to help add value to and grow our clients'
+                    businesses.
+                </p>
+            </div>
+
+            <!-- Office Image -->
+            <div class="mt-8 md:absolute md:top-[45%] md:left-[13%] md:w-[30%] md:h-[30%] w-full slide-in">
+                <img src="/about-assets/body-image-1.png" alt="Modern office space"
+                    class="w-full md:object-contain shadow-lg" />
+            </div>
         </div>
-      
+
         <!-- Second Section -->
         <div class="min-h-screen w-full relative overflow-hidden px-4 md:px-0">
-          <!-- Green Accent Blocks - Hidden on small screens -->
-          <div class="block absolute -top-0 right-0 h-[8%] w-[20%] sm:top-[2%] sm:left-[23.4%] sm:w-[16%] sm:h-[22%] bg-[url('/about-assets/green-box-1.png')] slide-in"></div>
-          <div class="block absolute top-[90%] right-0 sm:top-[64%] sm:left-[11.8%] w-[40%] sm:w-[11.7%] h-[8%] sm:h-[12%] bg-[url('/about-assets/green-box-2.png')] slide-in"></div>
-          <div class="hidden md:block absolute bottom-[9.7%] right-0 w-[15%] h-[8%] bg-[url('/about-assets/green-box-3.png')] slide-in"></div>
-      
-          <!-- "WE CHAMPION CLIENTS" Section -->
-          <div class="pt-16 md:absolute md:top-[4%] md:right-[32%] md:w-[25%] w-full slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE CHAMPION CLIENTS.</h2>
-            <p class="text-gray-600 w-full md:w-[75%]">
-              We are lucky enough to work with gifted, dedicated and committed clients. They offer us insight into their business; our job is to tell the world.
-            </p>
-          </div>
-      
-          <!-- "WE COLLABORATE FEARLESSLY" Section -->
-          <div class="mt-8 md:mt-0 md:absolute md:top-[55%] md:left-[30%] md:w-[20%] w-full slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE COLLABORATE FEARLESSLY.</h2>
-            <p class="text-gray-600">
-              Every relationship with every client is a partnership; we work alongside them to make their goals a reality and help them to grow their businesses.
-            </p>
-          </div>
-      
-          <!-- Office Image -->
-          <div class="mt-8 md:absolute md:top-[44%] md:right-[18%] md:w-[28%] md:h-[42%] w-full slide-in">
-            <img src="/about-assets/body-image-2.png" alt="Modern office space with wooden table and glass partitions" class="w-full md:h-full md:object-contain" />
-          </div>
+            <!-- Green Accent Blocks - Hidden on small screens -->
+            <div
+                class="block absolute -top-0 right-0 h-[8%] w-[20%] sm:top-[2%] sm:left-[23.4%] sm:w-[16%] sm:h-[22%] bg-[url('/about-assets/green-box-1.png')] slide-in">
+            </div>
+            <div
+                class="block absolute top-[90%] right-0 sm:top-[64%] sm:left-[11.8%] w-[40%] sm:w-[11.7%] h-[8%] sm:h-[12%] bg-[url('/about-assets/green-box-2.png')] slide-in">
+            </div>
+            <div
+                class="hidden md:block absolute bottom-[9.7%] right-0 w-[15%] h-[8%] bg-[url('/about-assets/green-box-3.png')] slide-in">
+            </div>
+
+            <!-- "WE CHAMPION CLIENTS" Section -->
+            <div class="pt-16 md:absolute md:top-[4%] md:right-[32%] md:w-[25%] w-full slide-in">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE CHAMPION CLIENTS.</h2>
+                <p class="text-gray-600 w-full md:w-[75%]">
+                    We are lucky enough to work with gifted, dedicated and committed clients. They offer us insight into
+                    their business; our job is to tell the world.
+                </p>
+            </div>
+
+            <!-- "WE COLLABORATE FEARLESSLY" Section -->
+            <div class="mt-8 md:mt-0 md:absolute md:top-[55%] md:left-[30%] md:w-[20%] w-full slide-in">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE COLLABORATE FEARLESSLY.
+                </h2>
+                <p class="text-gray-600">
+                    Every relationship with every client is a partnership; we work alongside them to make their goals a
+                    reality and help them to grow their businesses.
+                </p>
+            </div>
+
+            <!-- Office Image -->
+            <div class="mt-8 md:absolute md:top-[44%] md:right-[18%] md:w-[28%] md:h-[42%] w-full slide-in">
+                <img src="/about-assets/body-image-2.png"
+                    alt="Modern office space with wooden table and glass partitions"
+                    class="w-full md:h-full md:object-contain" />
+            </div>
         </div>
-      
+
         <!-- Third Section -->
         <div class="min-h-screen w-full relative overflow-hidden px-4 md:px-0">
-          <!-- Blue Accent Blocks - Hidden on small screens -->
-          <div class="block absolute top-0 left-0 sm:top-[5%] sm:left-0 w-[25%] sm:w-[2%] h-[7.8%] sm:h-[30%] bg-[url('/about-assets/blue-box-1.png')] slide-in"></div>
-          <div class="hidden md:block absolute top-0 right-[25%] w-[10%] h-[5%] bg-[url('/about-assets/blue-box-2.png')] slide-in"></div>
-          <div class="block absolute bottom-10 right-0 sm:bottom-[16%] sm:right-[27%] w-[30%] sm:w-[20%] h-24 sm:h-[32%] bg-[url('/about-assets/blue-box-3.png')] slide-in"></div>
-      
-          <!-- Office Image -->
-          <div class="pt-16 md:absolute md:top-[5%] md:left-[18%] md:w-[20%] md:h-[25%] w-full slide-in">
-            <img src="/about-assets/body-image-3.png" alt="Interior office space with wooden frames and glass partitions" class="w-full md:h-full md:object-cover shadow-lg" />
-          </div>
-      
-          <!-- "WE ADD VALUE" Section -->
-          <div class="mt-8 md:absolute md:top-[15%] md:right-[20%] md:w-[25%] w-full slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE ADD VALUE</h2>
-            <p class="text-gray-600 w-full md:w-[70%]">
-              Whatever the task, no matter whether it's big or small, we bring our experience and expertise to that project and strive to deliver the best possible solution.
-            </p>
-          </div>
-      
-          <!-- "WE CRAFT SOLUTIONS" Section -->
-          <div class="mt-8 md:absolute md:bottom-[30%] md:left-[13%] md:w-[25%] w-full slide-in">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE CRAFT SOLUTIONS.</h2>
-            <p class="text-gray-600 w-full md:w-[70%]">
-              Beautiful creative work only goes so far. To deliver something that really engages you need to add some blood, sweat and tears.
-            </p>
-          </div>
+            <!-- Blue Accent Blocks - Hidden on small screens -->
+            <div
+                class="block absolute top-0 left-0 sm:top-[5%] sm:left-0 w-[25%] sm:w-[2%] h-[7.8%] sm:h-[30%] bg-[url('/about-assets/blue-box-1.png')] slide-in">
+            </div>
+            <div
+                class="hidden md:block absolute top-0 right-[25%] w-[10%] h-[5%] bg-[url('/about-assets/blue-box-2.png')] slide-in">
+            </div>
+            <div
+                class="block absolute bottom-10 right-0 sm:bottom-[16%] sm:right-[27%] w-[30%] sm:w-[20%] h-24 sm:h-[32%] bg-[url('/about-assets/blue-box-3.png')] slide-in">
+            </div>
+
+            <!-- Office Image -->
+            <div class="pt-16 md:absolute md:top-[5%] md:left-[18%] md:w-[20%] md:h-[25%] w-full slide-in">
+                <img src="/about-assets/body-image-3.png"
+                    alt="Interior office space with wooden frames and glass partitions"
+                    class="w-full md:h-full md:object-cover shadow-lg" />
+            </div>
+
+            <!-- "WE ADD VALUE" Section -->
+            <div class="mt-8 md:absolute md:top-[15%] md:right-[20%] md:w-[25%] w-full slide-in">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE ADD VALUE</h2>
+                <p class="text-gray-600 w-full md:w-[70%]">
+                    Whatever the task, no matter whether it's big or small, we bring our experience and expertise to
+                    that project and strive to deliver the best possible solution.
+                </p>
+            </div>
+
+            <!-- "WE CRAFT SOLUTIONS" Section -->
+            <div class="mt-8 md:absolute md:bottom-[30%] md:left-[13%] md:w-[25%] w-full slide-in">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 mb-4">WE CRAFT SOLUTIONS.</h2>
+                <p class="text-gray-600 w-full md:w-[70%]">
+                    Beautiful creative work only goes so far. To deliver something that really engages you need to add
+                    some blood, sweat and tears.
+                </p>
+            </div>
         </div>
-      </section>
-      
+    </section>
+
 
     <!--Footer-->
     <section class="min-h-1/2 flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
         <div class="container">
-          <div class="w-full max-w-4xl mx-auto mt-6">
-            <!-- Heading + Input Field -->
-            <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
-            <div class="flex">
-                <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
-                <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
-            </div>
-        
-            <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
-                <!-- First Row: Lists (Grid of 5 Items) -->
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
-                    <div class="w-full order-1 md:order-none">
-                        <h3 class="font-semibold">HOME</h3>
-                        <ul class="space-y-1">
-                            <li>Why us</li>
-                        </ul>
+            <div class="w-full max-w-4xl mx-auto mt-6">
+                <!-- Heading + Input Field -->
+                <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
+                <div class="flex">
+                    <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS"
+                        class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
+                    <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
+                    <!-- First Row: Lists (Grid of 5 Items) -->
+                    <div
+                        class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
+                        <div class="w-full order-1 md:order-none">
+                            <h3 class="font-semibold">HOME</h3>
+                            <ul class="space-y-1">
+                                <li>Why us</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">WORK</h3>
+                            <ul class="space-y-1">
+                                <li>Film Posters</li>
+                                <li>Events</li>
+                                <li>Title Animations</li>
+                                <li>Branding</li>
+                                <li>Products</li>
+                                <li>Advertising</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">SERVICE</h3>
+                            <ul class="space-y-1 text-sm pt-3">
+                                <li class="whitespace-nowrap">Branding</li>
+                                <li class="whitespace-nowrap">Advertising</li>
+                                <li class="whitespace-nowrap">Film Production</li>
+                                <li class="whitespace-nowrap">Graphic Design</li>
+                                <li class="whitespace-nowrap">Social Media Marketing</li>
+                                <li class="whitespace-nowrap">Integrated Marketing</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">TEAM</h3>
+                            <ul class="space-y-1">
+                                <li>Meet the Team</li>
+                            </ul>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-semibold">CONTACT</h3>
+                            <ul class="space-y-1">
+                                <li>Contact Information</li>
+                                <li>Careers</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">WORK</h3>
-                        <ul class="space-y-1">
-                            <li>Film Posters</li>
-                            <li>Events</li>
-                            <li>Title Animations</li>
-                            <li>Branding</li>
-                            <li>Products</li>
-                            <li>Advertising</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">SERVICE</h3>
-                        <ul class="space-y-1 text-sm pt-3">
-                            <li class="whitespace-nowrap">Branding</li>
-                            <li class="whitespace-nowrap">Advertising</li>
-                            <li class="whitespace-nowrap">Film Production</li>
-                            <li class="whitespace-nowrap">Graphic Design</li>
-                            <li class="whitespace-nowrap">Social Media Marketing</li>
-                            <li class="whitespace-nowrap">Integrated Marketing</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">TEAM</h3>
-                        <ul class="space-y-1">
-                            <li>Meet the Team</li>
-                        </ul>
-                    </div>
-                    <div class="w-full">
-                        <h3 class="font-semibold">CONTACT</h3>
-                        <ul class="space-y-1">
-                            <li>Contact Information</li>
-                            <li>Careers</li>
-                        </ul>
+                    <!-- Second Row: Button & Social Media Icons -->
+                    <div
+                        class="flex flex-col sm:flex-row justify-between items-center w-full space-y-8 mt-8 sm:space-y-0">
+                        <button
+                            class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                            <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
+                        </button>
+
+
+                        <!-- Social Icons -->
+                        <div class="flex flex-wrap justify-center sm:justify-end gap-6">
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <!-- Second Row: Button & Social Media Icons -->
-                <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-8 mt-8 sm:space-y-0">
-                    <button class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
-                        <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
-                    </button>
-                    
-            
-                    <!-- Social Icons -->
-                    <div class="flex flex-wrap justify-center sm:justify-end gap-6">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
+
             </div>
-            
-        </div>
-        
+
         </div>
     </section>
     <script>
@@ -263,7 +310,7 @@
         // Close menu when clicking outside of it
         mobileMenu.addEventListener('click', (e) => {
             if (e.target === mobileMenu) {
-            mobileMenu.classList.add('hidden');
+                mobileMenu.classList.add('hidden');
             }
         });
 
@@ -288,147 +335,158 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const elements = document.querySelectorAll(".slide-in");
-          function checkVisibility() {
-            elements.forEach((el) => {
-              const rect = el.getBoundingClientRect();
-              if (rect.top < window.innerHeight - 100) {
-                el.classList.add("visible");
-              }
-            });
-          }
-          window.addEventListener("scroll", checkVisibility);
-          checkVisibility();
+            const elements = document.querySelectorAll(".slide-in");
+            function checkVisibility() {
+                elements.forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkVisibility);
+            checkVisibility();
         });
 
         function updatePlaceholder() {
-        const inputField = document.querySelector("input[type='email']");
-        
-        if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
-            inputField.placeholder = "EMAIL";
-        } else {
-            inputField.placeholder = "ENTER YOUR EMAIL ADDRESS";
-        }
-    }
+            const inputField = document.querySelector("input[type='email']");
 
-    // Run function on page load and resize
-    window.addEventListener("load", updatePlaceholder);
-    window.addEventListener("resize", updatePlaceholder);
-      </script>
-      <script>
-        // Enhanced function to check background section color and invert images if needed
-    function checkBackgroundAndInvertImages() {
-        const navbar = document.getElementById('navbar');
-        const logo = document.getElementById('logo-img');
-        const menuIcon = document.getElementById('menu-icon');
-        
-        // Get the scroll position to determine what section we're on
-        const scrollY = window.scrollY;
-        
-        // Get elements that navbar might be overlapping
-        const sections = document.querySelectorAll('section');
-        let currentSection = null;
-        
-        // Find which section the navbar is currently overlapping
-        for (const section of sections) {
-            const rect = section.getBoundingClientRect();
-            // If the navbar is within the top portion of this section
-            if (rect.top <= 80 && rect.bottom > 0) {
-                currentSection = section;
-                break;
-            }
-        }
-        
-        // If we found a current section, get its background color
-        if (currentSection) {
-            const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
-            const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
-            
-            // Check if this is a section where we need to invert
-            if (needsInversion(sectionBgColor, sectionBgImage)) {
-                logo.style.filter = "invert(1)";
-                menuIcon.style.filter = "invert(1)";
+            if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
+                inputField.placeholder = "EMAIL";
             } else {
-                logo.style.filter = "none";
-                menuIcon.style.filter = "none";
+                inputField.placeholder = "ENTER YOUR EMAIL ADDRESS";
             }
         }
-    }
-    
-    // Enhanced function to determine if inversion is needed
-    function needsInversion(backgroundColor, backgroundImage) {
-        // If there's a background image that's not "none", we might need special handling
-        const hasBackgroundImage = backgroundImage && backgroundImage !== "none";
-        
-        // Get the logo and menu icon color (you may need to define these explicitly)
-        // For example, if your logo is black (#000000) or close to it:
-        const logoColor = { r: 0, g: 0, b: 0 }; // Assuming black logo
-        
-        // Parse the backgroundColor to get RGB values
-        const rgbValues = backgroundColor.match(/\d+/g);
-        
-        if (!rgbValues || rgbValues.length < 3) {
-            // If we can't parse the color, default behavior based on section
-            return hasBackgroundImage || isKnownDarkSection(backgroundColor);
+
+        // Run function on page load and resize
+        window.addEventListener("load", updatePlaceholder);
+        window.addEventListener("resize", updatePlaceholder);
+    </script>
+    <script>
+        // Enhanced function to check background section color and invert images if needed
+        function checkBackgroundAndInvertImages() {
+            const navbar = document.getElementById('navbar');
+            const logo = document.getElementById('logo-img');
+            const menuIcon = document.getElementById('menu-icon');
+
+            // Get the scroll position to determine what section we're on
+            const scrollY = window.scrollY;
+
+            // Get elements that navbar might be overlapping
+            const sections = document.querySelectorAll('section');
+            let currentSection = null;
+
+            // Find which section the navbar is currently overlapping
+            for (const section of sections) {
+                const rect = section.getBoundingClientRect();
+                // If the navbar is within the top portion of this section
+                if (rect.top <= 80 && rect.bottom > 0) {
+                    currentSection = section;
+                    break;
+                }
+            }
+
+            // If we found a current section, get its background color
+            if (currentSection) {
+                const sectionBgColor = window.getComputedStyle(currentSection).backgroundColor;
+                const sectionBgImage = window.getComputedStyle(currentSection).backgroundImage;
+
+                if (currentSection.id === 'about-banner') {
+                    logo.style.filter = "invert(1)";
+                    menuIcon.style.filter = "invert(1)";
+                }else if (currentSection.id === 'about-content') {
+                    logo.style.filter = "invert(90%)";
+                    menuIcon.style.filter = "invert(90%)";
+                } else {
+                    logo.style.filter = "none";
+                    menuIcon.style.filter = "none";
+                }
+                // Check if this is a section where we need to invert
+                // if (needsInversion(sectionBgColor, sectionBgImage)) {
+                //     logo.style.filter = "invert(1)";
+                //     menuIcon.style.filter = "invert(1)";
+                // } else {
+                //     logo.style.filter = "none";
+                //     menuIcon.style.filter = "none";
+                // }
+            }
         }
-        
-        const r = parseInt(rgbValues[0]);
-        const g = parseInt(rgbValues[1]);
-        const b = parseInt(rgbValues[2]);
-        
-        // Calculate color similarity between background and logo
-        const colorSimilarity = calculateColorSimilarity(
-            { r, g, b },
-            logoColor
-        );
-        
-        // Calculate the perceived brightness
-        const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
-        
-        // If colors are similar OR background is dark, invert
-        return colorSimilarity > 85 || brightness < 128;
-    }
-    
-    // Calculate how similar two colors are (0-100%)
-    function calculateColorSimilarity(color1, color2) {
-        // Calculate the Euclidean distance in RGB space
-        const distance = Math.sqrt(
-            Math.pow(color1.r - color2.r, 2) +
-            Math.pow(color1.g - color2.g, 2) +
-            Math.pow(color1.b - color2.b, 2)
-        );
-        
-        // Convert to a similarity percentage (0-100)
-        // Max distance in RGB space is √(255² + 255² + 255²) ≈ 441.7
-        return 100 - (distance / 441.7 * 100);
-    }
-    
-    // Helper function for known dark sections
-    function isKnownDarkSection(backgroundColor) {
-        // List of sections we know should have inverted logo/menu
-        const darkSectionColors = [
-            "rgb(34, 38, 247)",    // Blue section (#2226f7)
-            "rgb(0, 0, 0)",        // Black section
-            "rgb(34, 34, 34)"      // Dark gray section
-        ];
-        
-        return darkSectionColors.includes(backgroundColor);
-    }
-    
-    // Run on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        checkBackgroundAndInvertImages();
-        
-        // Run when scrolling
-        window.addEventListener('scroll', checkBackgroundAndInvertImages);
-        
-        // Run on window resize
-        window.addEventListener('resize', checkBackgroundAndInvertImages);
-        
-        // Observe changes to the navbar element
-        const observer = new MutationObserver(checkBackgroundAndInvertImages);
-        observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
-    });
-        </script>
+
+        // Enhanced function to determine if inversion is needed
+        function needsInversion(backgroundColor, backgroundImage) {
+            // If there's a background image that's not "none", we might need special handling
+            const hasBackgroundImage = backgroundImage && backgroundImage !== "none";
+
+            // Get the logo and menu icon color (you may need to define these explicitly)
+            // For example, if your logo is black (#000000) or close to it:
+            const logoColor = { r: 0, g: 0, b: 0 }; // Assuming black logo
+
+            // Parse the backgroundColor to get RGB values
+            const rgbValues = backgroundColor.match(/\d+/g);
+
+            if (!rgbValues || rgbValues.length < 3) {
+                // If we can't parse the color, default behavior based on section
+                return hasBackgroundImage || isKnownDarkSection(backgroundColor);
+            }
+
+            const r = parseInt(rgbValues[0]);
+            const g = parseInt(rgbValues[1]);
+            const b = parseInt(rgbValues[2]);
+
+            // Calculate color similarity between background and logo
+            const colorSimilarity = calculateColorSimilarity(
+                { r, g, b },
+                logoColor
+            );
+
+            // Calculate the perceived brightness
+            const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
+
+            // If colors are similar OR background is dark, invert
+            return colorSimilarity > 85 || brightness < 128;
+        }
+
+        // Calculate how similar two colors are (0-100%)
+        function calculateColorSimilarity(color1, color2) {
+            // Calculate the Euclidean distance in RGB space
+            const distance = Math.sqrt(
+                Math.pow(color1.r - color2.r, 2) +
+                Math.pow(color1.g - color2.g, 2) +
+                Math.pow(color1.b - color2.b, 2)
+            );
+
+            // Convert to a similarity percentage (0-100)
+            // Max distance in RGB space is √(255² + 255² + 255²) ≈ 441.7
+            return 100 - (distance / 441.7 * 100);
+        }
+
+        // Helper function for known dark sections
+        function isKnownDarkSection(backgroundColor) {
+            // List of sections we know should have inverted logo/menu
+            const darkSectionColors = [
+                "rgb(34, 38, 247)",    // Blue section (#2226f7)
+                "rgb(0, 0, 0)",        // Black section
+                "rgb(34, 34, 34)"      // Dark gray section
+            ];
+
+            return darkSectionColors.includes(backgroundColor);
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            checkBackgroundAndInvertImages();
+
+            // Run when scrolling
+            window.addEventListener('scroll', checkBackgroundAndInvertImages);
+
+            // Run on window resize
+            window.addEventListener('resize', checkBackgroundAndInvertImages);
+
+            // Observe changes to the navbar element
+            const observer = new MutationObserver(checkBackgroundAndInvertImages);
+            observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
+        });
+    </script>
 </body>
+
 </html>
