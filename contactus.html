@@ -15,23 +15,8 @@
             font-family: 'Lato', sans-serif;
         }
 
-        #bg-img {
-            z-index: 0;
-        }
-
-        #fg-img {
-            z-index: 10;
-        }
-
-        .image-to-move {
-            will-change: transform;
-            transform: translateZ(0);
-            backface-visibility: hidden;
-        }
-
         #image-container {
             perspective: 1000px;
-            /* Enables 3D effect */
         }
     </style>
 </head>
@@ -295,11 +280,13 @@
     <script>
         // horse animation
         const images = document.querySelectorAll(".image-to-move"); // Select both images
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
         document.addEventListener("mousemove", (e) => {
             const { clientX: mouseX, clientY: mouseY } = e; // Get mouse position on the page
-            const centerX = window.innerWidth / 2; // Center of the viewport (X-axis)
-            const centerY = window.innerHeight / 2; // Center of the viewport (Y-axis)
+            const centerX = window.innerWidth / (isSafari ? 1 : 2);
+            const centerY = window.innerHeight / (isSafari ? 1 : 2);
+
 
             // Calculate movement strength based on distance from the center
             const moveX = (mouseX - centerX) / centerX * 20; // Horizontal movement
@@ -307,7 +294,7 @@
 
             // Apply movement to both images
             gsap.to(images, {
-                duration: 0.3, // Smooth transition
+                duration: (isSafari ? 0.2 : 0.3), // Smooth transition
                 x: moveX, // Move left/right
                 y: moveY, // Move up/down
                 force3D: true,
