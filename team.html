@@ -413,6 +413,7 @@
                     <!-- Second Row: Button & Social Media Icons -->
                     <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
                         <button
+                        id="shareButton"
                             class="bg-[#ffd628] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
                             <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
                         </button>
@@ -501,6 +502,16 @@
         });
     </script>
     <script>
+        document.getElementById("shareButton").addEventListener("click", async () => {
+            if (navigator.share) {
+                await navigator.share({
+                    title: "Check out this website!",
+                    url: window.location.href
+                });
+            } else {
+                alert("Your browser does not support sharing.");
+            }
+        });
         // Enhanced function to check background section color and invert images if needed
         function checkBackgroundAndInvertImages() {
             const navbar = document.getElementById('navbar');
