@@ -15,6 +15,20 @@
             font-family: 'Lato', sans-serif;
         }
 
+        #bg-img {
+            z-index: 0;
+        }
+
+        #fg-img {
+            z-index: 10;
+        }
+
+        .image-to-move {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
         #image-container {
             perspective: 1000px;
             /* Enables 3D effect */
@@ -296,6 +310,7 @@
                 duration: 0.3, // Smooth transition
                 x: moveX, // Move left/right
                 y: moveY, // Move up/down
+                force3D: true,
                 rotateY: moveX / 2, // Slight 3D rotation
                 rotateX: -moveY / 2, // Add vertical rotation for depth
                 ease: "power3.out" // Smooth easing
