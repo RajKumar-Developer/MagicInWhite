@@ -67,17 +67,17 @@
         class="w-full h-auto py-16 sm:py-24 sm:h-screen flex items-center justify-center bg-white">
         <div class="post-card mx-auto border shadow-2xl bg-white relative 
             flex flex-col md:flex-row
-            w-[95%] md:w-[720px] lg:w-[960px] xl:w-[1420px]
+            w-[95%] md:w-[720px] lg:w-[960px] xl:w-[60%]
             h-auto md:h-[550px] xl:h-[650px] overflow-hidden">
 
             <!-- Left Side (Stacked Images) -->
 
             <div class="md:w-1/2 flex items-center px-10 pt-4 pb-0 sm:py-6 md:px-12 md:py-24 xl:px-16 xl:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0"
                 style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
-                <div id="image-container" class="relative w-full max-w-md aspect-[1/1.1]">
+                <div id="image-container" class="relative w-full max-w-md aspect-[1/1.8]">
                     <!-- Background Image (Behind) -->
                     <img id="bg-img" src="/contactpage_assets/Vector_Smart_Object.svg" alt="Background"
-                        class="image-to-move absolute top-1 sm:top-3 right-9 sm:right-8 w-[55%] h-[85%] sm:w-[65%] sm:h-full object-contain z-0" />
+                        class="image-to-move absolute top-1 sm:top-3 right-9 sm:right-0 w-[55%] h-[75%] sm:w-[75%] sm:h-full object-contain z-0" />
 
                     <!-- Foreground Image (Top) -->
                     <img id="fg-img" src="/contactpage_assets/Horse.svg" alt="Foreground"
@@ -197,8 +197,9 @@
                         </div>
                     </div>
                     <!-- Second Row: Button & Social Media Icons -->
-                    <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
-                        <button
+                    <div
+                        class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0 relative">
+                        <button id="shareButton"
                             class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
                             <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
                         </button>
@@ -235,6 +236,17 @@
         const menuBtn = document.getElementById('menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
+
+        document.getElementById("shareButton").addEventListener("click", async () => {
+            if (navigator.share) {
+                await navigator.share({
+                    title: "Check out this website!",
+                    url: window.location.href
+                });
+            } else {
+                alert("Your browser does not support sharing.");
+            }
+        });
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
