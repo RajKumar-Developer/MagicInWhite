@@ -381,38 +381,38 @@
 
     <!--carousel slider-->
     <section id="carousel-section" class="min-h-screen h-auto flex flex-col">
-        <div class="h-[100dvh] sm:h-[60dvh] md:h-[50dvh] lg:h-[60dvh] relative overflow-hidden bg-[#ffd527]">
+        <div class="h-[100dvh] sm:h-[60dvh] md:h-[50dvh] lg:h-[70dvh] relative overflow-hidden bg-[#ffd527]">
             <div class="container mx-auto px-4 h-full flex flex-col 
         md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
 
                 <!-- Quote Icon (Top) -->
                 <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png" alt="Top Quote"
-                    class="absolute top-10 left-5 sm:left-10 w-12 sm:w-16 md:w-24 hidden lg:block">
+                    class="absolute top-10 left-5 sm:left-[20vh] w-10 sm:w-16 md:w-24 hidden lg:block">
 
                 <!-- Quote Content -->
                 <div class="w-full md:left-10 md:w-[50%] text-center md:text-left space-y-4 sm:space-y-6 relative">
                     <h2 id="quote" class="text-xl sm:text-2xl md:text-4xl font-bold text-gray-900"></h2>
                     <p id="content" class="text-sm sm:text-lg text-gray-800"></p>
-                    <p id="author" class="text-base sm:text-xl font-semibold text-gray-900"></p>
+                    <p id="author" class="text-base sm:text-xl text-gray-900 italic"></p>
 
                     <!-- Navigation Dots -->
                     <div class="flex gap-2 mt-4 sm:mt-6 justify-center md:justify-start" id="dots-container"></div>
                 </div>
 
                 <!-- Image Section -->
-                <div class="w-full md:w-[50%] flex justify-center md:justify-end items-end h-[60dvh] relative">
+                <div class="w-full md:w-[50%] flex justify-center md:justify-end items-end h-[70dvh] relative">
                     <img id="testimonial-image" alt="Mani Rathnam Sir"
-                        class="w-[100%] h-95 sm:h-60 md:h-full max-h-[54dvh] object-contain mx-auto absolute bottom-0 sm:relative">
+                        class="w-[100%] h-90 sm:h-60 md:h-full max-h-[55dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20">
                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png" alt="Bottom Quote"
                         class="absolute bottom-5 right-0 sm:right-5 md:right-14 w-24 sm:w-16 md:w-20 hidden lg:block">
                 </div>
             </div>
 
             <!-- Navigation Arrows -->
-            <button onclick="prevSlide()" class="absolute w-6 left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2">
+            <button onclick="prevSlide()" class="absolute w-6 left-2 sm:left-4 md:left-20 top-1/2 -translate-y-1/2">
                 <img src="/MIW_Website_Assets/Left_arrow_testimonials.png" alt="Previous" class="w-8 sm:w-12 md:w-16">
             </button>
-            <button onclick="nextSlide()" class="absolute w-6 right-2 sm:right-4 md:right-10 top-1/2 -translate-y-1/2">
+            <button onclick="nextSlide()" class="absolute w-6 right-2 sm:right-4 md:right-20 top-1/2 -translate-y-1/2">
                 <img src="/MIW_Website_Assets/Right_arrow_testimonials.png" alt="Next" class="w-8 sm:w-12 md:w-16">
             </button>
         </div>
@@ -612,10 +612,9 @@
         const workDetails = [
             {
                 id: 1, title: 'Gourmet Salads',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
+                desc: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of 
+                 type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,`,
                 imageSources: ['/MIW_Website_Assets/Poss_image_work.png']
             },
             {
@@ -890,33 +889,34 @@
     <script>
         const testimonials = [
             {
-                quote: "Ipsum suspendisse ultrices gravida",
-                content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ipsum suspendisse ultrices gravida.",
-                author: "- Kamal Hassn",
-                image: "/MIW_Website_Assets/4.png"
+                quote: "Ipsum suspendisse ultrices gravida 1",
+                content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                author: "- Mani Ratnam",
+                image: "/MIW_Website_Assets/mani_sir_testimonials.png"
             },
             {
                 quote: "Ipsum suspendisse ultrices gravida 2",
-                content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ipsum suspendisse ultrices gravida.2",
-                author: "- Mani Ratnam",
-                image: "/MIW_Website_Assets/mani_sir_testimonials.png"
+                content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                author: "- Atlee",
+                image: "/MIW_Website_Assets/1.png"
+
             }, {
                 quote: "Ipsum suspendisse ultrices gravida 3",
-                content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ipsum suspendisse ultrices gravida.3",
-                author: "- Nirav Shah",
-                image: "/MIW_Website_Assets/3.png"
-            },
-            {
-                quote: "Ipsum suspendisse ultrices gravida 4",
-                content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ipsum suspendisse ultrices gravida.3",
+                content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                 author: "- Thiagarajan Kumararaja",
                 image: "/MIW_Website_Assets/2.png"
             },
             {
+                quote: "Ipsum suspendisse ultrices gravida 4",
+                content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                author: "- Nirav Shah",
+                image: "/MIW_Website_Assets/3.png"
+            },
+            {
                 quote: "Ipsum suspendisse ultrices gravida 5",
-                content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis ipsum suspendisse ultrices gravida.3",
-                author: "- Atlee",
-                image: "/MIW_Website_Assets/1.png"
+                content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                author: "- Kamal Hassan",
+                image: "/MIW_Website_Assets/4.png"
             },
 
         ];
@@ -933,12 +933,12 @@
                 dot.classList.toggle("bg-green-500", i === index);
                 dot.classList.toggle("bg-white", i !== index);
             });
-        }
+        } 
 
         const dotsContainer = document.getElementById("dots-container");
         testimonials.forEach((_, index) => {
             const dot = document.createElement("span");
-            dot.classList.add("dot", "w-4", "h-4", "rounded-full", "bg-white", "cursor-pointer", "transition-all");
+            dot.classList.add("dot", "w-6", "h-6", "rounded-full", "bg-white", "cursor-pointer", "transition-all");
             dot.addEventListener("click", () => {
                 currentIndex = index;
                 updateTestimonial(currentIndex);
