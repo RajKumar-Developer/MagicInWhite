@@ -103,6 +103,11 @@
   opacity: 1;
   transform: translate3d(0%, -30%, 50px);
 }
+
+
+.card:hover .character-sm{
+  transform: translate3d(0%, -25%, 50px) !important;
+}
 /* Mobile hover activated by class */
 .card.mobile-hover .wrapper {
   transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
