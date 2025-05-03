@@ -544,18 +544,25 @@
         </div>
     </section>
 
-    <button id="closePopup"
-        class="hidden fixed top-10 right-4 sm:right-8 w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-        <span class="text-[8px] uppercase absolute top-[28px] hidden md:block">CLOSE</span>
-    </button>
-    <button id="workDetailsPageBtn" onclick="goToWorkPage()"
-        class="hidden fixed top-[11%] right-4 sm:right-8 w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl   shadow-lg z-50">
-        <img src="/MIW_Website_Assets/work-page-button.png" alt="Details" class="w-3 h-3 object-contain">
-        <span class="text-[8px] uppercase absolute top-10 leading-[12px] hidden md:block whitespace-nowrap">WORK
-            PAGE</span> </button>
+    <div class="fixed top-10 right-7 flex flex-col z-[50] place-items-center hidden" id="close-popup-button-wrapper">
+        <button id="closePopup"
+            class="hidden w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50 ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <span class="text-[8px] uppercase text-white hidden md:block">CLOSE</span>
+
+        <button id="workDetailsPageBtn" onclick="goToWorkPage()"
+            class="hidden w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50 mt-3">
+            <img src="/MIW_Website_Assets/work-page-button.png" alt="Details" class="w-3 h-3 object-contain">
+        </button>
+        <span class="text-[8px] uppercase text-white leading-[12px] hidden md:block whitespace-nowrap">WORK
+            PAGE</span>
+    </div>
+
+
 
     <div id="work-details-popup"
         class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16">
@@ -693,6 +700,8 @@
         const popup = document.getElementById("work-details-popup");
         const closePopup = document.getElementById("closePopup");
         const workDetailsPageBtn = document.getElementById("workDetailsPageBtn");
+        const closPopupButtonWrapper = document.getElementById("close-popup-button-wrapper");
+
         const detailsHeader = document.getElementById("details-pop-header");
         const detailsImageSrc = document.getElementById("details-pop-img-contents");
         const detailsPopupDescription = document.getElementById("details-pop-desc");
@@ -725,6 +734,7 @@
             popup.classList.remove("hidden");
             closePopup.classList.remove('hidden');
             workDetailsPageBtn.classList.remove('hidden');
+            closPopupButtonWrapper.classList.remove('hidden');
 
             // Disable background scrolling
             document.body.classList.add("overflow-hidden");
@@ -748,6 +758,7 @@
                     // Hide modal and restore background scrolling
                     closePopup.classList.add('hidden');
                     workDetailsPageBtn.classList.add('hidden');
+                    closPopupButtonWrapper.classList.add('hidden');
 
                     popup.classList.add("hidden");
                     document.body.classList.remove("overflow-hidden");
