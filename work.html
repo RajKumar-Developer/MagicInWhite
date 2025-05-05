@@ -377,8 +377,7 @@
                     </div>
                     <!-- Second Row: Button & Social Media Icons -->
                     <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
-                        <button
-                            id="shareButton"
+                        <button id="shareButton"
                             class="bg-[#00001b] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
                             <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
                         </button>
@@ -410,9 +409,21 @@
 
         </div>
     </section>
+
+    <!-- loader -->
+    <div id="loader"
+        class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
+        <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-16 h-16 object-contain">
+    </div>
+    <!--loader end  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <script>
+        document.addEventListener("readystatechange", () => {
+            if (document.readyState === "complete") {
+                document.getElementById("loader").classList.add("hidden");
+            }
+        });
         const workDetails = [
             {
                 id: 1, title: 'Gourmet Salads',
@@ -649,7 +660,7 @@
             }
         });
 
- 
+
 
         // Close modal when clicking outside image (only if screen width < 776px)
         document.getElementById("fullscreen-image-modal").addEventListener("click", (e) => {

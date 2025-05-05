@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <style>
         @font-face {
             font-family: "SF UI Text";
@@ -82,67 +82,66 @@
             /* Firefox */
         }
 
-/* Base: Mobile - place it below the slide content */
-.custom-swiper-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  position: static !important;
-  margin-top: 1.5rem;
-  width: 100%;
-  z-index: 10;
-}
+        /* Base: Mobile - place it below the slide content */
+        .custom-swiper-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            position: static !important;
+            margin-top: 1.5rem;
+            width: 100%;
+            z-index: 10;
+        }
 
-/* For medium screens and up: position absolutely at the bottom */
-@media (min-width: 1024px) {
-  .custom-swiper-pagination {
-    position: absolute !important;
-    bottom: 10vh !important;
-    left: 18% !important;
-    justify-content: flex-start;
-    margin-top: 0;
-  }
-}
+        /* For medium screens and up: position absolutely at the bottom */
+        @media (min-width: 1024px) {
+            .custom-swiper-pagination {
+                position: absolute !important;
+                bottom: 10vh !important;
+                left: 18% !important;
+                justify-content: flex-start;
+                margin-top: 0;
+            }
+        }
 
-/* Mobile and tablet view (max-width: 1023px) */
-@media (max-width: 1023px) {
-  .custom-swiper-pagination {
-    position: absolute !important;
-    bottom: 5vh !important;        /* Adjust as needed for mobile spacing */
-    left: 0;
-    right: 0;
-    display: flex !important;
-    justify-content: center !important;
-    width: 100%;
-    z-index: 10;
-  }
-}
+        /* Mobile and tablet view (max-width: 1023px) */
+        @media (max-width: 1023px) {
+            .custom-swiper-pagination {
+                position: absolute !important;
+                bottom: 5vh !important;
+                /* Adjust as needed for mobile spacing */
+                left: 0;
+                right: 0;
+                display: flex !important;
+                justify-content: center !important;
+                width: 100%;
+                z-index: 10;
+            }
+        }
 
-/* Dot styles */
-.swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
-  background-color: #ffffff;
-  border: 2px solid #ffffff;
-  border-radius: 9999px;
-  opacity: 0.6;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
-}
+        /* Dot styles */
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 9999px;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
 
-.swiper-pagination-bullet-active {
-  background-color: #22c55e;
-  border: none;
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-        
-
+        .swiper-pagination-bullet-active {
+            background-color: #22c55e;
+            border: none;
+            opacity: 1;
+            transform: scale(1.2);
+        }
     </style>
 </head>
 
 <body oncontextmenu="return false;">
+
     <!-- Navbar -->
     <nav id="navbar"
         class="bg-transparent sm:bg-transparent transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
@@ -441,150 +440,198 @@
     <!--carousel slider-->
     <section id="carousel-section" class="min-h-screen h-auto flex flex-col">
         <div class="h-[100dvh] sm:h-[60dvh] md:h-[50dvh] lg:h-[70dvh] relative overflow-hidden bg-[#ffd527]">
-            
+
             <div class="swiper mySwiper h-full">
-              <div class="swiper-wrapper container">
-        
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                  <div class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
-                    <!-- Top quote icon -->
-                    <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png" 
-                         class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block" 
-                         alt="Quote Top">
-                    <!-- Left text -->
-                    <div class="container mx-auto px-4 h-full flex flex-col 
+                <div class="swiper-wrapper container">
+
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div
+                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
+                            <!-- Top quote icon -->
+                            <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
+                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                alt="Quote Top">
+                            <!-- Left text -->
+                            <div
+                                class="container mx-auto px-4 h-full flex flex-col 
                     md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                    <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                      <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse ultrices gravida 1</h2>
-                      <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                      <p class="text-base sm:text-xl italic text-black">– Mani Ratnam</p>
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
+                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida 1</h2>
+                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
+                                        and scrambled it to make a type specimen book.</p>
+                                    <p class="text-base sm:text-xl italic text-black">– Mani Ratnam</p>
+                                </div>
+                                <!-- Right image -->
+                                <div
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    <img src="/MIW_Website_Assets/mani_sir_testimonials.png"
+                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        alt="Mani Ratnam">
+                                    <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
+                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        alt="Quote Bottom">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Right image -->
-                    <div class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
-                      <img src="/MIW_Website_Assets/mani_sir_testimonials.png" class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20" alt="Mani Ratnam">
-                      <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                           class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
-                           alt="Quote Bottom">
-                    </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                  <div class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
-                    <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png" 
-                         class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block" 
-                         alt="Quote Top">
-                         <div class="container mx-auto px-4 h-full flex flex-col 
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div
+                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
+                            <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
+                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                alt="Quote Top">
+                            <div
+                                class="container mx-auto px-4 h-full flex flex-col 
                          md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                    <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                      <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse ultrices gravida 2</h2>
-                      <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                      <p class="text-base sm:text-xl italic text-black">– Atlee</p>
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
+                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida 2</h2>
+                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
+                                        and scrambled it to make a type specimen book.</p>
+                                    <p class="text-base sm:text-xl italic text-black">– Atlee</p>
 
+                                </div>
+                                <div
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    <img src="/MIW_Website_Assets/1.png"
+                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        alt="Atlee">
+                                    <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
+                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        alt="Quote Bottom">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
-                      <img src="/MIW_Website_Assets/1.png" class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20" alt="Atlee">
-                      <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                           class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
-                           alt="Quote Bottom">
+
+                    <div class="swiper-slide">
+                        <div
+                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
+                            <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
+                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                alt="Quote Top">
+                            <div
+                                class="container mx-auto px-4 h-full flex flex-col 
+                           md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
+                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida 3</h2>
+                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
+                                        and scrambled it to make a type specimen book.</p>
+                                    <p class="text-base sm:text-xl italic text-black">– Thiagarajan Kumararaja</p>
+
+                                </div>
+                                <div
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    <img src="/MIW_Website_Assets/2.png"
+                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        alt="thiagu">
+                                    <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
+                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        alt="Quote Bottom">
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="swiper-slide">
+                        <div
+                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
+                            <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
+                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                alt="Quote Top">
+                            <div
+                                class="container mx-auto px-4 h-full flex flex-col 
+                           md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
+                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida 4</h2>
+                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
+                                        and scrambled it to make a type specimen book.</p>
+                                    <p class="text-base sm:text-xl italic text-black">– Nirav Shah</p>
+
+                                </div>
+                                <div
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    <img src="/MIW_Website_Assets/3.png"
+                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        alt="nirav">
+                                    <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
+                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        alt="Quote Bottom">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
+
+                    <div class="swiper-slide">
+                        <div
+                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
+                            <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
+                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                alt="Quote Top">
+                            <div
+                                class="container mx-auto px-4 h-full flex flex-col 
+                           md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
+                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida 5</h2>
+                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
+                                        and scrambled it to make a type specimen book.</p>
+                                    <p class="text-base sm:text-xl italic text-black">– Kamal Hassan</p>
+
+                                </div>
+                                <div
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    <img src="/MIW_Website_Assets/4.png"
+                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        alt="kamal">
+                                    <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
+                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        alt="Quote Bottom">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more slides the same way -->
+
                 </div>
+                <!-- <div class="swiper-pagination custom-swiper-pagination absolute left-4 sm:left-20 z-10"></div> -->
+                <div class="swiper-pagination custom-swiper-pagination"></div>
 
-                <div class="swiper-slide">
-                    <div class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
-                      <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png" 
-                           class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block" 
-                           alt="Quote Top">
-                           <div class="container mx-auto px-4 h-full flex flex-col 
-                           md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                      <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                        <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse ultrices gravida 3</h2>
-                        <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        <p class="text-base sm:text-xl italic text-black">– Thiagarajan Kumararaja</p>
-  
-                      </div>
-                      <div class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
-                        <img src="/MIW_Website_Assets/2.png" class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20" alt="thiagu">
-                        <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                             class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
-                             alt="Quote Bottom">
-                      </div>
-                      </div>
-                    </div>
-                  </div>
+                <!-- Navigation -->
+                <button
+                    class="custom-swiper-prev absolute w-6 left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-10">
+                    <img src="/MIW_Website_Assets/Left_arrow_testimonials.png" alt="Previous"
+                        class="w-8 sm:w-12 md:w-16">
+                </button>
 
-                  <div class="swiper-slide">
-                    <div class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
-                      <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png" 
-                           class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block" 
-                           alt="Quote Top">
-                           <div class="container mx-auto px-4 h-full flex flex-col 
-                           md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                      <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                        <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse ultrices gravida 4</h2>
-                        <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        <p class="text-base sm:text-xl italic text-black">– Nirav Shah</p>
-  
-                      </div>
-                      <div class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
-                        <img src="/MIW_Website_Assets/3.png" class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20" alt="nirav">
-                        <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                             class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
-                             alt="Quote Bottom">
-                      </div>
-                      </div>
-                    </div>
-                  </div>
+                <!-- Custom Next Button -->
+                <button
+                    class="custom-swiper-next absolute w-6 right-2 sm:right-4 md:right-10 top-1/2 -translate-y-1/2 z-10">
+                    <img src="/MIW_Website_Assets/Right_arrow_testimonials.png" alt="Next" class="w-8 sm:w-12 md:w-16">
+                </button>
 
-                  <div class="swiper-slide">
-                    <div class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
-                      <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png" 
-                           class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block" 
-                           alt="Quote Top">
-                           <div class="container mx-auto px-4 h-full flex flex-col 
-                           md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                      <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                        <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse ultrices gravida 5</h2>
-                        <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        <p class="text-base sm:text-xl italic text-black">– Kamal Hassan</p>
-  
-                      </div>
-                      <div class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
-                        <img src="/MIW_Website_Assets/4.png" class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20" alt="kamal">
-                        <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                             class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
-                             alt="Quote Bottom">
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-        
-                <!-- Add more slides the same way -->
-             
-              </div>
-              <!-- <div class="swiper-pagination custom-swiper-pagination absolute left-4 sm:left-20 z-10"></div> -->
-              <div class="swiper-pagination custom-swiper-pagination"></div>
-        
-              <!-- Navigation -->
-              <button class="custom-swiper-prev absolute w-6 left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-10"> 
-                <img src="/MIW_Website_Assets/Left_arrow_testimonials.png" alt="Previous" class="w-8 sm:w-12 md:w-16">
-              </button>
-              
-              <!-- Custom Next Button -->
-              <button class="custom-swiper-next absolute w-6 right-2 sm:right-4 md:right-10 top-1/2 -translate-y-1/2 z-10"> 
-                <img src="/MIW_Website_Assets/Right_arrow_testimonials.png" alt="Next" class="w-8 sm:w-12 md:w-16">
-              </button>
-           
 
-        
-              <!-- Pagination -->
+
+                <!-- Pagination -->
             </div>
-          </div>
+        </div>
 
         <!-- Bottom Horse Animation Section -->
         <div class="bg-white relative w-full flex items-center justify-center overflow-hidden h-[40dvh] hidden sm:flex">
@@ -712,7 +759,12 @@
 
         </div>
     </section>
-
+    <!-- loader -->
+    <div id="loader"
+        class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
+        <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-16 h-16 object-contain">
+    </div>
+    <!--loader end  -->
     <div class="fixed top-10 right-7 flex flex-col z-[50] place-items-center hidden" id="close-popup-button-wrapper">
         <button id="closePopup"
             class="hidden w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50 ">
@@ -774,24 +826,28 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="/main.js"></script>
     <script>
-const swiper = new Swiper(".mySwiper", {
-  loop: true,
-  autoplay: {
-    delay: 8000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".custom-swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.custom-swiper-next',
-    prevEl: '.custom-swiper-prev',
-  }
-});
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 8000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".custom-swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.custom-swiper-next',
+                prevEl: '.custom-swiper-prev',
+            }
+        });
 
-
-      </script>
+        document.addEventListener("readystatechange", () => {
+            if (document.readyState === "complete") {
+                document.getElementById("loader").classList.add("hidden");
+            }
+        });
+    </script>
     <script>
         function goToWorkPage() {
             window.location.href = '/work.html';
@@ -1049,7 +1105,7 @@ const swiper = new Swiper(".mySwiper", {
             });
         });
 
-        
+
         const menuBtn = document.getElementById('menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1097,8 +1153,8 @@ const swiper = new Swiper(".mySwiper", {
         window.addEventListener("resize", updatePlaceholder);
     </script>
 
-  
-    
+
+
     <script>
         let horseContainer = document.getElementById("horse-container");
         let obstacle = document.getElementById("obstacle");

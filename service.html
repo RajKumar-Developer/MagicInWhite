@@ -364,6 +364,12 @@
 		</div>
 	</section>
 
+    <!-- loader -->
+    <div id="loader"
+        class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
+        <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-16 h-16 object-contain">
+    </div>
+    <!--loader end  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
@@ -393,6 +399,11 @@
 		});
 	</script>
 	<script>
+		document.addEventListener("readystatechange", () => {
+            if (document.readyState === "complete") {
+                document.getElementById("loader").classList.add("hidden");
+            }
+        });
 		document.getElementById("shareButton").addEventListener("click", async () => {
             if (navigator.share) {
                 await navigator.share({

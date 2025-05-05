@@ -477,6 +477,12 @@
         </div>
     </section>
 
+    <!-- loader -->
+    <div id="loader"
+        class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
+        <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-16 h-16 object-contain">
+    </div>
+    <!--loader end  -->
     <script>
         let lastScrollY = window.scrollY;
         const navbar = document.getElementById("navbar");
@@ -662,6 +668,11 @@
             // Observe changes to the navbar element
             const observer = new MutationObserver(checkBackgroundAndInvertImages);
             observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
+        });
+        document.addEventListener("readystatechange", () => {
+            if (document.readyState === "complete") {
+                document.getElementById("loader").classList.add("hidden");
+            }
         });
     </script>
 </body>
