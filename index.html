@@ -97,12 +97,16 @@
         @media (min-width: 1024px) {
             .custom-swiper-pagination {
                 position: absolute !important;
-                bottom: 10vh !important;
-                left: 18% !important;
+                bottom: 8vh !important;
+                left: 18.60% !important;
                 justify-content: flex-start;
                 margin-top: 0;
             }
+            .blue-quote {
+                left: 12%  !important;
+            }
         }
+
 
         /* Mobile and tablet view (max-width: 1023px) */
         @media (max-width: 1023px) {
@@ -117,12 +121,15 @@
                 width: 100%;
                 z-index: 10;
             }
+            .blue-quote {
+            left: 5% !important;
+    }
         }
 
         /* Dot styles */
         .swiper-pagination-bullet {
-            width: 20px;
-            height: 20px;
+            width: 23px;
+            height: 23px;
             background-color: #ffffff;
             border: 2px solid #ffffff;
             border-radius: 9999px;
@@ -439,7 +446,7 @@
 
     <!--carousel slider-->
     <section id="carousel-section" class="min-h-screen h-auto flex flex-col">
-        <div class="h-[100dvh] sm:h-[60dvh] md:h-[50dvh] lg:h-[70dvh] relative overflow-hidden bg-[#ffd527]">
+        <div class="h-[100dvh] sm:h-[60dvh] md:h-[50dvh] lg:h-[60dvh] relative overflow-hidden bg-[#ffd527]">
 
             <div class="swiper mySwiper h-full">
                 <div class="swiper-wrapper container">
@@ -450,15 +457,15 @@
                             class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
                             <!-- Top quote icon -->
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                class="absolute top-12 left-15 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote" 
                                 alt="Quote Top">
                             <!-- Left text -->
                             <div
-                                class="container mx-auto px-4 h-full flex flex-col pt-8 sm:pt-0
+                                class="container mx-auto px-4 h-full flex flex-col pt-5 sm:pt-0
                     md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida 1</h2>
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4 mt-8 sm:mt-0">
+                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida</h2>
                                     <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
                                         printing and typesetting industry. Lorem Ipsum has been the industry's standard
                                         dummy text ever since the 1500s, when an unknown printer took a galley of type
@@ -467,12 +474,12 @@
                                 </div>
                                 <!-- Right image -->
                                 <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
                                     <img src="/MIW_Website_Assets/mani_sir_testimonials.png"
-                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        class="w-full max-h-[60dvh] object-contain mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
                                         alt="Mani Ratnam">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
@@ -484,14 +491,14 @@
                         <div
                             class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                class="absolute top-12 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
                                 alt="Quote Top">
                             <div
                                 class="container mx-auto px-4 h-full flex flex-col  pt-8 sm:pt-0
                          md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida 2</h2>
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4  mt-8 sm:mt-0">
+                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida</h2>
                                     <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
                                         printing and typesetting industry. Lorem Ipsum has been the industry's standard
                                         dummy text ever since the 1500s, when an unknown printer took a galley of type
@@ -500,12 +507,12 @@
 
                                 </div>
                                 <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
                                     <img src="/MIW_Website_Assets/1.png"
-                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        class="w-full max-h-[60dvh] object-contain mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
                                         alt="Atlee">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
@@ -516,14 +523,14 @@
                         <div
                             class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                class="absolute top-12 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
                                 alt="Quote Top">
                             <div
                                 class="container mx-auto px-4 h-full flex flex-col pt-8 sm:pt-0
                            md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida 3</h2>
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4  mt-8 sm:mt-0">
+                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida</h2>
                                     <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
                                         printing and typesetting industry. Lorem Ipsum has been the industry's standard
                                         dummy text ever since the 1500s, when an unknown printer took a galley of type
@@ -532,12 +539,12 @@
 
                                 </div>
                                 <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
                                     <img src="/MIW_Website_Assets/2.png"
-                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        class="w-full max-h-[60dvh] object-contain mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
                                         alt="thiagu">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
@@ -548,14 +555,14 @@
                         <div
                             class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                class="absolute top-12 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
                                 alt="Quote Top">
                             <div
                                 class="container mx-auto px-4 h-full flex flex-col pt-8 sm:pt-0
                            md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida 4</h2>
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4  mt-8 sm:mt-0">
+                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida</h2>
                                     <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
                                         printing and typesetting industry. Lorem Ipsum has been the industry's standard
                                         dummy text ever since the 1500s, when an unknown printer took a galley of type
@@ -564,12 +571,12 @@
 
                                 </div>
                                 <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
                                     <img src="/MIW_Website_Assets/3.png"
-                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        class="w-full max-h-[60dvh] object-contain mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
                                         alt="nirav">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
@@ -580,14 +587,14 @@
                         <div
                             class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-10 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block"
+                                class="absolute top-12 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
                                 alt="Quote Top">
                             <div
                                 class="container mx-auto px-4 h-full flex flex-col pt-8 sm:pt-0
                            md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4">
-                                    <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida 5</h2>
+                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4  mt-8 sm:mt-0">
+                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
+                                        ultrices gravida</h2>
                                     <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
                                         printing and typesetting industry. Lorem Ipsum has been the industry's standard
                                         dummy text ever since the 1500s, when an unknown printer took a galley of type
@@ -596,12 +603,12 @@
 
                                 </div>
                                 <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-[70dvh]">
+                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
                                     <img src="/MIW_Website_Assets/4.png"
-                                        class="w-full max-h-[70dvh] object-contain mx-auto absolute bottom-0 sm:relative lg:pl-20"
+                                        class="w-full max-h-[60dvh] object-contain mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
                                         alt="kamal">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-5 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
