@@ -55,6 +55,10 @@
 			will-change: transform;
 			transform: translateZ(0);
 		}
+
+		.green {
+			color: #22c55e;
+		}
 	</style>
 </head>
 
@@ -89,43 +93,43 @@
 
 		<!-- Menu Items -->
 		<ul class="text-center leading-[2.5rem]">
-            <li class="mt-2 pb-3">
-                <a href="/index.html"
-                    class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
-                    H O M E
-                </a>
-            </li>
-            <li class="mt-2 pb-3">
-                <a href="/work.html"
-                    class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
-                    W O R K
-                </a>
-            </li>
-            <li class="mt-2 pb-3">
-                <a href="/aboutus.html"
-                    class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
-                    A B O U T
-                </a>
-            </li>
-            <li class="mt-2 pb-3">
-                <a href="/service.html"
-                    class="text-black-700 font-bold text-2xl transition-transform duration-500 ease-out scale-125 hover:scale-125 hover:font-bold block">
-                    S E R V I C E S
-                </a>
-            </li>
-            <li class="mt-2 pb-3">
-                <a href="/team.html"
-                    class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
-                    T E A M
-                </a>
-            </li>
-            <li class="mt-2 pb-3">
-                <a href="/contactus.html"
-                    class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
-                    C O N T A C T
-                </a>
-            </li>
-        </ul>
+			<li class="mt-2 pb-3">
+				<a href="/index.html"
+					class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
+					H O M E
+				</a>
+			</li>
+			<li class="mt-2 pb-3">
+				<a href="/work.html"
+					class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
+					W O R K
+				</a>
+			</li>
+			<li class="mt-2 pb-3">
+				<a href="/aboutus.html"
+					class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
+					A B O U T
+				</a>
+			</li>
+			<li class="mt-2 pb-3">
+				<a href="/service.html"
+					class="text-black-700 font-bold text-2xl transition-transform duration-500 ease-out scale-125 hover:scale-125 hover:font-bold block green">
+					S E R V I C E S
+				</a>
+			</li>
+			<li class="mt-2 pb-3">
+				<a href="/team.html"
+					class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
+					T E A M
+				</a>
+			</li>
+			<li class="mt-2 pb-3">
+				<a href="/contactus.html"
+					class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
+					C O N T A C T
+				</a>
+			</li>
+		</ul>
 	</div>
 
 
@@ -330,8 +334,7 @@
 					<!-- Second Row: Button & Social Media Icons -->
 					<div
 						class="flex flex-col sm:flex-row justify-between items-center w-full space-y-8 mt-8 sm:space-y-0">
-						<button
-						id="shareButton"
+						<button id="shareButton"
 							class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
 							<img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
 						</button>
@@ -364,12 +367,12 @@
 		</div>
 	</section>
 
-    <!-- loader -->
-    <div id="loader"
-        class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
-        <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-20 h-20 object-contain">
-    </div>
-    <!--loader end  -->
+	<!-- loader -->
+	<div id="loader"
+		class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
+		<img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-20 h-20 object-contain">
+	</div>
+	<!--loader end  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
@@ -400,20 +403,20 @@
 	</script>
 	<script>
 		document.addEventListener("readystatechange", () => {
-            if (document.readyState === "complete") {
-                document.getElementById("loader").classList.add("hidden");
-            }
-        });
+			if (document.readyState === "complete") {
+				document.getElementById("loader").classList.add("hidden");
+			}
+		});
 		document.getElementById("shareButton").addEventListener("click", async () => {
-            if (navigator.share) {
-                await navigator.share({
-                    title: "Check out this website!",
-                    url: window.location.href
-                });
-            } else {
-                alert("Your browser does not support sharing.");
-            }
-        });
+			if (navigator.share) {
+				await navigator.share({
+					title: "Check out this website!",
+					url: window.location.href
+				});
+			} else {
+				alert("Your browser does not support sharing.");
+			}
+		});
 		function updatePlaceholder() {
 			const inputField = document.querySelector("input[type='email']");
 
