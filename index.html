@@ -50,6 +50,7 @@
             object-fit: cover;
             object-position: center;
         }
+
         .green {
             color: #22c55e;
         }
@@ -105,8 +106,9 @@
                 justify-content: flex-start;
                 margin-top: 0;
             }
+
             .blue-quote {
-                left: 12%  !important;
+                left: 12% !important;
             }
         }
 
@@ -124,9 +126,10 @@
                 width: 100%;
                 z-index: 10;
             }
+
             .blue-quote {
-            left: 5% !important;
-    }
+                left: 5% !important;
+            }
         }
 
         /* Dot styles */
@@ -147,7 +150,6 @@
             opacity: 1;
             transform: scale(1.2);
         }
-
     </style>
 </head>
 
@@ -447,6 +449,7 @@
 
         </div>
     </section>
+
     <!--carousel slider-->
     <section id="carousel-section" class="min-h-screen h-auto flex flex-col">
         <div class="h-[100dvh] sm:h-[60dvh] md:h-[50dvh] lg:h-[60dvh] relative overflow-hidden bg-[#ffd527]">
@@ -460,7 +463,7 @@
                             class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
                             <!-- Top quote icon -->
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-12 left-15 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote" 
+                                class="absolute top-12 left-15 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
                                 alt="Quote Top">
                             <!-- Left text -->
                             <div
@@ -769,6 +772,8 @@
 
         </div>
     </section>
+
+
     <!-- loader -->
     <div id="loader"
         class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
@@ -832,48 +837,60 @@
     </div>
 
     <!-- ibangle -->
-    <button id="closePopupBangle"
-class="hidden fixed top-10 right-4 sm:right-8 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-</svg>
-</button>
-    
-<div id="i-bangle-popup"
-class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16">
 
-<div
-    class="relative bg-white rounded-lg w-[92%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
 
-    <div class="p-6">
-        <div class="flex justify-between items-start">
-            <h2 class="text-2xl font-bold" id="details-pop-header-ibangle"></h2>
+    <div class="fixed top-10 right-7 flex flex-col place-items-center hidden z-[1000]"
+        id="close-popup-button-wrapper-ibangle">
+        <button id="closePopupBangle"
+            class="hidden w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50 ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <span class="text-[8px] uppercase text-white hidden md:block">CLOSE</span>
+
+    </div>
+
+
+    <div id="i-bangle-popup"
+        class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16 z-[900]">
+
+        <div
+            class="relative bg-white rounded-lg w-[92%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
+
+            <div class="p-6">
+                <div class="flex justify-between items-start">
+                    <h2 class="text-2xl font-bold" id="details-pop-header-ibangle"></h2>
+                </div>
+
+                <p class="text-gray-600 mt-2 " id="details-pop-desc-ibangle">
+
+                </p>
+            </div>
+
+            <div class="space-y-8 px-6 pb-6" id="details-pop-img-contents-i-bangle">
+            </div>
         </div>
+    </div>
+    <div id="fullscreen-image-modal-ibangle"
+        class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[1000]">
+        <div class="relative">
+            <button onclick="closeFullscreenImageIbangel()"
+                class="hidden sm:flex absolute -top-6 -right-4 sm:-top-6 sm:-right-12 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
 
-        <p class="text-gray-600 mt-2 " id="details-pop-desc-ibangle">
-
-        </p>
+            <img id="fullscreen-img-ibangle" src="" alt="Zoomed"
+                class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl ">
+        </div>
     </div>
 
-    <div class="space-y-8 px-6 pb-6" id="details-pop-img-contents-i-bangle">
-    </div>
-</div>
-</div>
-<!-- Fullscreen Image Modal -->
-<div id="fullscreen-image-modal"
-class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[60]">
-<div class="relative">
-    <button onclick="closeFullscreenImage()"
-        class="hidden sm:flex absolute -top-6 -right-4 sm:-top-6 sm:-right-12 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-    </button>
 
-    <img id="fullscreen-img" src="" alt="Zoomed" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl ">
-</div>
-</div>
+
 
     <!--Script Starts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -1474,71 +1491,92 @@ class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-cen
     </script>
 
 
-<script>
+    <script>
         const imageData = {
-        title: "Dramila: The Kombucha Shop",
-        description: "This is a sample paragraph for Dramila's kombucha shop popup. You can update this content as needed.",
-        images: [
-            "/MIW_Website_Assets/Dramila_image_work.png",
-            "/MIW_Website_Assets/OIC_image_work.png",
-            "/MIW_Website_Assets/Rockstar_image_work.png",
-            "/MIW_Website_Assets/Poss_image_work.png"
-        ]
-    };
-    
-    const iBanglePopup = document.getElementById('i-bangle-popup');
-    const closePopupBangle = document.getElementById('closePopupBangle');
-    const detailsHeaderIbangle = document.getElementById('details-pop-header-ibangle');
-    const detailsDescIbangle = document.getElementById('details-pop-desc-ibangle');
-    const detailsImgContainerIbangle = document.getElementById('details-pop-img-contents-i-bangle');
+            title: "Dramila: The Kombucha Shop",
+            description: "This is a sample paragraph for Dramila's kombucha shop popup. You can update this content as needed.",
+            images: [
+                "/MIW_Website_Assets/ibangle-asset.png",
+                "/MIW_Website_Assets/ibangle-asset.png",
+            ]
+        };
 
-    function openPopupForiBangle() {
-        detailsHeaderIbangle.textContent = 'iBangle';
-        detailsDescIbangle.textContent = 'The iBangle, designed by Gopi Prasannaa in 2008, was the first-of-its-kind wearable music device, conceptualized long before Apple introduced wearables.';
+        const iBanglePopup = document.getElementById('i-bangle-popup');
+        const closePopupBangle = document.getElementById('closePopupBangle');
+        const detailsHeaderIbangle = document.getElementById('details-pop-header-ibangle');
+        const detailsDescIbangle = document.getElementById('details-pop-desc-ibangle');
+        const detailsImgContainerIbangle = document.getElementById('details-pop-img-contents-i-bangle');
+        const closPopupButtonWrapperibangle = document.getElementById("close-popup-button-wrapper-ibangle");
 
-        detailsImgContainerIbangle.innerHTML = '';
+        function openPopupForiBangle() {
+            detailsHeaderIbangle.textContent = 'iBangle';
+            detailsDescIbangle.textContent = 'The iBangle, designed by Gopi Prasannaa in 2008, was the first-of-its-kind wearable music device, conceptualized long before Apple introduced wearables.';
 
-        imageData.images.forEach(src => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.className = 'w-full h-auto rounded-md cursor-zoom-in transition group-hover:opacity-90 min-h-[400px] object-cover sm:min-h-0 sm:object-contain';
-            img.onclick = () => openFullscreenImage(src);
-            detailsImgContainerIbangle.appendChild(img);
+            detailsImgContainerIbangle.innerHTML = '';
+
+            imageData.images.forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'w-full h-auto rounded-md cursor-zoom-in transition group-hover:opacity-90 min-h-[400px] object-cover sm:min-h-0 sm:object-contain';
+                img.onclick = () => openFullscreenImageIbangle(src);
+                detailsImgContainerIbangle.appendChild(img);
+            });
+
+            const modalContent = iBanglePopup.querySelector("div.relative");
+            iBanglePopup.classList.remove('hidden');
+            closePopupBangle.classList.remove('hidden');
+            document.body.classList.add("overflow-hidden");
+            closPopupButtonWrapperibangle.classList.remove('hidden');
+
+
+            // Animate opening
+            gsap.fromTo(modalContent,
+                { opacity: 0, scale: 0.9 },
+                { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }
+            );
+        }
+
+        closePopupBangle.addEventListener('click', () => {
+            const modalContent = iBanglePopup.querySelector("div.relative");
+            gsap.to(modalContent, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.3,
+                ease: "power3.in",
+                onComplete: () => {
+                    iBanglePopup.classList.add('hidden');
+                    closePopupBangle.classList.add('hidden');
+                    document.body.classList.remove("overflow-hidden");
+                    closPopupButtonWrapperibangle.classList.add('hidden');
+
+                }
+            });
         });
 
-        const modalContent = iBanglePopup.querySelector("div.relative");
-        iBanglePopup.classList.remove('hidden');
-        closePopupBangle.classList.remove('hidden');
-        document.body.classList.add("overflow-hidden");
 
-        // Animate opening
-        gsap.fromTo(modalContent, 
-            { opacity: 0, scale: 0.9 }, 
-            { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }
-        );
-    }
+        function openFullscreenImageIbangle(src) {
+            const modal = document.getElementById('fullscreen-image-modal-ibangle');
+            const image = document.getElementById('fullscreen-img-ibangle');
+            image.src = src;
+            modal.classList.remove('hidden');
+            document.body.classList.add("overflow-hidden"); // Prevent scrolling
+        }
 
-    closePopupBangle.addEventListener('click', () => {
-        const modalContent = iBanglePopup.querySelector("div.relative");
-        gsap.to(modalContent, {
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.3,
-            ease: "power3.in",
-            onComplete: () => {
-                iBanglePopup.classList.add('hidden');
-                closePopupBangle.classList.add('hidden');
-                document.body.classList.remove("overflow-hidden");
+        function closeFullscreenImageIbangel() {
+            const modal = document.getElementById('fullscreen-image-modal-ibangle');
+            modal.classList.add('hidden');
+            document.getElementById('fullscreen-img-ibangle').src = '';
+            document.body.classList.remove("overflow-hidden");
+        }
+
+        // Close modal when clicking outside image (only if screen width < 776px)
+        document.getElementById("fullscreen-image-modal-ibangle").addEventListener("click", (e) => {
+            if (window.innerWidth < 776 && !e.target.closest("img")) {
+                closeFullscreenImageIbangel();
             }
         });
-    });
 
-
-
-    function closeFullscreenImage() {
-        document.getElementById('fullscreen-image-modal').classList.add('hidden');
-    }
-</script>
+    </script>
 
 
 </body>
