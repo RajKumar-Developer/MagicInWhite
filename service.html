@@ -20,6 +20,7 @@
 			color: blue;
 			padding: 35px 10px 24px 10px;
 		}
+
 		/* Optional: Adding a slight tilt effect */
 		.grid img:hover {
 			/* transform: scale(1) rotateX(8deg) rotateY(8deg); */
@@ -158,7 +159,7 @@
 					LOGO DESIGN, BRAND POSITIONING, BRAND STRATEGY, NAMING & TAGLINE DEVELOPMENT, REBRANDING
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24">
+					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -181,8 +182,8 @@
 				<p class="text-right text-xs sm:text-sm md:text-base leading-loose animate-text">
 					PRINT, DIGITAL, FILM, PHOTOGRAPHY AND ART DIRECTION, OUT-OF-HOME ADVERTISING.
 				</p>
-				<button class="mt-4">
-					<img src="/services-assets/explore-button-blue.png" alt="Explore" class="w-16 sm:w-20 md:w-24">
+				<button class="mt-4 ">
+					<img src="/services-assets/explore-button-blue.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -198,7 +199,7 @@
 					MOTION GRAPHICS & ANIMATION
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24">
+					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -222,7 +223,7 @@
 					TITLE ANIMATION, STOP MOTION ANIMATION, MOVIE TITLE SEQUENCE, 2D ANIMATION & 3D ANIMATION
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24">
+					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -237,7 +238,7 @@
 					MARKETING
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24">
+					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -262,7 +263,7 @@
 					PARTNERSHIPS
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-blue.png" alt="Explore" class="w-16 sm:w-20 md:w-24">
+					<img src="/services-assets/explore-button-blue.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -480,12 +481,26 @@
 
 				lastScrollY = currentScrollY;
 
-				ScrollTrigger.update(); 
+				ScrollTrigger.update();
 			});
 
 			// locoScroll.on("scroll", ScrollTrigger.update);
 			ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 			ScrollTrigger.refresh();
+			gsap.utils.toArray(".animate-text").forEach((el) => {
+				gsap.from(el, {
+					opacity: 0,
+					y: 40,
+					duration: 1.2,
+					ease: "power3.out", // smooth and natural
+					scrollTrigger: {
+						trigger: el,
+						start: "top 85%",
+						end: "bottom top",
+						scrub: true,
+					}
+				});
+			});
 
 			requestAnimationFrame(() => {
 				ScrollTrigger.refresh();
