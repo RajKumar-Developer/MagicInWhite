@@ -9,29 +9,34 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Lato', sans-serif;
+        }
+
+        .bg-horse {
+            background-image: url('/our_works/work_banner.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            min-height: 65dvh;
+        }
+
+        [data-scroll-container] {
+            opacity: 1 !important;
+            visibility: visible !important;
         }
 
         .green {
             color: #22c55e;
         }
 
-        .parallax {
-            transition: transform 0.3s ease-out;
-        }
-
-        .parallax:hover {
-            transform: scale(1.05);
-        }
-
-        /* Scroll Parallax */
-        .parallax-scroll {
-            transform: translateY(0px);
-            transition: transform 0.2s ease-out;
-        }
 
         /* Hide scrollbar but keep scrolling functionality */
         .no-scrollbar::-webkit-scrollbar {
@@ -48,7 +53,7 @@
     </style>
 </head>
 
-<body oncontextmenu="return false;">
+<body oncontextmenu="return false;" data-scroll-container>
     <!-- Navbar -->
     <nav id="navbar"
         class="bg-transparent sm:bg-transparent transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
@@ -118,211 +123,76 @@
     </div>
 
     <!--Main Content-->
-    <section class="flex items-center justify-center h-[100dvh] sm:h-[70dvh] px-6 md:px-12 bg-[#ffffff] w-full">
-        <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl">
-            <!-- Logo Section -->
-            <div class="w-full pb-16 sm:pb-0 md:w-[40%] flex justify-center">
-                <img src="/work assets/logo-header.png" alt="Magic White Logo" class="h-[180px] md:h-[260px] w-auto">
-            </div>
-
-            <!-- Text Section -->
-            <div class="w-full sm:w-[60%] text-center md:text-left">
-                <h1
-                    class="lato-font text-[54px] md:text-[54px] sm:text-[72px] text-[#00001b] font-light tracking-wide leading-tight">
-                    OUR WORK
-                </h1>
-                <p class="lato-font md:text-lg mt-4 text-[#00001b] max-w-[450px]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nunc felis.
-                    Morbi dui turpis, facilisis vitae ullam sit amet, bibendum bibendum dui.
-                    Etiam volut eu est ut viverra. Mattis non magna sit amet, blandit sceler nibh.
-                    Praesent vitae purus ut elit ultricies finibus eu ut dui. Cras non laoreet augue. Morbi.
-                </p>
-            </div>
-        </div>
-    </section>
-
-
-    <!--image bento grid-->
-    <section class="h-auto w-full mx-auto">
-        <div class="grid grid-cols-4 grid-rows-20 gap-0 px-0 sm:gap-0 px-0 sm:px-0 py-0">
-            <div class="col-span-2 row-span-2 overflow-hidden" onclick="openModal(event, 1)">
-                <a href="/work.html/tossImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Poss_image_work.png"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Gourmet Salads">
-                </a>
-            </div>
-            <div class="row-span-2 col-start-1 row-start-3 overflow-hidden" onclick="openModal(event, 2)">
-                <a href="/work.html/bjImage" target="_blank">
-                    <img src="/MIW_Website_Assets/BJ_image_work.png"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Adidas Spain">
-                </a>
-            </div>
-            <div class="row-span-2 col-start-2 row-start-3 overflow-hidden" onclick="openModal(event, 3)">
-                <a href="/work.html/ynotImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Ynot_image_work.png"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="4" alt="Ynot Studios">
-                </a>
-            </div>
-            <div class="row-span-4 col-start-3 row-start-1 overflow-hidden" onclick="openModal(event, 4)">
-                <a href="/work.html/rockstarImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Rockstar_image_work.png"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="3"
-                        alt="Rockstar concert">
-                </a>
-            </div>
-            <div class="row-span-4 col-start-4 row-start-1 overflow-hidden" onclick="openModal(event, 5)">
-                <a href="/work.html/dramilaImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Dramila_image_work.png"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="5"
-                        alt="Dramila: The Kombucha Shop">
-                </a>
-            </div>
-            <div class="col-span-4 row-span-4 row-start-5 overflow-hidden" onclick="openModal(event, 6)">
-                <a href="/work.html/baskImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Bask_image_work.png"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Bask">
-                </a>
-            </div>
-            <div class="row-span-4 row-start-9 overflow-hidden" onclick="openModal(event, 7)">
-                <a href="/work.html/kolliImage" target="_blank">
-                    <img src="/FINAL/KolliHills/kolli-01.jpg"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="4"
-                        alt="KHS, kolli hills">
-                </a>
-            </div>
-            <div class="row-span-2 row-start-9 overflow-hidden" onclick="openModal(event, 8)">
-                <a href="/work.html/tdkfImage" target="_blank">
-                    <img src="/FINAL/TDKF/TDKF-2.jpg" class="w-full h-full object-cover parallax parallax-scroll"
-                        data-speed="3" alt="TDKF">
-                </a>
-            </div>
-            <div class="row-span-2 row-start-9 overflow-hidden" onclick="openModal(event, 9)">
-                <a href="/work.html/brickhouseImage" target="_blank">
-                    <img src="/FINAL/BrickHouse/BRICK-house-02.jpg"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="5" alt="Brick House">
-                </a>
-            </div>
-            <div class="col-span-2 row-span-2 col-start-2 row-start-11 overflow-hidden" onclick="openModal(event, 10)">
-                <a href="/work.html/krakenImage" target="_blank">
-                    <img src="/FINAL/Kraken/kraken-1.jpg" class="w-full h-full object-cover parallax parallax-scroll"
-                        data-speed="2" alt="kraken">
-                </a>
-            </div>
-            <div class="row-span-4 col-start-4 row-start-9 overflow-hidden" onclick="openModal(event, 11)">
-                <a href="/work.html/aussiehomebakerImage" target="_blank">
-                    <img src="/FINAL/AussieHomeBaker/Aussiebaker-03.jpg"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="4"
-                        alt="aussie home baker">
-                </a>
-            </div>
-            <div class="col-span-2 row-span-2 row-start-13 overflow-hidden" onclick="openModal(event, 12)">
-                <a href="/work.html/oicImage" target="_blank">
-                    <img src="./MIW_Website_Assets/OIC_image_work.png"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="3" alt="Oic">
-                </a>
-            </div>
-            <div class="col-span-2 row-span-2 col-start-1 row-start-15 overflow-hidden" onclick="openModal(event, 13)">
-                <a href="/work.html/coffeeImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Coffe_image_work.png"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="2" alt="Coffee">
-                </a>
-            </div>
-            <div class="col-span-2 row-span-4 col-start-3 row-start-13 overflow-hidden" onclick="openModal(event, 14)">
-                <a href="/work.html/redknotImage" target="_blank">
-                    <img src="/MIW_Website_Assets/Redknot_image_work.png"
-                        class="w-full h-full object-cover parallax parallax-scroll" data-speed="5" alt="Red Knot">
-                </a>
-            </div>
-            <!-- New Row Start: 17 -->
-            <div class="col-span-2 row-span-4 col-start-1 row-start-17 overflow-hidden" onclick="openModal(event, 15)">
-                <a href="/work.html/plantmonkImage" target="_blank">
-                    <img src="/FINAL/PlanMonk/1.jpg" class="w-full h-full object-cover parallax parallax-scroll"
-                        data-speed="5" alt="PlanMonk">
-                </a>
-            </div>
-            <div class="col-span-2 row-span-2 col-start-3 row-start-17 overflow-hidden" onclick="openModal(event, 16)">
-                <a href="/work.html/routeImage" target="_blank">
-                    <img src="/FINAL/TheRoute/ROUTE-02.jpg" class="w-full h-full object-cover parallax parallax-scroll"
-                        data-speed="2" alt="TheRoute">
-                </a>
-            </div>
-            <div class="col-span-2 row-span-2 col-start-3 row-start-19 overflow-hidden" onclick="openModal(event, 17)">
-                <a href="/work.html/stokerImage" target="_self">
-                    <img src="/FINAL/Stoker/stoker-1.jpg" class="w-full h-full object-cover parallax parallax-scroll"
-                        data-speed="3" alt="Stroker">
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work details popup -->
-
-    <!-- <div id="work-details-popup" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-start justify-center">
-        <div class="relative bg-white rounded-lg w-[90%] h-screen px-8 overflow-y-auto mt-16 no-scrollbar">
-
-            <div class="flex justify-between items-center mb-6 mt-4">
-                <h2 class="text-2xl font-bold" id="details-pop-header"></h2>
-
-                <button id="closePopup" class="text-gray-500 text-4xl hover:text-red-500">
-                    &times;
-                </button>
-            </div>
-            <p class="text-gray-600 mt-2 mb-4" id="details-pop-desc">
-
+    <!-- Main Page -->
+    <section class="w-full  flex items-end justify-end bg-black bg-horse" data-scroll-section>
+        <div class=" text-white text-right pr-20 max-[496px]:pr-[40px] max-[630px]:pl-[20px] pb-20">
+            <h1 class="text-4xl sm:text-6xl font-normal">OUR WORK</h1>
+            <p class="mt-4 max-w-2xl max-w-[50dvh] font-thin text-justify" dir="rtl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nunc felis.
+                Morbi dui turpis, facilisis vitae ullam sit amet, bibendum bibendum dui.
+                Etiam volut eu est ut viverra. Mattis non magna sit amet, blandit sceler nibh.
+                Praesent vitae purus ut elit ultricies finibus eu ut dui. Cras non laoreet augue. Morbi.
             </p>
-
-            <div class="space-y-8" id="details-pop-img-contents">
-
-            </div>
         </div>
-    </div> -->
+    </section>
 
-    <button id="closePopup"
-        class="hidden fixed top-10 right-4 sm:right-8 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-    </button>
-
-    <div id="work-details-popup"
-        class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16">
-
-        <div
-            class="relative bg-white rounded-lg w-[92%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
-
-            <div class="p-6">
-                <div class="flex justify-between items-start">
-                    <h2 class="text-2xl font-bold" id="details-pop-header"></h2>
+    <!-- Section work gallery -->
+    <section class="scroll-container" data-scroll-section>
+        <div class="overflow-x-scroll whitespace-nowrap flex space-x-4 p-4 no-scrollbar">
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/MIW_Website_Assets/PS-Nandini-01png.png" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Movie Posters
                 </div>
-
-                <p class="text-gray-600 mt-2 " id="details-pop-desc">
-
-                </p>
             </div>
-
-            <div class="space-y-8 px-6 pb-6" id="details-pop-img-contents">
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/Advertising.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Advertising
+                </div>
+            </div>
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/Branding.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Branding
+                </div>
+            </div>
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/Events.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Events
+                </div>
+            </div>
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/MoviePosters.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Movie Posters
+                </div>
+            </div>
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/Products.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Products
+                </div>
+            </div>
+            <div class="relative group h-[80vh] w-[3/4 flex-shrink-0">
+                <img src="/our_works/TItleAnimations.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    TItle Animations
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Fullscreen Image Modal -->
-    <div id="fullscreen-image-modal"
-        class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[60]">
-        <div class="relative">
-            <button onclick="closeFullscreenImage()"
-                class="hidden sm:flex absolute -top-6 -right-4 sm:-top-6 sm:-right-12 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-
-            <img id="fullscreen-img" src="" alt="Zoomed" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl ">
-        </div>
-    </div>
-
+    </section>
 
     <!--Footer-->
-    <section class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
+    <section data-scroll-section class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
         <div class="container">
             <div class="w-full max-w-4xl mx-auto mt-6">
                 <!-- Heading + Input Field -->
@@ -421,229 +291,28 @@
     </div>
     <!--loader end  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
     <script>
+        let locoScrollInstance;
+
         document.addEventListener("readystatechange", () => {
             if (document.readyState === "complete") {
                 document.getElementById("loader").classList.add("hidden");
             }
         });
-        const workDetails = [
-            {
-                id: 1, title: 'Gourmet Salads',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/MIW_Website_Assets/Poss_image_work.png']
-            },
-            {
-                id: 2, title: 'Adidas Spain',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/MIW_Website_Assets/BJ_image_work.png']
-            },
-            {
-                id: 3, title: 'Ynot Studios',
-                desc: `YNOT Studios was created by Chennai-based architect and entrepreneur S. Sashikanth in 2009. 
-                Having previously worked in films as an assistant art director, Sashikanth remained in contact with film personalities through his architectural 
-                work and became a close acquaintance of ad filmmaker C. S. Amudhan and cinematographer Nirav Shah. Looking to make his directorial debut, 
-                Amudhan pitched film scripts in three genres for YNOT Studios: a road film,
-                 a period film and a spoof film, with the latter, later materialising as the studio's first film, Thamizh Padam (2010), Tamil cinema's first spoof film`,
-                imageSources: ['/MIW_Website_Assets/Ynot_image_work.png']
-            },
-            {
-                id: 4, title: 'Rockstar on hotstar',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/MIW_Website_Assets/Rockstar_image_work.png']
-            },
-            {
-                id: 5, title: 'Dramila: The Kombucha Shop',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/MIW_Website_Assets/Dramila_image_work.png']
-            },
-            {
-                id: 6, title: 'Bask',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/MIW_Website_Assets/Bask_image_work.png']
-            },
-            {
-                id: 7, title: 'KHS, Kolli Hills',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/FINAL/KolliHills/kolli-01.jpg', '/FINAL/KolliHills/kolli-02.jpg', '/FINAL/KolliHills/kolli-03.jpg', '/FINAL/KolliHills/kolli-04.jpg']
-            },
-            {
-                id: 8, title: 'TDKF',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/FINAL/TDKF/TDKF-1.jpg', '/FINAL/TDKF/TDKF-2.jpg', '/FINAL/TDKF/TDKF-3.png', '/FINAL/TDKF/TDKF-4.jpg']
-            },
-            {
-                id: 9, title: 'Brick House',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/FINAL/BrickHouse/BRICK-house-01.jpg', '/FINAL/BrickHouse/BRICK-house-02.jpg', '/FINAL/BrickHouse/BRICK-house-03.jpg', '/FINAL/BrickHouse/BRICK-house-04.jpg']
-            },
-            {
-                id: 10, title: 'Kraken',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/FINAL/Kraken/kraken-1.jpg', '/FINAL/Kraken/kraken-2.jpg']
-            },
-            {
-                id: 11,
-                title: 'Aussie Home Baker',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/FINAL/AussieHomeBaker/Aussiebaker-00.jpg', '/FINAL/AussieHomeBaker/Aussiebaker-01.jpg', '/FINAL/AussieHomeBaker/Aussiebaker-02.jpg', '/FINAL/AussieHomeBaker/Aussiebaker-03.jpg']
-            },
-            {
-                id: 12,
-                title: 'OIC',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['MIW_Website_Assets/OIC_image_work.png']
-            },
-            {
-                id: 13,
-                title: 'Coffee',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/MIW_Website_Assets/Coffe_image_work.png']
-            },
-            {
-                id: 14,
-                title: 'Red Knot',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/MIW_Website_Assets/Redknot_image_work.png']
-            },
-            {
-                id: 15,
-                title: 'PlanMonk',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/FINAL/PlanMonk/1.jpg', '/FINAL/PlanMonk/2.jpg', '/FINAL/PlanMonk/3.jpg', '/FINAL/PlanMonk/4.jpg']
-            },
-            {
-                id: 16,
-                title: 'The Route',
-                desc: `The Route is a celebrity management and film production company currently representing some of the leading personalities from the Entertainment industry including Thalapathy Vijay, Samantha, Atlee, Lokesh Kanagaraj, Keerthy Suresh, Rashmika Mandanna, Kalyani Priyadarshan, Krithi Shetty, Meenakshi Chaudhary, Kathir, Arjun Das and Monisha Mohan Menon.`,
-                imageSources: ['/FINAL/TheRoute/ROUTE-01.jpg', '/FINAL/TheRoute/ROUTE-02.jpg', '/FINAL/TheRoute/ROUTE-03.jpg', '/FINAL/TheRoute/ROUTE-04.jpg']
-            },
-            {
-                id: 17,
-                title: 'Stroker',
-                desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris nec ligula blandit, at vulputate arcu tincidunt. 
-                Aliquam erat volutpat. Sed pretium, arcu at hendrerit faucibus, odio lorem tincidunt sem, in 
-                volutpat urna ligula id risus. Vivamus id vehicula eros. Aenean fringilla tempus sapien, 
-                non viverra libero ultrices sit amet. Quisque ac mi cursus, pellentesque ligula at, facilisis nisi.`,
-                imageSources: ['/FINAL/Stoker/stoker-1.jpg', '/FINAL/Stoker/stoker-2.jpg', '/FINAL/Stoker/stoker-3.jpg', '/FINAL/Stoker/stoker-4.jpg']
+        document.getElementById("shareButton").addEventListener("click", async () => {
+            if (navigator.share) {
+                await navigator.share({
+                    title: "Check out this website!",
+                    url: window.location.href
+                });
+            } else {
+                alert("Your browser does not support sharing.");
             }
-        ];
-        // Detail modal
-        const popup = document.getElementById("work-details-popup");
-        const closePopup = document.getElementById("closePopup");
-        const detailsHeader = document.getElementById("details-pop-header");
-        const detailsImageSrc = document.getElementById("details-pop-img-contents");
-        const detailsPopupDescription = document.getElementById("details-pop-desc");
-        // Function to open the modal
-        const openModal = (event, id) => {
-            // Prevent default behavior of the anchor tag
-            if (event) {
-                event.preventDefault();
-            }
-            const data = workDetails.filter((i) => { return i.id == id })[0];
-            detailsHeader.textContent = data.title;
-            detailsPopupDescription.textContent = data.desc;
-
-            detailsImageSrc.innerHTML = '';
-
-            // Append new images based on the `imageSources` array
-            data.imageSources.forEach((src) => {
-                const imgElement = document.createElement('img');
-                imgElement.src = src;
-                imgElement.alt = data.title; // Set alt text to the title for accessibility
-                imgElement.className = 'w-full h-auto rounded-md cursor-zoom-in transition group-hover:opacity-90 min-h-[400px] object-cover sm:min-h-0 sm:object-contain';
-                imgElement.onclick = () => openFullscreenImage(src);
-
-                detailsImageSrc.appendChild(imgElement);
-            });
-
-
-            // Show the popup
-            const modalContent = popup.querySelector("div.relative");
-            popup.classList.remove("hidden");
-            closePopup.classList.remove('hidden');
-            // Disable background scrolling
-            document.body.classList.add("overflow-hidden");
-            gsap.fromTo(
-                modalContent,
-                { opacity: 0, scale: 0.9 }, // Start state
-                { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" } // End state
-            );
-
-        };
-
-        // Function to close the modal
-        closePopup.addEventListener("click", () => {
-            const modalContent = popup.querySelector("div.relative");
-            gsap.to(modalContent, {
-                opacity: 0,
-                scale: 0.9,
-                duration: 0.3,
-                ease: "power3.in",
-                onComplete: () => {
-                    // Hide modal and restore background scrolling
-                    closePopup.classList.add('hidden');
-                    popup.classList.add("hidden");
-                    document.body.classList.remove("overflow-hidden");
-                },
-            });
-
         });
-
-        // Search query param if any id exist
-        const urlParams = new URLSearchParams(window.location.search);
-        const activeWorkDetail = urlParams.get('work_detail');
-
-        if (activeWorkDetail) {
-            const data = workDetails.find(i => i.id == activeWorkDetail);
-            if (data) openModal(null, activeWorkDetail);
-        }
-
-
-
         const menuBtn = document.getElementById('menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -663,78 +332,77 @@
                 mobileMenu.classList.add('hidden');
             }
         });
+        gsap.registerPlugin(ScrollTrigger);
 
+        const scrollContainer = document.querySelector("[data-scroll-container]");
 
+        function initSmoothScroll() {
+            const locoScroll = new LocomotiveScroll({
+                el: scrollContainer,
+                smooth: true,
+                smoothMobile: true,
+                inertia: 0.85,
+                multiplier: 2,
+                getDirection: true
+            });
+            locoScrollInstance = locoScroll;
 
-        // Close modal when clicking outside image (only if screen width < 776px)
-        document.getElementById("fullscreen-image-modal").addEventListener("click", (e) => {
-            if (window.innerWidth < 776 && !e.target.closest("img")) {
-                closeFullscreenImage();
-            }
-        });
+            ScrollTrigger.scrollerProxy(scrollContainer, {
+                scrollTop(value) {
+                    return arguments.length
+                        ? locoScroll.scrollTo(value, 0, 0)
+                        : locoScroll.scroll.instance.scroll.y;
+                },
+                getBoundingClientRect() {
+                    return {
+                        top: 0,
+                        left: 0,
+                        width: window.innerWidth,
+                        height: window.innerHeight,
+                    };
+                },
+                pinType: scrollContainer.style.transform ? "transform" : "fixed",
+            });
+            let lastScrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
 
-    </script>
-    <!-- full image -->
-    <script>
-        document.getElementById("shareButton").addEventListener("click", async () => {
-            if (navigator.share) {
-                await navigator.share({
-                    title: "Check out this website!",
-                    url: window.location.href
-                });
-            } else {
-                alert("Your browser does not support sharing.");
-            }
-        });
-        function openFullscreenImage(src) {
-            const modal = document.getElementById('fullscreen-image-modal');
-            const image = document.getElementById('fullscreen-img');
-            image.src = src;
-            modal.classList.remove('hidden');
-            document.body.classList.add("overflow-hidden"); // Prevent scrolling
+            locoScroll.on("scroll", (event) => {
+                checkBackgroundAndInvertImages();
+                const navbar = document.getElementById("navbar");
+                const currentScrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
+                console.log(currentScrollY)
+                console.log(lastScrollY)
+
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    // Scrolling down - Hide navbar with animation
+                    navbar.classList.add("-translate-y-full", "opacity-0");
+                    navbar.classList.remove("opacity-100");
+                } else {
+                    // Scrolling up - Show navbar with animation
+                    navbar.classList.remove("-translate-y-full", "opacity-0");
+                    navbar.classList.add("opacity-100");
+                }
+
+                lastScrollY = currentScrollY;
+
+                ScrollTrigger.update();
+            });
+
+            // locoScroll.on("scroll", ScrollTrigger.update);
+            ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+            ScrollTrigger.refresh();
+            requestAnimationFrame(() => {
+                ScrollTrigger.refresh();
+            });
         }
 
-        function closeFullscreenImage() {
-            const modal = document.getElementById('fullscreen-image-modal');
-            modal.classList.add('hidden');
-            document.getElementById('fullscreen-img').src = '';
-            document.body.classList.remove("overflow-hidden");
-        }
-    </script>
 
-    <script>
-        let lastScrollY = window.scrollY;
-        const navbar = document.getElementById("navbar");
 
-        window.addEventListener("scroll", () => {
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - Hide navbar with animation
-                navbar.classList.add("-translate-y-full", "opacity-0");
-                navbar.classList.remove("opacity-100");
-            } else {
-                // Scrolling up - Show navbar with animation
-                navbar.classList.remove("-translate-y-full", "opacity-0");
-                navbar.classList.add("opacity-100");
-            }
-
-            lastScrollY = currentScrollY;
+        window.addEventListener("load", () => {
+            imagesLoaded(scrollContainer, { background: true }, () => {
+                initSmoothScroll();
+            });
         });
 
-        function updatePlaceholder() {
-            const inputField = document.querySelector("input[type='email']");
-
-            if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
-                inputField.placeholder = "EMAIL";
-            } else {
-                inputField.placeholder = "ENTER YOUR EMAIL ADDRESS";
-            }
-        }
-
-        // Run function on page load and resize
-        window.addEventListener("load", updatePlaceholder);
-        window.addEventListener("resize", updatePlaceholder);
     </script>
     <script>
         // Enhanced function to check background section color and invert images if needed
@@ -838,10 +506,6 @@
 
         // Run on page load
         document.addEventListener('DOMContentLoaded', function () {
-            checkBackgroundAndInvertImages();
-
-            // Run when scrolling
-            window.addEventListener('scroll', checkBackgroundAndInvertImages);
 
             // Run on window resize
             window.addEventListener('resize', checkBackgroundAndInvertImages);
