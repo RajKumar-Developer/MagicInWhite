@@ -20,6 +20,14 @@
             font-family: 'Lato', sans-serif;
         }
 
+        .bg-horse {
+            background-image: url('/our_works/work_banner.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            min-height: 65dvh;
+        }
+
         [data-scroll-container] {
             opacity: 1 !important;
             visibility: visible !important;
@@ -29,8 +37,18 @@
             color: #22c55e;
         }
 
-        .footer {
-            position: relative;
+
+        /* Hide scrollbar but keep scrolling functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Edge */
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            scrollbar-width: none;
+            /* Firefox */
         }
     </style>
 </head>
@@ -106,101 +124,75 @@
 
     <!--Main Content-->
     <!-- Main Page -->
-    <section class="w-full h-[50vh] bg-white flex items-center" data-scroll-section>
-        <div class="flex flex-col md:flex-row w-full px-6 gap-6">
-
-            <!-- Left Side: Heading (centered on mobile, bottom-aligned on desktop) -->
-            <div class="flex-1 flex items-center md:items-center justify-center">
-                <h1 class="text-5xl md:text-8xl font-extrabold text-black text-center md:text-left">
-                    OUR WORK!
-                </h1>
-            </div>
-
-
-            <!-- Right Side: Paragraph (centered on mobile, top-aligned on desktop) -->
-            <div class="flex-1 flex items-center justify-center md:justify-start">
-                <p class="text-black text-xs md:text-sm text-center md:text-left w-full md:max-w-2xl">
-                    Our work spans across diverse creative domains including Advertising, Branding, Events, and Movie
-                    Posters. We specialize in crafting compelling visual content that tells stories, builds identities,
-                    and captures attention. Whether it’s designing eye-catching advertisements, creating memorable brand
-                    experiences, managing impactful events, or producing cinematic movie posters, each project is
-                    approached with creativity, precision, and a commitment to excellence.
-                </p>
-            </div>
-
+    <section class="w-full  flex items-end justify-end bg-black bg-horse" data-scroll-section>
+        <div class=" text-white text-right pr-20 max-[496px]:pr-[40px] max-[630px]:pl-[20px] pb-20">
+            <h1 class="text-4xl sm:text-6xl font-normal">OUR WORK</h1>
+            <p class="mt-4 max-w-2xl max-w-[50dvh] font-thin text-justify" dir="rtl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nunc felis.
+                Morbi dui turpis, facilisis vitae ullam sit amet, bibendum bibendum dui.
+                Etiam volut eu est ut viverra. Mattis non magna sit amet, blandit sceler nibh.
+                Praesent vitae purus ut elit ultricies finibus eu ut dui. Cras non laoreet augue. Morbi.
+            </p>
         </div>
     </section>
 
     <!-- Section work gallery -->
-    <section class="w-full h-auto bg-white" data-scroll-section>
-        <div class="flex flex-wrap w-full">
-
-            <div class="relative w-full h-[40vh] target-div">
-                <img src="/our_works/ads.jpg" class="w-full h-full object-cover" alt="Advertising" />
-                <div class="absolute bottom-5 left-0 p-6 text-white text-6xl font-semibold">
-                    Advertising
-                </div>
-                <button
-                    class="absolute bounce-button top-10 right-5 w-12 h-12 text-black bg-white rounded-full flex items-center justify-center text-2xl">
-                    <a href="/work-details.html">➜</a>
-                </button>
-            </div>
-            <div class="relative w-full h-[40vh] target-div">
-                <img src="/our_works/brand.jpg" class="w-full h-full object-cover" alt="Branding" />
-                <div class="absolute bottom-5 left-0 p-6 text-white text-6xl font-semibold">
-                    Branding
-                </div>
-                <button
-                    class="absolute bounce-button top-10 right-5 w-12 h-12 text-black bg-white rounded-full flex items-center justify-center text-2xl">
-                    <a href="/work-details.html">➜</a>
-                </button>
-            </div>
-            <div class="relative w-full h-[40vh] target-div">
-                <img src="/our_works/events.jpg" class="w-full h-full object-cover" alt="Branding" />
-                <div class="absolute bottom-5 left-0 p-6 text-white text-6xl font-semibold">
-                    Events
-                </div>
-                <button
-                    class="absolute bounce-button top-10 right-5 w-12 h-12 text-black bg-white rounded-full flex items-center justify-center text-2xl">
-                    <a href="/work-details.html">➜</a>
-                </button>
-            </div>
-            <div class="relative w-full h-[40vh] target-div">
-                <img src="/our_works/movie.jpg" class="w-full h-full object-cover" alt="Branding" />
-                <div class="absolute bottom-5 left-0 p-6 text-white text-6xl font-semibold">
+    <section class="scroll-container" data-scroll-section>
+        <div class="overflow-x-scroll whitespace-nowrap flex space-x-4 p-4 no-scrollbar">
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/MIW_Website_Assets/PS-Nandini-01png.png" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
                     Movie Posters
                 </div>
-                <button
-                    class="absolute bounce-button top-10 right-5 w-12 h-12 text-black bg-white rounded-full flex items-center justify-center text-2xl">
-                    <a href="/work-details.html">➜</a>
-                </button>
             </div>
-            <div class="relative w-full h-[40vh] target-div">
-                <img src="/our_works/product.jpg" class="w-full h-full object-cover" alt="Branding" />
-                <div class="absolute bottom-5 left-0 p-6 text-white text-6xl font-semibold">
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/Advertising.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Advertising
+                </div>
+            </div>
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/Branding.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Branding
+                </div>
+            </div>
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/Events.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Events
+                </div>
+            </div>
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/MoviePosters.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    Movie Posters
+                </div>
+            </div>
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0">
+                <img src="/our_works/Products.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
                     Products
                 </div>
-                <button
-                    class="absolute bounce-button top-10 right-5 w-12 h-12 text-black bg-white rounded-full flex items-center justify-center text-2xl">
-                    <a href="/work-details.html">➜</a>
-                </button>
             </div>
-            <div class="relative w-full h-[40vh] target-div">
-                <img src="/our_works/title.jpg" class="w-full h-full object-cover" alt="Branding" />
-                <div class="absolute bottom-5 left-0 p-6 text-white text-6xl font-semibold">
-                    Title Animations
+            <div class="relative group h-[80vh] w-[3/4 flex-shrink-0">
+                <img src="/our_works/TItleAnimations.webp" class="h-full w-full object-cover" alt="Image">
+                <div
+                    class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
+                    TItle Animations
                 </div>
-                <button
-                    class="absolute bounce-button top-10 right-5 w-12 h-12 text-black bg-white rounded-full flex items-center justify-center text-2xl">
-                    <a href="/work-details.html">➜</a>
-                </button>
             </div>
         </div>
     </section>
 
     <!--Footer-->
-    <section data-scroll-section
-        class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
+    <section data-scroll-section class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
         <div class="container">
             <div class="w-full max-w-4xl mx-auto mt-6">
                 <!-- Heading + Input Field -->
@@ -377,6 +369,8 @@
                 checkBackgroundAndInvertImages();
                 const navbar = document.getElementById("navbar");
                 const currentScrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
+                console.log(currentScrollY)
+                console.log(lastScrollY)
 
                 if (currentScrollY > lastScrollY && currentScrollY > 100) {
                     // Scrolling down - Hide navbar with animation
@@ -396,43 +390,6 @@
             // locoScroll.on("scroll", ScrollTrigger.update);
             ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
             ScrollTrigger.refresh();
-
-            gsap.utils.toArray(".target-div").forEach((el) => {
-                function expand() {
-                    gsap.to(el, { height: "50vh", duration: 0.5, ease: "power1.out" });
-                }
-
-                function shrink() {
-                    gsap.to(el, { height: "40vh", duration: 0.5, ease: "power1.out" });
-                }
-
-                el.addEventListener("mouseenter", expand);
-                el.addEventListener("mouseleave", shrink);
-                el.addEventListener("touchstart", expand);  // Works on mobile
-                el.addEventListener("touchend", shrink);    // Works on mobile
-            });
-
-            gsap.utils.toArray(".bounce-button").forEach((el) => {
-                el.addEventListener("mouseenter", () => {
-                    gsap.to(el, { scale: 1.2, duration: 0.3, ease: "bounce.out" });
-                });
-
-                el.addEventListener("mouseleave", () => {
-                    gsap.to(el, { scale: 1, duration: 0.3, ease: "power2.out" });
-                });
-            });
-
-
-            // Apply hover effect
-            document.querySelector(".bounce-button").addEventListener("mouseenter", function () {
-                gsap.to(this, { scale: 1.2, duration: 0.3, ease: "bounce.out" });
-            });
-
-            document.querySelector(".bounce-button").addEventListener("mouseleave", function () {
-                gsap.to(this, { scale: 1, duration: 0.3, ease: "power2.out" });
-            });
-
-
             requestAnimationFrame(() => {
                 ScrollTrigger.refresh();
             });
