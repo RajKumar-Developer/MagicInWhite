@@ -10,6 +10,8 @@ export default defineConfig({
         contact:'contactus.html',
         about:'aboutus.html',
         work:'work.html',
+        'work-details':'work-details.html',
+        'work1':'work-1.html',
       }
     }
   }
