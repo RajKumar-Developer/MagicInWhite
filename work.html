@@ -322,13 +322,42 @@
                 document.getElementById("loader").classList.add("hidden");
             }
         });
+        document.addEventListener("DOMContentLoaded", () => {
+            const loader = document.getElementById("loader");
+            const loadingText = document.getElementById("loading-text");
 
-        observer.observe({ type: "resource", buffered: true });
+            const assets = document.images;
+            const totalAssets = assets.length;
+            let loadedCount = 0;
 
-        window.addEventListener("load", () => {
-            progress = 100;
-            loadingText.textContent = "100%";
-            document.getElementById("loader").classList.add("hidden");
+            if (totalAssets === 0) {
+                finishLoading();
+            }
+            for (let i = 0; i < totalAssets; i++) {
+                const img = assets[i];
+
+                if (img.complete) {
+                    incrementLoaded();
+                } else {
+                    img.addEventListener('load', incrementLoaded);
+                    img.addEventListener('error', incrementLoaded);
+                }
+            }
+
+            function incrementLoaded() {
+                loadedCount++;
+                const percent = Math.round((loadedCount / totalAssets) * 100);
+                loadingText.textContent = `Loading ${percent}%`;
+
+                if (loadedCount === totalAssets) {
+                    finishLoading();
+                }
+            }
+
+            function finishLoading() {
+                loader.classList.add("opacity-0");
+                setTimeout(() => loader.classList.add("hidden"), 1000); // matches transition duration
+            }
         });
         // document.addEventListener("readystatechange", () => {
         //     if (document.readyState === "complete") {

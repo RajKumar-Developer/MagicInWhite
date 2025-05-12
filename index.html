@@ -380,7 +380,8 @@
                                 <img src="/MIW_Website_Assets/SD-10.png"
                                     class="title object-contain w-full h-60 sm:h-full" />
                             </div>
-                            <img src="/MIW_Website_Assets/SD-09.png" class="character character-sm w-full h-72" />
+                            <img src="/MIW_Website_Assets/SD-09.png"
+                                class="character character-sm w-full h-72" />
                         </div>
                     </a>
 
@@ -391,7 +392,8 @@
                                 <img src="/MIW_Website_Assets/PS-Nandini-01png.png"
                                     class="title object-cover w-full h-72 sm:h-80" />
                             </div>
-                            <img src="/MIW_Website_Assets/PS-Nandini-02.png" class="character w-full h-72" />
+                            <img src="/MIW_Website_Assets/PS-Nandini-02.png"
+                                class="character w-full h-72" />
                         </div>
                     </a>
 
@@ -402,7 +404,8 @@
                                 <img src="/MIW_Website_Assets/Kaththi-01.png"
                                     class="title object-contain w-full sm:h-72" />
                             </div>
-                            <img src="/MIW_Website_Assets/Kaththi-02.png" class="character w-full h-72" />
+                            <img src="/MIW_Website_Assets/Kaththi-02.png"
+                                class="character w-full h-72" />
 
                         </div>
                     </a>
@@ -915,29 +918,42 @@
             }
         });
 
-        const loadingText = document.getElementById("loading-text");
+        document.addEventListener("DOMContentLoaded", () => {
+            const loader = document.getElementById("loader");
+            const loadingText = document.getElementById("loading-text");
 
-        let progress = 0;
+            const assets = document.images;
+            const totalAssets = assets.length;
+            let loadedCount = 0;
 
-        const observer = new PerformanceObserver((list) => {
-            const entries = list.getEntries();
-            const loadedResources = entries.filter(entry => entry.entryType === "resource").length;
-            const totalResources = entries.length;
-
-            progress = Math.floor((loadedResources / totalResources) * 100);
-            loadingText.textContent = `${progress}%`;
-
-            if (progress >= 100) {
-                document.getElementById("loader").classList.add("hidden");
+            if (totalAssets === 0) {
+                finishLoading();
             }
-        });
+            for (let i = 0; i < totalAssets; i++) {
+                const img = assets[i];
 
-        observer.observe({ type: "resource", buffered: true });
+                if (img.complete) {
+                    incrementLoaded();
+                } else {
+                    img.addEventListener('load', incrementLoaded);
+                    img.addEventListener('error', incrementLoaded);
+                }
+            }
 
-        window.addEventListener("load", () => {
-            progress = 100;
-            loadingText.textContent = "100%";
-            document.getElementById("loader").classList.add("hidden");
+            function incrementLoaded() {
+                loadedCount++;
+                const percent = Math.round((loadedCount / totalAssets) * 100);
+                loadingText.textContent = `Loading ${percent}%`;
+
+                if (loadedCount === totalAssets) {
+                    finishLoading();
+                }
+            }
+
+            function finishLoading() {
+                loader.classList.add("opacity-0");
+                setTimeout(() => loader.classList.add("hidden"), 1000); // matches transition duration
+            }
         });
 
         // document.addEventListener("readystatechange", () => {
