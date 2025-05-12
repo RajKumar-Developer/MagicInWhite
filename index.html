@@ -55,6 +55,11 @@
             color: #22c55e;
         }
 
+        .loader-text{
+            color: #ea4294; 
+            font-family: 'Lato', sans-serif;
+        }
+
         @keyframes moveHorse {
             0% {
                 left: 10px;
@@ -781,7 +786,7 @@
     <div id="loader"
         class="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
         <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-20 h-20 object-contain">
-        <span id="loading-text" class="text-xl mt-4 ml-5">0%</span>
+        <span id="loading-text" class="loader-text text-sm font-bold mt-4 ml-5">0%</span>
     </div>
     <!--loader end  -->
     <div class="fixed top-10 right-7 flex flex-col z-[50] place-items-center hidden" id="close-popup-button-wrapper">
@@ -943,7 +948,7 @@
             function incrementLoaded() {
                 loadedCount++;
                 const percent = Math.round((loadedCount / totalAssets) * 100);
-                loadingText.textContent = `Loading ${percent}%`;
+                loadingText.textContent = `${percent}%`;
 
                 if (loadedCount === totalAssets) {
                     finishLoading();
