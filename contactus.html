@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
     <title>Contact Us</title>
     <style>
         body {
@@ -22,6 +23,22 @@
         .green {
             color: #22c55e;
         }
+        /* @media (min-width: 768px) and (max-width: 1440px) {
+            .card {
+                width: 60% !important;
+            }
+} */
+ @media (min-width: 425px) {
+  /* Example changes */
+  #tilt-section .post-card {
+    flex-direction: row;
+    height: 520px;
+  }
+
+  #tilt-section .vertical-line {
+    display: block;
+  }
+}
     </style>
 </head>
 
@@ -96,78 +113,72 @@
     </div>
 
     <!--contact design section-->
-    <section id="tilt-section"
-        class="w-full h-auto py-16 sm:py-24 sm:h-screen flex items-center justify-center bg-white">
-        <div class="post-card mx-auto border shadow-2xl bg-white relative 
-            flex flex-col md:flex-row
-            w-[95%] md:w-[720px] lg:w-[960px] xl:w-[60%]
-            h-auto md:h-[550px] xl:h-[650px] overflow-hidden">
+<section id="tilt-section" class="w-full min-h-screen flex items-center justify-center bg-white py-10 sm:py-16 px-4 sm:px-6">
+    <div class="post-card w-full max-w-[620px] mx-auto 
+        border shadow-2xl bg-white relative flex flex-col md:flex-row overflow-hidden
+        h-auto md:h-[520px] xl:h-[580px]">
 
-            <!-- Left Side (Stacked Images) -->
-
-            <div class="md:w-1/2 flex items-center px-10 pt-4 pb-0 sm:py-6 md:px-12 md:py-24 xl:px-16 xl:py-32 justify-center border-b-2 border-dotted border-gray-400 sm:border-0"
-                style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
-                <div id="image-container" class="relative w-full max-w-md aspect-[1.4/1.1] sm:aspect-[1/1.8]">
-                    <!-- Background Image (Behind) -->
-                    <img id="bg-img" src="/contactpage_assets/Vector_Smart_Object.svg" alt="Background"
-                        class="image-to-move absolute top-1 sm:top-3 right-9 sm:right-0 w-[55%] h-[75%] sm:w-[75%] sm:h-full object-contain z-0" />
-
-                    <!-- Foreground Image (Top) -->
-                    <img id="fg-img" src="/contactpage_assets/Horse.svg" alt="Foreground"
-                        class="image-to-move absolute top-0 left-0 w-full h-[90%] sm:h-full object-contain z-10" />
-                </div>
-            </div>
-
-
-            <!-- Vertical Dotted Line (Hidden on Small Screens) -->
-            <div class="hidden md:block absolute left-1/2 top-24 bottom-24 border-l-2 border-[#272cf7] border-dotted">
-            </div>
-            <!-- style="border-image: repeating-linear-gradient(to bottom, #000000 0, #000000 1px, transparent 1px, transparent 7px) 1 100%;"> -->
-
-            <!-- Right Side (Form) -->
-            <div class="md:w-1/2 pt-3 px-10 pb-8 sm:p-10  flex flex-col justify-center relative">
-                <!-- Header with Logo -->
-                <div class="flex items-center justify-between">
-                    <h1 class="text-2xl md:text-4xl leading-relaxed font-light text-[#272cf7]">L E T S <br> T A L K</h1>
-                    <img src="/contactpage_assets/stamp.png" alt="Logo" class="w-20 mt-6 sm:w-24 sm:mt-10  md:w-28">
-                </div>
-
-                <!-- Form Section -->
-                <form class="mt-5 sm:mt-10 md:mt-24 space-y-6 md:space-y-10">
-                    <!-- Name Field -->
-                    <div class="pt-1 sm:pt-5 sm:pt-0">
-                        <input type="text" name="name" placeholder="NAME" class="text-xs sm:text-base  w-full border-none outline-none bg-transparent text-[#272cf7] 
-                                   placeholder:text-[#272cf7] focus:ring-0" required>
-                        <div class="w-full border-b-2 border-dotted border-[#272cf7]">
-                        </div>
-                    </div>
-
-                    <!-- Email Field -->
-                    <div class="pt-1 sm:pt-5 sm:pt-0">
-                        <input type="email" name="email" placeholder="EMAIL ADDRESS" class="text-xs sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] 
-                                   placeholder:text-[#272cf7] focus:ring-0" required>
-                        <div class="w-full border-b-2 border-dotted border-[#272cf7]">
-                        </div>
-                    </div>
-
-                    <!-- Message Field -->
-                    <div class="pt-2 sm:pt-5 sm:pt-0">
-                        <textarea name="message" rows="1" placeholder="YOUR MESSAGE FOR US" class="text-xs sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] 
-                                   placeholder:text-[#272cf7] focus:ring-0" required></textarea>
-                        <div class="w-full border-b-2 border-dotted border-[#272cf7]">
-                        </div>
-                    </div>
-
-                    <!-- Send Button -->
-                    <div class="mt-6 md:mt-10 flex justify-end pt-5 sm:pt-0">
-                        <button type="submit">
-                            <img src="/contactpage_assets/send-button.png" alt="Send Button" class="w-20 md:w-24">
-                        </button>
-                    </div>
-                </form>
+        <!-- Left Side (Reduced Image Size) -->
+        <div class="w-full md:w-1/2 flex items-center justify-center px-4 md:px-6 pt-6 pb-4 md:py-20 xl:py-28 border-b-2 md:border-b-0 md:border-r-0 border-dotted border-gray-400"
+            style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
+            <div id="image-container"
+                class="relative w-[170px] sm:w-[200px] md:w-[240px] lg:w-[240px] aspect-[1/1.2]">
+                <img id="bg-img" src="/contactpage_assets/Vector_Smart_Object.svg" alt="Background"
+                    class="image-to-move absolute top-2 right-0 w-[75%] h-full object-contain z-0" />
+                <img id="fg-img" src="/contactpage_assets/Horse.svg" alt="Foreground"
+                    class="image-to-move absolute top-0 left-0 w-full h-full object-contain z-10" />
             </div>
         </div>
-    </section>
+
+        <!-- Vertical Dotted Line (Hidden on Small Screens) -->
+        <div class="hidden md:block absolute left-1/2 top-18 bottom-24 border-l-2 border-[#272cf7] border-dotted vertical-line"></div>
+
+        <!-- Right Side (Form Section) -->
+        <div class="w-full md:w-1/2 px-4 sm:px-6 pt-6 pb-10 flex flex-col justify-center relative">
+            <div class="flex items-center justify-between">
+                <h1 class="text-xl sm:text-2xl md:text-4xl font-light text-[#272cf7] leading-relaxed">
+                    L E T S <br> T A L K
+                </h1>
+                <img src="/contactpage_assets/stamp.png" alt="Logo" class="w-16 sm:w-20 md:w-24 mt-4 sm:mt-10">
+            </div>
+
+            <form class="mt-6 sm:mt-10 space-y-6 md:space-y-10">
+                <!-- Name Field -->
+                <div>
+                    <input type="text" name="name" placeholder="NAME"
+                        class="text-sm sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
+                        required>
+                    <div class="w-full border-b-2 border-dotted border-[#272cf7]"></div>
+                </div>
+
+                <!-- Email Field -->
+                <div>
+                    <input type="email" name="email" placeholder="EMAIL ADDRESS"
+                        class="text-sm sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
+                        required>
+                    <div class="w-full border-b-2 border-dotted border-[#272cf7]"></div>
+                </div>
+
+                <!-- Message Field -->
+                <div>
+                    <textarea name="message" rows="1" placeholder="YOUR MESSAGE FOR US"
+                        class="text-sm sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
+                        required></textarea>
+                    <div class="w-full border-b-2 border-dotted border-[#272cf7]"></div>
+                </div>
+
+                <!-- Send Button -->
+                <div class="mt-6 md:mt-10 flex justify-end">
+                    <button type="submit">
+                        <img src="/contactpage_assets/send-button.png" alt="Send Button"
+                            class="w-16 sm:w-20 md:w-24">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 
 
 
