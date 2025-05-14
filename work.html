@@ -164,7 +164,8 @@
                     Events
                 </div>
             </div>
-            <a href="/movie-poster.html" class="relative group h-[80vh] w-[3/4] flex-shrink-0 cursor-pointer each-section">
+            <a href="/movie-poster.html"
+                class="relative group h-[80vh] w-[3/4] flex-shrink-0 cursor-pointer each-section">
                 <img src="/our_works/MoviePosters.webp" class="h-full w-full object-cover" alt="Image">
                 <div
                     class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
@@ -330,7 +331,7 @@
             }
         });
         gsap.registerPlugin(ScrollTrigger);
- 
+
         // image on load effect
         gsap.utils.toArray(".group").forEach((group) => {
             let img = group.querySelector("img");
@@ -350,28 +351,6 @@
                 }
             });
         });
-
-        // flip effect
-        gsap.utils.toArray(".group").forEach((group) => {
-            let img = group.querySelector("img");
-            let overlay = group.querySelector("div");
-
-            gsap.set(group, { perspective: 1000 }); // Adds depth effect
-
-            // On hover
-            group.addEventListener("mouseenter", () => {
-                gsap.to(img, { rotationY: 180, duration: 0.6, ease: "power2.out" });
-                gsap.to(overlay, { opacity: 1, duration: 0.6, ease: "power1.out" });
-            });
-
-            // On hover out
-            group.addEventListener("mouseleave", () => {
-                gsap.to(img, { rotationY: 0, duration: 0.6, ease: "power2.out" });
-                gsap.to(overlay, { opacity: 0, duration: 0.6, ease: "power1.out" });
-            });
-        });
-
-
 
         const scrollContainer = document.querySelector("[data-scroll-container]");
 
