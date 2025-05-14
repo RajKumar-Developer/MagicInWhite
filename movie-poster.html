@@ -3,65 +3,76 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
 
-    <title>Contact Us</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Lato', sans-serif;
         }
 
-        #image-container {
-            perspective: 1000px;
+        .bg-movies {
+            background-image: url('/our_works/poster.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            min-height: 65dvh;
+            background-attachment: fixed;
+            /* Ensures the background doesn’t move */
+        }
+
+        [data-scroll-container] {
+            opacity: 1 !important;
+            visibility: visible !important;
         }
 
         .green {
             color: #22c55e;
         }
-        /* @media (min-width: 768px) and (max-width: 1440px) {
-            .card {
-                width: 60% !important;
-            }
-} */
- @media (min-width: 425px) {
-  /* Example changes */
-  #tilt-section .post-card {
-    flex-direction: row;
-    height: 520px;
-  }
 
-  #tilt-section .vertical-line {
-    display: block;
-  }
-}
+
+        /* Hide scrollbar but keep scrolling functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Edge */
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            scrollbar-width: none;
+            /* Firefox */
+        }
     </style>
 </head>
 
-<body oncontextmenu="return false;">
+<body oncontextmenu="return false;" data-scroll-container>
     <!-- Navbar -->
     <nav id="navbar"
         class="bg-transparent sm:bg-transparent transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
         <div class="flex py-2 justify-between items-center w-full max-w-full mx-auto">
             <!-- Logo (Left Corner) -->
             <div class="cursor-pointer" onclick="window.location.href='/index.html'">
-                <img id="logo-img" src="/services-assets/Logo-on-menu.png" alt="logo"
+                <img id="logo-img" src="/work assets/logo.png" alt="logo"
                     class="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14">
             </div>
 
             <!-- Mobile Menu Button (Right Corner) -->
             <button id="menu-btn" class="hover:text-yellow-400 transition duration-300">
-                <img id="menu-icon" src="/services-assets/Hamburger-menu.png" alt="nav button"
+                <img id="menu-icon" src="/work assets/burger menu.png" alt="nav button"
                     class="w-7 h-6 sm:w-9 sm:h-8 md:w-9 md:h-8">
             </button>
         </div>
     </nav>
-
-
     <!-- Mobile Popup Menu (Overlay) -->
     <div id="mobile-menu"
         class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
@@ -72,6 +83,7 @@
         </button>
 
         <!-- Menu Items -->
+
         <ul class="text-center leading-[2.5rem]">
             <li class="mt-2 pb-3">
                 <a href="/index.html"
@@ -105,93 +117,45 @@
             </li>
             <li class="mt-2 pb-3">
                 <a href="/contactus.html"
-                    class="text-black-700 font-bold text-2xl transition-transform green duration-500 ease-out scale-125 hover:scale-125 hover:font-bold block">
+                    class="text-2xl font-thin transition-transform duration-500 ease-out hover:scale-125 hover:font-bold font-normal block">
                     C O N T A C T
                 </a>
             </li>
         </ul>
     </div>
 
-    <!--contact design section-->
-<section id="tilt-section" class="w-full min-h-screen flex items-center justify-center bg-white py-10 sm:py-16 px-4 sm:px-6">
-    <div class="post-card w-full max-w-[620px] mx-auto 
-        border shadow-2xl bg-white relative flex flex-col md:flex-row overflow-hidden
-        h-auto md:h-[520px] xl:h-[580px]">
+    <!--Main Content-->
+    <!-- Main Page -->
+    <section id="textSection" class="relative w-full flex items-center justify-center bg-white bg-movies"
+        data-scroll-section>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-white"></div>
 
-        <!-- Left Side (Reduced Image Size) -->
-        <div class="w-full md:w-1/2 flex items-center justify-center px-4 md:px-6 pt-6 pb-4 md:py-20 xl:py-28 border-b-2 md:border-b-0 md:border-r-0 border-dotted border-gray-400"
-            style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
-            <div id="image-container"
-                class="relative w-[170px] sm:w-[200px] md:w-[240px] lg:w-[240px] aspect-[1/1.2]">
-                <img id="bg-img" src="/contactpage_assets/Vector_Smart_Object.svg" alt="Background"
-                    class="image-to-move absolute top-2 right-0 w-[75%] h-full object-contain z-0" />
-                <img id="fg-img" src="/contactpage_assets/Horse.svg" alt="Foreground"
-                    class="image-to-move absolute top-0 left-0 w-full h-full object-contain z-10" />
-            </div>
-        </div>
-
-        <!-- Vertical Dotted Line (Hidden on Small Screens) -->
-        <div class="hidden md:block absolute left-1/2 top-24 bottom-24 border-l-2 border-[#272cf7] border-dotted vertical-line"></div>
-
-        <!-- Right Side (Form Section) -->
-        <div class="w-full md:w-1/2 px-4 sm:px-6 pt-6 pb-10 flex flex-col justify-center relative">
-            <div class="flex items-center justify-between">
-                <h1 class="text-xl sm:text-2xl md:text-4xl font-light text-[#272cf7] leading-relaxed">
-                    L E T S <br> T A L K
-                </h1>
-                <img src="/contactpage_assets/stamp.png" alt="Logo" class="w-16 sm:w-20 md:w-24 mt-4 sm:mt-10">
-            </div>
-
-            <form class="mt-6 sm:mt-10 space-y-6 md:space-y-10">
-                <!-- Name Field -->
-                <div>
-                    <input type="text" name="name" placeholder="NAME"
-                        class="text-sm sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
-                        required>
-                    <div class="w-full border-b-2 border-dotted border-[#272cf7]"></div>
-                </div>
-
-                <!-- Email Field -->
-                <div>
-                    <input type="email" name="email" placeholder="EMAIL ADDRESS"
-                        class="text-sm sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
-                        required>
-                    <div class="w-full border-b-2 border-dotted border-[#272cf7]"></div>
-                </div>
-
-                <!-- Message Field -->
-                <div>
-                    <textarea name="message" rows="1" placeholder="YOUR MESSAGE FOR US"
-                        class="text-sm sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
-                        required></textarea>
-                    <div class="w-full border-b-2 border-dotted border-[#272cf7]"></div>
-                </div>
-
-                <!-- Send Button -->
-                <div class="mt-6 md:mt-10 flex justify-end">
-                    <button type="submit">
-                        <img src="/contactpage_assets/send-button.png" alt="Send Button"
-                            class="w-16 sm:w-20 md:w-24">
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
+        <!-- Transparent Text -->
+        <h1 id="animatedText"
+            class="absolute flex items-center justify-center text-[10vw] font-bold text-transparent bg-clip-text bg-movies text-center">
+            MOVIE POSTERS
+        </h1>
+    </section>
 
 
 
 
+    <!-- Section work gallery -->
+    <section class="scroll-container horizontal-scroll-content" data-scroll-section>
+
+    </section>
     <!--Footer-->
-    <section class="min-h-1/2 flex flex-col justify-center items-center bg-pink-500 text-white text-center p-10">
+    <section data-scroll-section
+        class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
         <div class="container">
             <div class="w-full max-w-4xl mx-auto mt-6">
                 <!-- Heading + Input Field -->
                 <h1 class="text-xl md:text-3xl font-bold mb-4 text-left">LETS BE CREATIVE. LETS BEGIN.</h1>
                 <div class="flex">
-                    <input type="email" id="footerMail" placeholder="ENTER YOUR EMAIL ADDRESS"
+                    <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS"
                         class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
-                    <button class="bg-blue-600 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
+                    <button class="bg-pink-500 px-8 py-4 text-lg text-white font-semibold">SUBSCRIBE</button>
                 </div>
 
                 <div class="mt-10 grid grid-cols-1 gap-y-6 w-full">
@@ -241,10 +205,9 @@
                         </div>
                     </div>
                     <!-- Second Row: Button & Social Media Icons -->
-                    <div
-                        class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0 relative">
+                    <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
                         <button id="shareButton"
-                            class="bg-pink-500 border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                            class="bg-[#00001b] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
                             <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
                         </button>
 
@@ -276,11 +239,25 @@
         </div>
     </section>
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
+    <!-- loader -->
+    <div id="loader"
+        class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
+        <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-20 h-20 object-contain">
+    </div>
+    <!--loader end  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
+    <script>
+        let locoScrollInstance;
+
+        document.addEventListener("readystatechange", () => {
+            if (document.readyState === "complete") {
+                document.getElementById("loader").classList.add("hidden");
+            }
+        });
         document.getElementById("shareButton").addEventListener("click", async () => {
             if (navigator.share) {
                 await navigator.share({
@@ -291,6 +268,9 @@
                 alert("Your browser does not support sharing.");
             }
         });
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
 
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
@@ -307,80 +287,95 @@
                 mobileMenu.classList.add('hidden');
             }
         });
+        gsap.registerPlugin(ScrollTrigger);
+        const section = document.getElementById("textSection");
+        const text = document.getElementById("animatedText");
 
-        function updatePlaceholder() {
-            const inputField = document.getElementById("footerMail");
+        section.addEventListener("mousemove", (e) => {
+            const { left, top, width, height } = section.getBoundingClientRect();
+            const xMove = ((e.clientX - left) / width - 0.5) * 30; // Small horizontal shift
+            const yMove = ((e.clientY - top) / height - 0.5) * 15; // Small vertical shift
 
-            if (window.innerWidth <= 640) { // Tailwind 'sm' breakpoint (mobile screens)
-                inputField.placeholder = "EMAIL";
-            } else {
-                inputField.placeholder = "ENTER YOUR EMAIL ADDRESS";
-            }
+            gsap.to(text, {
+                x: xMove,
+                y: yMove,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+
+        section.addEventListener("mouseleave", () => {
+            gsap.to(text, { x: 0, y: 0, duration: 0.3, ease: "power2.out" }); // Reset position on mouse leave
+        });
+
+
+
+        const scrollContainer = document.querySelector("[data-scroll-container]");
+
+        function initSmoothScroll() {
+
+            const locoScroll = new LocomotiveScroll({
+                el: scrollContainer,
+                smooth: true,
+                smoothMobile: true,
+                inertia: 0.25,
+                multiplier: 2,
+                getDirection: true
+            });
+            locoScrollInstance = locoScroll;
+
+            ScrollTrigger.scrollerProxy(scrollContainer, {
+                scrollTop(value) {
+                    return arguments.length
+                        ? locoScroll.scrollTo(value, 0, 0)
+                        : locoScroll.scroll.instance.scroll.y;
+                },
+                getBoundingClientRect() {
+                    return {
+                        top: 0,
+                        left: 0,
+                        width: window.innerWidth,
+                        height: window.innerHeight,
+                    };
+                },
+                pinType: scrollContainer.style.transform ? "transform" : "fixed",
+            });
+            let lastScrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
+
+            locoScroll.on("scroll", (event) => {
+                checkBackgroundAndInvertImages();
+                const navbar = document.getElementById("navbar");
+                const currentScrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
+
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    // Scrolling down - Hide navbar with animation
+                    navbar.classList.add("-translate-y-full", "opacity-0");
+                    navbar.classList.remove("opacity-100");
+                } else {
+                    // Scrolling up - Show navbar with animation
+                    navbar.classList.remove("-translate-y-full", "opacity-0");
+                    navbar.classList.add("opacity-100");
+                }
+
+                lastScrollY = currentScrollY;
+
+                ScrollTrigger.update();
+            });
+
+            // locoScroll.on("scroll", ScrollTrigger.update);
+            ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+            ScrollTrigger.refresh();
+            requestAnimationFrame(() => {
+                ScrollTrigger.refresh();
+            });
         }
-        // Run function on page load and resize
-        window.addEventListener("load", updatePlaceholder);
-        window.addEventListener("resize", updatePlaceholder);
-    </script>
-
-    <script>
-        // horse animation
-        const images = document.querySelectorAll(".image-to-move"); // Select both images
-        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-        document.addEventListener("mousemove", (e) => {
-            const { clientX: mouseX, clientY: mouseY } = e; // Get mouse position on the page
-            const centerX = window.innerWidth / (isSafari ? 1 : 2);
-            const centerY = window.innerHeight / (isSafari ? 1 : 2);
 
 
-            // Calculate movement strength based on distance from the center
-            const moveX = (mouseX - centerX) / centerX * 20; // Horizontal movement
-            const moveY = (mouseY - centerY) / centerY * 20; // Vertical movement
 
-            // Apply movement to both images
-            gsap.to(images, {
-                duration: (isSafari ? 0.06 : 0.3), // Smooth transition
-                x: moveX, // Move left/right
-                y: moveY, // Move up/down
-                force3D: true,
-                rotateY: moveX / 2, // Slight 3D rotation
-                rotateX: -moveY / 2, // Add vertical rotation for depth
-                ease: "power3.out" // Smooth easing
+        window.addEventListener("load", () => {
+            imagesLoaded(scrollContainer, { background: true }, () => {
+                initSmoothScroll();
             });
-        });
-
-        document.addEventListener("mouseleave", () => {
-            // Reset both images to their original position
-            gsap.to(images, {
-                duration: 0.5, // Slower reset
-                x: 0,
-                y: 0,
-                rotateY: 0,
-                rotateX: 0,
-                ease: "power3.out"
-            });
-        });
-    </script>
-
-
-    <script>
-        let lastScrollY = window.scrollY;
-        const navbar = document.getElementById("navbar");
-
-        window.addEventListener("scroll", () => {
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                // Scrolling down - Hide navbar with animation
-                navbar.classList.add("-translate-y-full", "opacity-0");
-                navbar.classList.remove("opacity-100");
-            } else {
-                // Scrolling up - Show navbar with animation
-                navbar.classList.remove("-translate-y-full", "opacity-0");
-                navbar.classList.add("opacity-100");
-            }
-
-            lastScrollY = currentScrollY;
         });
 
     </script>
@@ -486,10 +481,6 @@
 
         // Run on page load
         document.addEventListener('DOMContentLoaded', function () {
-            checkBackgroundAndInvertImages();
-
-            // Run when scrolling
-            window.addEventListener('scroll', checkBackgroundAndInvertImages);
 
             // Run on window resize
             window.addEventListener('resize', checkBackgroundAndInvertImages);

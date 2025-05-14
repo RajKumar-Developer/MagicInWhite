@@ -4,7 +4,8 @@
       {"source":"/team","destination":"/team.html"},
       {"source":"/contact","destination":"/contactus.html"},
       {"source":"/about","destination":"/aboutus.html"},
-      {"source":"/work","destination":"/work.html"}
+      {"source":"/work","destination":"/work.html"},
+       {"source":"/movie-posters","destination":"/movie-poster.html"}
     ],
     "redirects": [
       { "source": "/old-page", "destination": "/new-page", "permanent": true }
