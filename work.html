@@ -460,7 +460,12 @@
             stopLoco(); // always stop loco when in view
             e.preventDefault();
 
-            scrollable.scrollBy({ left: e.deltaY, behavior: 'smooth' });
+            // scrollable.scrollBy({ left: e.deltaY, behavior: 'smooth' });
+            gsap.to(scrollable, {
+                scrollLeft: scrollable.scrollLeft + e.deltaY,
+                duration: 0.1,
+                ease: "power2.out"
+            });
 
             if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
                 startLoco();
