@@ -419,7 +419,7 @@
         const offset = isMobile ? 300 : 550;
         let touchStartX = 0;
         let touchStartY = 0;
-        
+
         function isInView(el) {
             const rect = el.getBoundingClientRect();
             return rect.top <= offset && rect.bottom > 0;
@@ -447,12 +447,13 @@
             const isScrollingDown = e.deltaY > 0;
             const isScrollingUp = e.deltaY < 0;
 
+            e.preventDefault();
+
             if (!isLocoStopped) {
                 locoScrollInstance.stop();
                 isLocoStopped = true;
             }
 
-            e.preventDefault();
             scrollable.scrollBy({ left: e.deltaY, behavior: 'smooth' });
 
             if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
@@ -461,7 +462,6 @@
             }
         }, { passive: false });
 
-        // Detect touch scroll (Mobile)
         scrollable.addEventListener('touchstart', (e) => {
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
@@ -475,7 +475,7 @@
             const deltaX = touchStartX - touchX;
             const deltaY = touchStartY - touchY;
 
-            // We only care about horizontal swipes (ignore vertical)
+            // Detect horizontal gesture
             if (Math.abs(deltaX) > Math.abs(deltaY)) {
                 e.preventDefault();
 
@@ -484,15 +484,19 @@
                     isLocoStopped = true;
                 }
 
-                scrollable.scrollBy({ left: deltaX, behavior: 'smooth' });
+                scrollable.scrollLeft += deltaX ;
 
-                // Resume loco scroll when reaching ends
                 if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
                     locoScrollInstance.start();
                     isLocoStopped = false;
                 }
+
+                // Update touch start for smoother repeated moves
+                touchStartX = touchX;
             }
         }, { passive: false });
+
+
         window.addEventListener("load", () => {
             imagesLoaded(scrollContainer, { background: true }, () => {
                 initSmoothScroll();
