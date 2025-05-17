@@ -417,8 +417,6 @@
         // Check if the element is in the viewport
         const isMobile = window.innerWidth <= 768;
         const offset = isMobile ? 300 : 550;
-        let touchStartX = 0;
-        let touchStartY = 0;
 
         function isInView(el) {
             const rect = el.getBoundingClientRect();
@@ -439,23 +437,26 @@
 
 
         // Wheel event logic
-
-        // Detect wheel scroll (Desktop)
         document.addEventListener("wheel", (e) => {
             if (!isInView(scrollable)) return;
 
             const isScrollingDown = e.deltaY > 0;
             const isScrollingUp = e.deltaY < 0;
 
-            e.preventDefault();
-
+            // Stop Locomotive scroll when entering scrollable section
             if (!isLocoStopped) {
                 locoScrollInstance.stop();
                 isLocoStopped = true;
             }
 
+            e.preventDefault(); // Always prevent vertical scroll in scrollable section
+
+            // Scroll horizontally
             scrollable.scrollBy({ left: e.deltaY, behavior: 'smooth' });
 
+            // Resume LocomotiveScroll if user:
+            // - scrolls down and reaches horizontal end
+            // - scrolls up and reaches horizontal start
             if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
                 locoScrollInstance.start();
                 isLocoStopped = false;
@@ -463,39 +464,16 @@
         }, { passive: false });
 
         scrollable.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
+            console.log('touchstart')
         }, { passive: true });
 
         scrollable.addEventListener('touchmove', (e) => {
-            if (!isInView(scrollable)) return;
+            console.log('touchmove')
 
-            const touchX = e.touches[0].clientX;
-            const touchY = e.touches[0].clientY;
-            const deltaX = touchStartX - touchX;
-            const deltaY = touchStartY - touchY;
 
-            // Detect horizontal gesture
-            if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                e.preventDefault();
-
-                if (!isLocoStopped) {
-                    locoScrollInstance.stop();
-                    isLocoStopped = true;
-                }
-
-                scrollable.scrollLeft += deltaX ;
-
-                if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
-                    locoScrollInstance.start();
-                    isLocoStopped = false;
-                }
-
-                // Update touch start for smoother repeated moves
-                touchStartX = touchX;
-            }
+            // Prevent vertical scroll when active
+            if (e.cancelable) e.preventDefault();
         }, { passive: false });
-
 
         window.addEventListener("load", () => {
             imagesLoaded(scrollContainer, { background: true }, () => {
