@@ -437,32 +437,60 @@
 
 
         // Wheel event logic
+
+        // Detect wheel scroll (Desktop)
         document.addEventListener("wheel", (e) => {
             if (!isInView(scrollable)) return;
 
             const isScrollingDown = e.deltaY > 0;
             const isScrollingUp = e.deltaY < 0;
 
-            // Stop Locomotive scroll when entering scrollable section
             if (!isLocoStopped) {
                 locoScrollInstance.stop();
                 isLocoStopped = true;
             }
 
-            e.preventDefault(); // Always prevent vertical scroll in scrollable section
-
-            // Scroll horizontally
+            e.preventDefault();
             scrollable.scrollBy({ left: e.deltaY, behavior: 'smooth' });
 
-            // Resume LocomotiveScroll if user:
-            // - scrolls down and reaches horizontal end
-            // - scrolls up and reaches horizontal start
             if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
                 locoScrollInstance.start();
                 isLocoStopped = false;
             }
         }, { passive: false });
 
+        // Detect touch scroll (Mobile)
+        scrollable.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        scrollable.addEventListener('touchmove', (e) => {
+            if (!isInView(scrollable)) return;
+
+            const touchX = e.touches[0].clientX;
+            const touchY = e.touches[0].clientY;
+            const deltaX = touchStartX - touchX;
+            const deltaY = touchStartY - touchY;
+
+            // We only care about horizontal swipes (ignore vertical)
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                e.preventDefault();
+
+                if (!isLocoStopped) {
+                    locoScrollInstance.stop();
+                    isLocoStopped = true;
+                }
+
+                scrollable.scrollBy({ left: deltaX, behavior: 'smooth' });
+
+                // Resume loco scroll when reaching ends
+                if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
+                    locoScrollInstance.start();
+                    isLocoStopped = false;
+                }
+            }
+        }, { passive: false });
         window.addEventListener("load", () => {
             imagesLoaded(scrollContainer, { background: true }, () => {
                 initSmoothScroll();
