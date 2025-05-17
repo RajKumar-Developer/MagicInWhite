@@ -417,7 +417,9 @@
         // Check if the element is in the viewport
         const isMobile = window.innerWidth <= 768;
         const offset = isMobile ? 300 : 550;
-
+        let touchStartX = 0;
+        let touchStartY = 0;
+        
         function isInView(el) {
             const rect = el.getBoundingClientRect();
             return rect.top <= offset && rect.bottom > 0;
