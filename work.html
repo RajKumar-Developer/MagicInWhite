@@ -468,31 +468,29 @@
         }, { passive: false });
 
 
-        // Mobile: Handle touch horizontal scroll
-        scrollable.addEventListener("touchstart", (e) => {
-            console.log('Working here')
-            startX = e.touches[0].clientX;
-        }, { passive: true });
+        // // Mobile: Handle touch horizontal scroll
+        // scrollable.addEventListener("touchstart", (e) => {
+        //     startX = e.touches[0].clientX;
+        // }, { passive: true });
 
-        scrollable.addEventListener("touchmove", (e) => {
-            if (!isInView(scrollable)) return;
+        // scrollable.addEventListener("touchmove", (e) => {
+        //     if (!isInView(scrollable)) return;
 
-            const currentX = e.touches[0].clientX;
-            const deltaX = startX - currentX;
+        //     const currentX = e.touches[0].clientX;
+        //     const deltaX = startX - currentX;
 
-            stopLoco();
+        //     stopLoco();
 
-            // Prevent vertical scroll
-            if (e.cancelable) e.preventDefault();
-            console.log('Working here 22')
+        //     // Prevent vertical scroll
+        //     if (e.cancelable) e.preventDefault();
 
-            scrollable.scrollLeft += deltaX;
-            startX = currentX;
+        //     scrollable.scrollLeft += deltaX;
+        //     startX = currentX;
 
-            if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
-                startLoco();
-            }
-        }, { passive: false });
+        //     if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
+        //         startLoco();
+        //     }
+        // }, { passive: false });
 
         window.addEventListener("load", () => {
             imagesLoaded(scrollContainer, { background: true }, () => {
