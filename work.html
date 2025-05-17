@@ -138,10 +138,9 @@
             </p>
         </div>
     </section>
-
     <!-- Section work gallery -->
-    <section class="scroll-container horizontal-scroll-content" data-scroll-section>
-        <div class="overflow-x-scroll whitespace-nowrap flex space-x-4 p-4 no-scrollbar">
+    <section id="horizontal-scroll" class="scroll-container" data-scroll-section>
+        <div id="scrollable-div" class="overflow-x-scroll whitespace-nowrap flex space-x-4 p-4 no-scrollbar">
 
             <div class="relative group h-[80vh] w-[3/4] flex-shrink-0 cursor-pointer each-section">
                 <img src="/our_works/Advertising.webp" class="h-full w-full object-cover" alt="Image">
@@ -179,7 +178,7 @@
                     Products
                 </div>
             </div>
-            <div class="relative group h-[80vh] w-[3/4 flex-shrink-0 cursor-pointer each-section">
+            <div class="relative group h-[80vh] w-[3/4] flex-shrink-0 cursor-pointer each-section">
                 <img src="/our_works/TItleAnimations.webp" class="h-full w-full object-cover" alt="Image">
                 <div
                     class="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-lg font-thin lato-font">
@@ -360,7 +359,7 @@
                 el: scrollContainer,
                 smooth: true,
                 smoothMobile: true,
-                inertia: 0.25,
+                inertia: 0.60,
                 multiplier: 2,
                 getDirection: true
             });
@@ -412,7 +411,57 @@
             });
         }
 
+        // horizontal scroll
+        const scrollable = document.getElementById('scrollable-div');
+        let isLocoStopped = false;
+        // Check if the element is in the viewport
+        const isMobile = window.innerWidth <= 768;
+        const offset = isMobile ? 300 : 550;
 
+        function isInView(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top <= offset && rect.bottom > 0;
+        }
+
+
+        // Check if horizontal scroll reached start
+        function isAtStart(el) {
+            return el.scrollLeft <= 0;
+        }
+
+        // Check if horizontal scroll reached end
+        function isAtEnd(el) {
+            return Math.ceil(el.scrollLeft + el.clientWidth) >= el.scrollWidth;
+        }
+
+
+
+        // Wheel event logic
+        document.addEventListener("wheel", (e) => {
+            if (!isInView(scrollable)) return;
+
+            const isScrollingDown = e.deltaY > 0;
+            const isScrollingUp = e.deltaY < 0;
+
+            // Stop Locomotive scroll when entering scrollable section
+            if (!isLocoStopped) {
+                locoScrollInstance.stop();
+                isLocoStopped = true;
+            }
+
+            e.preventDefault(); // Always prevent vertical scroll in scrollable section
+
+            // Scroll horizontally
+            scrollable.scrollBy({ left: e.deltaY, behavior: 'smooth' });
+
+            // Resume LocomotiveScroll if user:
+            // - scrolls down and reaches horizontal end
+            // - scrolls up and reaches horizontal start
+            if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
+                locoScrollInstance.start();
+                isLocoStopped = false;
+            }
+        }, { passive: false });
 
         window.addEventListener("load", () => {
             imagesLoaded(scrollContainer, { background: true }, () => {
