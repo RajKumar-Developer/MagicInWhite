@@ -414,6 +414,8 @@
         // horizontal scroll
         const scrollable = document.getElementById('scrollable-div');
         let isLocoStopped = false;
+        let startX = 0;
+
         // Check if the element is in the viewport
         const isMobile = window.innerWidth <= 768;
         const offset = isMobile ? 300 : 550;
@@ -431,48 +433,65 @@
 
         // Check if horizontal scroll reached end
         function isAtEnd(el) {
-            return Math.ceil(el.scrollLeft + el.clientWidth) >= el.scrollWidth;
+            return el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1;
         }
 
+        function stopLoco() {
+            if (!isLocoStopped) {
+                locoScrollInstance.stop();
+                isLocoStopped = true;
+            }
+        }
 
+        function startLoco() {
+            if (isLocoStopped) {
+                locoScrollInstance.start();
+                isLocoStopped = false;
+            }
+        }
 
-        // Wheel event logic
+        // Desktop: Handle wheel scrolling
         document.addEventListener("wheel", (e) => {
             if (!isInView(scrollable)) return;
 
             const isScrollingDown = e.deltaY > 0;
             const isScrollingUp = e.deltaY < 0;
 
-            // Stop Locomotive scroll when entering scrollable section
-            if (!isLocoStopped) {
-                locoScrollInstance.stop();
-                isLocoStopped = true;
-            }
+            stopLoco(); // always stop loco when in view
+            e.preventDefault();
 
-            e.preventDefault(); // Always prevent vertical scroll in scrollable section
-
-            // Scroll horizontally
             scrollable.scrollBy({ left: e.deltaY, behavior: 'smooth' });
 
-            // Resume LocomotiveScroll if user:
-            // - scrolls down and reaches horizontal end
-            // - scrolls up and reaches horizontal start
             if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
-                locoScrollInstance.start();
-                isLocoStopped = false;
+                startLoco();
             }
         }, { passive: false });
 
-        scrollable.addEventListener('touchstart', (e) => {
-            console.log('touchstart')
+
+        // Mobile: Handle touch horizontal scroll
+        scrollable.addEventListener("touchstart", (e) => {
+            console.log('Working here')
+            startX = e.touches[0].clientX;
         }, { passive: true });
 
-        scrollable.addEventListener('touchmove', (e) => {
-            console.log('touchmove')
+        scrollable.addEventListener("touchmove", (e) => {
+            if (!isInView(scrollable)) return;
 
+            const currentX = e.touches[0].clientX;
+            const deltaX = startX - currentX;
 
-            // Prevent vertical scroll when active
+            stopLoco();
+
+            // Prevent vertical scroll
             if (e.cancelable) e.preventDefault();
+            console.log('Working here 22')
+
+            scrollable.scrollLeft += deltaX;
+            startX = currentX;
+
+            if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
+                startLoco();
+            }
         }, { passive: false });
 
         window.addEventListener("load", () => {
