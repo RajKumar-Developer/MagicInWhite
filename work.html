@@ -399,7 +399,7 @@
                 el: scrollContainer,
                 smooth: true,
                 smoothMobile: true,
-                inertia: 0.25,
+                inertia: 0.85,
                 multiplier: 2,
                 getDirection: true
             });
@@ -461,7 +461,7 @@
 
         function isInView(el) {
             const rect = el.getBoundingClientRect();
-            return rect.bottom - 200 <= window.innerHeight;
+            return rect.top <= 0;
         }
 
 
@@ -478,8 +478,8 @@
         function stopLoco() {
             if (!isLocoStopped) {
                 locoScrollInstance.stop();
-                locoScrollInstance.options.smooth = false
                 isLocoStopped = true;
+                locoScrollInstance.update();
             }
         }
 
@@ -487,8 +487,10 @@
             if (isLocoStopped) {
                 locoScrollInstance.start();
                 isLocoStopped = false;
+                locoScrollInstance.update();
             }
         }
+
         function getClosestToLeft() {
             const links = document.querySelectorAll("#scrollable-div a");
             let closestElement = null;
@@ -526,18 +528,16 @@
             });
         }
 
-
-
-
-        // Desktop: Handle wheel scrolling
-        document.addEventListener("wheel", (e) => {
-
+        function handlingScroll(e) {
             if (!isInView(scrollable)) return;
 
             const isScrollingDown = e.deltaY > 0;
             const isScrollingUp = e.deltaY < 0;
 
-            stopLoco(); // always stop loco when in view
+            if (!isLocoStopped) {
+                stopLoco(); // Stop LocoScroll only if it's not already stopped
+            }
+
             e.preventDefault();
             updateClasses()
 
@@ -551,6 +551,42 @@
             if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
                 startLoco();
             }
+        }
+
+        function handleTouchScroll(e) {
+            if (!isInView(scrollable)) return;
+
+            const touch = e.touches[0];
+            const deltaX = touch.clientX - lastTouchX; // Detect left/right swipe
+            lastTouchX = touch.clientX; // Update last touch position
+
+            if (!isLocoStopped) stopLoco();
+            e.preventDefault();
+            updateClasses();
+
+            gsap.to(scrollable, {
+                scrollLeft: scrollable.scrollLeft - deltaX, // Adjust for natural swipe motion
+                duration: 0.1,
+                ease: "power2.out"
+            });
+
+            if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
+                if (isInView(scrollable)) startLoco();
+            }
+        }
+
+        let lastTouchX = 0
+
+        document.addEventListener("wheel", handlingScroll, { passive: false }); // Mouse wheel
+        document.addEventListener("touchmove", handleTouchScroll, { passive: false }); // Touch scrolling
+        document.addEventListener("gesturechange", handleTouchScroll, { passive: false }); // Trackpad gestures
+
+
+
+        // Desktop: Handle wheel scrolling
+        document.addEventListener("wheel", (e) => {
+
+
         }, { passive: false });
 
 
