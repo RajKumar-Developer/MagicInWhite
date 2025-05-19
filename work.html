@@ -139,10 +139,11 @@
         </div>
     </section>
     <!-- Section work gallery -->
-    <section class="w-full overflow-x-auto whitespace-nowrap scrollbar-hide no-scrollbar pb-4 pt-4" data-scroll-section>
+    <section id="scrollable-div" class="w-full overflow-x-auto whitespace-nowrap scrollbar-hide no-scrollbar pb-4 pt-4"
+        data-scroll-section>
         <div class="flex flex-nowrap gap-4">
             <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group">
-                <img src="/our_works/Advertising.webp" class="w-full h-full object-cover" />
+                <img src="/our_works/Advertising.webp" class="w-full h-full object-cover " />
                 <div
                     class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span class="text-white text-3xl font-bold lat">Advertising</span>
@@ -150,15 +151,15 @@
             </a>
 
             <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group">
-                <img src="/our_works/Branding.webp" class="w-full h-full object-cover" />
+                <img src="/our_works/Branding.webp" class="w-full h-full object-cover filter blur-sm" />
                 <div
-                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hidden">
                     <span class="text-white text-3xl font-bold">Branding</span>
                 </div>
             </a>
 
             <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group">
-                <img src="/our_works/Events.webp" class="w-full h-full object-cover" />
+                <img src="/our_works/Events.webp" class="w-full h-full object-cover filter blur-sm" />
                 <div
                     class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span class="text-white text-3xl font-bold">Events</span>
@@ -166,7 +167,7 @@
             </a>
 
             <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group" href="/movie-poster.html">
-                <img src="/our_works/MoviePosters.webp" class="w-full h-full object-cover" />
+                <img src="/our_works/MoviePosters.webp" class="w-full h-full object-cover filter blur-sm" />
                 <div
                     class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span class="text-white text-3xl font-bold">Movie Posters</span>
@@ -174,7 +175,7 @@
             </a>
 
             <a class="relative w-full sm:w-[50vw]  h-screen flex-shrink-0 inline-block group">
-                <img src="/our_works/Products.webp" class="w-full h-full object-cover" />
+                <img src="/our_works/Products.webp" class="w-full h-full object-cover filter blur-sm" />
                 <div
                     class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span class="text-white text-3xl font-bold">Products</span>
@@ -182,7 +183,7 @@
             </a>
 
             <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group">
-                <img src="/our_works/TItleAnimations.webp" class="w-full h-full object-cover" />
+                <img src="/our_works/TItleAnimations.webp" class="w-full h-full object-cover filter blur-sm" />
                 <div
                     class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <span class="text-white text-3xl font-bold">Title Animations</span>
@@ -398,7 +399,7 @@
                 el: scrollContainer,
                 smooth: true,
                 smoothMobile: true,
-                inertia: 0.60,
+                inertia: 0.25,
                 multiplier: 2,
                 getDirection: true
             });
@@ -457,11 +458,10 @@
 
         // Check if the element is in the viewport
         const isMobile = window.innerWidth <= 768;
-        const offset = isMobile ? 300 : 550;
 
         function isInView(el) {
             const rect = el.getBoundingClientRect();
-            return rect.top <= offset && rect.bottom > 0;
+            return rect.bottom - 200 <= window.innerHeight;
         }
 
 
@@ -478,6 +478,7 @@
         function stopLoco() {
             if (!isLocoStopped) {
                 locoScrollInstance.stop();
+                locoScrollInstance.options.smooth = false
                 isLocoStopped = true;
             }
         }
@@ -488,28 +489,69 @@
                 isLocoStopped = false;
             }
         }
+        function getClosestToLeft() {
+            const links = document.querySelectorAll("#scrollable-div a");
+            let closestElement = null;
+            let closestDistance = Infinity;
+
+            links.forEach(link => {
+                const rect = link.getBoundingClientRect();
+
+                // Only consider elements that are still within the viewport (not crossed the left)
+                if (rect.left >= 0 && rect.left < closestDistance) {
+                    closestDistance = rect.left;
+                    closestElement = link;
+                }
+            });
+
+            return closestElement;
+        }
+
+        function updateClasses() {
+            const links = document.querySelectorAll("#scrollable-div a");
+            const closest = getClosestToLeft(); // Function from previous step
+
+            links.forEach(link => {
+                const img = link.querySelector("img");
+                const overlayDiv = link.querySelector("div");
+
+                if (link === closest) {
+                    img.classList.remove("blur-sm"); // Remove class from closest image
+                    overlayDiv.classList.remove("hidden"); // Remove class from closest div
+                } else {
+                    img.classList.add("blur-sm"); // Add class to all other images
+                    overlayDiv.classList.add("hidden"); // Add class to all other divs
+                }
+
+            });
+        }
+
+
+
 
         // Desktop: Handle wheel scrolling
-        // document.addEventListener("wheel", (e) => {
-        //     if (!isInView(scrollable)) return;
+        document.addEventListener("wheel", (e) => {
 
-        //     const isScrollingDown = e.deltaY > 0;
-        //     const isScrollingUp = e.deltaY < 0;
+            if (!isInView(scrollable)) return;
 
-        //     stopLoco(); // always stop loco when in view
-        //     e.preventDefault();
+            const isScrollingDown = e.deltaY > 0;
+            const isScrollingUp = e.deltaY < 0;
 
-        //     // scrollable.scrollBy({ left: e.deltaY, behavior: 'smooth' });
-        //     gsap.to(scrollable, {
-        //         scrollLeft: scrollable.scrollLeft + e.deltaY,
-        //         duration: 0.1,
-        //         ease: "power2.out"
-        //     });
+            stopLoco(); // always stop loco when in view
+            e.preventDefault();
+            updateClasses()
 
-        //     if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
-        //         startLoco();
-        //     }
-        // }, { passive: false });
+            gsap.to(scrollable, {
+                scrollLeft: scrollable.scrollLeft + e.deltaY,
+                duration: 0.1,
+                ease: "power2.out"
+            });
+
+
+            if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
+                startLoco();
+            }
+        }, { passive: false });
 
 
         window.addEventListener("load", () => {
