@@ -159,7 +159,8 @@
 					LOGO DESIGN, BRAND POSITIONING, BRAND STRATEGY, NAMING & TAGLINE DEVELOPMENT, REBRANDING
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
+					<img src="/services-assets/explore-button-white.png" alt="Explore"
+						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -183,7 +184,8 @@
 					PRINT, DIGITAL, FILM, PHOTOGRAPHY AND ART DIRECTION, OUT-OF-HOME ADVERTISING.
 				</p>
 				<button class="mt-4 ">
-					<img src="/services-assets/explore-button-blue.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
+					<img src="/services-assets/explore-button-blue.png" alt="Explore"
+						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -199,7 +201,8 @@
 					MOTION GRAPHICS & ANIMATION
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
+					<img src="/services-assets/explore-button-white.png" alt="Explore"
+						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -223,7 +226,8 @@
 					TITLE ANIMATION, STOP MOTION ANIMATION, MOVIE TITLE SEQUENCE, 2D ANIMATION & 3D ANIMATION
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
+					<img src="/services-assets/explore-button-white.png" alt="Explore"
+						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -238,7 +242,8 @@
 					MARKETING
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-white.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
+					<img src="/services-assets/explore-button-white.png" alt="Explore"
+						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -263,7 +268,8 @@
 					PARTNERSHIPS
 				</p>
 				<button class="mt-4">
-					<img src="/services-assets/explore-button-blue.png" alt="Explore" class="w-16 sm:w-20 md:w-24 animate-text">
+					<img src="/services-assets/explore-button-blue.png" alt="Explore"
+						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
 			</div>
 		</div>
@@ -366,9 +372,11 @@
 	</section>
 
 	<!-- loader -->
+	<!-- loader -->
 	<div id="loader"
-		class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
+		class="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
 		<img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-20 h-20 object-contain">
+		<span id="loading-text" class="loader-text text-sm font-bold mt-4 ml-3">0%</span>
 	</div>
 	<!--loader end  -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -400,11 +408,47 @@
 		});
 	</script>
 	<script>
-		document.addEventListener("readystatechange", () => {
-			if (document.readyState === "complete") {
-				document.getElementById("loader").classList.add("hidden");
+		// loading start
+		document.addEventListener("DOMContentLoaded", () => {
+			const loader = document.getElementById("loader");
+			const loadingText = document.getElementById("loading-text");
+
+			const assets = document.images;
+			const totalAssets = assets.length;
+			let loadedCount = 0;
+
+			if (totalAssets === 0) {
+				finishLoading();
+			}
+			for (let i = 0; i < totalAssets; i++) {
+				const img = assets[i];
+
+				if (img.complete) {
+					incrementLoaded();
+				} else {
+					img.addEventListener('load', incrementLoaded);
+					img.addEventListener('error', incrementLoaded);
+				}
+			}
+
+			function incrementLoaded() {
+				loadedCount++;
+				const percent = Math.round((loadedCount / totalAssets) * 100);
+				loadingText.textContent = `${percent}%`;
+
+				if (loadedCount === totalAssets) {
+					finishLoading();
+				}
+			}
+
+			function finishLoading() {
+				setTimeout(() => {
+					loader.classList.add("opacity-0");
+					loader.classList.add("hidden")
+				}, 1000); // matches transition duration
 			}
 		});
+		// loading end
 		document.getElementById("shareButton").addEventListener("click", async () => {
 			if (navigator.share) {
 				await navigator.share({
@@ -537,7 +581,7 @@
 				initSmoothScroll();
 				setTimeout(() => {
 					loadGsap();
-				}, 100);
+				});
 			});
 		});
 
