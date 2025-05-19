@@ -543,7 +543,7 @@
 
             gsap.to(scrollable, {
                 scrollLeft: scrollable.scrollLeft + e.deltaY,
-                duration: 0.1,
+                duration: 0.5,
                 ease: "power2.out"
             });
 
@@ -556,23 +556,23 @@
         function handleTouchScroll(e) {
             if (!isInView(scrollable)) return;
 
-            const touch = e.touches[0];
-            const deltaX = touch.clientX - lastTouchX; // Detect left/right swipe
-            lastTouchX = touch.clientX; // Update last touch position
+            // const touch = e.touches[0];
+            // const deltaX = touch.clientX - lastTouchX; // Detect left/right swipe
+            // lastTouchX = touch.clientX; // Update last touch position
 
-            if (!isLocoStopped) stopLoco();
-            e.preventDefault();
+            // if (!isLocoStopped) stopLoco();
+            // e.preventDefault();
             updateClasses();
 
-            gsap.to(scrollable, {
-                scrollLeft: scrollable.scrollLeft - deltaX, // Adjust for natural swipe motion
-                duration: 0.1,
-                ease: "power2.out"
-            });
+            // gsap.to(scrollable, {
+            //     scrollLeft: scrollable.scrollLeft - deltaX, // Adjust for natural swipe motion
+            //     duration: 0.1,
+            //     ease: "power2.out"
+            // });
 
-            if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
-                if (isInView(scrollable)) startLoco();
-            }
+            // if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
+            //     if (isInView(scrollable)) startLoco();
+            // }
         }
 
         let lastTouchX = 0
