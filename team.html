@@ -14,9 +14,15 @@
         body {
             font-family: 'Lato', sans-serif;
         }
+
         .green {
-			color: #22c55e;
-		}
+            color: #22c55e;
+        }
+
+        .loader-text {
+            color: #ea4294;
+            font-family: 'Lato', sans-serif;
+        }
     </style>
 </head>
 
@@ -50,7 +56,7 @@
         </button>
 
         <!-- Menu Items -->
-       
+
         <ul class="text-center leading-[2.5rem]">
             <li class="mt-2 pb-3">
                 <a href="/index.html"
@@ -446,8 +452,7 @@
                     </div>
                     <!-- Second Row: Button & Social Media Icons -->
                     <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
-                        <button
-                        id="shareButton"
+                        <button id="shareButton"
                             class="bg-[#ffd628] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
                             <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
                         </button>
@@ -482,8 +487,9 @@
 
     <!-- loader -->
     <div id="loader"
-        class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
+        class="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
         <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-20 h-20 object-contain">
+        <span id="loading-text" class="loader-text text-sm font-bold mt-4 ml-3">0%</span>
     </div>
     <!--loader end  -->
     <script>
@@ -672,9 +678,42 @@
             const observer = new MutationObserver(checkBackgroundAndInvertImages);
             observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
         });
-        document.addEventListener("readystatechange", () => {
-            if (document.readyState === "complete") {
-                document.getElementById("loader").classList.add("hidden");
+        // Loading
+        document.addEventListener("DOMContentLoaded", () => {
+            const loader = document.getElementById("loader");
+            const loadingText = document.getElementById("loading-text");
+
+            const assets = document.images;
+            const totalAssets = assets.length;
+            let loadedCount = 0;
+
+            if (totalAssets === 0) {
+                finishLoading();
+            }
+            for (let i = 0; i < totalAssets; i++) {
+                const img = assets[i];
+
+                if (img.complete) {
+                    incrementLoaded();
+                } else {
+                    img.addEventListener('load', incrementLoaded);
+                    img.addEventListener('error', incrementLoaded);
+                }
+            }
+
+            function incrementLoaded() {
+                loadedCount++;
+                const percent = Math.round((loadedCount / totalAssets) * 100);
+                loadingText.textContent = `${percent}%`;
+
+                if (loadedCount === totalAssets) {
+                    finishLoading();
+                }
+            }
+
+            function finishLoading() {
+                loader.classList.add("opacity-0");
+                setTimeout(() => loader.classList.add("hidden"), 1000); // matches transition duration
             }
         });
     </script>

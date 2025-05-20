@@ -14,6 +14,7 @@
         body {
             font-family: 'Lato', sans-serif;
         }
+
         .green {
             color: #22c55e;
         }
@@ -22,6 +23,11 @@
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .loader-text {
+            color: #ea4294;
+            font-family: 'Lato', sans-serif;
         }
 
         .slide-in.visible {
@@ -327,14 +333,15 @@
 
         </div>
     </section>
-    
+
     <!-- loader -->
     <div id="loader"
-        class="fixed inset-0 bg-white flex items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
+        class="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
         <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-20 h-20 object-contain">
+        <span id="loading-text" class="loader-text text-sm font-bold mt-4 ml-3">0%</span>
     </div>
     <!--loader end  -->
-    
+
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
@@ -376,11 +383,45 @@
         });
     </script>
     <script>
-        document.addEventListener("readystatechange", () => {
-            if (document.readyState === "complete") {
-                document.getElementById("loader").classList.add("hidden");
+        // Loading
+        document.addEventListener("DOMContentLoaded", () => {
+            const loader = document.getElementById("loader");
+            const loadingText = document.getElementById("loading-text");
+
+            const assets = document.images;
+            const totalAssets = assets.length;
+            let loadedCount = 0;
+
+            if (totalAssets === 0) {
+                finishLoading();
+            }
+            for (let i = 0; i < totalAssets; i++) {
+                const img = assets[i];
+
+                if (img.complete) {
+                    incrementLoaded();
+                } else {
+                    img.addEventListener('load', incrementLoaded);
+                    img.addEventListener('error', incrementLoaded);
+                }
+            }
+
+            function incrementLoaded() {
+                loadedCount++;
+                const percent = Math.round((loadedCount / totalAssets) * 100);
+                loadingText.textContent = `${percent}%`;
+
+                if (loadedCount === totalAssets) {
+                    finishLoading();
+                }
+            }
+
+            function finishLoading() {
+                loader.classList.add("opacity-0");
+                setTimeout(() => loader.classList.add("hidden"), 1000); // matches transition duration
             }
         });
+      
         document.getElementById("shareButton").addEventListener("click", async () => {
             if (navigator.share) {
                 await navigator.share({
