@@ -1,22 +1,71 @@
 {
-    "rewrites": [
-      { "source": "/service", "destination": "/service.html" },
-      {"source":"/team","destination":"/team.html"},
-      {"source":"/contact","destination":"/contactus.html"},
-      {"source":"/about","destination":"/aboutus.html"},
-      {"source":"/work","destination":"/work.html"},
-       {"source":"/movie-posters","destination":"/movie-poster.html"}
-    ],
-    "redirects": [
-      { "source": "/old-page", "destination": "/new-page", "permanent": true }
-    ],
-    "cleanUrls": true,
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          { "key": "Cache-Control", "value": "max-age=0, must-revalidate" }
-        ]
-      }
-    ]
-  }
+  "rewrites": [
+    {
+      "source": "/service",
+      "destination": "/service.html"
+    },
+    {
+      "source": "/team",
+      "destination": "/team.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contactus.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/aboutus.html"
+    },
+    {
+      "source": "/work",
+      "destination": "/work.html"
+    },
+    {
+      "source": "/movie-posters",
+      "destination": "/movie-poster.html"
+    },
+    {
+      "source": "/film-posters",
+      "destination": "/film-posters.html"
+    },
+    {
+      "source": "/events",
+      "destination": "/events.html"
+    },
+    {
+      "source": "/title-animations",
+      "destination": "/title-animations.html"
+    },
+    {
+      "source": "/branding",
+      "destination": "/branding.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/products.html"
+    },
+    {
+      "source": "/advertising",
+      "destination": "/advertising.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/old-page",
+      "destination": "/new-page",
+      "permanent": true
+    }
+  ],
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
