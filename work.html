@@ -340,6 +340,7 @@
                 setTimeout(() => loader.classList.add("hidden"), 1000); // matches transition duration
             }
         });
+
         document.getElementById("shareButton").addEventListener("click", async () => {
             if (navigator.share) {
                 await navigator.share({
@@ -350,6 +351,7 @@
                 alert("Your browser does not support sharing.");
             }
         });
+
         const menuBtn = document.getElementById('menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -369,27 +371,32 @@
                 mobileMenu.classList.add('hidden');
             }
         });
+
         gsap.registerPlugin(ScrollTrigger);
+        let isImageAnimationLoaded = false;
 
-        // image on load effect
-        gsap.utils.toArray(".group").forEach((group) => {
-            let img = group.querySelector("img");
-            let overlay = group.querySelector("div");
+        function loadGsapAnimationOnLoad() {
+            // image on load effect
+            gsap.utils.toArray(".group").forEach((group) => {
+                let img = group.querySelector("img");
+                let overlay = group.querySelector("div");
 
-            // Disable hover effects initially
-            group.classList.add("pointer-events-none");
+                // Disable hover effects initially
+                group.classList.add("pointer-events-none");
 
-            gsap.from(img, {
-                clipPath: "inset(30%)",
-                opacity: 0,
-                duration: 1.5,
-                ease: "power2.out",
-                onComplete: () => {
-                    // Enable hover after animation finishes
-                    group.classList.remove("pointer-events-none");
-                }
+                gsap.from(img, {
+                    clipPath: "inset(30%)",
+                    opacity: 0,
+                    duration: 1.5,
+                    ease: "power2.out",
+                    onComplete: () => {
+                        // Enable hover after animation finishes
+                        group.classList.remove("pointer-events-none");
+                    }
+                });
             });
-        });
+            isImageAnimationLoaded = true;
+        }
 
         const scrollContainer = document.querySelector("[data-scroll-container]");
 
@@ -580,14 +587,6 @@
         document.addEventListener("wheel", handlingScroll, { passive: false }); // Mouse wheel
         document.addEventListener("touchmove", handleTouchScroll, { passive: false }); // Touch scrolling
         document.addEventListener("gesturechange", handleTouchScroll, { passive: false }); // Trackpad gestures
-
-
-
-        // Desktop: Handle wheel scrolling
-        document.addEventListener("wheel", (e) => {
-
-
-        }, { passive: false });
 
 
         window.addEventListener("load", () => {
