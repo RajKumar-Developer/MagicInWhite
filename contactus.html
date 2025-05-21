@@ -23,6 +23,75 @@
         .green {
             color: #22c55e;
         }
+
+        .post-card {
+            width: 46.75%;
+            aspect-ratio: 3 / 2;
+        }
+
+        .contact-heading {
+            font-size: clamp(0.75rem, 1vw, 2.25rem);
+            line-height: clamp(1rem, 1vw, 2.5rem);
+        }
+
+        .contact-img-rt {
+            width: clamp(3rem, 4vw, 6rem)
+        }
+
+        .contact-form-text {
+            font-size: clamp(0.75rem, 0.5vw, 1rem);
+        }
+
+        .space-dynamic {
+            margin-top: 1rem;
+        }
+
+        .element-space-dynamic {
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .post-card {
+                width: 75%;
+                height: 80vh;
+                /* Adjust height for small screens */
+            }
+        }
+
+
+
+        /* Medium screens (768px - 1200px) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+
+            .element-space-dynamic,
+            .space-dynamic {
+                margin-top: 0.25rem;
+                /* Equivalent to space-y-1 */
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .contact-heading {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+
+            .contact-img-rt {
+                width: clamp(3rem, 6vw, 6rem)
+            }
+
+            .contact-form-text {
+                font-size: clamp(0.75rem, 2vw, 1rem);
+            }
+
+            .space-dynamic {
+                margin-top: 2rem;
+            }
+
+            .element-space-dynamic {
+                margin-top: 2.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -98,9 +167,7 @@
     <!--contact design section-->
     <section id="tilt-section"
         class="w-full min-h-screen flex items-center justify-center bg-white py-10 sm:py-16 px-4 sm:px-6">
-        <div
-            class="post-card mx-auto  border shadow-2xl bg-white relative flex flex-col md:flex-row overflow-hidden w-[70vw] md:w-[45vw] aspect-[2/3] h-[75dvh] md:h-[55dvh]">
-            <!-- Left Side (Reduced Image Size) -->
+        <div class="post-card mx-auto  border shadow-2xl bg-white relative flex flex-col md:flex-row overflow-hidden">
             <div class="w-full md:w-1/2 flex items-center justify-center px-4 md:px-6 pt-6 pb-4 md:py-20 xl:py-28 border-b-2 md:border-b-0 md:border-r-0 border-dotted border-gray-400"
                 style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
                 <div id="image-container"
@@ -112,54 +179,54 @@
                 </div>
             </div>
 
-            <!-- Vertical Dotted Line (Hidden on Small Screens) -->
             <div
                 class="hidden md:block absolute left-1/2 top-[3rem] bottom-[3rem] border-l-2 border-[#272cf7] border-dotted vertical-line">
             </div>
 
             <!-- Right Side (Form Section) -->
-            <div class="w-full md:w-1/2 px-4 sm:px-6 pt-6 pb-10 flex flex-col justify-center relative">
+
+            <!-- Right Side (Form Section) -->
+            <div class="w-full md:w-1/2 px-4 sm:px-6 pt-10 pb-10 flex flex-col justify-center relative">
                 <div class="flex items-center justify-between">
-                    <h1
-                        class="text-xl  sm:text-2xl md:text-2xl lg:md:text-4xl font-light text-[#272cf7] leading-relaxed">
+                    <h1 class="contact-heading font-light text-[#272cf7]">
                         L E T S <br> T A L K
                     </h1>
 
-                    <img src="/contactpage_assets/stamp.png" alt="Logo" class="w-16 sm:w-20 md:w-24 mt-4 sm:mt-10">
+                    <img src="/contactpage_assets/stamp.png" alt="Logo"
+                        class="contact-img-rt shrink-0 aspect-square object-contain mt-2 sm:mt-4 md:mt-6">
+
                 </div>
 
-                <form class="mt-6 sm:mt-10 space-y-6 md:space-y-10">
-                    <!-- Name Field -->
+                <form class="space-dynamic">
                     <div>
                         <input type="text" name="name" placeholder="NAME"
-                            class="text-sm sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
+                            class="contact-form-text w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
                             required>
                         <div class="w-full border-b-2 border-dotted border-[#272cf7]"></div>
                     </div>
 
-                    <!-- Email Field -->
-                    <div>
+                    <div class="element-space-dynamic">
                         <input type="email" name="email" placeholder="EMAIL ADDRESS"
-                            class="text-sm sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
+                            class="contact-form-text w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
                             required>
                         <div class="w-full border-b-2 border-dotted border-[#272cf7]"></div>
                     </div>
 
-                    <!-- Message Field -->
-                    <div>
+                    <div class="element-space-dynamic">
                         <textarea name="message" rows="1" placeholder="YOUR MESSAGE FOR US"
-                            class="text-sm sm:text-base w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
+                            class="contact-form-text w-full border-none outline-none bg-transparent text-[#272cf7] placeholder:text-[#272cf7] focus:ring-0"
                             required></textarea>
                         <div class="w-full border-b-2 border-dotted border-[#272cf7]"></div>
                     </div>
 
                     <!-- Send Button -->
-                    <div class="mt-6 md:mt-10 flex justify-end">
-                        <button type="submit">
+                    <div class="flex justify-end ">
+                        <button type="submit" class="aspect-square" style="width: clamp(4rem, 6vw, 6rem);">
                             <img src="/contactpage_assets/send-button.png" alt="Send Button"
-                                class="w-16 sm:w-20 md:w-24">
+                                class="w-full h-full object-contain">
                         </button>
                     </div>
+
                 </form>
             </div>
         </div>
