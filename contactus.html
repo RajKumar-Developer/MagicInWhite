@@ -30,7 +30,7 @@
         }
 
         .contact-heading {
-            font-size: clamp(0.75rem, 1vw, 2.25rem);
+            font-size: clamp(1rem, 1vw, 2.25rem);
             line-height: clamp(1rem, 1vw, 2.5rem);
         }
 
@@ -39,7 +39,7 @@
         }
 
         .contact-form-text {
-            font-size: clamp(0.75rem, 0.5vw, 1rem);
+            font-size: clamp(0.60rem, 0.5vw, 1rem);
         }
 
         .space-dynamic {
@@ -49,18 +49,18 @@
         .element-space-dynamic {
             margin-top: 1rem;
         }
+        
 
-        @media (max-width: 768px) {
+        /* Small screens (max-width: 768px) */
+        @media (max-width: 767px) {
             .post-card {
-                width: 75%;
+                width: 60%;
                 height: 80vh;
-                /* Adjust height for small screens */
+                aspect-ratio: 3 / 2;
             }
         }
 
-
-
-        /* Medium screens (768px - 1200px) */
+        /* Medium screens (768px - 1199px) */
         @media (min-width: 768px) and (max-width: 1199px) {
 
             .element-space-dynamic,
@@ -70,14 +70,27 @@
             }
         }
 
-        @media (min-width: 1200px) {
+        /* Large screens (1200px - 1460px) */
+        @media (min-width: 1200px) and (max-width: 1460px) {
+            .contact-heading {
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1461px) {
             .contact-heading {
                 font-size: 2.25rem;
                 line-height: 2.5rem;
             }
+        }
+
+        /* Extra large screens (1200px and above) */
+        @media (min-width: 1200px) {
 
             .contact-img-rt {
-                width: clamp(3rem, 6vw, 6rem)
+                width: clamp(3rem, 6vw, 6rem);
+                /* Added missing semicolon */
             }
 
             .contact-form-text {
