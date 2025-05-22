@@ -25,10 +25,6 @@
       "destination": "/movie-poster.html"
     },
     {
-      "source": "/film-posters",
-      "destination": "/film-posters.html"
-    },
-    {
       "source": "/events",
       "destination": "/events.html"
     },

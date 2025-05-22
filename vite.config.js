@@ -11,7 +11,6 @@ export default defineConfig({
         about: 'aboutus.html',
         work: 'work.html',
         'movie-posters': 'movie-poster.html',
-        'film-posters': 'film-posters.html',
         events: 'events.html',
         'title-animations': 'title-animations.html',
         branding: 'branding.html',
