@@ -51,13 +51,33 @@
         }
 
 
+
+
         /* Small screens (max-width: 768px) */
         @media (max-width: 767px) {
             .post-card {
-                width: 60%;
-                height: 80vh;
-                aspect-ratio: 3 / 2;
+                width: 300px;
+                height: 75vh;
             }
+
+            .contact-heading {
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+            }
+
+            .contact-img-rt {
+                width: 4rem;
+                /* Added missing semicolon */
+            }
+
+            @media (max-width: 375px) {
+
+                /* Styles for iPhone SE and similar small screens */
+                .post-card {
+                    height: 90vh;
+                }
+            }
+
         }
 
         /* Medium screens (768px - 1199px) */
@@ -184,7 +204,7 @@
             <div class="w-full md:w-1/2 flex items-center justify-center px-4 md:px-6 pt-6 pb-4 md:py-20 xl:py-28 border-b-2 md:border-b-0 md:border-r-0 border-dotted border-gray-400"
                 style="border-image: repeating-linear-gradient(to right, #000 0, #000 1px, transparent 1px, transparent 7px) 100% 1;">
                 <div id="image-container"
-                    class="relative w-[170px] sm:w-[200px] md:w-[240px] lg:w-[240px] aspect-[1/1.2]">
+                    class="relative w-[200px] sm:w-[200px] md:w-[240px] lg:w-[240px] aspect-[1/1.2]">
                     <img id="bg-img" src="/contactpage_assets/Vector_Smart_Object.svg" alt="Background"
                         class="image-to-move absolute top-2 right-0 w-[75%] h-full object-contain z-0" />
                     <img id="fg-img" src="/contactpage_assets/Horse.svg" alt="Foreground"
