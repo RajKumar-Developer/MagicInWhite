@@ -21,6 +21,7 @@
 			padding: 35px 10px 24px 10px;
 		}
 
+
 		/* Optional: Adding a slight tilt effect */
 		.grid img:hover {
 			/* transform: scale(1) rotateX(8deg) rotateY(8deg); */
@@ -163,7 +164,7 @@
 				<p class="text-xs sm:text-sm md:text-base leading-loose animate-text">
 					LOGO DESIGN, BRAND POSITIONING, BRAND STRATEGY, NAMING & TAGLINE DEVELOPMENT, REBRANDING
 				</p>
-				<button class="mt-4">
+				<button class="mt-4" onclick="openServiceModal('branding-popup')">
 					<img src="/services-assets/explore-button-white.png" alt="Explore"
 						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
@@ -188,7 +189,7 @@
 				<p class="text-right text-xs sm:text-sm md:text-base leading-loose animate-text">
 					PRINT, DIGITAL, FILM, PHOTOGRAPHY AND ART DIRECTION, OUT-OF-HOME ADVERTISING.
 				</p>
-				<button class="mt-4 ">
+				<button class="mt-4 " onclick="openServiceModal('ads-popup')">
 					<img src="/services-assets/explore-button-blue.png" alt="Explore"
 						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
@@ -205,7 +206,7 @@
 					WIREFRAMING,
 					MOTION GRAPHICS & ANIMATION
 				</p>
-				<button class="mt-4">
+				<button class="mt-4" onclick="openServiceModal('designer-popup')">
 					<img src="/services-assets/explore-button-white.png" alt="Explore"
 						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
@@ -230,7 +231,7 @@
 				<p class="text-xs sm:text-sm md:text-base leading-loose animate-text">
 					TITLE ANIMATION, STOP MOTION ANIMATION, MOVIE TITLE SEQUENCE, 2D ANIMATION & 3D ANIMATION
 				</p>
-				<button class="mt-4">
+				<button class="mt-4" onclick="openServiceModal('film-production-popup')">
 					<img src="/services-assets/explore-button-white.png" alt="Explore"
 						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
@@ -246,7 +247,7 @@
 					SOCIAL MEDIA STRATEGY AND MANAGEMENT, CONTENT CREATION - COPY, GRAPHICS AND VIDEO, INFLUENCER
 					MARKETING
 				</p>
-				<button class="mt-4">
+				<button class="mt-4" onclick="openServiceModal('ui-ux-popup')">
 					<img src="/services-assets/explore-button-white.png" alt="Explore"
 						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
@@ -272,7 +273,7 @@
 					360 MARKETING CAMPAIGNS, GUERRILLA MARKETING AND EXPERIENTIAL MARKETING, SPONSORSHIP AND
 					PARTNERSHIPS
 				</p>
-				<button class="mt-4">
+				<button class="mt-4" onclick="openServiceModal('integrated-popup')">
 					<img src="/services-assets/explore-button-blue.png" alt="Explore"
 						class="w-16 sm:w-20 md:w-24 animate-text">
 				</button>
@@ -301,39 +302,39 @@
 						<div class="w-full order-1 md:order-none">
 							<h3 class="font-semibold">HOME</h3>
 							<ul class="space-y-1">
-                                <li class="cursor-pointer" onclick="window.location.href='/aboutus.html'">Why us</li>
+								<li class="cursor-pointer" onclick="window.location.href='/aboutus.html'">Why us</li>
 							</ul>
 						</div>
 						<div class="w-full">
 							<h3 class="font-semibold">WORK</h3>
 							<ul class="space-y-1">
-							    <li class="cursor-pointer" onclick="window.location.href='/movie-poster.html'">Film
-                                    Posters</li>
-                                <li class="cursor-pointer" onclick="window.location.href='/events.html'">Events</li>
-                                <li class="cursor-pointer" onclick="window.location.href='/title-animations.html'">Title
-                                    Animations</li>
-                                <li class="cursor-pointer" onclick="window.location.href='/branding.html'">Branding</li>
-                                <li class="cursor-pointer" onclick="window.location.href='/products.html'">Products</li>
-                                <li class="cursor-pointer" onclick="window.location.href='/advertising.html'">
-                                    Advertising</li>
+								<li class="cursor-pointer" onclick="window.location.href='/movie-poster.html'">Film
+									Posters</li>
+								<li class="cursor-pointer" onclick="window.location.href='/events.html'">Events</li>
+								<li class="cursor-pointer" onclick="window.location.href='/title-animations.html'">Title
+									Animations</li>
+								<li class="cursor-pointer" onclick="window.location.href='/branding.html'">Branding</li>
+								<li class="cursor-pointer" onclick="window.location.href='/products.html'">Products</li>
+								<li class="cursor-pointer" onclick="window.location.href='/advertising.html'">
+									Advertising</li>
 							</ul>
 						</div>
 						<div class="w-full">
 							<h3 class="font-semibold">SERVICE</h3>
-                            <ul class="space-y-1">
-                                <li>Branding</li>
-                                <li>Advertising</li>
-                                <li>Film Production</li>
-                                <li>Graphic Design</li>
-                                <li>Social Media Marketing</li>
-                                <li>Integrated Marketing</li>
-                            </ul>
+							<ul class="space-y-1">
+								<li>Branding</li>
+								<li>Advertising</li>
+								<li>Film Production</li>
+								<li>Graphic Design</li>
+								<li>Social Media Marketing</li>
+								<li>Integrated Marketing</li>
+							</ul>
 						</div>
 						<div class="w-full">
 							<h3 class="font-semibold">TEAM</h3>
 							<ul class="space-y-1">
-                                <li class="cursor-pointer" onclick="window.location.href='/team.html'">Meet the Team
-                                </li>
+								<li class="cursor-pointer" onclick="window.location.href='/team.html'">Meet the Team
+								</li>
 							</ul>
 						</div>
 						<div class="w-full">
@@ -390,10 +391,731 @@
 		<span id="loading-text" class="loader-text text-sm font-bold mt-4 ml-3">0%</span>
 	</div>
 	<!--loader end  -->
+
+	<!-- branding Modal -->
+	<div id="branding-popup" class="hidden fixed inset-0 bg-black bg-opacity-65 overflow-y-auto px-4 pt-20 pb-16">
+		<div class="flex items-center justify-center min-h-full">
+			<div class="relative bg-white  max-w-4xl mx-auto p-5">
+				<button onclick="closeServiceModal('branding-popup')"
+					class="sm:flex absolute right-5 top-5 md:top-10 md:right-10 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl z-50">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+						class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/logo.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">logo design</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/knight.png" alt="knight asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">brand strategy</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/positioning.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">brand positioning</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/naming.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">naming & tagline</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10 mb-20">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/rebrand.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">rebranding</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- branding Modal end -->
+
+	<!-- ads Modal -->
+	<div id="ads-popup" class="hidden fixed inset-0 bg-black bg-opacity-65 overflow-y-auto px-4 pt-20 pb-16">
+		<div class="flex items-center justify-center min-h-full">
+			<div class="relative bg-white  max-w-4xl mx-auto p-5">
+				<button onclick="closeServiceModal('ads-popup')"
+					class="sm:flex absolute right-5 top-5 md:top-10 md:right-10 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl z-50">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+						class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/print.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">print & digital</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/film.png" alt="knight asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">film</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/photo.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">PHOTOGRAPHY</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/art.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">art direction</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10 mb-20">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/blimp.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">ooh</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ads Modal end -->
+
+	<!-- designer Modal -->
+	<div id="designer-popup" class="hidden fixed inset-0 bg-black bg-opacity-65 overflow-y-auto px-4 pt-20 pb-16">
+		<div class="flex items-center justify-center min-h-full">
+			<div class="relative bg-white  max-w-4xl mx-auto p-5">
+				<button onclick="closeServiceModal('designer-popup')"
+					class="sm:flex absolute right-5 top-5 md:top-10 md:right-10 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl z-50">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+						class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/wand.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">graphic design</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/jack.png" alt="knight asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">packaging design</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/web.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">website deesign and development</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/rgb.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">ui / ux design</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/wireframe.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">prototyping & wireframing</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10 mb-20">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/animation.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">motion graphics and animation</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- designer Modal end -->
+
+	<!-- Film Production Modal -->
+	<div id="film-production-popup"
+		class="hidden fixed inset-0 bg-black bg-opacity-65 overflow-y-auto px-4 pt-20 pb-16">
+		<div class="flex items-center justify-center min-h-full">
+			<div class="relative bg-white  max-w-4xl mx-auto p-5">
+				<button onclick="closeServiceModal('film-production-popup')"
+					class="sm:flex absolute right-5 top-5 md:top-10 md:right-10 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl z-50">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+						class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/title.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">Title Animation</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/stopmotion.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">stop motion</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/sequence.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">movie title sequence</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex flex-col md:flex-row w-full mt-10 mb-20">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/sequence.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">2d & 3d animation</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Film Production Modal end -->
+
+
+	<!-- UI / UX Modal -->
+	<div id="ui-ux-popup" class="hidden fixed inset-0 bg-black bg-opacity-65 overflow-y-auto px-4 pt-20 pb-16">
+		<div class="flex items-center justify-center min-h-full">
+			<div class="relative bg-white  max-w-4xl mx-auto p-5">
+				<button onclick="closeServiceModal('ui-ux-popup')"
+					class="sm:flex absolute right-5 top-5 md:top-10 md:right-10 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl z-50">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+						class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/verified.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">social media management</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+						</p>
+					</div>
+				</div>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/content.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">content creation</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/play.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">graphics & video</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex flex-col md:flex-row w-full mt-10 mb-20">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/influencer.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">INFLUENCER marketing</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+							of type and scrambled it to make a type specimen book. It has survived not only five
+							centuries,
+							but also the leap into electronic typesetting, remaining essentially unchanged. It was
+							popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+							passages,
+							and more recently with desktop publishing software like Aldus PageMaker including versions
+							of
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- UI / UX Modal end -->
+	<!-- INTEGRATED MARKETING  Modal -->
+	<div id="integrated-popup" class="hidden fixed inset-0 bg-black bg-opacity-65 overflow-y-auto px-4 pt-20 pb-16">
+		<div class="flex items-center justify-center min-h-full">
+			<div class="relative bg-white  max-w-4xl mx-auto p-5">
+				<button onclick="closeServiceModal('integrated-popup')"
+					class="sm:flex absolute right-5 top-5 md:top-10 md:right-10 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl z-50">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+						class="w-6 h-6">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/360.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">360 marketing CAMPAIGNS</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+							galley
+						</p>
+					</div>
+				</div>
+
+				<div class="flex flex-col md:flex-row w-full mt-10">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/guerrilla.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">GUERRILLA marketing</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+
+				<div class="flex flex-col md:flex-row w-full mt-10 mb-20">
+					<div class="md:w-[30%] w-full flex items-center justify-start md:justify-center p-4">
+						<img src="/services-assets/pop-assets/sponsor.png" alt="service asset"
+							class="w-24 h-24 object-contain" />
+					</div>
+
+					<div class="md:w-[70%] w-full p-4 flex flex-col justify-center pr-0 md:pr-20">
+						<h2 class="uppercase text-4xl text-[#272cf7] mb-5">sponsorships & partnerships</h2>
+						<p class="text-sm text-gray-700">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+							been
+							the industry's standard dummy text ever since the 1500s
+							Lorem Ipsum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- INTEGRATED MARKETING Modal end -->
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 	<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+
 
 
 	<script>
@@ -499,6 +1221,14 @@
 				getDirection: true
 			});
 			locoScrollInstance = locoScroll;
+
+			// load popup from url
+			const urlParams = new URLSearchParams(window.location.search);
+			const activeWorkDetail = urlParams.get('details');
+
+			if (activeWorkDetail) {
+				openServiceModal(activeWorkDetail)
+			}
 
 			ScrollTrigger.scrollerProxy(scrollContainer, {
 				scrollTop(value) {
@@ -728,6 +1458,20 @@
 		});
 	</script>
 
+	<script>
+
+		function openServiceModal(id) {
+			const modal = document.getElementById(id);
+			modal.classList.remove('hidden');
+			if (locoScrollInstance) locoScrollInstance.stop();
+		}
+
+		function closeServiceModal(id) {
+			document.getElementById(id).classList.add('hidden');
+			if (locoScrollInstance) locoScrollInstance.start();
+		}
+
+	</script>
 
 </body>
 
