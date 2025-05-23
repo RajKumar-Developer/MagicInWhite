@@ -11,6 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -53,6 +58,11 @@
             /* Internet Explorer 10+ */
             scrollbar-width: none;
             /* Firefox */
+        }
+
+        .no-pointer-events {
+            pointer-events: none;
+            /* Disables mouse interactions, including clicks */
         }
     </style>
 </head>
@@ -143,57 +153,75 @@
         </div>
     </section>
     <!-- Section work gallery -->
-    <section id="scrollable-div" class="w-full overflow-x-auto whitespace-nowrap scrollbar-hide no-scrollbar pb-4 pt-4"
+    <section id="scrollable-div"
+        class="swiper horizontal-scroll w-full overflow-x-auto whitespace-nowrap scrollbar-hide no-scrollbar pb-4 pt-4"
         data-scroll-section>
-        <div class="flex flex-nowrap gap-4">
-            <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group" href="/advertising.html">
-                <img src="/our_works/Advertising.webp" class="w-full h-full object-cover " />
-                <div
-                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span class="text-white text-3xl font-bold lat">Advertising</span>
-                </div>
-            </a>
+        <div class="swiper-wrapper flex flex-nowrap gap-4 " id="scrollable-div-wrapper">
+            <div class="w-auto swiper-slide">
+                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group"
+                    href="/advertising.html">
+                    <img src="/our_works/Advertising.webp" class="w-full h-full object-cover " />
+                    <div
+                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white text-3xl font-bold lat">Advertising</span>
+                    </div>
+                </a>
+            </div>
+            <div class="w-auto swiper-slide">
 
-            <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group" href="/branding.html">
-                <img src="/our_works/Branding.webp" class="w-full h-full object-cover filter blur-sm" />
-                <div
-                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hidden">
-                    <span class="text-white text-3xl font-bold">Branding</span>
-                </div>
-            </a>
+                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+                    href="/branding.html">
+                    <img src="/our_works/Branding.webp" class="w-full h-full object-cover filter blur-sm" />
+                    <div
+                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hidden">
+                        <span class="text-white text-3xl font-bold">Branding</span>
+                    </div>
+                </a>
+            </div>
+            <div class="w-auto swiper-slide">
 
-            <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group" href="/events.html">
-                <img src="/our_works/Events.webp" class="w-full h-full object-cover filter blur-sm" />
-                <div
-                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span class="text-white text-3xl font-bold">Events</span>
-                </div>
-            </a>
 
-            <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group" href="/movie-poster.html">
-                <img src="/our_works/MoviePosters.webp" class="w-full h-full object-cover filter blur-sm" />
-                <div
-                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span class="text-white text-3xl font-bold">Movie Posters</span>
-                </div>
-            </a>
+                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+                    href="/events.html">
+                    <img src="/our_works/Events.webp" class="w-full h-full object-cover filter blur-sm" />
+                    <div
+                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white text-3xl font-bold">Events</span>
+                    </div>
+                </a>
+            </div>
+            <div class="w-auto swiper-slide">
 
-            <a class="relative w-full sm:w-[50vw]  h-screen flex-shrink-0 inline-block group" href="/products.html">
-                <img src="/our_works/Products.webp" class="w-full h-full object-cover filter blur-sm" />
-                <div
-                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span class="text-white text-3xl font-bold">Products</span>
-                </div>
-            </a>
+                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+                    href="/movie-poster.html">
+                    <img src="/our_works/MoviePosters.webp" class="w-full h-full object-cover filter blur-sm" />
+                    <div
+                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white text-3xl font-bold">Movie Posters</span>
+                    </div>
+                </a>
+            </div>
+            <div class="w-auto swiper-slide">
+                <a class="relative w-full sm:w-[50vw]  h-screen flex-shrink-0 inline-block group no-pointer-events"
+                    href="/products.html">
+                    <img src="/our_works/Products.webp" class="w-full h-full object-cover filter blur-sm" />
+                    <div
+                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white text-3xl font-bold">Products</span>
+                    </div>
+                </a>
+            </div>
+            <div class="w-[60%] swiper-slide">
 
-            <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group"
-                href="/title-animations.html">
-                <img src="/our_works/TItleAnimations.webp" class="w-full h-full object-cover filter blur-sm" />
-                <div
-                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span class="text-white text-3xl font-bold">Title Animations</span>
-                </div>
-            </a>
+                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+                    href="/title-animations.html">
+                    <img src="/our_works/TItleAnimations.webp" class="w-full h-full object-cover filter blur-sm" />
+                    <div
+                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-white text-3xl font-bold">Title Animations</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -226,7 +254,7 @@
                             </ul>
                         </div>
                         <div class="w-full">
-                              <h3 class="font-semibold">
+                            <h3 class="font-semibold">
                                 <a class="hover:text-yellow-400" href="/work.html">WORK</a>
                             </h3>
                             <ul class="space-y-1">
@@ -277,7 +305,7 @@
                             </ul>
                         </div>
                         <div class="w-full">
-                             <h3 class="font-semibold"><a class="hover:text-yellow-400" href="/team.html">TEAM</a></h3>
+                            <h3 class="font-semibold"><a class="hover:text-yellow-400" href="/team.html">TEAM</a></h3>
                             <ul class="space-y-1">
                                 <li class="cursor-pointer">
                                     <a class="hover:text-yellow-400" href="/team.html">Meet the Team</a>
@@ -331,7 +359,6 @@
         </div>
     </section>
 
-
     <!-- loader -->
     <div id="loader"
         class="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
@@ -343,7 +370,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-
     <script>
         let locoScrollInstance;
 
@@ -418,32 +444,9 @@
         });
 
         gsap.registerPlugin(ScrollTrigger);
-        let isImageAnimationLoaded = false;
-
-        function loadGsapAnimationOnLoad() {
-            // image on load effect
-            gsap.utils.toArray(".group").forEach((group) => {
-                let img = group.querySelector("img");
-                let overlay = group.querySelector("div");
-
-                // Disable hover effects initially
-                group.classList.add("pointer-events-none");
-
-                gsap.from(img, {
-                    clipPath: "inset(30%)",
-                    opacity: 0,
-                    duration: 1.5,
-                    ease: "power2.out",
-                    onComplete: () => {
-                        // Enable hover after animation finishes
-                        group.classList.remove("pointer-events-none");
-                    }
-                });
-            });
-            isImageAnimationLoaded = true;
-        }
 
         const scrollContainer = document.querySelector("[data-scroll-container]");
+        // Select the scroll container
 
         function initSmoothScroll() {
 
@@ -490,10 +493,12 @@
                     navbar.classList.add("opacity-100");
                 }
 
-                lastScrollY = currentScrollY;
 
+                lastScrollY = currentScrollY;
                 ScrollTrigger.update();
             });
+
+
 
             // locoScroll.on("scroll", ScrollTrigger.update);
             ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
@@ -502,47 +507,6 @@
                 ScrollTrigger.refresh();
             });
         }
-
-        // horizontal scroll
-        const scrollable = document.getElementById('scrollable-div');
-        let isLocoStopped = false;
-        let startX = 0;
-
-        // Check if the element is in the viewport
-        const isMobile = window.innerWidth <= 768;
-
-        function isInView(el) {
-            const rect = el.getBoundingClientRect();
-            return rect.top <= 0;
-        }
-
-
-        // Check if horizontal scroll reached start
-        function isAtStart(el) {
-            return el.scrollLeft <= 0;
-        }
-
-        // Check if horizontal scroll reached end
-        function isAtEnd(el) {
-            return el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1;
-        }
-
-        function stopLoco() {
-            if (!isLocoStopped) {
-                locoScrollInstance.stop();
-                isLocoStopped = true;
-                locoScrollInstance.update();
-            }
-        }
-
-        function startLoco() {
-            if (isLocoStopped) {
-                locoScrollInstance.start();
-                isLocoStopped = false;
-                locoScrollInstance.update();
-            }
-        }
-
         function getClosestToLeft() {
             const links = document.querySelectorAll("#scrollable-div a");
             let closestElement = null;
@@ -572,75 +536,53 @@
                 if (link === closest) {
                     img.classList.remove("blur-sm"); // Remove class from closest image
                     overlayDiv.classList.remove("hidden"); // Remove class from closest div
+                    link.classList.remove('no-pointer-events'); // Prevent clicks on other links
+
                 } else {
                     img.classList.add("blur-sm"); // Add class to all other images
                     overlayDiv.classList.add("hidden"); // Add class to all other divs
+                    link.classList.add('no-pointer-events'); // Prevent clicks on other links
+
                 }
 
             });
         }
 
-        function handlingScroll(e) {
-            if (!isInView(scrollable)) return;
-
-            const isScrollingDown = e.deltaY > 0;
-            const isScrollingUp = e.deltaY < 0;
-
-            if (!isLocoStopped) {
-                stopLoco(); // Stop LocoScroll only if it's not already stopped
-            }
-
-            e.preventDefault();
-            updateClasses()
-
-            gsap.to(scrollable, {
-                scrollLeft: scrollable.scrollLeft + e.deltaY,
-                duration: 0.5,
-                ease: "power2.out"
-            });
-
-
-            if ((isScrollingDown && isAtEnd(scrollable)) || (isScrollingUp && isAtStart(scrollable))) {
-                startLoco();
-            }
-        }
-
-        function handleTouchScroll(e) {
-            if (!isInView(scrollable)) return;
-
-            // const touch = e.touches[0];
-            // const deltaX = touch.clientX - lastTouchX; // Detect left/right swipe
-            // lastTouchX = touch.clientX; // Update last touch position
-
-            // if (!isLocoStopped) stopLoco();
-            // e.preventDefault();
-            updateClasses();
-
-            // gsap.to(scrollable, {
-            //     scrollLeft: scrollable.scrollLeft - deltaX, // Adjust for natural swipe motion
-            //     duration: 0.1,
-            //     ease: "power2.out"
-            // });
-
-            // if ((deltaX > 0 && isAtEnd(scrollable)) || (deltaX < 0 && isAtStart(scrollable))) {
-            //     if (isInView(scrollable)) startLoco();
-            // }
-        }
-
-        let lastTouchX = 0
-
-        document.addEventListener("wheel", handlingScroll, { passive: false }); // Mouse wheel
-        document.addEventListener("touchmove", handleTouchScroll, { passive: false }); // Touch scrolling
-        document.addEventListener("gesturechange", handleTouchScroll, { passive: false }); // Trackpad gestures
-
 
         window.addEventListener("load", () => {
             imagesLoaded(scrollContainer, { background: true }, () => {
-                initSmoothScroll();
+                // initSmoothScroll();
             });
         });
 
+        document.addEventListener("DOMContentLoaded", () => {
+            const swiper = new Swiper(".swiper", {
+                direction: "horizontal",
+                slidesPerView: "auto",
+                freeMode: true, // Allows smooth scrolling
+                mousewheel: true, // Enables mouse wheel scrolling
+                grabCursor: false, // Shows grab cursor for better UX
+                touchEventsTarget: "container", // Enables touch gestures
+            });
+
+            swiper.on("reachEnd", () => {
+                window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+            });
+
+            swiper.on("reachBeginning", () => {
+                window.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
+            });
+
+            // ✅ Listen for Swiper scroll events and call updateClasses()
+            swiper.on("scroll", () => {
+                updateClasses();
+            });
+
+
+        });
+
     </script>
+
     <script>
         // Enhanced function to check background section color and invert images if needed
         function checkBackgroundAndInvertImages() {
@@ -743,8 +685,10 @@
 
         // Run on page load
         document.addEventListener('DOMContentLoaded', function () {
+            window.addEventListener('scroll', checkBackgroundAndInvertImages);
 
-            // Run on window resize
+            // Run on window resize - comment if locomotive scroll enabled
+            checkBackgroundAndInvertImages()
             window.addEventListener('resize', checkBackgroundAndInvertImages);
 
             // Observe changes to the navbar element
