@@ -22,8 +22,8 @@
         }
 
         .swiper {
-            touch-action: pan-y;
-            /* ✅ Allows vertical scrolling */
+            touch-action: pan-x;
+            /* ✅ Enables horizontal scrolling */
         }
 
         body {
@@ -591,22 +591,20 @@
                 freeMode: true, // Allows smooth scrolling
                 mousewheel: true, // Enables mouse wheel scrolling
                 grabCursor: false, // Shows grab cursor for better UX
-                touchEventsTarget: "container", // Enables touch gestures
+                touchEventsTarget: "wrapper", // Enables touch gestures
                 simulateTouch: true, // ✅ Enables touch interactions
                 on: {
+                    touchMove: () => {
+                        console.log('Moblie Touch happening')
+                        updateClasses(); // ✅ Calls function while touch movement is happening
+                    },
                     touchEnd: () => {
                         console.log('Moblie Touch end')
                         updateClasses(); // ✅ Calls function when touch interaction stops
                     },
                 }
-            });
 
-            swiper.on("touchMove", (e) => {
-                console.log('Moblie Touch check')
-                e.preventDefault(); // ✅ Prevents unwanted blocking
-                updateClasses(); // ✅ Calls function while touch movement is happening
             });
-
 
             swiper.on("reachEnd", () => {
                 window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
