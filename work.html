@@ -211,7 +211,7 @@
                     </div>
                 </a>
             </div>
-            <div class="w-[60%] swiper-slide">
+            <div class="w-full swiper-slide">
 
                 <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
                     href="/title-animations.html">
@@ -575,6 +575,12 @@
 
             // ✅ Listen for Swiper scroll events and call updateClasses()
             swiper.on("scroll", () => {
+                updateClasses();
+            });
+            swiper.on("touchMove", () => {
+                updateClasses();
+            });
+            swiper.on("touchEnd", () => {
                 updateClasses();
             });
 
