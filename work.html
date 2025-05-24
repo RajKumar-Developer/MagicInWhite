@@ -563,6 +563,18 @@
                 mousewheel: true, // Enables mouse wheel scrolling
                 grabCursor: false, // Shows grab cursor for better UX
                 touchEventsTarget: "container", // Enables touch gestures
+                on: {
+                    touchMove: () => {
+                        console.log('Moblie Touch')
+                        updateClasses(); // ✅ Calls function while touch movement is happening
+                    },
+                    touchEnd: () => {
+                        console.log('Moblie Touch end')
+                        updateClasses(); // ✅ Calls function when touch interaction stops
+                    }
+                }
+
+
             });
 
             swiper.on("reachEnd", () => {
@@ -577,12 +589,7 @@
             swiper.on("scroll", () => {
                 updateClasses();
             });
-            swiper.on("touchMove", () => {
-                updateClasses();
-            });
-            swiper.on("touchEnd", () => {
-                updateClasses();
-            });
+
 
 
         });
