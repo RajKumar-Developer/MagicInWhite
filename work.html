@@ -593,19 +593,20 @@
                 grabCursor: false, // Shows grab cursor for better UX
                 touchEventsTarget: "container", // Enables touch gestures
                 simulateTouch: true, // ✅ Enables touch interactions
-
                 on: {
-                    touchMove: () => {
-                        console.log('Moblie Touch')
-                        updateClasses(); // ✅ Calls function while touch movement is happening
-                    },
                     touchEnd: () => {
                         console.log('Moblie Touch end')
                         updateClasses(); // ✅ Calls function when touch interaction stops
                     },
                 }
-
             });
+
+            swiper.on("touchMove", (e) => {
+                console.log('Moblie Touch check')
+                e.preventDefault(); // ✅ Prevents unwanted blocking
+                updateClasses(); // ✅ Calls function while touch movement is happening
+            });
+
 
             swiper.on("reachEnd", () => {
                 window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
