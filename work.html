@@ -585,26 +585,55 @@
             const gallerySectionWrapper = document.querySelector("#scrollable-div");
 
 
+            // const swiper = new Swiper(".swiper", {
+            //     direction: "horizontal",
+            //     slidesPerView: "auto",
+            //     freeMode: true, // Allows smooth scrolling
+            //     mousewheel: true, // Enables mouse wheel scrolling
+            //     grabCursor: false, // Shows grab cursor for better UX
+            //     touchEventsTarget: "container",
+            //     simulateTouch: true,
+            //     allowTouchMove: true,
+            //     touchMoveStopPropagation: false,
+            //     on: {
+            //         touchMove: () => {
+            //             console.log('Moblie Touch happening')
+            //         },
+            //         touchEnd: () => {
+            //             console.log('Moblie Touch end')
+            //             updateClasses(); // ✅ Calls function when touch interaction stops
+            //         },
+            //     }
+
+            // });
+
             const swiper = new Swiper(".swiper", {
-                direction: "horizontal",
+                direction: "horizontal", // ✅ Enables horizontal scrolling
                 slidesPerView: "auto",
-                freeMode: true, // Allows smooth scrolling
-                mousewheel: true, // Enables mouse wheel scrolling
-                grabCursor: false, // Shows grab cursor for better UX
-                touchEventsTarget: "wrapper", // Enables touch gestures
-                simulateTouch: true, // ✅ Enables touch interactions
+                freeMode: true, // ✅ Allows smooth free scrolling
+                mousewheel: {
+                    forceToAxis: true, // ✅ Ensures scrolling only happens in one direction
+                    releaseOnEdges: true, // ✅ Allows page scrolling when Swiper reaches edges
+                    sensitivity: 1,
+                },
+                grabCursor: false,
+                touchEventsTarget: "container",
+                simulateTouch: true,
+                allowTouchMove: true,
+                touchMoveStopPropagation: false,
+                touchStartPreventDefault: true, // ✅ Prevents vertical scrolling takeover
                 on: {
                     touchMove: () => {
                         console.log('Moblie Touch happening')
-                        updateClasses(); // ✅ Calls function while touch movement is happening
                     },
                     touchEnd: () => {
                         console.log('Moblie Touch end')
                         updateClasses(); // ✅ Calls function when touch interaction stops
                     },
                 }
-
             });
+
+
 
             swiper.on("reachEnd", () => {
                 window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
