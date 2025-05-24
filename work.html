@@ -17,7 +17,6 @@
         body {
             font-family: 'Lato', sans-serif;
             overflow-x: hidden;
-
         }
 
         .bg-horse {
@@ -59,7 +58,7 @@
             width: fit-content;
             display: flex;
             flex-wrap: nowrap;
-            pointer-events: none;
+            /* pointer-events: none; */
         }
     </style>
 </head>
@@ -150,68 +149,58 @@
         </div>
     </section>
     <!-- Section work gallery -->
-    <div class="racesWrapper">
+    <div class="racesWrapper overflow-x-auto whitespace-nowrap scrollbar-hide no-scrollbar">
         <div class="races" id="scrollable-div">
-             <div class="p-2">
-                <a class="w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group"
-                    href="/advertising.html">
-                    <img src="/our_works/Advertising.webp" class="w-full h-full object-cover " />
-                    <div
-                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span class="text-white text-3xl font-bold lat">Advertising</span>
-                    </div>
-                </a>
-            </div>
-            <div class="p-2">
-                <a class="  w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
-                    href="/branding.html">
-                    <img src="/our_works/Branding.webp" class="w-full h-full object-cover filter blur-sm" />
-                    <div
-                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hidden">
-                        <span class="text-white text-3xl font-bold">Branding</span>
-                    </div>
-                </a>
-            </div>
-            <div class="p-2">
-                <a class="  w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
-                    href="/events.html">
-                    <img src="/our_works/Events.webp" class="w-full h-full object-cover filter blur-sm" />
-                    <div
-                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span class="text-white text-3xl font-bold">Events</span>
-                    </div>
-                </a>
-            </div>
-            <div class="p-2">
-                <a class="  w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
-                    href="/movie-poster.html">
-                    <img src="/our_works/MoviePosters.webp" class="w-full h-full object-cover filter blur-sm" />
-                    <div
-                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span class="text-white text-3xl font-bold">Movie Posters</span>
-                    </div>
-                </a>
-            </div>
-            <div class="p-2">
-                <a class="  w-full sm:w-[50vw]  h-screen flex-shrink-0 inline-block group no-pointer-events"
-                    href="/products.html">
-                    <img src="/our_works/Products.webp" class="w-full h-full object-cover filter blur-sm" />
-                    <div
-                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span class="text-white text-3xl font-bold">Products</span>
-                    </div>
-                </a>
-            </div>
-            <div class="p-2">
-                <a class="w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
-                    href="/title-animations.html">
-                    <img src="/our_works/TItleAnimations.webp" class="w-full h-full object-cover filter blur-sm" />
-                    <div
-                        class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span class="text-white text-3xl font-bold">Title Animations</span>
-                    </div>
-                </a>
-            </div> 
+            <a class="p-2 relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group"
+                href="/advertising.html">
+                <img src="/our_works/Advertising.webp" class="w-full h-full object-cover " />
+                <div
+                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="text-white text-3xl font-bold lat">Advertising</span>
+                </div>
+            </a>
+            <a class="p-2 relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+                href="/branding.html">
+                <img src="/our_works/Branding.webp" class="w-full h-full object-cover filter blur-sm" />
+                <div
+                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hidden">
+                    <span class="text-white text-3xl font-bold">Branding</span>
+                </div>
+            </a>
+            <a class="p-2 relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+                href="/events.html">
+                <img src="/our_works/Events.webp" class="w-full h-full object-cover filter blur-sm" />
+                <div
+                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="text-white text-3xl font-bold">Events</span>
+                </div>
+            </a>
+
+            <a class="p-2 relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+                href="/movie-poster.html">
+                <img src="/our_works/MoviePosters.webp" class="w-full h-full object-cover filter blur-sm" />
+                <div
+                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="text-white text-3xl font-bold">Movie Posters</span>
+                </div>
+            </a>
+            <a class="p-2 relative w-full sm:w-[50vw]  h-screen flex-shrink-0 inline-block group no-pointer-events"
+                href="/products.html">
+                <img src="/our_works/Products.webp" class="w-full h-full object-cover filter blur-sm" />
+                <div
+                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="text-white text-3xl font-bold">Products</span>
+                </div>
+            </a>
+
+            <a class="p-2 relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+                href="/title-animations.html">
+                <img src="/our_works/TItleAnimations.webp" class="w-full h-full object-cover filter blur-sm" />
+                <div
+                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="text-white text-3xl font-bold">Title Animations</span>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -453,13 +442,14 @@
             scrub: 1,
             invalidateOnRefresh: true,
             markers: false,
-            onUpdate: self => updateClasses() 
+            onUpdate: self => updateClasses()
         });
 
         ScrollTrigger.observe({
             target: ".racesWrapper", // can be any element (selector text is fine)
             type: "pointer,touch",
         });
+        
         function getClosestToLeft() {
             const links = document.querySelectorAll("#scrollable-div a");
             let closestElement = null;
@@ -500,7 +490,6 @@
 
             });
         }
-
 
 
     </script>
