@@ -21,6 +21,11 @@
             scroll-behavior: smooth;
         }
 
+        .swiper {
+            touch-action: pan-y;
+            /* ✅ Allows vertical scrolling */
+        }
+
         body {
             font-family: 'Lato', sans-serif;
         }
@@ -37,6 +42,8 @@
             opacity: 1 !important;
             visibility: visible !important;
         }
+
+
 
         .green {
             color: #22c55e;
@@ -445,6 +452,25 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
+
+        ScrollTrigger.create({
+            trigger: "#scrollable-div",
+            start: "top top", // ✅ Pin when section reaches the top
+            end: "bottom top", // ✅ Keep pinned until the end
+            pin: true, // ✅ Freeze scrolling while inside horizontal scroll
+            scrub: true, // ✅ Adjusts dynamically to user scroll speed
+            onUpdate: (self) => {
+                const wrapper = document.querySelector(".swiper-wrapper");
+                const maxScrollLeft = wrapper.scrollWidth - wrapper.clientWidth;
+
+                if (wrapper.scrollLeft >= maxScrollLeft || wrapper.scrollLeft <= 0) {
+                    document.body.style.overflowY = "auto"; // ✅ Resume vertical scrolling only when Swiper reaches start or end
+                } else {
+                    document.body.style.overflowY = "hidden"; // ✅ Disable vertical scrolling while Swiper is active
+                }
+            }
+        });
+
         const scrollContainer = document.querySelector("[data-scroll-container]");
         // Select the scroll container
 
@@ -556,6 +582,9 @@
         });
 
         document.addEventListener("DOMContentLoaded", () => {
+            const gallerySectionWrapper = document.querySelector("#scrollable-div");
+
+
             const swiper = new Swiper(".swiper", {
                 direction: "horizontal",
                 slidesPerView: "auto",
@@ -571,9 +600,8 @@
                     touchEnd: () => {
                         console.log('Moblie Touch end')
                         updateClasses(); // ✅ Calls function when touch interaction stops
-                    }
+                    },
                 }
-
 
             });
 
@@ -582,6 +610,7 @@
             });
 
             swiper.on("reachBeginning", () => {
+                // ✅ Allow vertical scrolling when reaching the beginning of horizontal scroll
                 window.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
             });
 
@@ -590,9 +619,8 @@
                 updateClasses();
             });
 
-
-
         });
+        //h-scroll-main-wrapper
 
     </script>
 
