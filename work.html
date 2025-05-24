@@ -9,25 +9,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
-
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <style>
         html {
             scroll-behavior: smooth;
         }
 
-        .swiper {
-            touch-action: pan-x;
-            /* ✅ Enables horizontal scrolling */
-        }
-
         body {
             font-family: 'Lato', sans-serif;
+            overflow-x: hidden;
+
         }
 
         .bg-horse {
@@ -37,13 +27,6 @@
             background-position: top;
             min-height: 65dvh;
         }
-
-        [data-scroll-container] {
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-
-
 
         .green {
             color: #22c55e;
@@ -71,10 +54,17 @@
             pointer-events: none;
             /* Disables mouse interactions, including clicks */
         }
+
+        .races {
+            width: fit-content;
+            display: flex;
+            flex-wrap: nowrap;
+            pointer-events: none;
+        }
     </style>
 </head>
 
-<body oncontextmenu="return false;" data-scroll-container>
+<body oncontextmenu="return false;">
     <!-- Navbar -->
     <nav id="navbar"
         class="bg-transparent sm:bg-transparent transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
@@ -145,7 +135,7 @@
 
     <!--Main Content-->
     <!-- Main Page -->
-    <section class="relative w-full flex items-end justify-end bg-black bg-horse h-screen" data-scroll-section>
+    <section class="relative w-full flex items-end justify-end bg-black bg-horse h-screen">
         <!-- Overlay with dark blue -->
         <div class="absolute inset-0 bg-blue-950 opacity-50"></div>
 
@@ -160,12 +150,10 @@
         </div>
     </section>
     <!-- Section work gallery -->
-    <section id="scrollable-div"
-        class="swiper horizontal-scroll w-full overflow-x-auto whitespace-nowrap scrollbar-hide no-scrollbar pb-4 pt-4"
-        data-scroll-section>
-        <div class="swiper-wrapper flex flex-nowrap gap-4 " id="scrollable-div-wrapper">
-            <div class="w-auto swiper-slide">
-                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group"
+    <div class="racesWrapper">
+        <div class="races" id="scrollable-div">
+             <div class="p-2">
+                <a class="w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group"
                     href="/advertising.html">
                     <img src="/our_works/Advertising.webp" class="w-full h-full object-cover " />
                     <div
@@ -174,9 +162,8 @@
                     </div>
                 </a>
             </div>
-            <div class="w-auto swiper-slide">
-
-                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+            <div class="p-2">
+                <a class="  w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
                     href="/branding.html">
                     <img src="/our_works/Branding.webp" class="w-full h-full object-cover filter blur-sm" />
                     <div
@@ -185,10 +172,8 @@
                     </div>
                 </a>
             </div>
-            <div class="w-auto swiper-slide">
-
-
-                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+            <div class="p-2">
+                <a class="  w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
                     href="/events.html">
                     <img src="/our_works/Events.webp" class="w-full h-full object-cover filter blur-sm" />
                     <div
@@ -197,9 +182,8 @@
                     </div>
                 </a>
             </div>
-            <div class="w-auto swiper-slide">
-
-                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+            <div class="p-2">
+                <a class="  w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
                     href="/movie-poster.html">
                     <img src="/our_works/MoviePosters.webp" class="w-full h-full object-cover filter blur-sm" />
                     <div
@@ -208,8 +192,8 @@
                     </div>
                 </a>
             </div>
-            <div class="w-auto swiper-slide">
-                <a class="relative w-full sm:w-[50vw]  h-screen flex-shrink-0 inline-block group no-pointer-events"
+            <div class="p-2">
+                <a class="  w-full sm:w-[50vw]  h-screen flex-shrink-0 inline-block group no-pointer-events"
                     href="/products.html">
                     <img src="/our_works/Products.webp" class="w-full h-full object-cover filter blur-sm" />
                     <div
@@ -218,9 +202,8 @@
                     </div>
                 </a>
             </div>
-            <div class="w-auto sm:w-[60%]  swiper-slide">
-
-                <a class="relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
+            <div class="p-2">
+                <a class="w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group no-pointer-events"
                     href="/title-animations.html">
                     <img src="/our_works/TItleAnimations.webp" class="w-full h-full object-cover filter blur-sm" />
                     <div
@@ -228,13 +211,13 @@
                         <span class="text-white text-3xl font-bold">Title Animations</span>
                     </div>
                 </a>
-            </div>
+            </div> 
         </div>
-    </section>
+    </div>
+
 
     <!--Footer-->
-    <section data-scroll-section
-        class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
+    <section class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
         <div class="container">
             <div class="w-full max-w-4xl mx-auto mt-6">
                 <!-- Heading + Input Field -->
@@ -375,8 +358,6 @@
     <!--loader end  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script>
         let locoScrollInstance;
 
@@ -450,89 +431,35 @@
             }
         });
 
-        gsap.registerPlugin(ScrollTrigger);
+        const races = document.querySelector(".races");
 
+        function getScrollAmount() {
+            let racesWidth = races.scrollWidth;
+            return -(racesWidth - window.innerWidth);
+        }
 
-        ScrollTrigger.create({
-            trigger: "#scrollable-div",
-            start: "top top", // ✅ Pin when section reaches the top
-            end: "bottom top", // ✅ Keep pinned until the end
-            pin: true, // ✅ Freeze scrolling while inside horizontal scroll
-            scrub: true, // ✅ Adjusts dynamically to user scroll speed
-            onUpdate: (self) => {
-                const wrapper = document.querySelector(".swiper-wrapper");
-                const maxScrollLeft = wrapper.scrollWidth - wrapper.clientWidth;
-
-                if (wrapper.scrollLeft >= maxScrollLeft || wrapper.scrollLeft <= 0) {
-                    document.body.style.overflowY = "auto"; // ✅ Resume vertical scrolling only when Swiper reaches start or end
-                } else {
-                    document.body.style.overflowY = "hidden"; // ✅ Disable vertical scrolling while Swiper is active
-                }
-            }
+        const tween = gsap.to(races, {
+            x: getScrollAmount,
+            duration: 3,
+            ease: "none"
         });
 
-        const scrollContainer = document.querySelector("[data-scroll-container]");
-        // Select the scroll container
+        ScrollTrigger.create({
+            trigger: ".racesWrapper",
+            start: "top 1%",
+            end: () => `+=${getScrollAmount() * -1}`,
+            pin: true,
+            animation: tween,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            markers: false,
+            onUpdate: self => updateClasses() 
+        });
 
-        function initSmoothScroll() {
-
-            const locoScroll = new LocomotiveScroll({
-                el: scrollContainer,
-                smooth: true,
-                smoothMobile: true,
-                inertia: 0.85,
-                multiplier: 2,
-                getDirection: true
-            });
-            locoScrollInstance = locoScroll;
-
-            ScrollTrigger.scrollerProxy(scrollContainer, {
-                scrollTop(value) {
-                    return arguments.length
-                        ? locoScroll.scrollTo(value, 0, 0)
-                        : locoScroll.scroll.instance.scroll.y;
-                },
-                getBoundingClientRect() {
-                    return {
-                        top: 0,
-                        left: 0,
-                        width: window.innerWidth,
-                        height: window.innerHeight,
-                    };
-                },
-                pinType: scrollContainer.style.transform ? "transform" : "fixed",
-            });
-            let lastScrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
-
-            locoScroll.on("scroll", (event) => {
-                checkBackgroundAndInvertImages();
-                const navbar = document.getElementById("navbar");
-                const currentScrollY = locoScrollInstance ? locoScrollInstance.scroll.instance.scroll.y : 0;
-
-                if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                    // Scrolling down - Hide navbar with animation
-                    navbar.classList.add("-translate-y-full", "opacity-0");
-                    navbar.classList.remove("opacity-100");
-                } else {
-                    // Scrolling up - Show navbar with animation
-                    navbar.classList.remove("-translate-y-full", "opacity-0");
-                    navbar.classList.add("opacity-100");
-                }
-
-
-                lastScrollY = currentScrollY;
-                ScrollTrigger.update();
-            });
-
-
-
-            // locoScroll.on("scroll", ScrollTrigger.update);
-            ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-            ScrollTrigger.refresh();
-            requestAnimationFrame(() => {
-                ScrollTrigger.refresh();
-            });
-        }
+        ScrollTrigger.observe({
+            target: ".racesWrapper", // can be any element (selector text is fine)
+            type: "pointer,touch",
+        });
         function getClosestToLeft() {
             const links = document.querySelectorAll("#scrollable-div a");
             let closestElement = null;
@@ -575,82 +502,6 @@
         }
 
 
-        window.addEventListener("load", () => {
-            imagesLoaded(scrollContainer, { background: true }, () => {
-                // initSmoothScroll();
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const gallerySectionWrapper = document.querySelector("#scrollable-div");
-
-
-            // const swiper = new Swiper(".swiper", {
-            //     direction: "horizontal",
-            //     slidesPerView: "auto",
-            //     freeMode: true, // Allows smooth scrolling
-            //     mousewheel: true, // Enables mouse wheel scrolling
-            //     grabCursor: false, // Shows grab cursor for better UX
-            //     touchEventsTarget: "container",
-            //     simulateTouch: true,
-            //     allowTouchMove: true,
-            //     touchMoveStopPropagation: false,
-            //     on: {
-            //         touchMove: () => {
-            //             console.log('Moblie Touch happening')
-            //         },
-            //         touchEnd: () => {
-            //             console.log('Moblie Touch end')
-            //             updateClasses(); // ✅ Calls function when touch interaction stops
-            //         },
-            //     }
-
-            // });
-
-            const swiper = new Swiper(".swiper", {
-                direction: "horizontal", // ✅ Enables horizontal scrolling
-                slidesPerView: "auto",
-                freeMode: true, // ✅ Allows smooth free scrolling
-                mousewheel: {
-                    forceToAxis: true, // ✅ Ensures scrolling only happens in one direction
-                    releaseOnEdges: true, // ✅ Allows page scrolling when Swiper reaches edges
-                    sensitivity: 1,
-                },
-                grabCursor: false,
-                touchEventsTarget: "container",
-                simulateTouch: true,
-                allowTouchMove: true,
-                touchMoveStopPropagation: false,
-                touchStartPreventDefault: true, // ✅ Prevents vertical scrolling takeover
-                on: {
-                    touchMove: () => {
-                        console.log('Moblie Touch happening')
-                    },
-                    touchEnd: () => {
-                        console.log('Moblie Touch end')
-                        updateClasses(); // ✅ Calls function when touch interaction stops
-                    },
-                }
-            });
-
-
-
-            swiper.on("reachEnd", () => {
-                window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
-            });
-
-            swiper.on("reachBeginning", () => {
-                // ✅ Allow vertical scrolling when reaching the beginning of horizontal scroll
-                window.scrollBy({ top: -window.innerHeight, behavior: "smooth" });
-            });
-
-            // ✅ Listen for Swiper scroll events and call updateClasses()
-            swiper.on("scroll", () => {
-                updateClasses();
-            });
-
-        });
-        //h-scroll-main-wrapper
 
     </script>
 
