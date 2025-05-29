@@ -1504,6 +1504,26 @@
 			if (locoScrollInstance) locoScrollInstance.start();
 		}
 
+		// Add event listeners to close modals when clicking outside the content box
+		document.addEventListener('DOMContentLoaded', function() {
+			// Get all service modals
+			const serviceModals = document.querySelectorAll('[id$="-popup"]');
+			
+			// Add click event listener to each modal
+			serviceModals.forEach(modal => {
+				modal.addEventListener('click', function(e) {
+					// Get the modal content box (the white background div)
+					const contentBox = modal.querySelector('.relative.bg-white');
+					
+					// Check if the click was outside the content box
+					// If the clicked element is not inside the content box, close the modal
+					if (!contentBox.contains(e.target) && e.target !== contentBox) {
+						closeServiceModal(modal.id);
+					}
+				});
+			});
+		});
+
 	</script>
 
 </body>
