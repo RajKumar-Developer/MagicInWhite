@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
     <style>
         @font-face {
             font-family: "SF UI Text";
@@ -60,6 +61,12 @@
             font-family: 'Lato', sans-serif;
         }
 
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         @keyframes moveHorse {
             0% {
                 left: 10px;
@@ -102,19 +109,95 @@
             z-index: 10;
         }
 
+        .testimonaial-text {
+            margin-top: 5% !important;
+            /* margin-left: 2%; */
+        }
+
         /* For medium screens and up: position absolutely at the bottom */
         @media (min-width: 1024px) {
             .custom-swiper-pagination {
                 position: absolute !important;
                 bottom: 8vh !important;
-                left: 18.60% !important;
+                left: 22.5% !important;
                 justify-content: flex-start;
                 margin-top: 0;
             }
 
-            .blue-quote {
-                left: 12% !important;
+        }
+
+
+
+        @media (min-width: 1144.5px) and (max-width: 2560px) {
+               .testimonial-image {
+                margin-right: -15% !important;
             }
+              .testimonaial-text {
+                margin-bottom: 5% !important;
+            }
+                .testimonaial-text h2 {
+                font-size: 34px !important;
+            }
+
+            .testimonaial-text p {
+                font-size: 18px !important;
+            }
+            .blue-quote {
+                left: -5% !important;
+            }
+            .custom-swiper-pagination {
+                position: absolute !important;
+                bottom: 8vh !important;
+                left: 20% !important;
+                justify-content: flex-start;
+                margin-top: 0;
+            }
+
+
+        
+
+        }
+
+        @media (max-width: 320px) {
+            .testimonaial-text {
+                margin-top: 30% !important;
+            }
+
+            .testimonial-image {
+                max-height: 70dvh !important;
+            }
+        }
+
+        @media (min-width: 321px) and (max-width: 425px) {
+            .testimonaial-text {
+                margin-top: 30% !important;
+            }
+
+            .testimonial-image {
+                max-height: 70dvh !important;
+            }
+
+        }
+
+        @media (min-width: 425px) and (max-width: 639px) {
+            .testimonial-image {
+                max-height: 70dvh !important;
+                margin-bottom: -20%;
+            }
+
+        }
+
+        @media (min-width: 640px) and (max-width: 767.5px) {
+            .testimonaial-text {
+                margin-top: 18% !important;
+            }
+
+                .game-section {
+                display: none !important; /* Disables interactions */
+    }
+    .testimonial-section {
+        height: 100dvh !important;
+    }
         }
 
 
@@ -133,8 +216,9 @@
             }
 
             .blue-quote {
-                left: 5% !important;
+                left: 2% !important;
             }
+          
         }
 
         /* Dot styles */
@@ -155,6 +239,7 @@
             opacity: 1;
             transform: scale(1.2);
         }
+       
     </style>
 </head>
 
@@ -272,7 +357,7 @@
                     class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
             </div>
             <div class="grid-item col-span-2 sm:col-span-2 sm:row-span-2 sm:col-start-4 bg-yellow-500 cursor-pointer overflow-hidden"
-                onclick="openModal(event, 3)">
+                onclick="openModal(event, 2)">
                 <img src="/MIW_Website_Assets/Ynot_image_work.png"
                     class="w-full h-full object-contain transition-transform transform hover:scale-110 duration-300" />
             </div>
@@ -371,7 +456,7 @@
                     </p>
                     <button
                         class="mt-6 bg-pink-500 px-8 py-3 text-white font-semibold hover:bg-pink-600 transition-all shadow-lg"
-                        onclick="window.location.href='/movie-poster.html'">
+                        onclick="window.location.href='/work.html'">
                         CLICK FOR MORE
                     </button>
                 </div>
@@ -449,49 +534,45 @@
             <div
                 class="w-full lg:w-[50%] sm:h-auto flex justify-center lg:justify-end mt-8 lg:mt-0 lg:absolute lg:bottom-0 lg:right-0">
                 <img src="/MIW_Website_Assets/ibangle-asset.png" alt="iBangle Image"
-                    class="w-[80%] lg:w-full max-w-md lg:max-w-lg object-contain sm:object-cover sm:h-[51rem]">
+                    class="w-[80%] lg:w-full max-w-md lg:max-w-lg object-contain sm:object-cover sm:h-[40rem] md:h-[35rem]">
             </div>
 
         </div>
     </section>
 
     <!--carousel slider-->
-    <section id="carousel-section" class="min-h-0 sm:min-h-screen h-auto flex flex-col">
-        <div class="h-[100dvh] sm:h-[60dvh] md:h-[50dvh] lg:h-[60dvh] relative overflow-hidden bg-[#ffd527]">
-
+    <section id="carousel-section" class="min-h-screen h-auto flex flex-col">
+        <div class="h-[100dvh] sm:h-[60dvh] md:h-[50dvh] lg:h-[60dvh] relative overflow-hidden bg-[#ffd527] testimonial-section">
             <div class="swiper mySwiper h-full">
-                <div class="swiper-wrapper container">
-
-                    <!-- Slide 1 -->
+                <div class="swiper-wrapper">
 
                     <div class="swiper-slide">
                         <div
-                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
-                            <!-- Top quote icon -->
+                            class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-12 left-15 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
                                 alt="Quote Top">
-                            <!-- Left text -->
+
                             <div
-                                class="container mx-auto px-4 h-full flex flex-col pt-5 sm:pt-0
-                    md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4 mt-8 sm:mt-0">
-                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida</h2>
-                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
-                                        and scrambled it to make a type specimen book.</p>
-                                    <p class="text-base sm:text-xl italic text-black">– Mani Ratnam</p>
-                                </div>
-                                <!-- Right image -->
-                                <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
+                                class="w-full md:w-1/2 text-center md:text-left space-y-3 sm:space-y-4 order-2 md:order-1 mt-0 md:mt-0 testimonaial-text">
+                                <h2 class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl  font-bold text-black">Ipsum suspendisse
+                                    ultrices gravida</h2>
+                                <p class="text-sm sm:text-base md:text-sm lg:text-lg text-black leading-relaxed">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                                <p class="text-base sm:text-lg md:text-xl italic text-black pt-2">– Mani Ratnam</p>
+                            </div>
+
+                            <div
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                <div class="relative w-full h-full flex items-end justify-center md:justify-end">
                                     <img src="/MIW_Website_Assets/mani_sir_testimonials.png"
-                                        class="w-full max-h-[60dvh] object-contain mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
+                                        class="w-auto max-h-[55vh] sm:max-h-[45vh] md:max-h-[50vh] lg:max-h-[60vh] mt-5 object-contain testimonial-image"
                                         alt="Mani Ratnam">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
@@ -499,164 +580,164 @@
                     </div>
 
 
-                    <!-- Slide 2 -->
+
                     <div class="swiper-slide">
                         <div
-                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
+                            class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-12 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
                                 alt="Quote Top">
-                            <div
-                                class="container mx-auto px-4 h-full flex flex-col  pt-8 sm:pt-0
-                         md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4  mt-8 sm:mt-0">
-                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida</h2>
-                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
-                                        and scrambled it to make a type specimen book.</p>
-                                    <p class="text-base sm:text-xl italic text-black">– Atlee</p>
 
-                                </div>
-                                <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
+                            <div
+                                class="w-full md:w-1/2 text-center md:text-left space-y-3 sm:space-y-4 order-2 md:order-1 mt-0 md:mt-0 testimonaial-text">
+                                <h2 class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-bold text-black">Ipsum
+                                    suspendisse
+                                    ultrices gravida</h2>
+                                <p class="text-sm sm:text-base md:text-sm lg:text-lg text-black leading-relaxed">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                                <p class="text-base sm:text-lg md:text-xl italic text-black pt-2">– Atlee</p>
+                            </div>
+
+                            <div
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                <div class="relative w-full h-full flex items-end justify-center md:justify-end">
                                     <img src="/MIW_Website_Assets/1.png"
-                                        class="w-full md:w-[120%] max-w-screen-xl h-auto object-cover mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
+                                        class="w-auto max-h-[45vh] sm:max-h-[50vh] md:max-h-[50vh] lg:h-[60vh] mt-28 object-contain testimonial-image"
                                         alt="Atlee">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 3 -->
                     <div class="swiper-slide">
                         <div
-                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
+                            class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-12 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
                                 alt="Quote Top">
-                            <div
-                                class="container mx-auto px-4 h-full flex flex-col  pt-8 sm:pt-0
-                         md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4  mt-8 sm:mt-0">
-                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida</h2>
-                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
-                                        and scrambled it to make a type specimen book.</p>
-                                    <p class="text-base sm:text-xl italic text-black">– Nirav shah</p>
 
-                                </div>
-                                <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
+                            <div
+                                class="w-full md:w-1/2 text-center md:text-left space-y-3 sm:space-y-4 order-2 md:order-1 mt-0 md:mt-0 testimonaial-text">
+                                <h2 class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-bold text-black">Ipsum
+                                    suspendisse
+                                    ultrices gravida</h2>
+                                <p class="text-sm sm:text-base md:text-sm lg:text-lg text-black leading-relaxed">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                                <p class="text-base sm:text-lg md:text-xl italic text-black pt-2">– Thiagarajan
+                                    Kumararaja</p>
+                            </div>
+
+                            <div
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                <div class="relative w-full h-full flex items-end justify-center md:justify-end">
                                     <img src="/MIW_Website_Assets/2.png"
-                                        class="w-full md:w-[120%] max-w-screen-xl h-auto object-cover mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
-                                        alt="nirav shah">
+                                        class="w-auto max-h-[45vh] sm:max-h-[50vh] md:max-h-[50vh] lg:max-h-[60vh] mt-16 object-contain testimonial-image"
+                                        alt="Mani Ratnam">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 4 -->
+
+
                     <div class="swiper-slide">
                         <div
-                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
+                            class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-12 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
                                 alt="Quote Top">
-                            <div
-                                class="container mx-auto px-4 h-full flex flex-col  pt-8 sm:pt-0
-                         md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4  mt-8 sm:mt-0">
-                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida</h2>
-                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
-                                        and scrambled it to make a type specimen book.</p>
-                                    <p class="text-base sm:text-xl italic text-black">–Thyagarajan kumar raja</p>
 
-                                </div>
-                                <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
+                            <div
+                                class="w-full md:w-1/2 text-center md:text-left space-y-3 sm:space-y-4 order-2 md:order-1 mt-0 md:mt-0 testimonaial-text">
+                                <h2 class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-bold text-black">Ipsum
+                                    suspendisse
+                                    ultrices gravida</h2>
+                                <p class="text-sm sm:text-base md:text-sm lg:text-lg text-black leading-relaxed">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                                <p class="text-base sm:text-lg md:text-xl italic text-black pt-2">– Nirav Shah</p>
+                            </div>
+
+                            <div
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                <div class="relative w-full h-full flex items-end justify-center md:justify-end">
                                     <img src="/MIW_Website_Assets/3.png"
-                                        class="w-full md:w-[110%] max-w-screen-xl h-auto object-cover mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
-                                        alt="thyagarajan kumar raja">
+                                        class="w-auto max-h-[45vh] sm:max-h-[50vh] md:max-h-[50vh] lg:max-h-[60vh] mt-16 object-contain testimonial-image"
+                                        alt="Mani Ratnam">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 5 -->
+
+
+
                     <div class="swiper-slide">
                         <div
-                            class="container mx-auto px-4 h-full flex flex-col md:flex-row items-center justify-between relative">
+                            class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-12 left-5 sm:left-[10vh] w-10 sm:w-16 md:w-24 hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
                                 alt="Quote Top">
-                            <div
-                                class="container mx-auto px-4 h-full flex flex-col pt-8 sm:pt-0
-                           md:flex-row lg:max-w-[1020px] md:max-w-[760px] items-center justify-end md:justify-between gap-6 sm:gap-8">
-                                <div class="w-full md:w-1/2 text-center md:text-left space-y-4  mt-8 sm:mt-0">
-                                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-black">Ipsum suspendisse
-                                        ultrices gravida</h2>
-                                    <p class="text-sm sm:text-lg text-black">Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an unknown printer took a galley of type
-                                        and scrambled it to make a type specimen book.</p>
-                                    <p class="text-base sm:text-xl italic text-black">– Kamal Hassan</p>
 
-                                </div>
-                                <div
-                                    class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative h-full">
+                            <div
+                                class="w-full md:w-1/2 text-center md:text-left space-y-3 sm:space-y-4 order-2 md:order-1 mt-0 md:mt-0 testimonaial-text">
+                                <h2 class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl font-bold text-black">Ipsum
+                                    suspendisse
+                                    ultrices gravida</h2>
+                                <p class="text-sm sm:text-base md:text-sm lg:text-lg text-black leading-relaxed">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                                <p class="text-base sm:text-lg md:text-xl italic text-black pt-2">– Kamal Hassan</p>
+                            </div>
+
+                            <div
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                <div class="relative w-full h-full flex items-end justify-center md:justify-end">
                                     <img src="/MIW_Website_Assets/4.png"
-                                        class="w-full max-h-[60dvh] object-contain mx-auto absolute bottom-0 left-0 sm:left-10 sm:relative lg:pl-20"
-                                        alt="kamal">
+                                        class="w-auto max-h-[45vh] sm:max-h-[50vh] md:max-h-[50vh] lg:max-h-[60vh] mt-5 object-contain testimonial-image"
+                                        alt="Mani Ratnam">
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-10 right-0 sm:right-5 md:right-10 w-24 sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
                                         alt="Quote Bottom">
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-                    <!-- Add more slides the same way -->
 
                 </div>
-                <!-- <div class="swiper-pagination custom-swiper-pagination absolute left-4 sm:left-20 z-10"></div> -->
-                <div class="swiper-pagination custom-swiper-pagination"></div>
+                <div class="swiper-pagination custom-swiper-pagination !bottom-4 md:!bottom-6"></div>
 
-                <!-- Navigation -->
                 <button
-                    class="custom-swiper-prev absolute w-6 left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-10">
+                    class="custom-swiper-prev absolute left-2 sm:left-3 md:left-4 top-1/2 -translate-y-1/2 z-10 p-2">
                     <img src="/MIW_Website_Assets/Left_arrow_testimonials.png" alt="Previous"
-                        class="w-8 sm:w-12 md:w-16">
+                        class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8">
                 </button>
-
-                <!-- Custom Next Button -->
                 <button
-                    class="custom-swiper-next absolute w-6 right-2 sm:right-4 md:right-10 top-1/2 -translate-y-1/2 z-10">
-                    <img src="/MIW_Website_Assets/Right_arrow_testimonials.png" alt="Next" class="w-8 sm:w-12 md:w-16">
+                    class="custom-swiper-next absolute right-2 sm:right-3 md:right-4 top-1/2 -translate-y-1/2 z-10 p-2">
+                    <img src="/MIW_Website_Assets/Right_arrow_testimonials.png" alt="Next"
+                        class="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8">
                 </button>
 
-
-
-                <!-- Pagination -->
             </div>
         </div>
-
-        <!-- Bottom Horse Animation Section -->
-        <div class="bg-white relative w-full flex items-center justify-center overflow-hidden h-[40dvh] hidden sm:flex">
+        <div class="bg-white relative w-full flex items-center justify-center overflow-hidden h-[40dvh] hidden sm:flex game-section">
             <div class="absolute bottom-5">
                 <img src="/MIW_Website_Assets/Horse_Game_BG.png" alt="Path Background"
                     class="w-full h-full object-contain">
@@ -705,82 +786,44 @@
                     <div
                         class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
                         <div class="w-full order-1 md:order-none">
-                            <h3 class="font-semibold">
-                                <a class="hover:text-yellow-400" href="/">HOME</a>
-                            </h3>
+                            <h3 class="font-semibold">HOME</h3>
                             <ul class="space-y-1">
-                                <li>
-                                    <a class="hover:text-yellow-400" href="/aboutus.html">Why us</a>
-                                </li>
+                                <li>Why us</li>
                             </ul>
                         </div>
                         <div class="w-full">
-                            <h3 class="font-semibold">
-                                <a class="hover:text-yellow-400" href="/work.html">WORK</a>
-                            </h3>
+                            <h3 class="font-semibold">WORK</h3>
                             <ul class="space-y-1">
-                                <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/movie-poster.html">Film Posters</a>
-                                </li>
-                                <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/events.html">Events</a>
-                                </li>
-                                <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/title-animations.html">Title Animations</a>
-                                </li>
-
-                                <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/branding.html">Branding</a>
-                                </li>
-                                <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/products.html">Products</a>
-                                </li>
-                                <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/advertising.html">Advertising</a>
-                                </li>
-
+                                <li>Film Posters</li>
+                                <li>Events</li>
+                                <li>Title Animations</li>
+                                <li>Branding</li>
+                                <li>Products</li>
+                                <li>Advertising</li>
                             </ul>
                         </div>
                         <div class="w-full">
-                            <h3 class="font-semibold">
-                                <a class="hover:text-yellow-400" href="/service.html">
-                                    SERVICE
-
-                                </a>
-                            </h3>
-                            <ul class="space-y-1">
-                                <li>
-                                    <a class="hover:text-yellow-400"
-                                        href="/service.html?details=branding-popup">Branding</a>
-                                </li>
-                                <li><a class="hover:text-yellow-400"
-                                        href="/service.html?details=ads-popup">Advertising</a></li>
-                                <li><a class="hover:text-yellow-400"
-                                        href="/service.html?details=film-production-popup">Film Production</a></li>
-                                <li><a class="hover:text-yellow-400" href="/service.html?details=designer-popup">Graphic
-                                        Design</a></li>
-                                <li><a class="hover:text-yellow-400" href="/service.html?details=ui-ux-popup">Social
-                                        Media Marketing</a></li>
-                                <li><a class="hover:text-yellow-400"
-                                        href="/service.html?details=integrated-popup">Integrated Marketing</a></li>
+                            <h3 class="font-semibold">SERVICE</h3>
+                            <ul class="space-y-1 text-sm pt-3">
+                                <li class="whitespace-nowrap">Branding</li>
+                                <li class="whitespace-nowrap">Advertising</li>
+                                <li class="whitespace-nowrap">Film Production</li>
+                                <li class="whitespace-nowrap">Graphic Design</li>
+                                <li class="whitespace-nowrap">Social Media Marketing</li>
+                                <li class="whitespace-nowrap">Integrated Marketing</li>
                             </ul>
                         </div>
                         <div class="w-full">
-                            <h3 class="font-semibold"><a class="hover:text-yellow-400" href="/team.html">TEAM</a></h3>
+                            <h3 class="font-semibold">TEAM</h3>
                             <ul class="space-y-1">
-                                <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/team.html">Meet the Team</a>
-                                </li>
+                                <li>Meet the Team</li>
                             </ul>
                         </div>
                         <div class="w-full">
-                            <h3 class="font-semibold"><a class="hover:text-yellow-400"
-                                    href="/contactus.html">CONTACT</a></h3>
+                            <h3 class="font-semibold">CONTACT</h3>
                             <ul class="space-y-1">
-
-                                <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/contactus.html">Contact Information</a>
-                                </li>
+                                <li>Contact Information</li>
+                                <li>Careers</li>
                             </ul>
                         </div>
                     </div>
@@ -795,20 +838,19 @@
 
                         <!-- Social Icons -->
                         <div class="flex flex-wrap justify-center sm:justify-end gap-6">
-                            <a href="https://x.com/gopiprasannaa" target="_blank"
+                            <a href="#"
                                 class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
                                 <i class="fa-brands fa-x-twitter"></i>
                             </a>
-                            <a href="https://www.facebook.com/p/Gopi-Prasannaa-Movie-Designs-100063507769046/"
-                                target="_blank"
+                            <a href="#"
                                 class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="https://www.youtube.com/watch?v=t70PCpFsGA8" target="_blank"
+                            <a href="#"
                                 class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
                                 <i class="fab fa-youtube"></i>
                             </a>
-                            <a href="https://www.instagram.com/gopiprasannaa" target="_blank"
+                            <a href="#"
                                 class="w-10 h-10 flex items-center justify-center border-2 border-white rounded-full text-white text-xl">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
@@ -826,7 +868,7 @@
     <div id="loader"
         class="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999999] transition-opacity duration-1000 opacity-100">
         <img id="logo-img" src="/MIW_Website_Assets/loader_horse.gif" alt="loader" class="w-20 h-20 object-contain">
-        <span id="loading-text" class="loader-text text-sm font-bold mt-4 ml-3">0%</span>
+        <span id="loading-text" class="loader-text text-sm font-bold mt-4 ml-5">0%</span>
     </div>
     <!--loader end  -->
     <div class="fixed top-10 right-7 flex flex-col z-[50] place-items-center hidden" id="close-popup-button-wrapper">
@@ -887,6 +929,7 @@
 
     <!-- ibangle -->
 
+
     <div class="fixed top-10 right-7 flex flex-col place-items-center hidden z-[1000]"
         id="close-popup-button-wrapper-ibangle">
         <button id="closePopupBangle"
@@ -905,14 +948,14 @@
         class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16 z-[900]">
 
         <div
-            class="relative bg-black rounded-lg w-[92%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
+            class="relative bg-white rounded-lg w-[92%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
 
             <div class="p-6">
                 <div class="flex justify-between items-start">
-                    <h2 class="text-2xl font-bold text-white" id="details-pop-header-ibangle"></h2>
+                    <h2 class="text-2xl font-bold" id="details-pop-header-ibangle"></h2>
                 </div>
 
-                <p class="text-white font-thin mt-2 " id="details-pop-desc-ibangle">
+                <p class="text-gray-600 mt-2 " id="details-pop-desc-ibangle">
 
                 </p>
             </div>
@@ -946,19 +989,42 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="/main.js"></script>
     <script>
-        const swiper = new Swiper(".mySwiper", {
+        const swiper = new Swiper('.mySwiper', {
+            // Optional parameters
+            direction: 'horizontal',
             loop: true,
-            autoplay: {
-                delay: 8000,
-                disableOnInteraction: false,
-            },
+            grabCursor: true,
+            effect: 'slide', // 'slide', 'fade', 'cube', 'coverflow', 'flip'
+
+            // Pagination
             pagination: {
-                el: ".custom-swiper-pagination",
+                el: '.swiper-pagination',
                 clickable: true,
             },
+
+            // Navigation arrows
             navigation: {
                 nextEl: '.custom-swiper-next',
                 prevEl: '.custom-swiper-prev',
+            },
+
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is >= 768px
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                },
+                // when window width is >= 1024px
+                1024: {
+                    slidesPerView: 1,
+                    spaceBetween: 40
+                }
             }
         });
 
@@ -1000,6 +1066,11 @@
             }
         });
 
+        // document.addEventListener("readystatechange", () => {
+        //     if (document.readyState === "complete") {
+        //         document.getElementById("loader").classList.add("hidden");
+        //     }
+        // });
     </script>
     <script>
         function goToWorkPage() {
@@ -1577,10 +1648,8 @@
             title: "Dramila: The Kombucha Shop",
             description: "This is a sample paragraph for Dramila's kombucha shop popup. You can update this content as needed.",
             images: [
-                "/our_works/ibangles/ibangle1.jpg",
-                "/our_works/ibangles/ibangle2.jpg",
-                "/our_works/ibangles/ibangle3.jpg",
-                "/our_works/ibangles/ibangle4.jpg"
+                "/MIW_Website_Assets/ibangle-asset.png",
+                "/MIW_Website_Assets/ibangle-asset.png",
             ]
         };
 
