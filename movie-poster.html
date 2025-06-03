@@ -53,23 +53,28 @@
         }
 
         .flip-card {
-            perspective: 1000px;
-            height: 580px;
-            /* Card height as per your request */
+            width: 100%;
+            max-width: 400px;
+            /* adjust max width as needed */
+            height: auto;
+            aspect-ratio: 2 / 3;
+            /* maintains proportion (e.g., 400x600) */
+            margin: auto;
         }
 
         @media (max-width: 768px) {
             .flip-card {
-                height: 400px;
-                /* or any smaller value for mobile */
+                max-width: 90vw;
             }
         }
 
-        @media (max-width: 480px) {
+        /* Optional: larger screens */
+        @media (min-width: 1024px) {
             .flip-card {
-                height: 300px;
+                max-width: 420px;
             }
         }
+
 
         .flip-card-inner {
             position: relative;
@@ -89,11 +94,22 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            /* Tailwind's rounded-xl */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
         }
 
         .flip-card-back {
             transform: rotateY(180deg);
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
     </style>
 </head>
@@ -188,7 +204,7 @@
                     <!-- Front Side -->
                     <div class="flip-card-front w-full h-full">
                         <img src="/our_works/movie-posters/96-poster30x40-01.jpg" alt="Front Image"
-                            class="w-full h-full object-cover shadow-lg">
+                            class="w-full h-full object-contain shadow-lg">
                     </div>
 
                     <!-- Back Side -->
@@ -205,7 +221,7 @@
                     <!-- Front Side -->
                     <div class="flip-card-front w-full h-full">
                         <img src="/our_works/movie-posters/amaran 1.jpg" alt="Front Image"
-                            class="w-full h-full object-cover shadow-lg">
+                            class="w-full h-full object-contain shadow-lg">
                     </div>
 
                     <!-- Back Side -->
@@ -223,7 +239,7 @@
                     <!-- Front Side -->
                     <div class="flip-card-front w-full h-full">
                         <img src="/our_works/movie-posters/BIGIL-1stLOOK-poster-01.jpg" alt="Front Image"
-                            class="w-full h-full object-cover shadow-lg">
+                            class="w-full h-full object-contain shadow-lg">
                     </div>
 
                     <!-- Back Side -->
@@ -682,7 +698,7 @@
                     <!-- First Row: Lists (Grid of 5 Items) -->
                     <div
                         class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-6 w-full text-left md:text-left">
-                      <div class="w-full order-1 md:order-none">
+                        <div class="w-full order-1 md:order-none">
                             <h3 class="font-semibold">
                                 <a class="hover:text-yellow-400" href="/">HOME</a>
                             </h3>
