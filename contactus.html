@@ -30,24 +30,29 @@
         }
 
         .contact-heading {
-            font-size: clamp(1rem, 1vw, 2.25rem);
-            line-height: clamp(1rem, 1vw, 2.5rem);
+            font-size: clamp(1.5rem, 1vw, 2.25rem);
+            line-height: clamp(1.5rem, 1vw, 2.5rem);
+            transition: font-size 0.1s ease-in-out, line-height 0.1s ease-in-out;
         }
 
         .contact-img-rt {
-            width: clamp(3rem, 4vw, 6rem)
+            width: clamp(3.5rem, 4vw, 6rem);
+            transition: width 0.1s ease-in-out;
         }
 
         .contact-form-text {
             font-size: clamp(0.60rem, 0.5vw, 1rem);
+            transition: font-size 0.1s ease-in-out;
         }
 
         .space-dynamic {
             margin-top: 1rem;
+            transition: margin-top 0.1s ease-in-out;
         }
 
         .element-space-dynamic {
             margin-top: 1rem;
+            transition: margin-top 0.1s ease-in-out;
         }
 
         .loader-text {
@@ -68,13 +73,15 @@
                 line-height: 1.5rem;
             }
 
-            .contact-img-rt {
-                width: 4rem;
-                /* Added missing semicolon */
+        }
+
+        /* Fix for title breaking at specific screen sizes */
+        @media (min-width: 768px) and (max-width: 838px) {
+            .contact-heading {
+                font-size: 1.1rem;
+                line-height: 1.2rem;
+                white-space: nowrap;
             }
-
-
-
         }
 
         /* Medium screens (768px - 1199px) */
@@ -82,7 +89,7 @@
 
             .element-space-dynamic,
             .space-dynamic {
-                margin-top: 0.25rem;
+                margin-top: 0.5rem;
                 /* Equivalent to space-y-1 */
             }
         }
@@ -104,10 +111,8 @@
 
         /* Extra large screens (1200px and above) */
         @media (min-width: 1200px) {
-
             .contact-img-rt {
                 width: clamp(3rem, 6vw, 6rem);
-                /* Added missing semicolon */
             }
 
             .contact-form-text {
