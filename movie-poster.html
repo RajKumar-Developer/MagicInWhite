@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style>
         html {
@@ -54,12 +55,13 @@
 
         .flip-card {
             width: 100%;
-            max-width: 400px;
+            max-width: 90vw;
             aspect-ratio: 2 / 3;
             margin: 5px !important;
             box-sizing: border-box;
             display: inline-block;
             vertical-align: top;
+            padding: 3px !important;
         }
 
         @media (max-width: 768px) {
@@ -71,9 +73,16 @@
         /* Optional: larger screens */
         @media (min-width: 1024px) {
             .flip-card {
-                max-width: 420px;
+                max-width: 90vw;
             }
         }
+
+         @media (min-width: 1800px) and (max-width: 2800px) {
+            .flip-card {
+                max-width: 90vw;
+            }
+        }
+
 
         @media (min-width: 850px) and (max-width: 1023.5px) {
             .flip-card {
