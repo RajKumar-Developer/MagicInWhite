@@ -29,35 +29,35 @@
             aspect-ratio: 3 / 2;
         }
 
-        .contact-heading {
-            font-size: clamp(1.5rem, 1vw, 2.25rem);
-            line-height: clamp(1.5rem, 1vw, 2.5rem);
-            transition: font-size 0.1s ease-in-out, line-height 0.1s ease-in-out;
-        }
-
-        .contact-img-rt {
-            width: clamp(3.5rem, 4vw, 6rem);
-            transition: width 0.1s ease-in-out;
-        }
-
-        .contact-form-text {
-            font-size: clamp(0.60rem, 0.5vw, 1rem);
-            transition: font-size 0.1s ease-in-out;
-        }
-
-        .space-dynamic {
-            margin-top: 1rem;
-            transition: margin-top 0.1s ease-in-out;
-        }
-
-        .element-space-dynamic {
-            margin-top: 1rem;
-            transition: margin-top 0.1s ease-in-out;
-        }
 
         .loader-text {
             color: #ea4294;
             font-family: 'Lato', sans-serif;
+        }
+
+        .contact-title-text {
+            font-size: calc(36px + 55 * ((100vw - 1600px) / 2400));
+            line-height: calc(40px + 55 * ((100vw - 1600px) / 2400));
+        }
+
+        .contact-form-text {
+            /* font-size: 1rem; */
+            font-size: calc(16px + 20 * ((100vw - 1600px) / 2400));
+        }
+
+        .element-space-dynamic {
+            /* margin-top: 2.5rem; */
+            margin-top: calc(40px + 110 * ((100vw - 1600px) / 2400));
+        }
+
+        .contact-img-rt {
+            width: calc(6rem + 120 * ((100vw - 1600px) / 2400));
+            /* width: 6rem; */
+        }
+
+        .space-dynamic {
+            margin-top: calc(32px + 100 * ((100vw - 1600px) / 2400));
+            /* margin-top: 2rem; */
         }
 
 
@@ -68,55 +68,13 @@
                 height: 600px;
             }
 
-            .contact-heading {
-                font-size: 1.5rem;
+            .contact-title-text {
+                font-size: 24px;
                 line-height: 1.5rem;
             }
 
-        }
-
-        /* Fix for title breaking at specific screen sizes */
-        @media (min-width: 768px) and (max-width: 838px) {
-            .contact-heading {
-                font-size: 1.1rem;
-                line-height: 1.2rem;
-                white-space: nowrap;
-            }
-        }
-
-        /* Medium screens (768px - 1199px) */
-        @media (min-width: 768px) and (max-width: 1199px) {
-
-            .element-space-dynamic,
-            .space-dynamic {
-                margin-top: 0.5rem;
-                /* Equivalent to space-y-1 */
-            }
-        }
-
-        /* Large screens (1200px - 1460px) */
-        @media (min-width: 1200px) and (max-width: 1460px) {
-            .contact-heading {
-                font-size: 1.5rem;
-                line-height: 1.5rem;
-            }
-        }
-
-        @media (min-width: 1461px) {
-            .contact-heading {
-                font-size: 2.25rem;
-                line-height: 2.5rem;
-            }
-        }
-
-        /* Extra large screens (1200px and above) */
-        @media (min-width: 1200px) {
             .contact-img-rt {
-                width: clamp(3rem, 6vw, 6rem);
-            }
-
-            .contact-form-text {
-                font-size: clamp(0.75rem, 2vw, 1rem);
+                width: 3.5rem;
             }
 
             .space-dynamic {
@@ -124,7 +82,11 @@
             }
 
             .element-space-dynamic {
-                margin-top: 2.5rem;
+                margin-top: 1.15rem;
+            }
+
+            .contact-form-text {
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -221,15 +183,14 @@
             <!-- Right Side (Form Section) -->
 
             <!-- Right Side (Form Section) -->
-            <div class="w-full md:w-1/2 px-4 sm:px-6 pt-10 pb-10 flex flex-col justify-center relative">
+            <div class="w-full md:w-1/2 px-4 lg:px-6 pt-10 pb-10 flex flex-col justify-center relative">
                 <div class="flex items-center justify-between">
-                    <h1 class="contact-heading font-light text-[#272cf7]">
+                    <h1 class="contact-title-text font-light text-[#272cf7]">
                         L E T S <br> T A L K
                     </h1>
 
                     <img src="/contactpage_assets/stamp.png" alt="Logo"
-                        class="contact-img-rt shrink-0 aspect-square object-contain mt-2 sm:mt-4 md:mt-6">
-
+                        class="contact-img-rt shrink-0 object-contain mt-2 sm:mt-4 md:mt-6">
                 </div>
 
                 <form class="space-dynamic">
