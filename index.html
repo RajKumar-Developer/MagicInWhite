@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style>
         @font-face {
@@ -126,9 +127,7 @@
 
         }
 
-
-
-        @media (min-width: 1144.5px) and (max-width: 2560px) {
+        @media (min-width: 1170.5px) and (max-width: 1279px) {
             .testimonial-image {
                 margin-right: -15% !important;
             }
@@ -146,7 +145,7 @@
             }
 
             .blue-quote {
-                left: -5% !important;
+                left: -6% !important;
             }
 
             .custom-swiper-pagination {
@@ -159,6 +158,49 @@
 
         }
 
+
+        @media (min-width: 1280px) and (max-width: 2600px) {
+            .testimonial-image {
+                margin-right: -20% !important;
+                height: 460px !important;
+            }
+
+           .testimonial-image-atlee{
+                margin-right: -20% !important;
+                height: 410px !important;
+            }
+
+            .testimonaial-text {
+                margin-bottom: 20px !important;
+                /* Adding consistent spacing */
+            }
+
+            .testimonaial-text h2 {
+                font-size: 34px !important;
+            }
+
+            .testimonaial-text p {
+                font-size: 18px !important;
+            }
+
+            .blue-quote {
+                position: absolute;
+                left: -60px !important;
+                /* Adjust position with pixels */
+                bottom: 20px !important;
+                /* Ensure it's placed correctly */
+            }
+
+            .custom-swiper-pagination {
+                position: absolute !important;
+                bottom: 40px !important;
+                /* Adjusting for pixel-based spacing */
+                left: 20% !important;
+                justify-content: flex-start;
+                margin-top: 0;
+            }
+        }
+
         @media (max-width: 320px) {
             .testimonaial-text {
                 margin-top: 30% !important;
@@ -166,6 +208,12 @@
 
             .testimonial-image {
                 max-height: 70dvh !important;
+                margin-bottom: -20%;
+            }
+
+            .testimonial-image-atlee {
+                height: 90dvh !important;
+                margin-bottom: -32%;
             }
         }
 
@@ -175,7 +223,14 @@
             }
 
             .testimonial-image {
-                max-height: 70dvh !important;
+                max-height: 60dvh !important;
+                margin-bottom: -20%;
+            }
+
+            .testimonial-image-atlee {
+              
+                 position: relative;
+                 top: 33%;
             }
 
         }
@@ -184,6 +239,12 @@
             .testimonial-image {
                 max-height: 70dvh !important;
                 margin-bottom: -20%;
+            }
+            
+            .testimonial-image-atlee {
+              
+                 position: relative;
+                 top: 33%;
             }
 
         }
@@ -554,7 +615,7 @@
                         <div
                             class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden xl:block blue-quote"
                                 alt="Quote Top">
 
                             <div
@@ -571,14 +632,16 @@
                             </div>
 
                             <div
-                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 h-[60vh] sm:h-[60vh]">
                                 <div class="relative w-full h-full flex items-end justify-center md:justify-end">
+
                                     <img src="/MIW_Website_Assets/mani_sir_testimonials.png"
-                                        class="w-auto max-h-[55vh] sm:max-h-[45vh] md:max-h-[50vh] lg:max-h-[55vh] mt-20 object-contain testimonial-image"
-                                        alt="Mani Ratnam">
+                                        class="w-auto h-auto max-h-full object-contain testimonial-image" alt="Person">
+
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden xl:block"
                                         alt="Quote Bottom">
+
                                 </div>
                             </div>
                         </div>
@@ -590,7 +653,7 @@
                         <div
                             class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden xl:block blue-quote"
                                 alt="Quote Top">
 
                             <div
@@ -607,14 +670,16 @@
                             </div>
 
                             <div
-                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 max-h-[60vh] sm:h-[60vh]">
                                 <div class="relative w-full h-full flex items-end justify-center md:justify-end">
-                                    <img src="/MIW_Website_Assets/1.png"
-                                        class="w-auto max-h-[45vh] sm:max-h-[50vh] md:max-h-[50vh] lg:h-[60vh] mt-28 object-contain testimonial-image"
-                                        alt="Atlee">
+
+                                    <img src="/MIW_Website_Assets/1.png" class="w-auto h-auto max-h-full object-contain testimonial-image-atlee"
+                                        alt="Person">
+
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden xl:block"
                                         alt="Quote Bottom">
+
                                 </div>
                             </div>
                         </div>
@@ -624,7 +689,7 @@
                         <div
                             class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden xl:block blue-quote"
                                 alt="Quote Top">
 
                             <div
@@ -642,16 +707,20 @@
                             </div>
 
                             <div
-                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 h-[60vh] sm:h-[60vh]">
                                 <div class="relative w-full h-full flex items-end justify-center md:justify-end">
-                                    <img src="/MIW_Website_Assets/2.png"
-                                        class="w-auto max-h-[45vh] sm:max-h-[50vh] md:max-h-[50vh] lg:max-h-[60vh] mt-16 object-contain testimonial-image"
-                                        alt="Mani Ratnam">
+
+                                    <img src="/MIW_Website_Assets/2.png" class="w-auto h-auto max-h-full object-contain testimonial-image"
+                                        alt="Person">
+
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden xl:block"
                                         alt="Quote Bottom">
+
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
 
@@ -660,7 +729,7 @@
                         <div
                             class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden xl:block blue-quote"
                                 alt="Quote Top">
 
                             <div
@@ -677,14 +746,16 @@
                             </div>
 
                             <div
-                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 h-[60vh] sm:h-[60vh]">
                                 <div class="relative w-full h-full flex items-end justify-center md:justify-end">
-                                    <img src="/MIW_Website_Assets/3.png"
-                                        class="w-auto max-h-[45vh] sm:max-h-[50vh] md:max-h-[50vh] lg:max-h-[60vh] mt-16 object-contain testimonial-image"
-                                        alt="Mani Ratnam">
+
+                                    <img src="/MIW_Website_Assets/3.png" class="w-auto h-auto max-h-full object-contain testimonial-image"
+                                        alt="Person">
+
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden xl:block"
                                         alt="Quote Bottom">
+
                                 </div>
                             </div>
                         </div>
@@ -696,7 +767,7 @@
                         <div
                             class="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col md:flex-row items-center justify-center md:justify-between relative lg:max-w-screen-lg gap-6 sm:gap-8 py-8 md:py-12">
                             <img src="/MIW_Website_Assets/doubleqoute_High_Blue_testimonials.png"
-                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden lg:block blue-quote"
+                                class="absolute top-6 left-0 sm:top-8 sm:left-0 md:w-20 lg:w-24 w-12 h-auto hidden xl:block blue-quote"
                                 alt="Quote Top">
 
                             <div
@@ -713,14 +784,16 @@
                             </div>
 
                             <div
-                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 min-h-[65vh] sm:min-h-[60vh] md:min-h-0">
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 h-[60vh] sm:h-[60vh]">
                                 <div class="relative w-full h-full flex items-end justify-center md:justify-end">
-                                    <img src="/MIW_Website_Assets/4.png"
-                                        class="w-auto max-h-[45vh] sm:max-h-[50vh] md:max-h-[50vh] lg:max-h-[60vh] mt-5 object-contain testimonial-image"
-                                        alt="Mani Ratnam">
+
+                                    <img src="/MIW_Website_Assets/4.png" class="w-auto h-auto max-h-full object-contain testimonial-image"
+                                        alt="Person">
+
                                     <img src="/MIW_Website_Assets/doubleqoute_low_Yellow_testimonials.png"
-                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden lg:block"
+                                        class="absolute bottom-8 right-0 sm:right-2 md:right-5 w-12 h-auto sm:w-16 md:w-20 hidden xl:block"
                                         alt="Quote Bottom">
+
                                 </div>
                             </div>
                         </div>
