@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -20,11 +21,28 @@
         }
 
         .bg-horse {
-            background-image: url('/our_works/work_banner.gif');
+            background-image: url('/our_works/HEADER.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top;
             min-height: 65dvh;
+            /* Better for centering on all screens */
+            width: 100%;
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .bg-horse {
+                min-height: 50dvh;
+                background-position: center top;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .bg-horse {
+                min-height: 40dvh;
+                background-position: center top;
+            }
         }
 
         .green {
@@ -74,10 +92,140 @@
 
 
         }
+
+        .custom-underline {
+            position: relative;
+            padding-bottom: 4px;
+            /* spacing below text */
+            background: transparent;
+            outline: none;
+            border: none;
+        }
+
+        .custom-underline::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #c5c6c7;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+
+        .custom-underline:hover::after {
+            width: 100%;
+        }
+
+        .custom-underline.text-black::after {
+            width: 100%;
+            background-color: #000
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .flip-card {
+            width: 100%;
+            max-width: 100vw;
+            aspect-ratio: 2 / 3;
+            margin: 5px !important;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        @media (max-width: 768px) {
+            .flip-card {
+                max-width: 90vw;
+            }
+        }
+
+        /* Optional: larger screens */
+        @media (min-width: 1024px) {
+            .flip-card {
+                max-width: 90vw;
+            }
+        }
+
+        @media (min-width: 1800px) and (max-width: 2800px) {
+            .flip-card {
+                max-width: 90vw;
+            }
+        }
+
+
+        @media (min-width: 850px) and (max-width: 1023.5px) {
+            .flip-card {
+                max-width: 90vw;
+            }
+        }
+
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        [data-scroll-container] {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Edge */
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            scrollbar-width: none;
+            /* Firefox */
+        }
     </style>
 </head>
 
-<body oncontextmenu="return false;">
+<body oncontextmenu="return false; data-scroll-container">
     <!-- Navbar -->
     <nav id="navbar"
         class="bg-transparent sm:bg-transparent transition-transform duration-500 ease-in-out opacity-100 fixed w-full top-0 left-0 px-5 z-50">
@@ -146,89 +294,460 @@
         </ul>
     </div>
 
+
+    </div>
+
     <!--Main Content-->
     <!-- Main Page -->
     <section class="relative w-full flex items-end justify-end bg-black bg-horse h-screen">
         <!-- Overlay with dark blue -->
-        <div class="absolute inset-0 bg-blue-950 opacity-50"></div>
 
-        <div class="relative text-white text-right pr-20 max-[496px]:pr-[40px] max-[630px]:pl-[20px] pb-20">
-            <h1 class="text-4xl sm:text-6xl font-normal">OUR WORK</h1>
-            <p class="mt-4 max-w-2xl max-w-[50dvh] font-thin text-justify" dir="rtl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nunc felis.
-                Morbi dui turpis, facilisis vitae ullam sit amet, bibendum bibendum dui.
-                Etiam volut eu est ut viverra. Mattis non magna sit amet, blandit sceler nibh.
-                Praesent vitae purus ut elit ultricies finibus eu ut dui. Cras non laoreet augue. Morbi.
-            </p>
+        <div class="absolute text-white right-5 bottom-[28%]">
+            <h1 class="max-w-[40dvh] font-bold text-right text-3xl uppercase">
+                We belive that INTELLIGENT creative THINKING helps ORGANISATIONS and INDIVIDUALS to grow
+            </h1>
         </div>
     </section>
-    <!-- Section work gallery -->
-    <div class="racesWrapper overflow-x-auto whitespace-nowrap scrollbar-hide no-scrollbar">
-        <div class="races" id="scrollable-div">
-            <!-- <a class="p-2 relative w-full sm:w-[50vw] h-screen flex-shrink-0 inline-block group"
-                href="/advertising.html">
-                <img src="/our_works/Advertising.webp" class="w-full h-full object-cover " />
-                <div
-                    class="absolute inset-0 bg-green-500 bg-opacity-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span class="text-white text-3xl font-bold lat">Advertising</span>
-                </div>
-            </a> -->
-            <a class="p-2 relative w-half h-screen flex-shrink-0 inline-block group" href="/advertising.html">
-                <img src="/our_works/Advertising.webp" class="w-full h-full object-cover" />
-                <span
-                    class="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-thin uppercase text-center">
-                    Advertising
-                </span>
-            </a>
-            <a class="p-2 relative w-half h-screen flex-shrink-0 inline-block group no-pointer-events"
-                href="/branding.html">
-                <img src="/our_works/Branding.webp" class="w-full h-full object-cover filter blur-sm" />
-                <span
-                    class="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-thin uppercase text-center hidden">
-                    Branding
-                </span>
-            </a>
-            <a class="p-2 relative w-half h-screen flex-shrink-0 inline-block group no-pointer-events"
-                href="/events.html">
-                <img src="/our_works/Events.webp" class="w-full h-full object-cover filter blur-sm" />
-                <span
-                    class="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-thin uppercase text-center hidden">
-                    Events
-                </span>
-            </a>
 
-            <a class="p-2 relative w-half h-screen flex-shrink-0 inline-block group no-pointer-events"
-                href="/movie-poster.html">
-                <img src="/our_works/MoviePosters.webp" class="w-full h-full object-cover filter blur-sm" />
-                <span
-                    class="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-thin uppercase text-center hidden">
-                    Movie Posters
-                </span>
-            </a>
-            <a class="p-2 relative w-half  h-screen flex-shrink-0 inline-block group no-pointer-events"
-                href="/products.html">
-                <img src="/our_works/Products.webp" class="w-full h-full object-cover filter blur-sm" />
-                <span
-                    class="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-thin uppercase text-center hidden">
-                    Products
-                </span>
-            </a>
+    <!-- tabs -->
+    <div class="mt-8 mb-8 px-4 py-3 flex justify-center">
+        <div id="custom-cursor"
+            class="hidden pointer-events-none fixed z-50 w-4 h-4 rounded-full bg-red-400 mix-blend-difference"></div>
 
-            <a class="p-2 relative w-half h-screen flex-shrink-0 inline-block group no-pointer-events"
-                href="/title-animations.html">
-                <img src="/our_works/TItleAnimations.webp" class="w-full h-full object-cover filter blur-sm" />
-                <span
-                    class="absolute inset-x-0 top-1/2 transform -translate-y-1/2 text-white text-7xl font-thin uppercase text-center hidden">
-                    Title <br /> Animations
-                </span>
-            </a>
-            <div class="spacer"></div>
+        <div class="flex items-center space-x-4 overflow-x-auto whitespace-nowrap scroll-smooth hide-scrollbar">
+
+            <!-- Static text -->
+            <span class="flex items-center flex-shrink-0 font-semibold text-blue-600">
+                Work <span class="mx-2 w-12 border-t border-black"></span>
+            </span>
+
+            <!-- Tabs -->
+            <button class="tab-item custom-underline font-semibold text-black flex-shrink-0 cursor-none pb-0"
+                data-tab="flim">
+                Flim Posters
+            </button>
+            <button class="tab-item custom-underline text-gray-400 flex-shrink-0 cursor-none ml-2 pb-0"
+                data-tab="branding">
+                Branding
+            </button>
+            <button class="tab-item custom-underline text-gray-400 flex-shrink-0 cursor-none ml-2 pb-0"
+                data-tab="title">
+                Title Animation
+            </button>
+            <button class="tab-item custom-underline text-gray-400 flex-shrink-0 cursor-none ml-2 pb-0"
+                data-tab="advertising">
+                Advertising
+            </button>
+            <button class="tab-item custom-underline text-gray-400 flex-shrink-0 cursor-none ml-2 pb-0"
+                data-tab="products">
+                Products
+            </button>
+            <button class="tab-item custom-underline text-gray-400 flex-shrink-0 cursor-none ml-2 pb-0"
+                data-tab="events">
+                Events
+            </button>
         </div>
     </div>
 
 
+    <section class="px-4 py-0 sm:px-32 sm:py-4 tab-section block bg-white mb-8" id="flim">
+        <div class="grid gap-1 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3" data-scroll-section>
+            <!-- Gallery Images with Overlay -->
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/96-poster30x40-01.jpg')">
+                <div class="flip-card-inner w-full h-full">
+                    <!-- Front Side -->
+                    <div class="flip-card-front w-full h-full">
+                        <img src="/our_works/movie-posters/96-poster30x40-01.jpg" alt="Front Image"
+                            class="w-full h-full object-contain shadow-lg">
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="flip-card-back w-full h-full bg-green-500 text-white flex items-center justify-center shadow-lg">
+                        <h2 class="text-xl font-bold">96</h2>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/amaran 1.jpg')">
+                <div class="flip-card-inner w-full h-full">
+                    <!-- Front Side -->
+                    <div class="flip-card-front w-full h-full">
+                        <img src="/our_works/movie-posters/amaran 1.jpg" alt="Front Image"
+                            class="w-full h-full object-contain shadow-lg">
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="flip-card-back w-full h-full bg-green-500 text-white flex items-center justify-center shadow-lg">
+                        <h2 class="text-xl font-bold">Amaran</h2>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flip-card"
+                onclick="openFullscreenImage('/our_works/movie-posters/BIGIL-1stLOOK-poster-01.jpg')">
+                <div class="flip-card-inner w-full h-full">
+                    <!-- Front Side -->
+                    <div class="flip-card-front w-full h-full">
+                        <img src="/our_works/movie-posters/BIGIL-1stLOOK-poster-01.jpg" alt="Front Image"
+                            class="w-full h-full object-contain shadow-lg">
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="flip-card-back w-full h-full bg-green-500 text-white flex items-center justify-center shadow-lg">
+                        <h2 class="text-xl font-bold">Bigil</h2>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/BJ.jpg')">
+                <div class="flip-card-inner w-full h-full">
+                    <!-- Front Side -->
+                    <div class="flip-card-front w-full h-full">
+                        <img src="/our_works/movie-posters/BJ.jpg" alt="Front Image"
+                            class="w-full h-full object-contain  shadow-lg">
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="flip-card-back w-full h-full bg-green-500 text-white flex items-center justify-center shadow-lg">
+                        <h2 class="text-xl font-bold">Baby John</h2>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/CCV2.jpg')">
+                <div class="flip-card-inner w-full h-full">
+                    <!-- Front Side -->
+                    <div class="flip-card-front w-full h-full">
+                        <img src="/our_works/movie-posters/CCV2.jpg" alt="Front Image"
+                            class="w-full h-full object-contain shadow-lg">
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="flip-card-back w-full h-full bg-green-500 text-white flex items-center justify-center shadow-lg">
+                        <h2 class="text-xl font-bold">Chekka Chivantha Vaanam</h2>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/game over 2.jpg')">
+                <div class="flip-card-inner w-full h-full">
+                    <!-- Front Side -->
+                    <div class="flip-card-front w-full h-full">
+                        <img src="/our_works/movie-posters/game over 2.jpg" alt="Front Image"
+                            class="w-full h-full object-contain shadow-lg">
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="flip-card-back w-full h-full bg-green-500 text-white flex items-center justify-center shadow-lg">
+                        <h2 class="text-xl font-bold">Game Over</h2>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/GOAT-03.jpg')">
+                <div class="flip-card-inner w-full h-full">
+                    <!-- Front Side -->
+                    <div class="flip-card-front w-full h-full">
+                        <img src="/our_works/movie-posters/GOAT-03.jpg" alt="Front Image"
+                            class="w-full h-full object-contain shadow-lg">
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="flip-card-back w-full h-full bg-green-500 text-white flex items-center justify-center shadow-lg">
+                        <h2 class="text-xl font-bold">Goat</h2>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/Intern-Web.jpg')">
+                <div class="flip-card-inner w-full h-full">
+                    <!-- Front Side -->
+                    <div class="flip-card-front w-full h-full">
+                        <img src="/our_works/movie-posters/Intern-Web.jpg" alt="Front Image"
+                            class="w-full h-full object-contain shadow-lg">
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="flip-card-back w-full h-full bg-green-500 text-white flex items-center justify-center shadow-lg">
+                        <h2 class="text-xl font-bold">The Intern</h2>
+                    </div>
+
+                </div>
+            </div>
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/IruthiSutru_7.jpg')">
+                <div class="flip-card-inner w-full h-full">
+                    <!-- Front Side -->
+                    <div class="flip-card-front w-full h-full">
+                        <img src="/our_works/movie-posters/IruthiSutru_7.jpg" alt="Iruthi Sutru"
+                            class="w-full h-full object-contain shadow-lg">
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="flip-card-back w-full h-full bg-green-500 text-white flex items-center justify-center shadow-lg">
+                        <h2 class="text-xl font-bold">Iruthi Sutru</h2>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- branding -->
+    <section class="px-4 py-0 sm:px-32 sm:py-4 tab-section block mb-8 bg-white" id="branding">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/BrickHouse/BRICK-house-01.jpg" alt="thunivu" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Brick House</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Rebranding to reclaim a
+                    legacy</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/BrickHouse/BRICK-house-02.jpg" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Brick House</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mt-1 mb-5">Rebranding to reclaim a
+                    legacy</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/BrickHouse/BRICK-house-03.jpg" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Brick House</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mt-1 mb-5">Rebranding to reclaim a
+                    legacy</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/Kraken/kraken-1.jpg" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">kraken</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mt-1 mb-5">Rebranding to reclaim a
+                    legacy</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- title -->
+    <section class="px-4 py-0 sm:px-32 sm:py-4 tab-section block mb-8 bg-white" id="title">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/our_works/poster.jpg" alt="poster" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/our_works/title.jpg" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/services-assets/filmproduction-asset.png" alt="beast"
+                        class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/services-assets/designing-asset.png" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- advertising -->
+    <section class="px-4 py-0 sm:px-32 sm:py-4 tab-section block mb-8 bg-white" id="advertising">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/Stoker/stoker-1.jpg" alt="poster" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/KolliHills/kolli-01.jpg" alt="Kolli Hills" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/TDKF/TDKF-4.jpg" alt="beast"
+                        class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/Stoker/stoker-4.jpg" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- products -->
+
+    <section class="px-4 py-0 sm:px-32 sm:py-4 tab-section block mb-8 bg-white" id="products">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/our_works/poster.jpg" alt="poster" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/our_works/title.jpg" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/services-assets/filmproduction-asset.png" alt="beast"
+                        class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/services-assets/designing-asset.png" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- events -->
+    <section class="px-4 py-0 sm:px-32 sm:py-4 tab-section block mb-8 bg-white" id="events">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/TheRoute/ROUTE-01.jpg" alt="poster" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/TheRoute/ROUTE-02.jpg" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/FINAL/TheRoute/ROUTE-04.jpg" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+            <div class="flex flex-col md:justify-between">
+                <div
+                    class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+                    <img src="/our_works/events.jpg" alt="beast" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
+                <p class="order-3 md:order-2 text-sm text-gray-600 mb-5">Lorem ipsum is a dummy or placeholder text
+                    commonly used in graphic design</p>
+            </div>
+
+        </div>
+    </section>
+
     <!--Footer-->
-    <section class="min-h-1/2 flex flex-col justify-center items-center bg-[#00001b] text-white text-center p-10">
+    <section class="min-h-1/2 flex flex-col justify-center items-center bg-[#2226f7] text-white text-center p-10">
         <div class="container">
             <div class="w-full max-w-4xl mx-auto mt-6">
                 <!-- Heading + Input Field -->
@@ -246,80 +765,80 @@
                         <div class="w-full order-1 md:order-none">
 
                             <h3 class="font-semibold">
-                                <a class="hover:text-yellow-400" href="/">HOME</a>
+                                <a class="hover:text-pink-500" href="/">HOME</a>
                             </h3>
                             <ul class="space-y-1">
                                 <li>
-                                    <a class="hover:text-yellow-400" href="/aboutus.html">Why us</a>
+                                    <a class="hover:text-pink-500" href="/aboutus.html">Why us</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="w-full">
                             <h3 class="font-semibold">
-                                <a class="hover:text-yellow-400" href="/work.html">WORK</a>
+                                <a class="hover:text-pink-500" href="/work.html">WORK</a>
                             </h3>
                             <ul class="space-y-1">
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/movie-poster.html">Film Posters</a>
+                                    <a class="hover:text-pink-500" href="/movie-poster.html">Film Posters</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/events.html">Events</a>
+                                    <a class="hover:text-pink-500" href="/events.html">Events</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/title-animations.html">Title Animations</a>
+                                    <a class="hover:text-pink-500" href="/title-animations.html">Title Animations</a>
                                 </li>
 
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/branding.html">Branding</a>
+                                    <a class="hover:text-pink-500" href="/branding.html">Branding</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/products.html">Products</a>
+                                    <a class="hover:text-pink-500" href="/products.html">Products</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/advertising.html">Advertising</a>
+                                    <a class="hover:text-pink-500" href="/advertising.html">Advertising</a>
                                 </li>
 
                             </ul>
                         </div>
                         <div class="w-full">
                             <h3 class="font-semibold">
-                                <a class="hover:text-yellow-400" href="/service.html">
+                                <a class="hover:text-pink-500" href="/service.html">
                                     SERVICE
 
                                 </a>
                             </h3>
                             <ul class="space-y-1">
                                 <li>
-                                    <a class="hover:text-yellow-400"
+                                    <a class="hover:text-pink-500"
                                         href="/service.html?details=branding-popup">Branding</a>
                                 </li>
-                                <li><a class="hover:text-yellow-400"
+                                <li><a class="hover:text-pink-500"
                                         href="/service.html?details=ads-popup">Advertising</a></li>
-                                <li><a class="hover:text-yellow-400"
+                                <li><a class="hover:text-pink-500"
                                         href="/service.html?details=film-production-popup">Film Production</a></li>
-                                <li><a class="hover:text-yellow-400" href="/service.html?details=designer-popup">Graphic
+                                <li><a class="hover:text-pink-500" href="/service.html?details=designer-popup">Graphic
                                         Design</a></li>
-                                <li><a class="hover:text-yellow-400" href="/service.html?details=ui-ux-popup">Social
+                                <li><a class="hover:text-pink-500" href="/service.html?details=ui-ux-popup">Social
                                         Media Marketing</a></li>
-                                <li><a class="hover:text-yellow-400"
+                                <li><a class="hover:text-pink-500"
                                         href="/service.html?details=integrated-popup">Integrated Marketing</a></li>
                             </ul>
                         </div>
                         <div class="w-full">
-                            <h3 class="font-semibold"><a class="hover:text-yellow-400" href="/team.html">TEAM</a></h3>
+                            <h3 class="font-semibold"><a class="hover:text-pink-500" href="/team.html">TEAM</a></h3>
                             <ul class="space-y-1">
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/team.html">Meet the Team</a>
+                                    <a class="hover:text-pink-500" href="/team.html">Meet the Team</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="w-full">
-                            <h3 class="font-semibold"><a class="hover:text-yellow-400"
-                                    href="/contactus.html">CONTACT</a></h3>
+                            <h3 class="font-semibold"><a class="hover:text-pink-500" href="/contactus.html">CONTACT</a>
+                            </h3>
                             <ul class="space-y-1">
 
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/contactus.html">Contact Information</a>
+                                    <a class="hover:text-pink-500" href="/contactus.html">Contact Information</a>
                                 </li>
                             </ul>
                         </div>
@@ -327,7 +846,7 @@
                     <!-- Second Row: Button & Social Media Icons -->
                     <div class="flex flex-col sm:flex-row justify-between items-center w-full space-y-4 sm:space-y-0">
                         <button id="shareButton"
-                            class="bg-[#00001b] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
+                            class="bg-[#2226f7] border border-white px-6 py-3 text-lg text-white font-semibold flex items-center gap-2">
                             <img src="/footer-png/share-button.png" alt="Share Icon" class="w-6 h-6"> Share this Website
                         </button>
 
@@ -359,6 +878,23 @@
 
         </div>
     </section>
+
+
+
+    <div id="fullscreen-image-modal"
+        class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[60]">
+        <div class="relative">
+            <button onclick="closeFullscreenImage()"
+                class="hidden sm:flex absolute -top-6 -right-4 sm:-top-6 sm:-right-12 w-10 h-10 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <img id="fullscreen-img" src="" alt="Zoomed" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl">
+        </div>
+    </div>
 
     <!-- loader -->
     <div id="loader"
@@ -442,100 +978,8 @@
             }
         });
 
-        const races = document.querySelector(".races");
 
-        function getScrollAmount() {
-            let racesWidth = races.scrollWidth;
-            return -(racesWidth - window.innerWidth);
-        }
-
-        const tween = gsap.to(races, {
-            x: getScrollAmount,
-            duration: 3,
-            ease: "power2.out"
-        });
-
-        ScrollTrigger.create({
-            trigger: ".racesWrapper",
-            start: "top 1%",
-            end: () => `+=${getScrollAmount() * -1}`,
-            pin: true,
-            animation: tween,
-
-            scrub: 1,
-            invalidateOnRefresh: true,
-            markers: false,
-            onUpdate: self => updateClasses()
-        });
-
-        ScrollTrigger.observe({
-            target: ".racesWrapper", // can be any element (selector text is fine)
-            type: "pointer,touch",
-        });
-
-        gsap.utils.toArray(".group").forEach(box => {
-            gsap.from(box, {
-                opacity: 0,
-                scale: 0.5,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: box,
-                    start: "top 80%", // Adjust this to control when the animation begins
-                    end: "top 50%",
-                    toggleActions: "play none none none" // Runs animation only once when the element enters
-                }
-            });
-        });
-
-        function getClosestToLeft() {
-            const links = document.querySelectorAll("#scrollable-div a");
-            let closestElement = null;
-            let closestDistance = Infinity;
-
-            links.forEach(link => {
-                const rect = link.getBoundingClientRect();
-                // Only consider elements that are still within the viewport (not crossed the left)
-                // if (rect.left >= 0 && rect.left < closestDistance) {
-                //     closestDistance = rect.left;
-                //     closestElement = link;
-                // }  
-
-                if (rect.left <= 200) {
-                    closestDistance = rect.left;
-                    closestElement = link;
-                }
-
-
-            });
-
-            return closestElement;
-        }
-
-        function updateClasses() {
-            const links = document.querySelectorAll("#scrollable-div a");
-            const closest = getClosestToLeft(); // Function from previous step
-
-            links.forEach(link => {
-                const img = link.querySelector("img");
-                const overlayDiv = link.querySelector("span");// overlay to span
-
-                if (link === closest) {
-                    img.classList.remove("blur-sm"); // Remove class from closest image
-                    overlayDiv.classList.remove("hidden"); // Remove class from closest div
-                    link.classList.remove('no-pointer-events'); // Prevent clicks on other links
-
-                } else {
-                    img.classList.add("blur-sm"); // Add class to all other images
-                    overlayDiv.classList.add("hidden"); // Add class to all other divs
-                    link.classList.add('no-pointer-events'); // Prevent clicks on other links
-
-                }
-
-            });
-        }
-
-
+ 
     </script>
 
     <script>
@@ -544,7 +988,7 @@
             const navbar = document.getElementById('navbar');
             const logo = document.getElementById('logo-img');
             const menuIcon = document.getElementById('menu-icon');
-
+            console.log('.')
             // Get the scroll position to determine what section we're on
             const scrollY = window.scrollY;
 
@@ -650,6 +1094,70 @@
             const observer = new MutationObserver(checkBackgroundAndInvertImages);
             observer.observe(document.getElementById('navbar'), { attributes: true, attributeFilter: ['class'] });
         });
+    </script>
+
+    <script>
+        const tabs = document.querySelectorAll(".tab-item");
+        const sections = document.querySelectorAll(".tab-section");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                // Update tab styles
+                tabs.forEach(t => {
+                    t.classList.remove("font-semibold", "text-black", "border-b-2", "border-black");
+                    t.classList.add("text-gray-400");
+                });
+                tab.classList.remove("text-gray-400");
+                tab.classList.add("font-semibold", "text-black", "border-b-2", "border-black");
+
+                // Show matching section
+                const target = tab.getAttribute("data-tab");
+                sections.forEach(section => section.classList.add("hidden"));
+                const activeSection = document.getElementById(target);
+                if (activeSection) {
+                    activeSection.classList.remove("hidden");
+                }
+            });
+        });
+
+        document.querySelector('.tab-item[data-tab="flim"]').click();
+    </script>
+
+
+
+    <script>
+        const cursor = document.getElementById("custom-cursor");
+        const tabItems = document.querySelectorAll(".tab-item");
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        tabItems.forEach(item => {
+            item.addEventListener("mouseenter", () => {
+                cursor.classList.remove("hidden");
+            });
+
+            item.addEventListener("mouseleave", () => {
+                cursor.classList.add("hidden");
+            });
+        });
+
+        function openFullscreenImage(src) {
+            const modal = document.getElementById('fullscreen-image-modal');
+            const image = document.getElementById('fullscreen-img');
+            image.src = src;
+            modal.classList.remove('hidden');
+            document.body.classList.add("overflow-hidden"); // Prevent scrolling
+        }
+
+        function closeFullscreenImage() {
+            const modal = document.getElementById('fullscreen-image-modal');
+            modal.classList.add('hidden');
+            document.getElementById('fullscreen-img').src = '';
+            document.body.classList.remove("overflow-hidden");
+        }
     </script>
 </body>
 
