@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+ 
     <style>
         @font-face {
             font-family: "SF UI Text";
@@ -229,8 +228,8 @@
 
             .testimonial-image-atlee {
 
-                position: relative;
-                top: 33%;
+                 max-height: 60dvh !important;
+                margin-bottom: -10%;
             }
 
         }
@@ -242,9 +241,8 @@
             }
 
             .testimonial-image-atlee {
-
-                position: relative;
-                top: 33%;
+                    max-height: 70dvh !important;
+                margin-bottom: -13%;
             }
 
         }
@@ -331,8 +329,8 @@
         class="fixed top-0 left-0 w-full h-full bg-[#ffd527] flex flex-col justify-center items-center text-[#2025f8] text-xl uppercase tracking-widest z-50 hidden">
         <!-- Close Button -->
         <button id="close-menu"
-            class="absolute top-6 right-6 text-[3rem] font-bold text-[#2025f8] transition duration-300">
-            &times;
+            class="absolute top-6 right-6 text-4xl font-bold text-[#2025f8] transition duration-300">
+            ✖
         </button>
 
         <!-- Menu Items -->
@@ -670,7 +668,7 @@
                             </div>
 
                             <div
-                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 max-h-[60vh] sm:h-[60vh]">
+                                class="w-full md:w-1/2 flex justify-center md:justify-end items-end relative order-2 md:order-2 h-[60vh] sm:h-[60vh]">
                                 <div class="relative w-full h-full flex items-end justify-center md:justify-end">
 
                                     <img src="/MIW_Website_Assets/1.png"
@@ -880,23 +878,23 @@
                             </h3>
                             <ul class="space-y-1">
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/movie-poster.html">Film Posters</a>
+                                    <a class="hover:text-yellow-400" href="/work.html?tab=flim">Film Posters</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/events.html">Events</a>
+                                    <a class="hover:text-yellow-400" href="/work.html?tab=events">Events</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/title-animations.html">Title Animations</a>
+                                    <a class="hover:text-yellow-400" href="/work.html?tab=title">Title Animations</a>
                                 </li>
 
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/branding.html">Branding</a>
+                                    <a class="hover:text-yellow-400" href="/work.html?tab=branding">Branding</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/products.html">Products</a>
+                                    <a class="hover:text-yellow-400" href="/work.html?tab=products">Products</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-yellow-400" href="/advertising.html">Advertising</a>
+                                    <a class="hover:text-yellow-400" href="work.html?tab=advertising">Advertising</a>
                                 </li>
 
                             </ul>
