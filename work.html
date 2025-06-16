@@ -156,6 +156,23 @@
             line-height: 1.75rem;
             font-weight: 500;
         }
+
+        .custom-header-text-width {
+            max-width: 40dvh;
+        }
+
+        @media (max-width: 440px) {
+            .custom-header-text-width {
+                max-width: 100%;
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 440px) and (max-width: 1024px) {
+            .custom-header-text-width {
+                max-width: 50dvh; 
+            }
+        }
     </style>
 </head>
 
@@ -235,7 +252,7 @@
         <!-- Overlay with dark blue -->
 
         <div class="absolute text-white right-5 bottom-[30vh]">
-            <h1 class="max-w-[40dvh] banner-text uppercase">
+            <h1 class="custom-header-text-width banner-text uppercase">
                 We belive that INTELLIGENT creative THINKING helps ORGANISATIONS and INDIVIDUALS to grow
             </h1>
         </div>
@@ -253,7 +270,7 @@
             <!-- Tabs -->
             <button class="tab-item custom-underline font-semibold text-black flex-shrink-0 cursor-pointer pb-0"
                 data-tab="flim">
-                Flim Posters
+                Film Posters
             </button>
             <button class="tab-item custom-underline text-gray-400 flex-shrink-0 cursor-pointer ml-2 pb-0"
                 data-tab="branding">
@@ -334,8 +351,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/BrickHouse/BRICK-house-01.jpg"
-                        onclick="openFullscreenImage('/FINAL/BrickHouse/BRICK-house-01.jpg')" alt="thunivu"
+                    <img src="/FINAL/BrickHouse/BRICK-house-01.jpg" onclick="openWorkModal(event)" alt="thunivu"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Brick House</h3>
@@ -346,8 +362,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/BrickHouse/BRICK-house-02.jpg"
-                        onclick="openFullscreenImage('/FINAL/BrickHouse/BRICK-house-02.jpg')" alt="beast"
+                    <img src="/FINAL/BrickHouse/BRICK-house-02.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Brick House</h3>
@@ -358,8 +373,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/BrickHouse/BRICK-house-03.jpg"
-                        onclick="openFullscreenImage('/FINAL/BrickHouse/BRICK-house-03.jpg')" alt="beast"
+                    <img src="/FINAL/BrickHouse/BRICK-house-03.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Brick House</h3>
@@ -370,8 +384,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/Kraken/kraken-1.jpg" onclick="openFullscreenImage('/FINAL/Kraken/kraken-1.jpg')"
-                        alt="beast"
+                    <img src="/FINAL/Kraken/kraken-1.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">kraken</h3>
@@ -390,7 +403,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/our_works/poster.jpg" onclick="openFullscreenImage('/our_works/poster.jpg')" alt="poster"
+                    <img src="/our_works/poster.jpg" onclick="openWorkModal(event)" alt="poster"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -401,7 +414,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/our_works/title.jpg" onclick="openFullscreenImage('/our_works/title.jpg')" alt="beast"
+                    <img src="/our_works/title.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -412,8 +425,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/services-assets/filmproduction-asset.png" alt="beast"
-                        onclick="openFullscreenImage('/services-assets/filmproduction-asset.png')"
+                    <img src="/services-assets/filmproduction-asset.png" alt="beast" onclick="openWorkModal(event)"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -424,8 +436,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/services-assets/designing-asset.png"
-                        onclick="openFullscreenImage('/services-assets/designing-asset.png')" alt="beast"
+                    <img src="/services-assets/designing-asset.png" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -443,8 +454,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/Stoker/stoker-1.jpg" onclick="openFullscreenImage('/FINAL/Stoker/stoker-1.jpg')"
-                        alt="poster"
+                    <img src="/FINAL/Stoker/stoker-1.jpg" onclick="openWorkModal(event)" alt="poster"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -455,8 +465,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/KolliHills/kolli-01.jpg"
-                        onclick="openFullscreenImage('/FINAL/KolliHills/kolli-01.jpg')" alt="Kolli Hills"
+                    <img src="/FINAL/KolliHills/kolli-01.jpg" onclick="openWorkModal(event)" alt="Kolli Hills"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -467,8 +476,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/TDKF/TDKF-4.jpg" onclick="openFullscreenImage('/FINAL/TDKF/TDKF-4.jpg')"
-                        alt="beast"
+                    <img src="/FINAL/TDKF/TDKF-4.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -479,8 +487,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/Stoker/stoker-4.jpg" onclick="openFullscreenImage('/FINAL/Stoker/stoker-4.jpg')"
-                        alt="beast"
+                    <img src="/FINAL/Stoker/stoker-4.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -499,7 +506,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/our_works/poster.jpg" onclick="openFullscreenImage('/our_works/poster.jpg')" alt="poster"
+                    <img src="/our_works/poster.jpg" onclick="openWorkModal(event)" alt="poster"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -510,7 +517,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/our_works/title.jpg" onclick="openFullscreenImage('/our_works/title.jpg')" alt="beast"
+                    <img src="/our_works/title.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -521,8 +528,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/services-assets/filmproduction-asset.png" alt="beast"
-                        onclick="openFullscreenImage('/services-assets/filmproduction-asset.png')"
+                    <img src="/services-assets/filmproduction-asset.png" alt="beast" onclick="openWorkModal(event)"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -533,8 +539,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/services-assets/designing-asset.png"
-                        onclick="openFullscreenImage('/services-assets/designing-asset.png')" alt="beast"
+                    <img src="/services-assets/designing-asset.png" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -552,8 +557,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/TheRoute/ROUTE-01.jpg"
-                        onclick="openFullscreenImage('/FINAL/TheRoute/ROUTE-01.jpg')" alt="poster"
+                    <img src="/FINAL/TheRoute/ROUTE-01.jpg" onclick="openWorkModal(event)" alt="poster"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -564,8 +568,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/TheRoute/ROUTE-02.jpg"
-                        onclick="openFullscreenImage('/FINAL/TheRoute/ROUTE-02.jpg')" alt="beast"
+                    <img src="/FINAL/TheRoute/ROUTE-02.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -576,8 +579,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/FINAL/TheRoute/ROUTE-04.jpg"
-                        onclick="openFullscreenImage('/FINAL/TheRoute/ROUTE-04.jpg')" alt="beast"
+                    <img src="/FINAL/TheRoute/ROUTE-04.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -588,7 +590,7 @@
             <div class="flex flex-col md:justify-between">
                 <div
                     class="order-1 md:order-3 w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] flex items-center justify-center overflow-hidden">
-                    <img src="/our_works/events.jpg" onclick="openFullscreenImage('/our_works/events.jpg')" alt="beast"
+                    <img src="/our_works/events.jpg" onclick="openWorkModal(event)" alt="beast"
                         class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer" />
                 </div>
                 <h3 class="order-2 md:order-1 text-base md:text-2xl font-bold uppercase mt-2">Lorem ipsum</h3>
@@ -635,19 +637,20 @@
                                     <a class="hover:text-pink-500" href="/work.html?tab=flim">Film Posters</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-pink-500" href="/work.html?tab=events">Events</a>
+                                    <a class="hover:text-yellow-400" href="/work.html?tab=branding">Branding</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-pink-500" href="/work.html?tab=title">Title Animations</a>
+                                    <a class="hover:text-yellow-400" href="/work.html?tab=title">Title Animations</a>
+                                </li>
+
+                                <li class="cursor-pointer">
+                                    <a class="hover:text-yellow-400" href="work.html?tab=advertising">Advertising</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-pink-500" href="/work.html?tab=branding">Branding</a>
+                                    <a class="hover:text-yellow-400" href="/work.html?tab=products">Products</a>
                                 </li>
                                 <li class="cursor-pointer">
-                                    <a class="hover:text-pink-500" href="/work.html?tab=products">Products</a>
-                                </li>
-                                <li class="cursor-pointer">
-                                    <a class="hover:text-pink-500" href="work.html?tab=advertising">Advertising</a>
+                                    <a class="hover:text-yellow-400" href="/work.html?tab=events">Events</a>
                                 </li>
 
                             </ul>
@@ -756,10 +759,100 @@
         <span id="loading-text" class="loader-text text-sm font-bold mt-4 ml-3">0%</span>
     </div>
     <!--loader end  -->
+
+    <!-- Details Popup -->
+    <div class="fixed top-10 right-7 flex flex-col z-[50] place-items-center hidden" id="close-popup-button-wrapper">
+        <button id="closePopup"
+            class="hidden w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50 ">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <span class="text-[8px] uppercase text-white hidden md:block">CLOSE</span>
+
+    </div>
+
+
+    <div id="work-details-popup"
+        class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16">
+
+        <div
+            class="relative bg-white rounded-lg w-[90%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
+
+            <div class="p-6">
+                <div class="flex justify-between items-start">
+                    <h2 class="text-2xl font-bold">Lorem ipsum is placeholder text commonly used</h2>
+                </div>
+
+                <p class="text-gray-600 mt-2 ">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+
+            <div class="space-y-8 px-6 pb-6">
+                <img src="/FINAL/BrickHouse/BRICK-house-02.jpg"
+                    class="w-full h-auto rounded-md cursor-zoom-in transition group-hover:opacity-90 min-h-[400px] object-cover sm:min-h-0 sm:object-contain"
+                    alt="branding image" onclick="openFullscreenImage('/FINAL/BrickHouse/BRICK-house-02.jpg')" />
+                <img src="/FINAL/BrickHouse/BRICK-house-01.jpg"
+                    class="w-full h-auto rounded-md cursor-zoom-in transition group-hover:opacity-90 min-h-[400px] object-cover sm:min-h-0 sm:object-contain"
+                    alt="branding image" onclick="openFullscreenImage('/FINAL/BrickHouse/BRICK-house-01.jpg')">
+            </div>
+        </div>
+    </div>
+    <!-- Details Popup End -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
         let locoScrollInstance;
+        const workPopup = document.getElementById("work-details-popup");
+        const closeWorkPopup = document.getElementById("closePopup");
+        const closPopupButtonWrapper = document.getElementById("close-popup-button-wrapper");
+
+        // Function to open the modal
+        const openWorkModal = (event) => {
+            // Prevent default behavior of the anchor tag
+            if (event) {
+                event.preventDefault();
+            }
+            // Show the popup
+            const modalContent = workPopup.querySelector("div.relative");
+            workPopup.classList.remove("hidden");
+            closeWorkPopup.classList.remove('hidden');
+            closPopupButtonWrapper.classList.remove('hidden');
+
+            // Disable background scrolling
+            document.body.classList.add("overflow-hidden");
+            gsap.fromTo(
+                modalContent,
+                { opacity: 0, scale: 0.9 }, // Start state
+                { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" } // End state
+            );
+        };
+
+        // Function to close the modal
+        closeWorkPopup.addEventListener("click", () => {
+            const modalContent = workPopup.querySelector("div.relative");
+            gsap.to(modalContent, {
+                opacity: 0,
+                scale: 0.9,
+                duration: 0.3,
+                ease: "power3.in",
+                onComplete: () => {
+                    // Hide modal and restore background scrolling
+                    closeWorkPopup.classList.add('hidden');
+                    closPopupButtonWrapper.classList.add('hidden');
+                    workPopup.classList.add("hidden");
+                    document.body.classList.remove("overflow-hidden");
+                },
+            });
+
+        });
 
         // Loading
         document.addEventListener("DOMContentLoaded", () => {
