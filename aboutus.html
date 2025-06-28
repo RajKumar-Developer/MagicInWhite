@@ -14,6 +14,19 @@
     <style>
         body {
             font-family: 'Lato', sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        img {
+            -webkit-user-drag: none;
+            /* Works in WebKit browsers like Chrome and Safari */
+            user-select: none;
+            /* Prevents text selection */
+            -webkit-touch-callout: none;
+            /* Disables callout menu on iOS */
         }
 
         .green {
@@ -221,7 +234,7 @@
         <div class="absolute bottom-10 right-10 text-white text-right max-w-xs md:max-w-md lg:max-w-lg">
             <p class="text-lg md:text-xl lg:text-2xl font-semibold leading-tight uppercase">
                 Born out of a love<br>
-                for design and<br> 
+                for design and<br>
                 storytelling, we started <br>
                 this studio in 1999 <br>
                 to help ideas find their <br>
@@ -354,7 +367,8 @@
         <div class="container">
             <div class="w-full max-w-4xl mx-auto mt-6">
                 <!-- Heading + Input Field -->
-                <h1 class="text-xl md:text-3xl font-bold mb-4 text-left uppercase">Ready when you are. Let’s create.</h1>
+                <h1 class="text-xl md:text-3xl font-bold mb-4 text-left uppercase">Ready when you are. Let’s create.
+                </h1>
                 <div class="flex">
                     <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS"
                         class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />

@@ -23,7 +23,20 @@
         }
 
         body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
             font-family: 'Lato', sans-serif;
+        }
+
+        img {
+            -webkit-user-drag: none;
+            /* Works in WebKit browsers like Chrome and Safari */
+            user-select: none;
+            /* Prevents text selection */
+            -webkit-touch-callout: none;
+            /* Disables callout menu on iOS */
         }
 
         .active {
@@ -586,7 +599,8 @@
             <!-- Text Content (Left) -->
             <div class="w-full lg:w-1/2 text-left">
                 <h1 class="text-4xl lg:text-6xl font-sf font-medium mb-4">Product Design</h1>
-                <p class="text-gray-400 text-[14px] sm:text-lg mb-[2vh] sm:mb-[10vh]">We create smart, functional product designs, from concept to final prototype.</p>
+                <p class="text-gray-400 text-[14px] sm:text-lg mb-[2vh] sm:mb-[10vh]">We create smart, functional
+                    product designs, from concept to final prototype.</p>
                 <h1 class="text-2xl lg:text-4xl font-sf font-medium mb-1 mt-2">ibangle</h1>
                 <p class="text-gray-400 text-[15px] sm:text-lg leading-relaxed">
                     <br />

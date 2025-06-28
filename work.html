@@ -15,9 +15,22 @@
             scroll-behavior: smooth;
         }
 
+        img {
+            -webkit-user-drag: none;
+            /* Works in WebKit browsers like Chrome and Safari */
+            user-select: none;
+            /* Prevents text selection */
+            -webkit-touch-callout: none;
+            /* Disables callout menu on iOS */
+        }
+
         body {
             font-family: 'Lato', sans-serif;
             overflow-x: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .bg-horse {
@@ -341,11 +354,11 @@
                 <img src="/our_works/movie-posters/threean-30x40.jpg" alt="threean"
                     class="w-full h-full object-contain filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer">
             </div>
-             <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/ThugLife-poster-01.jpg')">
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/ThugLife-poster-01.jpg')">
                 <img src="/our_works/movie-posters/ThugLife-poster-01.jpg" alt="ThugLife"
                     class="w-full h-full object-contain filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer">
             </div>
-             <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/vikram 9.jpg')">
+            <div class="flip-card" onclick="openFullscreenImage('/our_works/movie-posters/vikram 9.jpg')">
                 <img src="/our_works/movie-posters/vikram 9.jpg" alt="vikram"
                     class="w-full h-full object-contain filter grayscale hover:grayscale-0 transition duration-300 cursor-pointer">
             </div>

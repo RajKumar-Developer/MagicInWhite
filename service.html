@@ -14,6 +14,19 @@
 	<style>
 		body {
 			font-family: 'Lato', sans-serif;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		img {
+			-webkit-user-drag: none;
+			/* Works in WebKit browsers like Chrome and Safari */
+			user-select: none;
+			/* Prevents text selection */
+			-webkit-touch-callout: none;
+			/* Disables callout menu on iOS */
 		}
 
 		.active {

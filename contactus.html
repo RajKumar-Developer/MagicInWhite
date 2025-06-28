@@ -14,6 +14,19 @@
     <style>
         body {
             font-family: 'Lato', sans-serif;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        img {
+            -webkit-user-drag: none;
+            /* Works in WebKit browsers like Chrome and Safari */
+            user-select: none;
+            /* Prevents text selection */
+            -webkit-touch-callout: none;
+            /* Disables callout menu on iOS */
         }
 
         #image-container {
@@ -234,7 +247,8 @@
         <div class="container">
             <div class="w-full max-w-4xl mx-auto mt-6">
                 <!-- Heading + Input Field -->
-                <h1 class="text-xl md:text-3xl font-bold mb-4 text-left uppercase">Ready when you are. Let’s create.</h1>
+                <h1 class="text-xl md:text-3xl font-bold mb-4 text-left uppercase">Ready when you are. Let’s create.
+                </h1>
                 <div class="flex">
                     <input type="email" id="footerMail" placeholder="ENTER YOUR EMAIL ADDRESS"
                         class="p-4 w-full text-lg text-gray-600 outline-none bg-white" />
