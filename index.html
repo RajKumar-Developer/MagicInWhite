@@ -335,6 +335,34 @@
             opacity: 1;
             transform: scale(1.2);
         }
+
+        @media (max-width: 639.5px) {
+            #close-popup-button-wrapper-ibangle {
+                top: 90px !important;
+                right: 8px !important;
+            }
+        }
+
+        @media (max-width: 320px) {
+            #close-popup-button-wrapper-ibangle {
+                top: 200px !important;
+                right: 8px !important;
+            }
+        }
+
+        @media (max-width: 500px) {
+            #close-popup-button-wrapper-ibangle {
+                top: 30vh !important;
+                right: 8px !important;
+            }
+        }
+
+        @media (min-width: 500.5px) and (max-width: 639px) {
+            #close-popup-button-wrapper-ibangle {
+                top: 120px !important;
+                right: 8px !important;
+            }
+        }
     </style>
 </head>
 
@@ -1079,7 +1107,7 @@
 
     <!-- ibangle -->
 
-    <div class="fixed top-[5vh] right-8 flex flex-col place-items-center hidden z-[1000]"
+    <div class="fixed top-[180px] right-2 max-[610px]:right-2 sm:top-16 md:top-[5vh] md:right-8 flex flex-col items-center z-[1000]"
         id="close-popup-button-wrapper-ibangle">
         <button id="closePopupBangle"
             class="hidden w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50 ">
@@ -1094,7 +1122,7 @@
 
 
     <div id="i-bangle-popup"
-        class="hidden fixed inset-0 bg-transparent bg-opacity-65 flex items-center justify-center px-4 pb-16 z-[900]">
+        class="hidden fixed inset-0 bg-black/50 backdrop-blur-md flex items-center justify-center px-4 pb-16 z-[900]">
         <div class="relative bg-black rounded-lg w-full max-h-[95vh] overflow-y-auto shadow-xl mt-16 no-scrollbar">
             <div id="videoContainer"></div>
         </div>
