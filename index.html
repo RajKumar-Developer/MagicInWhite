@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+    <!-- Video.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.6.1/video-js.css" rel="stylesheet">
+
     <style>
         @font-face {
             font-family: "SF UI Text";
@@ -110,6 +113,7 @@
             scrollbar-width: none;
             /* Firefox */
         }
+
 
         /* Base: Mobile - place it below the slide content */
         .custom-swiper-pagination {
@@ -1075,7 +1079,7 @@
 
     <!-- ibangle -->
 
-    <div class="fixed top-10 right-7 flex flex-col place-items-center hidden z-[1000]"
+    <div class="fixed top-[5vh] right-8 flex flex-col place-items-center hidden z-[1000]"
         id="close-popup-button-wrapper-ibangle">
         <button id="closePopupBangle"
             class="hidden w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50 ">
@@ -1090,23 +1094,9 @@
 
 
     <div id="i-bangle-popup"
-        class="hidden fixed inset-0 bg-black bg-opacity-65 flex items-center justify-center px-4 pb-16 z-[900]">
-
-        <div
-            class="relative bg-black rounded-lg w-[92%] max-h-[85vh] px-2 overflow-y-auto shadow-xl mt-16 no-scrollbar">
-
-            <div class="p-6">
-                <div class="flex justify-between items-start">
-                    <h2 class="text-2xl font-bold text-white" id="details-pop-header-ibangle"></h2>
-                </div>
-
-                <p class="text-white font-thin mt-2 " id="details-pop-desc-ibangle">
-
-                </p>
-            </div>
-
-            <div class="space-y-8 px-6 pb-6" id="details-pop-img-contents-i-bangle">
-            </div>
+        class="hidden fixed inset-0 bg-transparent bg-opacity-65 flex items-center justify-center px-4 pb-16 z-[900]">
+        <div class="relative bg-black rounded-lg w-full max-h-[95vh] overflow-y-auto shadow-xl mt-16 no-scrollbar">
+            <div id="videoContainer"></div>
         </div>
     </div>
     <div id="fullscreen-image-modal-ibangle"
@@ -1131,6 +1121,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.6.1/video.min.js"></script>
+
+
     <script>
         const swiper = new Swiper('.mySwiper', {
             // Optional parameters
@@ -1804,20 +1797,21 @@
         const detailsDescIbangle = document.getElementById('details-pop-desc-ibangle');
         const detailsImgContainerIbangle = document.getElementById('details-pop-img-contents-i-bangle');
         const closPopupButtonWrapperibangle = document.getElementById("close-popup-button-wrapper-ibangle");
+        let player;
 
         function openPopupForiBangle() {
-            detailsHeaderIbangle.textContent = 'iBangle';
-            detailsDescIbangle.textContent = 'The iBangle, designed by Gopi Prasannaa in 2008, was the first-of-its-kind wearable music device, conceptualized long before Apple introduced wearables.';
+            // detailsHeaderIbangle.textContent = 'iBangle';
+            // detailsDescIbangle.textContent = 'The iBangle, designed by Gopi Prasannaa in 2008, was the first-of-its-kind wearable music device, conceptualized long before Apple introduced wearables.';
 
-            detailsImgContainerIbangle.innerHTML = '';
+            // detailsImgContainerIbangle.innerHTML = '';
 
-            imageData.images.forEach(src => {
-                const img = document.createElement('img');
-                img.src = src;
-                img.className = 'w-full h-auto rounded-md cursor-zoom-in transition group-hover:opacity-90 min-h-[400px] object-cover sm:min-h-0 sm:object-contain';
-                img.onclick = () => openFullscreenImageIbangle(src);
-                detailsImgContainerIbangle.appendChild(img);
-            });
+            // imageData.images.forEach(src => {
+            //     const img = document.createElement('img');
+            //     img.src = src;
+            //     img.className = 'w-full h-auto rounded-md cursor-zoom-in transition group-hover:opacity-90 min-h-[400px] object-cover sm:min-h-0 sm:object-contain';
+            //     img.onclick = () => openFullscreenImageIbangle(src);
+            //     detailsImgContainerIbangle.appendChild(img);
+            // });
 
             const modalContent = iBanglePopup.querySelector("div.relative");
             iBanglePopup.classList.remove('hidden');
@@ -1831,10 +1825,49 @@
                 { opacity: 0, scale: 0.9 },
                 { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }
             );
+
+            if (!player) {
+                loadVideo();
+            } else {
+                player.play();
+            }
         }
+
+        function loadVideo() {
+            const videoContainer = document.getElementById('videoContainer');
+            videoContainer.innerHTML = `
+                <video
+                    id="videoPlayer"
+                    class="video-js vjs-default-skin"
+                    controls
+                    preload="none"
+                    data-setup='{}'>
+                </video>
+            `;
+            player = videojs('videoPlayer', {
+                fluid: true,
+                responsive: true,
+
+                playbackRates: [0.5, 1, 1.25, 1.5, 2],
+                sources: [{
+                    src: '/ibangle_product.mp4',
+                    type: 'video/mp4'
+                }]
+            });
+
+            // Auto-play when loaded
+            player.ready(() => {
+                player.play();
+            });
+
+        }
+
 
         closePopupBangle.addEventListener('click', () => {
             const modalContent = iBanglePopup.querySelector("div.relative");
+            if (player) {
+                player.pause();
+            }
             gsap.to(modalContent, {
                 opacity: 0,
                 scale: 0.9,
