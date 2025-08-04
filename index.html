@@ -335,34 +335,6 @@
             opacity: 1;
             transform: scale(1.2);
         }
-
-        @media (max-width: 639.5px) {
-            #close-popup-button-wrapper-ibangle {
-                top: 90px !important;
-                right: 8px !important;
-            }
-        }
-
-        @media (max-width: 320px) {
-            #close-popup-button-wrapper-ibangle {
-                top: 200px !important;
-                right: 8px !important;
-            }
-        }
-
-        @media (max-width: 500px) {
-            #close-popup-button-wrapper-ibangle {
-                top: 30vh !important;
-                right: 8px !important;
-            }
-        }
-
-        @media (min-width: 500.5px) and (max-width: 639px) {
-            #close-popup-button-wrapper-ibangle {
-                top: 120px !important;
-                right: 8px !important;
-            }
-        }
     </style>
 </head>
 
@@ -1106,19 +1078,21 @@
     </div>
 
     <!-- ibangle -->
+    <!-- 
+<div id="close-popup-button-wrapper-ibangle"
+     class="hidden fixed top-[180px] right-2 max-[610px]:right-2 sm:top-16 md:top-[5vh] md:right-8 flex flex-col items-center z-[1000]">
+     
+    <button id="closePopupBangle"
+        class="w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
 
-    <div class="fixed top-[180px] right-2 max-[610px]:right-2 sm:top-16 md:top-[5vh] md:right-8 flex flex-col items-center z-[1000]"
-        id="close-popup-button-wrapper-ibangle">
-        <button id="closePopupBangle"
-            class="hidden w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg z-50 ">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-        <span class="text-[8px] uppercase text-white hidden md:block">CLOSE</span>
+    <span class="text-[8px] uppercase text-white hidden md:inline">CLOSE</span>
+</div> -->
 
-    </div>
 
 
     <div id="i-bangle-popup"
@@ -1820,11 +1794,13 @@
         };
 
         const iBanglePopup = document.getElementById('i-bangle-popup');
-        const closePopupBangle = document.getElementById('closePopupBangle');
+        // const closePopupBangle = document.getElementById('closePopupBangle');
+
+
         const detailsHeaderIbangle = document.getElementById('details-pop-header-ibangle');
         const detailsDescIbangle = document.getElementById('details-pop-desc-ibangle');
         const detailsImgContainerIbangle = document.getElementById('details-pop-img-contents-i-bangle');
-        const closPopupButtonWrapperibangle = document.getElementById("close-popup-button-wrapper-ibangle");
+        // const closPopupButtonWrapperibangle = document.getElementById("close-popup-button-wrapper-ibangle");
         let player;
 
         function openPopupForiBangle() {
@@ -1843,9 +1819,9 @@
 
             const modalContent = iBanglePopup.querySelector("div.relative");
             iBanglePopup.classList.remove('hidden');
-            closePopupBangle.classList.remove('hidden');
+            // closePopupBangle.classList.remove('hidden');
             document.body.classList.add("overflow-hidden");
-            closPopupButtonWrapperibangle.classList.remove('hidden');
+            // closPopupButtonWrapperibangle.classList.remove('hidden');
 
 
             // Animate opening
@@ -1864,14 +1840,34 @@
         function loadVideo() {
             const videoContainer = document.getElementById('videoContainer');
             videoContainer.innerHTML = `
-                <video
-                    id="videoPlayer"
-                    class="video-js vjs-default-skin"
-                    controls
-                    preload="none"
-                    data-setup='{}'>
-                </video>
-            `;
+    <div class="relative w-full sm:max-w-8xl mx-auto px-2">
+        <!-- Close Button Inside Video -->
+        <div id="close-popup-button-wrapper-ibangle"
+             class="absolute top-0 right-0 flex flex-col items-center z-50">
+            <button id="closePopupBangle"
+                    onclick="closePopupForiBangle()"
+                    class="w-9 h-9 flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 rounded-full text-xl shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                     class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <span class="text-[8px] uppercase text-white hidden md:inline">CLOSE</span>
+        </div>
+
+        <!-- Video Player -->
+        <video
+            id="videoPlayer"
+            class="video-js vjs-default-skin rounded-lg overflow-hidden w-full"
+            controls
+            autoplay
+            preload="none"
+            data-setup='{}'>
+        </video>
+    </div>
+`;
+
             player = videojs('videoPlayer', {
                 fluid: true,
                 responsive: true,
@@ -1889,27 +1885,44 @@
             });
 
         }
-
-
-        closePopupBangle.addEventListener('click', () => {
-            const modalContent = iBanglePopup.querySelector("div.relative");
-            if (player) {
-                player.pause();
+        function closePopupForiBangle() {
+            const popup = document.getElementById('i-bangle-popup');
+            if (popup) {
+                popup.classList.add('hidden');
             }
-            gsap.to(modalContent, {
-                opacity: 0,
-                scale: 0.9,
-                duration: 0.3,
-                ease: "power3.in",
-                onComplete: () => {
-                    iBanglePopup.classList.add('hidden');
-                    closePopupBangle.classList.add('hidden');
-                    document.body.classList.remove("overflow-hidden");
-                    closPopupButtonWrapperibangle.classList.add('hidden');
 
-                }
-            });
-        });
+            // Destroy player and clear video HTML
+            if (typeof player !== 'undefined' && player !== null) {
+                player.dispose(); // Completely stop and remove
+                player = null;
+                document.getElementById('videoContainer').innerHTML = '';
+            }
+
+            // Restore body scroll
+            document.body.classList.remove("overflow-hidden");
+        }
+
+
+
+        // closePopupBangle.addEventListener('click', () => {
+        //     const modalContent = iBanglePopup.querySelector("div.relative");
+        //     if (player) {
+        //         player.pause();
+        //     }
+        //     gsap.to(modalContent, {
+        //         opacity: 0,
+        //         scale: 0.9,
+        //         duration: 0.3,
+        //         ease: "power3.in",
+        //         onComplete: () => {
+        //             iBanglePopup.classList.add('hidden');
+        //             closePopupBangle.classList.add('hidden');
+        //             document.body.classList.remove("overflow-hidden");
+        //             closPopupButtonWrapperibangle.classList.add('hidden');
+
+        //         }
+        //     });
+        // });
 
 
         function openFullscreenImageIbangle(src) {
